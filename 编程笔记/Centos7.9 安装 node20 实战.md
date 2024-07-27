@@ -1,4 +1,4 @@
-## 1. Centos7.9 安装 node20 实战
+## Centos7.9 安装 node20 实战
 通常我们安装 nodejs 使用的是 `nvm` 工具，具体用法如下：
 ```bash
 # 安装 nvm
