@@ -46,7 +46,7 @@ gcc hello.c -o hello.exe
 # Hello, World!
 ```
 
-## 内置标识符
+## Token
 - **关键字**（Keywords）
 - **标识符**（Identifiers）
 - **常量**（Constants）
