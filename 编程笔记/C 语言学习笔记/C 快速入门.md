@@ -53,3 +53,5 @@ gcc hello.c -o hello.exe
 - **字符串字面量**（String Literals）
 - **运算符**（Operators）
 - **分隔符**（Separators）
+
+## 基本类型
