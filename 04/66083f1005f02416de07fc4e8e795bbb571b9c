@@ -1,0 +1,14 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "0466083f1005f02416de07fc4e8e795bbb571b9c",
+  "prompts": {},
+  "humans": {
+    "h_318b0e42409ad8": {
+      "author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
