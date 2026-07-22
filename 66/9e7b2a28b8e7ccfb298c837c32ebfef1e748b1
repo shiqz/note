@@ -1,0 +1,33 @@
+时间胶囊.md
+  h_318b0e42409ad8 11 gitai:{"mixed_line_ranges":[{"Single":11}],"operations":[]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "669e7b2a28b8e7ccfb298c837c32ebfef1e748b1",
+  "prompts": {},
+  "humans": {
+    "h_318b0e42409ad8": {
+      "author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "时间胶囊.md": [
+      {
+        "hash": "h_318b0e42409ad8",
+        "line_ranges": [
+          {
+            "Single": 11
+          }
+        ],
+        "mixed_line_ranges": [
+          {
+            "Single": 11
+          }
+        ],
+        "operations": []
+      }
+    ]
+  },
+  "remote_transcripts": {}
+}
