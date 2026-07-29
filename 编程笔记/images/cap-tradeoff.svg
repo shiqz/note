@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">CAP tradeoff</title>
+  <desc id="desc">CAP theorem shows consistency, availability and partition tolerance tradeoff.</desc>
+  <rect width="1100" height="720" rx="28" fill="#f7f7f5"/>
+  <text x="70" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#222">CAP：分区发生时，只能在 C 和 A 之间取舍</text>
+  <text x="70" y="112" font-family="Arial, sans-serif" font-size="18" fill="#666">真实分布式系统必须面对网络分区，所以关键问题不是要不要 P，而是分区时保一致性还是保可用性。</text>
+  <polygon points="550,160 210,580 890,580" fill="#fff" stroke="#d7d7d0" stroke-width="3"/>
+  <circle cx="550" cy="160" r="70" fill="#e8f1ff" stroke="#b9d4ff" stroke-width="3"/>
+  <text x="550" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#222">C</text>
+  <text x="550" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#555">Consistency</text>
+  <circle cx="210" cy="580" r="70" fill="#e8f8ea" stroke="#b8d9bd" stroke-width="3"/>
+  <text x="210" y="573" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#222">A</text>
+  <text x="210" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#555">Availability</text>
+  <circle cx="890" cy="580" r="70" fill="#fff0df" stroke="#e1b270" stroke-width="3"/>
+  <text x="890" y="573" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#222">P</text>
+  <text x="890" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#555">Partition</text>
+  <rect x="455" y="342" width="190" height="58" rx="16" fill="#f1f1ee" stroke="#d7d7d0"/>
+  <text x="550" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#222">网络分区发生</text>
+  <text x="372" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">CP：拒绝部分请求</text>
+  <text x="727" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">AP：允许短暂不一致</text>
+  <text x="550" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#666">CA 更像单机或无分区假设；跨网络系统无法真正放弃 P。</text>
+</svg>

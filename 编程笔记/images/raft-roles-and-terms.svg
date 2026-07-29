@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">Raft roles and terms</title>
+  <desc id="desc">Raft node roles and term timeline.</desc>
+  <rect width="1100" height="620" rx="28" fill="#f7f7f5"/>
+  <text x="70" y="76" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#222">Raft 的三个角色与任期 Term</text>
+  <text x="70" y="116" font-family="Arial, sans-serif" font-size="18" fill="#666">同一时刻最多只有一个 Leader；Term 是 Raft 识别新旧领导权的逻辑时钟。</text>
+
+  <rect x="80" y="165" width="260" height="180" rx="22" fill="#fff" stroke="#d7d7d0" stroke-width="2"/>
+  <circle cx="210" cy="220" r="38" fill="#2f80ed"/>
+  <text x="210" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">L</text>
+  <text x="210" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#222">Leader</text>
+  <text x="210" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#666">处理写请求</text>
+
+  <rect x="420" y="165" width="260" height="180" rx="22" fill="#fff" stroke="#d7d7d0" stroke-width="2"/>
+  <circle cx="550" cy="220" r="38" fill="#78a55a"/>
+  <text x="550" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">F</text>
+  <text x="550" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#222">Follower</text>
+  <text x="550" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#666">被动接收心跳和日志</text>
+
+  <rect x="760" y="165" width="260" height="180" rx="22" fill="#fff" stroke="#d7d7d0" stroke-width="2"/>
+  <circle cx="890" cy="220" r="38" fill="#d9963b"/>
+  <text x="890" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">C</text>
+  <text x="890" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#222">Candidate</text>
+  <text x="890" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#666">发起选举，请求投票</text>
+
+  <line x1="120" y1="455" x2="980" y2="455" stroke="#333" stroke-width="3"/>
+  <polygon points="980,455 958,444 958,466" fill="#333"/>
+  <text x="120" y="430" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#222">Term 1</text>
+  <text x="375" y="430" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#222">Term 2</text>
+  <text x="630" y="430" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#222">Term 3</text>
+  <line x1="330" y1="430" x2="330" y2="485" stroke="#999" stroke-width="2" stroke-dasharray="6 6"/>
+  <line x1="585" y1="430" x2="585" y2="485" stroke="#999" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="135" y="475" width="160" height="44" rx="12" fill="#e8f1ff" stroke="#b9d4ff"/>
+  <text x="215" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">Leader A</text>
+  <rect x="390" y="475" width="160" height="44" rx="12" fill="#e8f1ff" stroke="#b9d4ff"/>
+  <text x="470" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">Leader B</text>
+  <rect x="645" y="475" width="160" height="44" rx="12" fill="#e8f1ff" stroke="#b9d4ff"/>
+  <text x="725" y="503" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">Leader C</text>
+  <text x="120" y="560" font-family="Arial, sans-serif" font-size="18" fill="#666">节点只承认更大 Term 的消息；旧 Term 的 Leader 会自动退化为 Follower。</text>
+</svg>

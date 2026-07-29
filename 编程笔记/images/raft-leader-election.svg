@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="680" viewBox="0 0 1100 680" role="img" aria-labelledby="title desc">
+  <title id="title">Raft leader election</title>
+  <desc id="desc">Leader election process in a five-node Raft cluster.</desc>
+  <rect width="1100" height="680" rx="28" fill="#f7f7f5"/>
+  <text x="70" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#222">Leader 选举流程</text>
+  <text x="70" y="112" font-family="Arial, sans-serif" font-size="18" fill="#666">Follower 超时后变成 Candidate，Term 加一并向其他节点请求投票；拿到多数票后成为 Leader。</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect x="80" y="155" width="280" height="420" rx="24" fill="#fff" stroke="#d7d7d0" stroke-width="2"/>
+  <text x="220" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#222">1. 心跳超时</text>
+  <circle cx="220" cy="300" r="48" fill="#78a55a"/>
+  <text x="220" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">F</text>
+  <text x="220" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">长时间没有收到 Leader 心跳</text>
+  <text x="220" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">触发 election timeout</text>
+
+  <rect x="410" y="155" width="280" height="420" rx="24" fill="#fff" stroke="#d7d7d0" stroke-width="2"/>
+  <text x="550" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#222">2. 发起投票</text>
+  <circle cx="550" cy="300" r="48" fill="#d9963b"/>
+  <text x="550" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">C</text>
+  <text x="550" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">Term + 1</text>
+  <text x="550" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">先投自己一票</text>
+  <text x="550" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">发送 RequestVote RPC</text>
+
+  <rect x="740" y="155" width="280" height="420" rx="24" fill="#fff" stroke="#d7d7d0" stroke-width="2"/>
+  <text x="880" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#222">3. 多数票胜出</text>
+  <circle cx="880" cy="300" r="48" fill="#2f80ed"/>
+  <text x="880" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">L</text>
+  <text x="880" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">5 节点集群需要 3 票</text>
+  <text x="880" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">成为 Leader 后立即发送心跳</text>
+
+  <line x1="360" y1="365" x2="410" y2="365" stroke="#555" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="690" y1="365" x2="740" y2="365" stroke="#555" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="118" y="595" width="864" height="46" rx="14" fill="#f1f1ee" stroke="#d7d7d0"/>
+  <text x="550" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">随机 election timeout 可以降低多个节点同时竞选导致选票分裂的概率。</text>
+</svg>
