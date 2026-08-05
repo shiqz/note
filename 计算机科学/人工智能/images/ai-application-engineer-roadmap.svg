@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+  <text x="600" y="64" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="34" font-weight="700" fill="#0f172a">AI 应用工程师学习路线</text>
+  <text x="600" y="104" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" fill="#475569">从后端基础到 RAG、Agent、工程化部署与作品集</text>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <line x1="180" y1="210" x2="1020" y2="210" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow)"/>
+    <circle cx="180" cy="210" r="16" fill="#2563eb"/>
+    <circle cx="348" cy="210" r="16" fill="#2563eb"/>
+    <circle cx="516" cy="210" r="16" fill="#2563eb"/>
+    <circle cx="684" cy="210" r="16" fill="#2563eb"/>
+    <circle cx="852" cy="210" r="16" fill="#2563eb"/>
+    <circle cx="1020" cy="210" r="16" fill="#2563eb"/>
+
+    <g filter="url(#shadow)">
+      <rect x="80" y="260" width="200" height="270" rx="18" fill="url(#card)" stroke="#dbeafe"/>
+      <text x="180" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#1d4ed8">阶段 0</text>
+      <text x="180" y="330" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">编程与后端基础</text>
+      <text x="108" y="372" font-size="15" fill="#334155">Python / Go / Java</text>
+      <text x="108" y="402" font-size="15" fill="#334155">HTTP / REST / WebSocket</text>
+      <text x="108" y="432" font-size="15" fill="#334155">SQL / Redis / 消息队列</text>
+      <text x="108" y="462" font-size="15" fill="#334155">Docker / Linux / Git</text>
+      <text x="108" y="492" font-size="15" fill="#334155">日志 / 监控 / 异常处理</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="300" y="260" width="200" height="270" rx="18" fill="url(#card)" stroke="#dbeafe"/>
+      <text x="400" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#1d4ed8">阶段 1</text>
+      <text x="400" y="330" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">LLM 使用基础</text>
+      <text x="328" y="372" font-size="15" fill="#334155">Token / 上下文窗口</text>
+      <text x="328" y="402" font-size="15" fill="#334155">Prompt / Few-shot</text>
+      <text x="328" y="432" font-size="15" fill="#334155">结构化输出 / JSON</text>
+      <text x="328" y="462" font-size="15" fill="#334155">Function Calling</text>
+      <text x="328" y="492" font-size="15" fill="#334155">模型选择 / 成本估算</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="520" y="260" width="200" height="270" rx="18" fill="url(#card)" stroke="#dbeafe"/>
+      <text x="620" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#1d4ed8">阶段 2</text>
+      <text x="620" y="330" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">RAG 知识库</text>
+      <text x="548" y="372" font-size="15" fill="#334155">文档解析 / 清洗</text>
+      <text x="548" y="402" font-size="15" fill="#334155">Chunk / Embedding</text>
+      <text x="548" y="432" font-size="15" fill="#334155">向量库 / 混合检索</text>
+      <text x="548" y="462" font-size="15" fill="#334155">Rerank / 引用溯源</text>
+      <text x="548" y="492" font-size="15" fill="#334155">召回评测 / 幻觉控制</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="740" y="260" width="200" height="270" rx="18" fill="url(#card)" stroke="#dbeafe"/>
+      <text x="840" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#1d4ed8">阶段 3</text>
+      <text x="840" y="330" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Agent 与工作流</text>
+      <text x="768" y="372" font-size="15" fill="#334155">工具调用 / 权限</text>
+      <text x="768" y="402" font-size="15" fill="#334155">任务拆解 / 状态机</text>
+      <text x="768" y="432" font-size="15" fill="#334155">Planner / Executor</text>
+      <text x="768" y="462" font-size="15" fill="#334155">Human-in-the-loop</text>
+      <text x="768" y="492" font-size="15" fill="#334155">失败重试 / 兜底</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="960" y="260" width="200" height="270" rx="18" fill="url(#card)" stroke="#dbeafe"/>
+      <text x="1060" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#1d4ed8">阶段 4</text>
+      <text x="1060" y="330" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">工程化落地</text>
+      <text x="988" y="372" font-size="15" fill="#334155">API 网关 / 鉴权</text>
+      <text x="988" y="402" font-size="15" fill="#334155">缓存 / 限流 / 队列</text>
+      <text x="988" y="432" font-size="15" fill="#334155">评测集 / A/B 测试</text>
+      <text x="988" y="462" font-size="15" fill="#334155">监控 / 成本 / SLA</text>
+      <text x="988" y="492" font-size="15" fill="#334155">安全 / 合规 / 审计</text>
+    </g>
+  </g>
+
+  <rect x="110" y="600" width="980" height="92" rx="18" fill="#0f172a" opacity="0.92"/>
+  <text x="600" y="638" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="22" font-weight="700" fill="#ffffff">最终作品集标准</text>
+  <text x="600" y="674" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="17" fill="#dbeafe">可运行服务 + 可复现实验 + 评测报告 + 架构说明 + 部署脚本 + 线上监控</text>
+</svg>

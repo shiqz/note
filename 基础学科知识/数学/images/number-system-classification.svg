@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">数系分类关系图</title>
+  <desc id="desc">展示自然数、整数、有理数、无理数、实数、虚数与复数之间的包含关系。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px sans-serif; fill: #0f172a; }
+      .subtitle { font: 18px sans-serif; fill: #475569; }
+      .set { fill-opacity: 0.74; stroke-width: 3; }
+      .label { font: 700 24px sans-serif; fill: #0f172a; }
+      .small { font: 16px sans-serif; fill: #334155; }
+      .example { font: 15px monospace; fill: #475569; }
+      .complex { fill: #ede9fe; stroke: #8b5cf6; }
+      .real { fill: #dbeafe; stroke: #3b82f6; }
+      .rational { fill: #dcfce7; stroke: #22c55e; }
+      .integer { fill: #fef3c7; stroke: #f59e0b; }
+      .natural { fill: #fee2e2; stroke: #ef4444; }
+      .irrational { fill: #e0f2fe; stroke: #06b6d4; }
+      .imaginary { fill: #fae8ff; stroke: #d946ef; }
+      .axis { stroke: #64748b; stroke-width: 2; marker-end: url(#arrow); }
+      .note { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1100" height="720"/>
+  <text class="title" x="550" y="55" text-anchor="middle">数的分类与表示</text>
+  <text class="subtitle" x="550" y="86" text-anchor="middle">从计数到方程求解，数系不断扩展，用来表示更丰富的数量关系。</text>
+
+  <rect class="set complex" x="70" y="125" width="960" height="500" rx="34"/>
+  <text class="label" x="105" y="165">复数 C</text>
+  <text class="example" x="105" y="193">a + bi，例如 3 + 2i</text>
+
+  <rect class="set real" x="115" y="220" width="600" height="350" rx="30"/>
+  <text class="label" x="145" y="260">实数 R</text>
+  <text class="example" x="145" y="288">数轴上所有点对应的数</text>
+
+  <rect class="set rational" x="155" y="320" width="360" height="220" rx="26"/>
+  <text class="label" x="185" y="360">有理数 Q</text>
+  <text class="example" x="185" y="390">m/n，n != 0</text>
+
+  <rect class="set integer" x="190" y="420" width="295" height="92" rx="22"/>
+  <text class="label" x="215" y="454">整数 Z</text>
+  <text class="example" x="310" y="454">...,-2,-1,0,1,2,...</text>
+
+  <rect class="set natural" x="255" y="472" width="150" height="32" rx="16"/>
+  <text class="small" x="330" y="494" text-anchor="middle">自然数 N</text>
+
+  <rect class="set irrational" x="535" y="320" width="145" height="220" rx="26"/>
+  <text class="label" x="607" y="360" text-anchor="middle">无理数</text>
+  <text class="example" x="607" y="393" text-anchor="middle">π, √2, e</text>
+  <text class="small" x="607" y="425" text-anchor="middle">无限不循环小数</text>
+
+  <rect class="set imaginary" x="760" y="275" width="220" height="230" rx="30"/>
+  <text class="label" x="870" y="325" text-anchor="middle">虚数</text>
+  <text class="example" x="870" y="360" text-anchor="middle">bi，例如 2i</text>
+  <text class="small" x="870" y="394" text-anchor="middle">i² = -1</text>
+
+  <rect class="note" x="760" y="535" width="220" height="60" rx="14"/>
+  <text class="small" x="870" y="560" text-anchor="middle">实数和虚数结合后</text>
+  <text class="small" x="870" y="582" text-anchor="middle">形成复数 a + bi</text>
+
+  <line class="axis" x1="135" y1="660" x2="955" y2="660"/>
+  <text class="small" x="135" y="687" text-anchor="middle">自然数</text>
+  <text class="small" x="320" y="687" text-anchor="middle">整数</text>
+  <text class="small" x="500" y="687" text-anchor="middle">有理数</text>
+  <text class="small" x="680" y="687" text-anchor="middle">实数</text>
+  <text class="small" x="890" y="687" text-anchor="middle">复数</text>
+</svg>
