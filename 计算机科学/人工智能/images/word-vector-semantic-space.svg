@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">词向量语义空间</title>
+  <desc id="desc">展示动物、水果、交通工具等词在二维示意语义空间中的聚类，以及余弦相似度关注向量方向。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#475569"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px sans-serif; fill: #0f172a; }
+      .subtitle { font: 17px sans-serif; fill: #475569; }
+      .panel { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .grid { stroke: #e2e8f0; stroke-width: 1; }
+      .axis { stroke: #475569; stroke-width: 2.5; marker-end: url(#arrow); }
+      .animal { fill: #3b82f6; }
+      .fruit { fill: #22c55e; }
+      .vehicle { fill: #f97316; }
+      .point-label { font: 17px sans-serif; fill: #1e293b; }
+      .group-label { font: 700 18px sans-serif; }
+      .formula { font: 700 15px monospace; fill: #1d4ed8; }
+      .text { font: 16px sans-serif; fill: #334155; }
+      .vector-a { stroke: #2563eb; stroke-width: 4; marker-end: url(#arrow); }
+      .vector-b { stroke: #16a34a; stroke-width: 4; marker-end: url(#arrow); }
+      .arc { fill: none; stroke: #8b5cf6; stroke-width: 3; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1100" height="720"/>
+  <text class="title" x="550" y="52" text-anchor="middle">词向量中的“语义距离”</text>
+  <text class="subtitle" x="550" y="84" text-anchor="middle">真实词向量通常有数百或数千维，下图降为二维仅用于建立直觉。</text>
+
+  <rect class="panel" x="55" y="120" width="620" height="520" rx="24"/>
+  <g transform="translate(115,170)">
+    <line class="grid" x1="0" y1="0" x2="0" y2="400"/>
+    <line class="grid" x1="100" y1="0" x2="100" y2="400"/>
+    <line class="grid" x1="200" y1="0" x2="200" y2="400"/>
+    <line class="grid" x1="300" y1="0" x2="300" y2="400"/>
+    <line class="grid" x1="400" y1="0" x2="400" y2="400"/>
+    <line class="grid" x1="500" y1="0" x2="500" y2="400"/>
+    <line class="grid" x1="0" y1="0" x2="500" y2="0"/>
+    <line class="grid" x1="0" y1="100" x2="500" y2="100"/>
+    <line class="grid" x1="0" y1="200" x2="500" y2="200"/>
+    <line class="grid" x1="0" y1="300" x2="500" y2="300"/>
+    <line class="grid" x1="0" y1="400" x2="500" y2="400"/>
+    <line class="axis" x1="0" y1="400" x2="525" y2="400"/>
+    <line class="axis" x1="0" y1="400" x2="0" y2="-25"/>
+
+    <circle class="animal" cx="115" cy="90" r="9"/>
+    <text class="point-label" x="130" y="95">猫</text>
+    <circle class="animal" cx="155" cy="125" r="9"/>
+    <text class="point-label" x="170" y="130">狗</text>
+    <circle class="animal" cx="90" cy="145" r="9"/>
+    <text class="point-label" x="105" y="150">兔</text>
+    <text class="group-label" x="80" y="55" fill="#2563eb">动物语义簇</text>
+
+    <circle class="fruit" cx="350" cy="105" r="9"/>
+    <text class="point-label" x="365" y="110">苹果</text>
+    <circle class="fruit" cx="405" cy="135" r="9"/>
+    <text class="point-label" x="420" y="140">香蕉</text>
+    <circle class="fruit" cx="370" cy="175" r="9"/>
+    <text class="point-label" x="385" y="180">梨</text>
+    <text class="group-label" x="350" y="65" fill="#15803d">水果语义簇</text>
+
+    <circle class="vehicle" cx="260" cy="310" r="9"/>
+    <text class="point-label" x="275" y="315">汽车</text>
+    <circle class="vehicle" cx="315" cy="340" r="9"/>
+    <text class="point-label" x="330" y="345">卡车</text>
+    <circle class="vehicle" cx="220" cy="355" r="9"/>
+    <text class="point-label" x="235" y="360">公交车</text>
+    <text class="group-label" x="235" y="275" fill="#c2410c">交通工具语义簇</text>
+  </g>
+
+  <rect class="panel" x="715" y="120" width="330" height="520" rx="24"/>
+  <text class="group-label" x="880" y="168" text-anchor="middle" fill="#0f172a">余弦相似度</text>
+  <text class="formula" x="880" y="210" text-anchor="middle">cos θ = (u · v) / (||u|| ||v||)</text>
+
+  <g transform="translate(780,475)">
+    <line class="axis" x1="0" y1="0" x2="210" y2="0"/>
+    <line class="axis" x1="0" y1="0" x2="0" y2="-210"/>
+    <line class="vector-a" x1="0" y1="0" x2="165" y2="-110"/>
+    <line class="vector-b" x1="0" y1="0" x2="115" y2="-160"/>
+    <path class="arc" d="M65 -43 A78 78 0 0 0 45 -63"/>
+    <text class="point-label" x="172" y="-112">u</text>
+    <text class="point-label" x="112" y="-174">v</text>
+    <text class="point-label" x="67" y="-67">θ</text>
+  </g>
+
+  <text class="text" x="880" y="535" text-anchor="middle">夹角越小，方向越接近，</text>
+  <text class="text" x="880" y="562" text-anchor="middle">通常表示语义越相似。</text>
+  <text class="text" x="880" y="600" text-anchor="middle">余弦值越接近 1，相似度越高。</text>
+</svg>

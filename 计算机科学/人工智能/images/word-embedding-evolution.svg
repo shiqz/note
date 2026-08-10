@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">文本表示到词向量的演进</title>
+  <desc id="desc">展示自然语言经过分词、编号、独热编码、静态词向量和上下文词向量的演进过程。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#475569"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px sans-serif; fill: #0f172a; }
+      .subtitle { font: 17px sans-serif; fill: #475569; }
+      .card { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .raw { fill: #fee2e2; stroke: #ef4444; }
+      .token { fill: #fef3c7; stroke: #f59e0b; }
+      .onehot { fill: #dcfce7; stroke: #22c55e; }
+      .static { fill: #dbeafe; stroke: #3b82f6; }
+      .context { fill: #ede9fe; stroke: #8b5cf6; }
+      .label { font: 700 22px sans-serif; fill: #0f172a; }
+      .text { font: 16px sans-serif; fill: #334155; }
+      .code { font: 13px monospace; fill: #1e293b; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .weak { font: 15px sans-serif; fill: #b91c1c; }
+      .strong { font: 15px sans-serif; fill: #166534; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="700"/>
+  <text class="title" x="600" y="52" text-anchor="middle">从文字到可计算向量</text>
+  <text class="subtitle" x="600" y="84" text-anchor="middle">表示能力逐步增强：符号身份 → 稠密语义 → 结合上下文的动态语义</text>
+
+  <rect class="card raw" x="40" y="155" width="190" height="190" rx="22"/>
+  <text class="label" x="135" y="198" text-anchor="middle">原始文本</text>
+  <text class="text" x="135" y="240" text-anchor="middle">“我喜欢苹果”</text>
+  <text class="text" x="135" y="274" text-anchor="middle">人能理解语义</text>
+  <text class="weak" x="135" y="310" text-anchor="middle">计算机不能直接运算</text>
+
+  <rect class="card token" x="275" y="155" width="190" height="190" rx="22"/>
+  <text class="label" x="370" y="198" text-anchor="middle">分词与编号</text>
+  <text class="code" x="370" y="238" text-anchor="middle">[我, 喜欢, 苹果]</text>
+  <text class="code" x="370" y="272" text-anchor="middle">[15, 86, 203]</text>
+  <text class="text" x="370" y="310" text-anchor="middle">建立符号与 ID 的映射</text>
+
+  <rect class="card onehot" x="510" y="155" width="190" height="190" rx="22"/>
+  <text class="label" x="605" y="198" text-anchor="middle">独热编码</text>
+  <text class="code" x="605" y="236" text-anchor="middle">苹果 → [0,0,1,0]</text>
+  <text class="text" x="605" y="270" text-anchor="middle">能区分词的身份</text>
+  <text class="weak" x="605" y="305" text-anchor="middle">高维、稀疏、无语义距离</text>
+
+  <rect class="card static" x="745" y="155" width="190" height="190" rx="22"/>
+  <text class="label" x="840" y="198" text-anchor="middle">静态词向量</text>
+  <text class="code" x="840" y="236" text-anchor="middle">苹果 → [0.2,-0.7,...]</text>
+  <text class="strong" x="840" y="272" text-anchor="middle">低维、稠密、含语义</text>
+  <text class="weak" x="840" y="305" text-anchor="middle">一词只有一个固定向量</text>
+
+  <rect class="card context" x="980" y="155" width="190" height="190" rx="22"/>
+  <text class="label" x="1075" y="198" text-anchor="middle">上下文词向量</text>
+  <text class="text" x="1075" y="235" text-anchor="middle">“苹果很好吃”</text>
+  <text class="text" x="1075" y="265" text-anchor="middle">“苹果发布手机”</text>
+  <text class="strong" x="1075" y="305" text-anchor="middle">同一词可产生不同向量</text>
+
+  <path class="arrow" d="M230 250 L270 250"/>
+  <path class="arrow" d="M465 250 L505 250"/>
+  <path class="arrow" d="M700 250 L740 250"/>
+  <path class="arrow" d="M935 250 L975 250"/>
+
+  <rect class="card" x="95" y="435" width="1010" height="180" rx="24"/>
+  <text class="label" x="600" y="478" text-anchor="middle">现代 NLP 的核心转换</text>
+  <text class="code" x="600" y="522" text-anchor="middle">Token ID → Embedding 矩阵查表 → 向量序列 → 神经网络处理</text>
+  <text class="text" x="600" y="558" text-anchor="middle">词向量不是人为逐维设计，而是模型根据训练目标从大量语料中学习得到的参数。</text>
+  <text class="text" x="600" y="590" text-anchor="middle">相似上下文中的词会收到相似的梯度更新，最终在向量空间中彼此靠近。</text>
+</svg>
