@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" width="1000" height="580">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff6f0"/>
+      <stop offset="100%" stop-color="#ffe8d6"/>
+    </linearGradient>
+    <linearGradient id="stepGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9a9e"/>
+      <stop offset="100%" stop-color="#fad0c4"/>
+    </linearGradient>
+    <linearGradient id="stepGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a1c4fd"/>
+      <stop offset="100%" stop-color="#c2e9fb"/>
+    </linearGradient>
+    <linearGradient id="stepGrad3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4fc79"/>
+      <stop offset="100%" stop-color="#96e6a1"/>
+    </linearGradient>
+    <linearGradient id="stepGrad4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffecd2"/>
+      <stop offset="100%" stop-color="#fcb69f"/>
+    </linearGradient>
+    <linearGradient id="stepGrad5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#84fab0"/>
+      <stop offset="100%" stop-color="#8fd3f4"/>
+    </linearGradient>
+    <marker id="arrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="7" markerHeight="10" refX="3.5" refY="9" orient="auto">
+      <polygon points="0 0, 7 0, 3.5 10" fill="#666"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="580" rx="20" fill="url(#bgGrad2)"/>
+  <text x="500" y="40" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">从文本到 Token ID 的完整流程</text>
+
+  <!-- 输入示例文本 -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="900" height="60" rx="12" fill="white" stroke="#e07a5f" stroke-width="2.5"/>
+    <text x="450" y="28" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#777" text-anchor="middle">输入原始文本</text>
+    <text x="450" y="52" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#e07a5f" text-anchor="middle">「我喜欢学习自然语言处理，NLP 真的非常有趣！」</text>
+  </g>
+
+  <!-- 向下箭头 -->
+  <line x1="500" y1="140" x2="500" y2="165" stroke="#666" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+
+  <!-- 步骤1: 分词 -->
+  <g transform="translate(50, 180)">
+    <rect x="0" y="0" width="280" height="140" rx="14" fill="url(#stepGrad1)" opacity="0.95"/>
+    <text x="140" y="32" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 1: 分词 Tokenization</text>
+    <line x1="20" y1="48" x2="260" y2="48" stroke="rgba(44,62,80,0.2)" stroke-width="1"/>
+    <text x="140" y="72" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">中文：BPE / jieba / 字级</text>
+    <text x="140" y="94" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">英文：PTB-style / BPE / WordPiece</text>
+    <rect x="20" y="110" width="240" height="22" rx="6" fill="white" opacity="0.7"/>
+    <text x="140" y="126" font-family="monospace, Courier New" font-size="12" fill="#2c3e50" text-anchor="middle">[我, 喜欢, 学习, 自然, 语言, 处理, ,, NLP, 真的, 非常, 有趣, ！]</text>
+  </g>
+
+  <!-- 箭头1 -->
+  <line x1="330" y1="250" x2="365" y2="250" stroke="#666" stroke-width="2.5" marker-end="url(#arrow2)"/>
+
+  <!-- 步骤2: 子词拆分 -->
+  <g transform="translate(375, 180)">
+    <rect x="0" y="0" width="280" height="140" rx="14" fill="url(#stepGrad2)" opacity="0.95"/>
+    <text x="140" y="32" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 2: 子词切分 Subword</text>
+    <line x1="20" y1="48" x2="260" y2="48" stroke="rgba(44,62,80,0.2)" stroke-width="1"/>
+    <text x="140" y="72" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">合并高频字符对（BPE）</text>
+    <text x="140" y="94" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">N+L+P → NLP, 自+然 → 自然</text>
+    <rect x="20" y="110" width="240" height="22" rx="6" fill="white" opacity="0.7"/>
+    <text x="140" y="126" font-family="monospace, Courier New" font-size="11" fill="#2c3e50" text-anchor="middle">[我, 喜欢, 学习, 自然, 语言, 处理, ,, N, L, P, 真的, 非, 常, 有趣, ！]</text>
+  </g>
+
+  <!-- 箭头2 -->
+  <line x1="655" y1="250" x2="690" y2="250" stroke="#666" stroke-width="2.5" marker-end="url(#arrow2)"/>
+
+  <!-- 步骤3: 加特殊Token -->
+  <g transform="translate(700, 180)">
+    <rect x="0" y="0" width="250" height="140" rx="14" fill="url(#stepGrad3)" opacity="0.95"/>
+    <text x="125" y="32" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 3: 特殊Token</text>
+    <line x1="15" y1="48" x2="235" y2="48" stroke="rgba(44,62,80,0.2)" stroke-width="1"/>
+    <text x="125" y="72" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">&lt;[BOS_never_used_51bce0c785ca2f68081bfa7d91973934]&gt; 句首, [SEP] 句末</text>
+    <text x="125" y="94" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">[PAD] 补齐, [UNK] 未知</text>
+    <rect x="15" y="110" width="220" height="22" rx="6" fill="white" opacity="0.7"/>
+    <text x="125" y="126" font-family="monospace, Courier New" font-size="10" fill="#2c3e50" text-anchor="middle">&lt;[BOS_never_used_51bce0c785ca2f68081bfa7d91973934]&gt;, 我, 喜欢, 学习, 自然, 语言, 处理, [SEP]</text>
+  </g>
+
+  <!-- 向下箭头 -->
+  <line x1="500" y1="320" x2="500" y2="345" stroke="#666" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+
+  <!-- 步骤4: 词表查ID -->
+  <g transform="translate(100, 360)">
+    <rect x="0" y="0" width="380" height="180" rx="14" fill="url(#stepGrad4)" opacity="0.95"/>
+    <text x="190" y="32" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 4: 词表查表 Vocab → ID</text>
+    <line x1="20" y1="50" x2="340" y2="50" stroke="rgba(44,62,80,0.2)" stroke-width="1"/>
+
+    <rect x="20" y="62" width="340" height="105" rx="8" fill="white" opacity="0.8"/>
+    <g transform="translate(35, 78)">
+      <text x="0" y="0" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">[PAD]   →  0</text>
+      <text x="0" y="18" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">[UNK]   →  1</text>
+      <text x="0" y="36" font-family="monospace, Courier New" font-size="11" fill="#e07a5f" font-weight="bold">&lt;[BOS_never_used_51bce0c785ca2f68081bfa7d91973934]&gt;    →  2</text>
+      <text x="0" y="54" font-family="monospace, Courier New" font-size="11" fill="#e07a5f" font-weight="bold">[SEP]   →  3</text>
+      <text x="0" y="72" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">我      → 15</text>
+      <text x="0" y="90" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">喜欢    → 86</text>
+    </g>
+    <g transform="translate(200, 78)">
+      <text x="0" y="0" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">学习    → 120</text>
+      <text x="0" y="18" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">自然    → 205</text>
+      <text x="0" y="36" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">语言    → 309</text>
+      <text x="0" y="54" font-family="monospace, Courier New" font-size="11" fill="#2c3e50">处理    → 417</text>
+      <text x="0" y="72" font-family="monospace, Courier New" font-size="11" fill="#888">N       → 5521</text>
+      <text x="0" y="90" font-family="monospace, Courier New" font-size="11" fill="#888">...     → ...</text>
+    </g>
+  </g>
+
+  <!-- 水平箭头 -->
+  <line x1="480" y1="450" x2="520" y2="450" stroke="#666" stroke-width="2.5" marker-end="url(#arrow2)"/>
+
+  <!-- 步骤5: 输出ID序列 -->
+  <g transform="translate(530, 360)">
+    <rect x="0" y="0" width="370" height="180" rx="14" fill="url(#stepGrad5)" opacity="0.95"/>
+    <text x="185" y="32" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50" text-anchor="middle">Step 5: 输出 ID 序列 + Padding</text>
+    <line x1="20" y1="50" x2="330" y2="50" stroke="rgba(44,62,80,0.2)" stroke-width="1"/>
+
+    <text x="185" y="78" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">Token IDs</text>
+    <rect x="20" y="86" width="330" height="30" rx="6" fill="white" opacity="0.8"/>
+    <text x="185" y="106" font-family="monospace, Courier New" font-size="12" fill="#2c3e50" font-weight="bold" text-anchor="middle">[2, 15, 86, 120, 205, 309, 417, 3, 0, 0, 0, 0]</text>
+
+    <text x="185" y="136" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2c3e50" text-anchor="middle">Attention Mask</text>
+    <rect x="20" y="144" width="330" height="26" rx="6" fill="white" opacity="0.8"/>
+    <text x="185" y="162" font-family="monospace, Courier New" font-size="12" fill="#2c3e50" text-anchor="middle">[1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]</text>
+  </g>
+
+  <!-- 底部提示 -->
+  <rect x="50" y="552" width="900" height="18" rx="6" fill="#fff3e0" opacity="0.8"/>
+  <text x="500" y="565" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#795548" text-anchor="middle">注意：不同 Tokenizer 的词表与切分规则不同，配套使用才能保证正确的 ID 映射。未登录词 → [UNK](ID=1)，填充位 → [PAD](ID=0)</text>
+</svg>

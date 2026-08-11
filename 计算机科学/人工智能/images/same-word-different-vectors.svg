@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f3ff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
+    </linearGradient>
+    <linearGradient id="sentAGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6a88"/>
+      <stop offset="100%" stop-color="#ff99ac"/>
+    </linearGradient>
+    <linearGradient id="sentBGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b8def"/>
+      <stop offset="100%" stop-color="#8f68e8"/>
+    </linearGradient>
+    <linearGradient id="embGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd26f"/>
+      <stop offset="100%" stop-color="#ff9a3c"/>
+    </linearGradient>
+    <linearGradient id="vecAGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9a9e"/>
+      <stop offset="100%" stop-color="#fecfef"/>
+    </linearGradient>
+    <linearGradient id="vecBGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a18cd1"/>
+      <stop offset="100%" stop-color="#fbc2eb"/>
+    </linearGradient>
+    <marker id="arrA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff6a88"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5b8def"/>
+    </marker>
+    <marker id="arrC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#888"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="620" rx="20" fill="url(#bgGrad3)"/>
+  <text x="500" y="35" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50" text-anchor="middle">同一词"苹果"如何产生不同向量：从 Token ID 到最终表示</text>
+
+  <!-- 两个输入句子 -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="420" height="60" rx="12" fill="url(#sentAGrad)"/>
+    <text x="210" y="24" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">句子 A（水果语境）</text>
+    <text x="210" y="48" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="bold" fill="white" text-anchor="middle">这个 🍎苹果 很 好吃 🍎</text>
+  </g>
+
+  <g transform="translate(530, 70)">
+    <rect x="0" y="0" width="420" height="60" rx="12" fill="url(#sentBGrad)"/>
+    <text x="210" y="24" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">句子 B（公司语境）</text>
+    <text x="210" y="48" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="bold" fill="white" text-anchor="middle">🍎苹果 💻发布 新 手机 📱</text>
+  </g>
+
+  <!-- 向下箭头 -->
+  <line x1="260" y1="130" x2="260" y2="155" stroke="#ff6a88" stroke-width="2.5" marker-end="url(#arrA)"/>
+  <line x1="740" y1="130" x2="740" y2="155" stroke="#5b8def" stroke-width="2.5" marker-end="url(#arrB)"/>
+
+  <!-- Token ID 层 -->
+  <text x="500" y="170" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#666" text-anchor="middle">规则①：同一 Token ID（查表阶段完全相同）</text>
+
+  <g transform="translate(120, 180)">
+    <rect x="0" y="0" width="280" height="44" rx="10" fill="white" stroke="#ff6a88" stroke-width="2"/>
+    <text x="140" y="28" font-family="monospace, Courier New" font-size="15" fill="#ff6a88" font-weight="bold" text-anchor="middle">ID = [ 这个 , 4821 , 很 , 好吃 ]</text>
+  </g>
+  <g transform="translate(600, 180)">
+    <rect x="0" y="0" width="280" height="44" rx="10" fill="white" stroke="#5b8def" stroke-width="2"/>
+    <text x="140" y="28" font-family="monospace, Courier New" font-size="15" fill="#5b8def" font-weight="bold" text-anchor="middle">ID = [ 4821 , 发布 , 新 , 手机 ]</text>
+  </g>
+  <text x="500" y="227" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#e74c3c" font-weight="bold" text-anchor="middle">↑ "苹果"在两句中的 ID 都是 4821，完全相同</text>
+
+  <!-- 箭头 -->
+  <line x1="260" y1="224" x2="260" y2="252" stroke="#888" stroke-width="2.5" marker-end="url(#arrC)"/>
+  <line x1="740" y1="224" x2="740" y2="252" stroke="#888" stroke-width="2.5" marker-end="url(#arrC)"/>
+
+  <!-- 基础嵌入 + 位置编码 -->
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="900" height="92" rx="14" fill="white" stroke="#ff9a3c" stroke-width="2"/>
+    <text x="450" y="24" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#e67e22" text-anchor="middle">规则②+③：Token Embedding (查表)  +  Position Embedding (位置1 vs 位置0)  +  Segment Embedding</text>
+    <line x1="50" y1="36" x2="850" y2="36" stroke="#eee" stroke-width="1"/>
+
+    <!-- 句子A组合 -->
+    <g transform="translate(70, 48)">
+      <rect x="0" y="0" width="370" height="36" rx="8" fill="url(#embGrad)" opacity="0.85"/>
+      <text x="185" y="23" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#2c3e50" text-anchor="middle">A: E[4821] + PE[位置1] + SEG[0] = <tspan font-weight="bold">h₀ᴬ</tspan></text>
+    </g>
+    <!-- 句子B组合 -->
+    <g transform="translate(460, 48)">
+      <rect x="0" y="0" width="370" height="36" rx="8" fill="url(#embGrad)" opacity="0.85"/>
+      <text x="185" y="23" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#2c3e50" text-anchor="middle">B: E[4821] + PE[位置0] + SEG[0] = <tspan font-weight="bold">h₀ᴮ</tspan></text>
+    </g>
+  </g>
+
+  <text x="500" y="355" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#e67e22" text-anchor="middle">↑ 基础嵌入相同 E[4821]，但位置编码不同 → h₀ᴬ ≠ h₀ᴮ 已有初步差异</text>
+
+  <!-- 向下箭头 -->
+  <line x1="500" y1="352" x2="500" y2="378" stroke="#888" stroke-width="2.5" marker-end="url(#arrC)"/>
+
+  <!-- Transformer 多层注意力 -->
+  <g transform="translate(50, 385)">
+    <rect x="0" y="0" width="900" height="150" rx="14" fill="white" stroke="#888" stroke-width="1.5"/>
+    <text x="450" y="26" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#2c3e50" text-anchor="middle">规则④+⑤+⑥：Transformer N 层 × 多头注意力（核心差异来源）</text>
+
+    <!-- 句子A注意力 -->
+    <g transform="translate(30, 42)">
+      <rect x="0" y="0" width="410" height="96" rx="10" fill="url(#vecAGrad)" opacity="0.5"/>
+      <text x="205" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="bold" fill="#c0392b" text-anchor="middle">句子 A：每层注意力权重（"苹果"对其他词）</text>
+      <g transform="translate(20, 32)">
+        <rect x="0" y="0" width="90" height="20" rx="4" fill="rgba(255,255,255,0.9)" stroke="#ff6a88"/>
+        <text x="45" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#2c3e50" text-anchor="middle">这个 · 8%</text>
+        <rect x="100" y="0" width="90" height="20" rx="4" fill="rgba(255,255,255,0.9)" stroke="#ff6a88"/>
+        <text x="145" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#2c3e50" text-anchor="middle">苹果 · 25%</text>
+        <rect x="200" y="0" width="60" height="20" rx="4" fill="rgba(255,255,255,0.9)" stroke="#ff6a88"/>
+        <text x="230" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#2c3e50" text-anchor="middle">很</text>
+        <rect x="270" y="0" width="120" height="20" rx="4" fill="rgba(231,76,60,0.35)" stroke="#e74c3c" stroke-width="2"/>
+        <text x="330" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#c0392b" font-weight="bold" text-anchor="middle">🍎好吃 · 67%</text>
+      </g>
+      <g transform="translate(20, 62)">
+        <text x="0" y="15" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#c0392b" font-weight="bold">→ context = Σ weight · V   →   朝"水果"方向偏移 ✓</text>
+      </g>
+    </g>
+
+    <!-- 句子B注意力 -->
+    <g transform="translate(460, 42)">
+      <rect x="0" y="0" width="410" height="96" rx="10" fill="url(#vecBGrad)" opacity="0.5"/>
+      <text x="205" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">句子 B：每层注意力权重（"苹果"对其他词）</text>
+      <g transform="translate(20, 32)">
+        <rect x="0" y="0" width="120" height="20" rx="4" fill="rgba(52,152,219,0.3)" stroke="#3498db" stroke-width="2"/>
+        <text x="60" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#2980b9" font-weight="bold" text-anchor="middle">💻发布 · 45%</text>
+        <rect x="130" y="0" width="90" height="20" rx="4" fill="rgba(255,255,255,0.9)" stroke="#5b8def"/>
+        <text x="175" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#2c3e50" text-anchor="middle">苹果 · 10%</text>
+        <rect x="230" y="0" width="60" height="20" rx="4" fill="rgba(255,255,255,0.9)" stroke="#5b8def"/>
+        <text x="260" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#2c3e50" text-anchor="middle">新</text>
+        <rect x="300" y="0" width="90" height="20" rx="4" fill="rgba(91,141,239,0.35)" stroke="#5b8def" stroke-width="2"/>
+        <text x="345" y="14" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#2980b9" font-weight="bold" text-anchor="middle">📱手机 ·45%</text>
+      </g>
+      <g transform="translate(20, 62)">
+        <text x="0" y="15" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#2980b9" font-weight="bold">→ context = Σ weight · V   →   朝"科技公司"方向偏移 ✓</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 箭头 -->
+  <line x1="500" y1="535" x2="500" y2="555" stroke="#888" stroke-width="2.5" marker-end="url(#arrC)"/>
+
+  <!-- 最终输出不同向量 -->
+  <text x="500" y="548" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#666" text-anchor="middle">规则⑦：经 N 层累积 +（可选）下游微调</text>
+
+  <g transform="translate(60, 560)">
+    <rect x="0" y="0" width="400" height="46" rx="10" fill="url(#sentAGrad)"/>
+    <text x="200" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="white" text-anchor="middle">🍎苹果（水果语境）最终向量</text>
+    <text x="200" y="38" font-family="monospace, Courier New" font-size="11" fill="white" text-anchor="middle">[0.82, 0.04, -0.71, 0.33, ···]</text>
+  </g>
+  <g transform="translate(540, 560)">
+    <rect x="0" y="0" width="400" height="46" rx="10" fill="url(#sentBGrad)"/>
+    <text x="200" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="white" text-anchor="middle">🍎苹果（公司语境）最终向量</text>
+    <text x="200" y="38" font-family="monospace, Courier New" font-size="11" fill="white" text-anchor="middle">[-0.15, 0.78, 0.26, -0.59, ···]</text>
+  </g>
+  <text x="500" y="614" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#e74c3c" text-anchor="middle">⚠ 两个向量余弦相似度可能仅 0.2 ~ 0.4 —— 同 Token ID，不同语义表示</text>
+</svg>
