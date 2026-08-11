@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .sub{font:15px "Microsoft YaHei",sans-serif;fill:#475569}
+      .head{font:700 18px "Microsoft YaHei",sans-serif;fill:white}
+      .txt{font:14px "Microsoft YaHei",sans-serif;fill:#334155}
+      .arrow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="620" rx="22" fill="url(#bg)"/>
+  <text x="600" y="48" text-anchor="middle" class="title">从物理状态到全球网络</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">程序执行、数据存储和网络传输是同一条信息处理链</text>
+
+  <g transform="translate(55,130)">
+    <rect width="185" height="155" rx="16" fill="#0f766e"/>
+    <text x="92" y="34" text-anchor="middle" class="head">物理层</text>
+    <rect x="12" y="52" width="161" height="87" rx="10" fill="#f0fdfa"/>
+    <text x="92" y="79" text-anchor="middle" class="txt">电压与电荷</text>
+    <text x="92" y="104" text-anchor="middle" class="txt">磁化与光信号</text>
+    <text x="92" y="129" text-anchor="middle" class="txt">晶体管导通/截止</text>
+  </g>
+  <path d="M245 208 H285" class="arrow"/>
+  <g transform="translate(295,130)">
+    <rect width="185" height="155" rx="16" fill="#2563eb"/>
+    <text x="92" y="34" text-anchor="middle" class="head">数字电路</text>
+    <rect x="12" y="52" width="161" height="87" rx="10" fill="#eff6ff"/>
+    <text x="92" y="79" text-anchor="middle" class="txt">0 / 1 与逻辑门</text>
+    <text x="92" y="104" text-anchor="middle" class="txt">寄存器与 ALU</text>
+    <text x="92" y="129" text-anchor="middle" class="txt">CPU 与存储器</text>
+  </g>
+  <path d="M485 208 H525" class="arrow"/>
+  <g transform="translate(535,130)">
+    <rect width="185" height="155" rx="16" fill="#7c3aed"/>
+    <text x="92" y="34" text-anchor="middle" class="head">系统软件</text>
+    <rect x="12" y="52" width="161" height="87" rx="10" fill="#f5f3ff"/>
+    <text x="92" y="79" text-anchor="middle" class="txt">编译器与机器指令</text>
+    <text x="92" y="104" text-anchor="middle" class="txt">进程与虚拟内存</text>
+    <text x="92" y="129" text-anchor="middle" class="txt">文件与设备驱动</text>
+  </g>
+  <path d="M725 208 H765" class="arrow"/>
+  <g transform="translate(775,130)">
+    <rect width="185" height="155" rx="16" fill="#c2410c"/>
+    <text x="92" y="34" text-anchor="middle" class="head">网络协议</text>
+    <rect x="12" y="52" width="161" height="87" rx="10" fill="#fff7ed"/>
+    <text x="92" y="79" text-anchor="middle" class="txt">HTTP / TLS</text>
+    <text x="92" y="104" text-anchor="middle" class="txt">TCP / IP</text>
+    <text x="92" y="129" text-anchor="middle" class="txt">以太网 / Wi-Fi</text>
+  </g>
+  <path d="M965 208 H1005" class="arrow"/>
+  <g transform="translate(1015,130)">
+    <rect width="130" height="155" rx="16" fill="#be123c"/>
+    <text x="65" y="34" text-anchor="middle" class="head">远端</text>
+    <rect x="12" y="52" width="106" height="87" rx="10" fill="#fff1f2"/>
+    <text x="65" y="81" text-anchor="middle" class="txt">服务器</text>
+    <text x="65" y="106" text-anchor="middle" class="txt">数据库</text>
+    <text x="65" y="131" text-anchor="middle" class="txt">另一用户</text>
+  </g>
+
+  <g transform="translate(120,370)">
+    <rect width="960" height="150" rx="18" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="480" y="34" text-anchor="middle" class="title" font-size="21">贯穿所有层的三个问题</text>
+    <g transform="translate(45,58)">
+      <rect width="250" height="65" rx="12" fill="#ecfeff" stroke="#06b6d4"/>
+      <text x="125" y="27" text-anchor="middle" class="head" fill="#0e7490">状态在哪里？</text>
+      <text x="125" y="50" text-anchor="middle" class="txt">寄存器、内存、磁盘或网络</text>
+    </g>
+    <g transform="translate(355,58)">
+      <rect width="250" height="65" rx="12" fill="#f0fdf4" stroke="#22c55e"/>
+      <text x="125" y="27" text-anchor="middle" class="head" fill="#15803d">谁改变状态？</text>
+      <text x="125" y="50" text-anchor="middle" class="txt">电路、CPU、内核或应用</text>
+    </g>
+    <g transform="translate(665,58)">
+      <rect width="250" height="65" rx="12" fill="#fffbeb" stroke="#f59e0b"/>
+      <text x="125" y="27" text-anchor="middle" class="head" fill="#b45309">状态怎样移动？</text>
+      <text x="125" y="50" text-anchor="middle" class="txt">总线、DMA、链路与路由</text>
+    </g>
+  </g>
+</svg>

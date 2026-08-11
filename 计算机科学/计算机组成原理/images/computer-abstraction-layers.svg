@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="680" viewBox="0 0 1080 680">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#334155" flood-opacity=".16"/>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="1080" height="680" rx="24" fill="url(#bg)"/>
+  <text x="540" y="52" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">从程序到电路：计算机的抽象层次</text>
+  <text x="540" y="82" text-anchor="middle" font-size="16" fill="#475569">每一层隐藏下层细节，又依赖下层实现</text>
+  <g font-family="Microsoft YaHei, sans-serif" filter="url(#shadow)">
+    <rect x="250" y="112" width="580" height="72" rx="14" fill="#4f46e5"/>
+    <text x="540" y="143" text-anchor="middle" font-size="23" font-weight="700" fill="white">应用程序与算法</text>
+    <text x="540" y="168" text-anchor="middle" font-size="15" fill="#e0e7ff">变量、函数、对象、业务逻辑</text>
+    <rect x="220" y="208" width="640" height="72" rx="14" fill="#2563eb"/>
+    <text x="540" y="239" text-anchor="middle" font-size="23" font-weight="700" fill="white">语言、编译器与操作系统</text>
+    <text x="540" y="264" text-anchor="middle" font-size="15" fill="#dbeafe">翻译程序，管理进程、内存与设备</text>
+    <rect x="190" y="304" width="700" height="72" rx="14" fill="#0891b2"/>
+    <text x="540" y="335" text-anchor="middle" font-size="23" font-weight="700" fill="white">指令集体系结构 ISA</text>
+    <text x="540" y="360" text-anchor="middle" font-size="15" fill="#cffafe">软件与硬件的契约：指令、寄存器、异常、内存模型</text>
+    <rect x="160" y="400" width="760" height="72" rx="14" fill="#059669"/>
+    <text x="540" y="431" text-anchor="middle" font-size="23" font-weight="700" fill="white">微体系结构</text>
+    <text x="540" y="456" text-anchor="middle" font-size="15" fill="#d1fae5">流水线、Cache、分支预测、乱序执行、多核</text>
+    <rect x="130" y="496" width="820" height="72" rx="14" fill="#ca8a04"/>
+    <text x="540" y="527" text-anchor="middle" font-size="23" font-weight="700" fill="white">数字逻辑</text>
+    <text x="540" y="552" text-anchor="middle" font-size="15" fill="#fef3c7">组合电路、时序电路、加法器、寄存器、状态机</text>
+    <rect x="100" y="592" width="880" height="58" rx="14" fill="#dc2626"/>
+    <text x="540" y="628" text-anchor="middle" font-size="23" font-weight="700" fill="white">晶体管与物理器件</text>
+  </g>
+  <g stroke="#64748b" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M870 148 H1010"/>
+    <path d="M870 244 H1010"/>
+    <path d="M900 340 H1010"/>
+    <path d="M930 436 H1010"/>
+    <path d="M960 532 H1010"/>
+  </g>
+  <g font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">
+    <text x="1008" y="137" text-anchor="end">向下看：如何实现？</text>
+    <text x="1008" y="233" text-anchor="end">向上看：提供什么？</text>
+  </g>
+</svg>

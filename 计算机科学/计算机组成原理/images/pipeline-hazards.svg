@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610">
+  <rect width="1200" height="610" rx="24" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" font-family="Microsoft YaHei" font-size="30" font-weight="700" fill="#0f172a">五级流水线：提高吞吐量，而非缩短单条指令路径</text>
+  <g font-family="Microsoft YaHei" font-size="16">
+    <text x="65" y="115" font-weight="700" fill="#334155">指令 A</text>
+    <text x="65" y="185" font-weight="700" fill="#334155">指令 B</text>
+    <text x="65" y="255" font-weight="700" fill="#334155">指令 C</text>
+    <text x="65" y="325" font-weight="700" fill="#334155">指令 D</text>
+    <g fill="#64748b">
+      <text x="210" y="82" text-anchor="middle">周期 1</text><text x="350" y="82" text-anchor="middle">周期 2</text>
+      <text x="490" y="82" text-anchor="middle">周期 3</text><text x="630" y="82" text-anchor="middle">周期 4</text>
+      <text x="770" y="82" text-anchor="middle">周期 5</text><text x="910" y="82" text-anchor="middle">周期 6</text>
+      <text x="1050" y="82" text-anchor="middle">周期 7</text>
+    </g>
+    <g stroke="#fff" stroke-width="3" text-anchor="middle">
+      <g fill="#4f46e5"><rect x="140" y="92" width="140" height="50"/><rect x="280" y="162" width="140" height="50"/><rect x="420" y="232" width="140" height="50"/><rect x="560" y="302" width="140" height="50"/></g>
+      <g fill="#2563eb"><rect x="280" y="92" width="140" height="50"/><rect x="420" y="162" width="140" height="50"/><rect x="560" y="232" width="140" height="50"/><rect x="700" y="302" width="140" height="50"/></g>
+      <g fill="#0891b2"><rect x="420" y="92" width="140" height="50"/><rect x="560" y="162" width="140" height="50"/><rect x="700" y="232" width="140" height="50"/><rect x="840" y="302" width="140" height="50"/></g>
+      <g fill="#059669"><rect x="560" y="92" width="140" height="50"/><rect x="700" y="162" width="140" height="50"/><rect x="840" y="232" width="140" height="50"/><rect x="980" y="302" width="140" height="50"/></g>
+      <g fill="#ca8a04"><rect x="700" y="92" width="140" height="50"/><rect x="840" y="162" width="140" height="50"/><rect x="980" y="232" width="140" height="50"/></g>
+    </g>
+    <g fill="white" text-anchor="middle" font-weight="700">
+      <text x="210" y="124">IF</text><text x="350" y="124">ID</text><text x="490" y="124">EX</text><text x="630" y="124">MEM</text><text x="770" y="124">WB</text>
+      <text x="350" y="194">IF</text><text x="490" y="194">ID</text><text x="630" y="194">EX</text><text x="770" y="194">MEM</text><text x="910" y="194">WB</text>
+      <text x="490" y="264">IF</text><text x="630" y="264">ID</text><text x="770" y="264">EX</text><text x="910" y="264">MEM</text><text x="1050" y="264">WB</text>
+      <text x="630" y="334">IF</text><text x="770" y="334">ID</text><text x="910" y="334">EX</text><text x="1050" y="334">MEM</text>
+    </g>
+    <rect x="105" y="402" width="990" height="150" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="140" y="440" font-size="20" font-weight="700" fill="#0f172a">三类冒险</text>
+    <circle cx="160" cy="480" r="9" fill="#dc2626"/><text x="180" y="486" fill="#334155">数据冒险：后一条指令需要前一条尚未产生的结果</text>
+    <circle cx="160" cy="520" r="9" fill="#d97706"/><text x="180" y="526" fill="#334155">控制冒险：分支结果未确定，下一条指令地址未知</text>
+    <circle cx="660" cy="480" r="9" fill="#7c3aed"/><text x="680" y="486" fill="#334155">结构冒险：多条指令争用同一硬件资源</text>
+    <text x="680" y="526" fill="#475569">常见对策：转发、暂停、预测、增加资源</text>
+  </g>
+</svg>

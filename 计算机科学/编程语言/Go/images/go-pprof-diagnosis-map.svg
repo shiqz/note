@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <style>
+    .title{font:700 28px Arial,"Microsoft YaHei";fill:#17324d}.text{font:18px Arial,"Microsoft YaHei";fill:#17324d}.small{font:15px Arial,"Microsoft YaHei";fill:#46627a}.box{fill:#f7fbff;stroke:#4b88b6;stroke-width:2;rx:12}.hot{fill:#fff4e8;stroke:#e08337;stroke-width:2;rx:12}.line{stroke:#7895aa;stroke-width:2;fill:none;marker-end:url(#a)}
+  </style>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7895aa"/></marker></defs>
+  <text x="600" y="42" text-anchor="middle" class="title">Go 性能问题到 pprof 证据的选择路径</text>
+  <rect x="450" y="70" width="300" height="68" class="hot"/><text x="600" y="110" text-anchor="middle" class="text">先确认业务症状与时间窗口</text>
+  <path d="M600 138 V180" class="line"/>
+  <rect x="35" y="190" width="210" height="75" class="box"/><text x="140" y="220" text-anchor="middle" class="text">CPU 高 / 吞吐低</text><text x="140" y="247" text-anchor="middle" class="small">CPU profile</text>
+  <rect x="265" y="190" width="210" height="75" class="box"/><text x="370" y="220" text-anchor="middle" class="text">内存或 GC 压力</text><text x="370" y="247" text-anchor="middle" class="small">heap / allocs</text>
+  <rect x="495" y="190" width="210" height="75" class="box"/><text x="600" y="220" text-anchor="middle" class="text">协程持续增长</text><text x="600" y="247" text-anchor="middle" class="small">goroutine</text>
+  <rect x="725" y="190" width="210" height="75" class="box"/><text x="830" y="220" text-anchor="middle" class="text">锁等待明显</text><text x="830" y="247" text-anchor="middle" class="small">mutex / block</text>
+  <rect x="955" y="190" width="210" height="75" class="box"/><text x="1060" y="220" text-anchor="middle" class="text">尾延迟 / 调度异常</text><text x="1060" y="247" text-anchor="middle" class="small">trace + 指标</text>
+  <path d="M600 138 C600 165 140 150 140 190 M600 138 C600 165 370 150 370 190 M600 138 V190 M600 138 C600 165 830 150 830 190 M600 138 C600 165 1060 150 1060 190" class="line"/>
+  <rect x="70" y="340" width="1060" height="92" class="hot"/>
+  <text x="600" y="375" text-anchor="middle" class="text">采集必须覆盖异常负载：同版本、同配置、同实例、足够长但可控的窗口</text>
+  <text x="600" y="405" text-anchor="middle" class="small">保存 profile、二进制、构建信息、时间范围、实例与压测参数，禁止只看一次 top 就改代码</text>
+  <path d="M600 265 V340" class="line"/>
+  <rect x="125" y="500" width="250" height="90" class="box"/><text x="250" y="535" text-anchor="middle" class="text">定位主导调用路径</text><text x="250" y="564" text-anchor="middle" class="small">top → top -cum → list / flame</text>
+  <rect x="475" y="500" width="250" height="90" class="box"/><text x="600" y="535" text-anchor="middle" class="text">提出并实施单一假设</text><text x="600" y="564" text-anchor="middle" class="small">算法、分配、锁粒度、I/O</text>
+  <rect x="825" y="500" width="250" height="90" class="box"/><text x="950" y="535" text-anchor="middle" class="text">同负载重新测量</text><text x="950" y="564" text-anchor="middle" class="small">benchstat + profile 差分 + SLO</text>
+  <path d="M600 432 C600 470 250 460 250 500 M375 545 H475 M725 545 H825" class="line"/>
+  <path d="M950 590 C950 650 250 650 250 590" class="line"/>
+</svg>

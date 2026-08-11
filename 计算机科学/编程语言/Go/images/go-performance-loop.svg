@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#f4faf7"/>
+    </linearGradient>
+    <filter id="s2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#17324d" flood-opacity=".12"/>
+    </filter>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#44627c"/>
+    </marker>
+    <style>
+      .t{font:700 30px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .st{font:400 15px "Microsoft YaHei",sans-serif;fill:#5a7184}
+      .n{font:700 22px "Microsoft YaHei",sans-serif;fill:#fff}
+      .h{font:700 18px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .p{font:400 14px "Microsoft YaHei",sans-serif;fill:#486176}
+      .l{stroke:#44627c;stroke-width:2.5;fill:none;marker-end:url(#a2)}
+    </style>
+  </defs>
+  <rect width="1200" height="650" rx="24" fill="url(#bg2)"/>
+  <text x="600" y="54" text-anchor="middle" class="t">Go 性能优化证据闭环</text>
+  <text x="600" y="82" text-anchor="middle" class="st">先定义问题和基线，再用剖析数据定位；优化后必须复测并防止回归</text>
+
+  <path d="M300 205 C430 110 770 110 900 205" class="l"/>
+  <path d="M965 275 C1040 360 970 470 850 495" class="l"/>
+  <path d="M760 520 C610 590 410 565 330 490" class="l"/>
+  <path d="M235 430 C155 350 170 260 245 220" class="l"/>
+
+  <g filter="url(#s2)">
+    <rect x="120" y="145" width="270" height="135" rx="18" fill="#fff"/>
+    <circle cx="160" cy="180" r="24" fill="#2878b5"/>
+    <text x="160" y="188" text-anchor="middle" class="n">1</text>
+    <text x="200" y="184" class="h">定义与基线</text>
+    <text x="145" y="222" class="p">指标：吞吐、P99、CPU、内存</text>
+    <text x="145" y="250" class="p">固定数据、环境、版本和负载</text>
+  </g>
+
+  <g filter="url(#s2)">
+    <rect x="810" y="145" width="270" height="135" rx="18" fill="#fff"/>
+    <circle cx="850" cy="180" r="24" fill="#536dfe"/>
+    <text x="850" y="188" text-anchor="middle" class="n">2</text>
+    <text x="890" y="184" class="h">采集证据</text>
+    <text x="835" y="222" class="p">benchmark · pprof · trace</text>
+    <text x="835" y="250" class="p">指标、日志和执行剖面互证</text>
+  </g>
+
+  <g filter="url(#s2)">
+    <rect x="810" y="405" width="270" height="135" rx="18" fill="#fff"/>
+    <circle cx="850" cy="440" r="24" fill="#00897b"/>
+    <text x="850" y="448" text-anchor="middle" class="n">3</text>
+    <text x="890" y="444" class="h">最小化优化</text>
+    <text x="835" y="482" class="p">先改最大热点，控制改动范围</text>
+    <text x="835" y="510" class="p">同时检查正确性和可维护性</text>
+  </g>
+
+  <g filter="url(#s2)">
+    <rect x="120" y="405" width="270" height="135" rx="18" fill="#fff"/>
+    <circle cx="160" cy="440" r="24" fill="#ef6c00"/>
+    <text x="160" y="448" text-anchor="middle" class="n">4</text>
+    <text x="200" y="444" class="h">复测与固化</text>
+    <text x="145" y="482" class="p">benchstat 比较，压测验证尾延迟</text>
+    <text x="145" y="510" class="p">加入测试、告警与容量基线</text>
+  </g>
+
+  <g filter="url(#s2)">
+    <circle cx="600" cy="340" r="105" fill="#17324d"/>
+    <text x="600" y="325" text-anchor="middle" class="n">没有测量</text>
+    <text x="600" y="360" text-anchor="middle" class="n">就没有优化</text>
+    <text x="600" y="395" text-anchor="middle" class="st" fill="#dbe8f2">Measure → Change → Verify</text>
+  </g>
+  <text x="600" y="610" text-anchor="middle" class="st">常见误区：凭感觉改代码、只看平均值、在不同环境比较、忽略回归与资源成本</text>
+</svg>

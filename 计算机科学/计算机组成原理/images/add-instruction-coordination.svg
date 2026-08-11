@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1350" height="780" viewBox="0 0 1350 780">
+  <defs>
+    <marker id="dataArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#2563eb"/></marker>
+    <marker id="ctrlArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#dc2626"/></marker>
+    <style>
+      .title{font:700 29px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 18px "Microsoft YaHei",sans-serif;fill:#fff}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .data{stroke:#2563eb;stroke-width:5;fill:none;marker-end:url(#dataArrow)}
+      .ctrl{stroke:#dc2626;stroke-width:3;fill:none;stroke-dasharray:8 6;marker-end:url(#ctrlArrow)}
+    </style>
+  </defs>
+  <rect width="1350" height="780" rx="24" fill="#f8fafc"/>
+  <text x="675" y="48" text-anchor="middle" class="title">一条加法指令怎样让许多电路协同：R3 = R1 + R2</text>
+  <text x="675" y="77" text-anchor="middle" class="s">蓝线传数据，红色虚线传控制，紫色时钟规定保存时刻</text>
+
+  <g transform="translate(40,130)">
+    <rect width="190" height="160" rx="17" fill="#0f766e"/>
+    <text x="95" y="34" text-anchor="middle" class="h">① 指令寄存器</text>
+    <rect x="18" y="58" width="154" height="62" rx="9" fill="#f0fdfa"/>
+    <text x="95" y="84" text-anchor="middle" class="t" font-weight="700">ADD R3,R1,R2</text>
+    <text x="95" y="106" text-anchor="middle" class="s">加法、输入、输出</text>
+    <text x="95" y="144" text-anchor="middle" class="h" font-size="14">保存机器指令</text>
+  </g>
+  <path d="M235 210h65" class="data"/>
+
+  <g transform="translate(310,130)">
+    <rect width="205" height="160" rx="17" fill="#c2410c"/>
+    <text x="102" y="34" text-anchor="middle" class="h">② 译码与控制</text>
+    <rect x="18" y="58" width="169" height="62" rx="9" fill="#fff7ed"/>
+    <text x="102" y="83" text-anchor="middle" class="t">读 R1、R2</text>
+    <text x="102" y="107" text-anchor="middle" class="t">选择 ADD，写 R3</text>
+    <text x="102" y="144" text-anchor="middle" class="h" font-size="14">产生控制信号</text>
+  </g>
+
+  <g transform="translate(55,390)">
+    <rect width="335" height="225" rx="20" fill="#2563eb"/>
+    <text x="167" y="36" text-anchor="middle" class="h">③ 寄存器组：数据小仓库</text>
+    <rect x="25" y="62" width="88" height="62" rx="9" fill="#eff6ff"/>
+    <text x="69" y="88" text-anchor="middle" class="t" font-weight="700">R1</text>
+    <text x="69" y="112" text-anchor="middle" class="t">3</text>
+    <rect x="123" y="62" width="88" height="62" rx="9" fill="#eff6ff"/>
+    <text x="167" y="88" text-anchor="middle" class="t" font-weight="700">R2</text>
+    <text x="167" y="112" text-anchor="middle" class="t">5</text>
+    <rect x="221" y="62" width="88" height="62" rx="9" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+    <text x="265" y="88" text-anchor="middle" class="t" font-weight="700">R3</text>
+    <text x="265" y="112" text-anchor="middle" class="t">等待写入</text>
+    <text x="167" y="158" text-anchor="middle" class="h" font-size="14">R1、R2 同时放出许多 bit</text>
+    <text x="167" y="188" text-anchor="middle" class="h" font-size="14">时钟边沿到来时 R3 保存结果</text>
+  </g>
+
+  <g transform="translate(515,390)">
+    <rect width="300" height="225" rx="20" fill="#7c3aed"/>
+    <text x="150" y="36" text-anchor="middle" class="h">④ ALU 加法器</text>
+    <path d="M68 65h135l42 65-42 65H68l37-65z" fill="#ede9fe" stroke="#6d28d9" stroke-width="5"/>
+    <text x="156" y="113" text-anchor="middle" class="t" font-weight="700">3 + 5</text>
+    <text x="156" y="143" text-anchor="middle" class="t">XOR / AND / 进位</text>
+    <text x="156" y="177" text-anchor="middle" class="t" font-weight="700">输出 = 8</text>
+    <text x="150" y="211" text-anchor="middle" class="h" font-size="14">逻辑门自动响应输入</text>
+  </g>
+
+  <g transform="translate(935,390)">
+    <rect width="350" height="225" rx="20" fill="#be123c"/>
+    <text x="175" y="36" text-anchor="middle" class="h">⑤ 时钟与写回</text>
+    <rect x="25" y="60" width="300" height="82" rx="10" fill="#fff1f2"/>
+    <path d="M45 125V108h55V76h55v49h55V76h55v49h40" fill="none" stroke="#7c3aed" stroke-width="5"/>
+    <line x1="155" y1="67" x2="155" y2="150" stroke="#7c3aed" stroke-width="3" stroke-dasharray="6 5"/>
+    <text x="155" y="165" text-anchor="middle" class="s">这个边沿保存结果</text>
+    <text x="175" y="195" text-anchor="middle" class="h" font-size="14">写入允许=1，R3 接住 8</text>
+  </g>
+
+  <path d="M390 485h115" class="data"/>
+  <path d="M815 485h110" class="data"/>
+  <path d="M935 565C810 690 450 690 325 620" class="data"/>
+  <text x="662" y="699" text-anchor="middle" class="s" fill="#2563eb">结果 8 沿数据通路返回 R3</text>
+
+  <path d="M410 295v68H170v20" class="ctrl"/>
+  <path d="M450 295v45h215v43" class="ctrl"/>
+  <path d="M480 295v20h625v68" class="ctrl"/>
+  <text x="675" y="330" text-anchor="middle" class="s" fill="#dc2626">控制信号：读 R1/R2、ALU 选加法、允许写 R3</text>
+
+  <g transform="translate(905,125)">
+    <rect width="380" height="160" rx="18" fill="#e2e8f0"/>
+    <text x="190" y="31" text-anchor="middle" class="t" font-weight="700">三类信号分工</text>
+    <text x="30" y="64" class="t" fill="#2563eb">● 数据：3、5 和计算结果 8</text>
+    <text x="30" y="96" class="t" fill="#dc2626">● 控制：读谁、算什么、写到哪里</text>
+    <text x="30" y="128" class="t" fill="#7c3aed">● 时钟：什么时候把结果保存下来</text>
+  </g>
+
+  <rect x="195" y="730" width="960" height="36" rx="10" fill="#e2e8f0"/>
+  <text x="675" y="754" text-anchor="middle" class="t">同一时刻，芯片中还有许多其他模块沿各自通路处理其他指令和数据</text>
+</svg>

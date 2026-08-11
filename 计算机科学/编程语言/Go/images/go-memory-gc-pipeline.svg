@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <defs>
+    <style>
+      .title{font:700 29px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .h{font:700 18px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#29475f}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#4d687c}
+      .arrow{stroke:#55778d;stroke-width:2;fill:none;marker-end:url(#a)}
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#55778d"/></marker>
+  </defs>
+  <rect width="1200" height="780" fill="#f8fbfd"/>
+  <text x="600" y="45" text-anchor="middle" class="title">内存分配与 GC：同一套 span 上的生产和回收</text>
+
+  <text x="55" y="90" class="h">分配路径（小对象快路径尽量无锁）</text>
+  <rect x="55" y="115" width="190" height="100" rx="14" fill="#e7f6fb" stroke="#2d8ca9" stroke-width="2"/>
+  <text x="150" y="153" text-anchor="middle" class="h">mallocgc</text>
+  <text x="150" y="184" text-anchor="middle" class="s">按大小和指针属性分类</text>
+  <rect x="305" y="115" width="190" height="100" rx="14" fill="#e7f6fb" stroke="#2d8ca9" stroke-width="2"/>
+  <text x="400" y="153" text-anchor="middle" class="h">mcache</text>
+  <text x="400" y="184" text-anchor="middle" class="s">每 P 的 span 缓存</text>
+  <rect x="555" y="115" width="190" height="100" rx="14" fill="#edf2ff" stroke="#637cca" stroke-width="2"/>
+  <text x="650" y="153" text-anchor="middle" class="h">mcentral</text>
+  <text x="650" y="184" text-anchor="middle" class="s">每 size class 汇总 span</text>
+  <rect x="805" y="115" width="190" height="100" rx="14" fill="#f4edff" stroke="#8167bd" stroke-width="2"/>
+  <text x="900" y="153" text-anchor="middle" class="h">mheap / pageAlloc</text>
+  <text x="900" y="184" text-anchor="middle" class="s">以 8 KiB 页管理 span</text>
+  <rect x="1030" y="115" width="120" height="100" rx="14" fill="#eaf7ec" stroke="#4b9a62" stroke-width="2"/>
+  <text x="1090" y="153" text-anchor="middle" class="h">OS</text>
+  <text x="1090" y="184" text-anchor="middle" class="s">虚拟内存</text>
+  <path d="M245 165 L300 165" class="arrow"/><path d="M495 165 L550 165" class="arrow"/>
+  <path d="M745 165 L800 165" class="arrow"/><path d="M995 165 L1025 165" class="arrow"/>
+
+  <rect x="55" y="255" width="1095" height="90" rx="14" fill="#fff5df" stroke="#d79a2b" stroke-width="2"/>
+  <text x="90" y="290" class="h">关键分流</text>
+  <text x="230" y="290" class="t">tiny：多个无指针微对象合并</text>
+  <text x="520" y="290" class="t">small ≤ 32 KiB：size class → mspan 槽位</text>
+  <text x="880" y="290" class="t">large：绕过 mcache / mcentral</text>
+  <text x="90" y="321" class="s">mspan 是若干连续页，也是分配器与 GC 的交汇点：它保存对象大小、分配位图、标记位图和 sweep generation。</text>
+
+  <text x="55" y="395" class="h">并发标记清扫周期（Go 1.26 默认 Green Tea 标记引擎）</text>
+  <rect x="55" y="425" width="205" height="125" rx="14" fill="#feecec" stroke="#c95a5a" stroke-width="2"/>
+  <text x="158" y="461" text-anchor="middle" class="h">① Sweep Termination</text>
+  <text x="158" y="491" text-anchor="middle" class="t">短暂 STW</text>
+  <text x="158" y="520" text-anchor="middle" class="s">扫完遗留 span，开写屏障</text>
+  <rect x="350" y="425" width="205" height="125" rx="14" fill="#e7f6fb" stroke="#2d8ca9" stroke-width="2"/>
+  <text x="453" y="461" text-anchor="middle" class="h">② Concurrent Mark</text>
+  <text x="453" y="491" text-anchor="middle" class="t">根扫描、标记、GC assist</text>
+  <text x="453" y="520" text-anchor="middle" class="s">程序与 GC 并发运行</text>
+  <rect x="645" y="425" width="205" height="125" rx="14" fill="#feecec" stroke="#c95a5a" stroke-width="2"/>
+  <text x="748" y="461" text-anchor="middle" class="h">③ Mark Termination</text>
+  <text x="748" y="491" text-anchor="middle" class="t">短暂 STW</text>
+  <text x="748" y="520" text-anchor="middle" class="s">确认无灰对象，关写屏障</text>
+  <rect x="940" y="425" width="205" height="125" rx="14" fill="#eaf7ec" stroke="#4b9a62" stroke-width="2"/>
+  <text x="1043" y="461" text-anchor="middle" class="h">④ Concurrent Sweep</text>
+  <text x="1043" y="491" text-anchor="middle" class="t">按 span 清扫</text>
+  <text x="1043" y="520" text-anchor="middle" class="s">后台清扫 + 分配时清扫</text>
+  <path d="M260 488 L345 488" class="arrow"/><path d="M555 488 L640 488" class="arrow"/>
+  <path d="M850 488 L935 488" class="arrow"/>
+  <path d="M1043 550 C1043 610 158 610 158 555" class="arrow"/>
+
+  <rect x="55" y="635" width="530" height="95" rx="14" fill="#edf2ff" stroke="#637cca" stroke-width="2"/>
+  <text x="80" y="670" class="h">三色只是逻辑状态</text>
+  <text x="80" y="699" class="t">白：尚未发现　灰：已发现待扫描　黑：已扫描</text>
+  <rect x="615" y="635" width="535" height="95" rx="14" fill="#f4edff" stroke="#8167bd" stroke-width="2"/>
+  <text x="640" y="670" class="h">Pacer 控制时间与空间</text>
+  <text x="640" y="699" class="t">GOGC 给增长目标；GOMEMLIMIT 给软内存上限；assist 偿还分配债务</text>
+</svg>

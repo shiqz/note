@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="760" viewBox="0 0 1300 760">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#475569"/></marker>
+    <style>
+      .title{font:700 29px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 18px "Microsoft YaHei",sans-serif;fill:#fff}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .wire{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1300" height="760" rx="24" fill="#f8fafc"/>
+  <text x="650" y="48" text-anchor="middle" class="title">海量晶体管怎样协同：没有总司令，只有连接、规则与节拍</text>
+  <text x="650" y="77" text-anchor="middle" class="s">晶体管组成小电路，小电路组成模块；信号沿预先设计的道路自动传播</text>
+
+  <g transform="translate(40,125)">
+    <rect width="250" height="205" rx="18" fill="#0f766e"/>
+    <text x="125" y="36" text-anchor="middle" class="h">1. 固定导线</text>
+    <rect x="20" y="58" width="210" height="88" rx="11" fill="#f0fdfa"/>
+    <circle cx="55" cy="102" r="19" fill="#5eead4" stroke="#0f766e" stroke-width="4"/>
+    <path d="M74 102h45M119 102l45-27M119 102l45 27" stroke="#0f766e" stroke-width="5" fill="none"/>
+    <circle cx="180" cy="75" r="17" fill="#99f6e4" stroke="#0f766e" stroke-width="4"/>
+    <circle cx="180" cy="129" r="17" fill="#99f6e4" stroke="#0f766e" stroke-width="4"/>
+    <text x="125" y="176" text-anchor="middle" class="h" font-size="14">决定信号能去哪里</text>
+  </g>
+  <path d="M295 228h42" class="wire"/>
+  <g transform="translate(345,125)">
+    <rect width="250" height="205" rx="18" fill="#2563eb"/>
+    <text x="125" y="36" text-anchor="middle" class="h">2. 逻辑规则</text>
+    <rect x="20" y="58" width="210" height="88" rx="11" fill="#eff6ff"/>
+    <path d="M48 74h70c55 0 76 28 76 28s-21 28-76 28H48z" fill="#93c5fd" stroke="#1d4ed8" stroke-width="4"/>
+    <text x="120" y="108" text-anchor="middle" class="t" font-weight="700">AND</text>
+    <path d="M30 87h18M30 117h18M194 102h20" stroke="#1d4ed8" stroke-width="4"/>
+    <text x="125" y="176" text-anchor="middle" class="h" font-size="14">结构决定怎样响应输入</text>
+  </g>
+  <path d="M600 228h42" class="wire"/>
+  <g transform="translate(650,125)">
+    <rect width="250" height="205" rx="18" fill="#7c3aed"/>
+    <text x="125" y="36" text-anchor="middle" class="h">3. 寄存器</text>
+    <rect x="20" y="58" width="210" height="88" rx="11" fill="#f5f3ff"/>
+    <rect x="67" y="73" width="116" height="57" rx="9" fill="#c4b5fd" stroke="#6d28d9" stroke-width="4"/>
+    <text x="125" y="108" text-anchor="middle" class="t" font-weight="700">保存 0 / 1</text>
+    <path d="M38 102h29M183 102h29" stroke="#6d28d9" stroke-width="4"/>
+    <text x="125" y="176" text-anchor="middle" class="h" font-size="14">在交接点接住结果</text>
+  </g>
+  <path d="M905 228h42" class="wire"/>
+  <g transform="translate(955,125)">
+    <rect width="305" height="205" rx="18" fill="#c2410c"/>
+    <text x="152" y="36" text-anchor="middle" class="h">4. 时钟节拍</text>
+    <rect x="20" y="58" width="265" height="88" rx="11" fill="#fff7ed"/>
+    <path d="M38 124V106h48V76h48v48h48V76h48v48h38" fill="none" stroke="#ea580c" stroke-width="5" stroke-linejoin="round"/>
+    <text x="152" y="176" text-anchor="middle" class="h" font-size="14">规定何时统一交接</text>
+  </g>
+
+  <g transform="translate(70,390)">
+    <rect width="1160" height="255" rx="20" fill="#e2e8f0"/>
+    <text x="580" y="34" text-anchor="middle" class="title" font-size="22">分层分工：不是一万亿只开关挤在同一个房间</text>
+    <g transform="translate(30,72)">
+      <rect width="180" height="120" rx="13" fill="#fff"/>
+      <text x="90" y="31" text-anchor="middle" class="t" font-weight="700">晶体管</text>
+      <text x="90" y="61" text-anchor="middle" class="s">控制一条微小通路</text>
+      <text x="90" y="88" text-anchor="middle" class="s">数量：一只只</text>
+    </g>
+    <path d="M215 522h34" class="wire"/>
+    <g transform="translate(255,462)">
+      <rect width="180" height="120" rx="13" fill="#fff"/>
+      <text x="90" y="31" text-anchor="middle" class="t" font-weight="700">逻辑门</text>
+      <text x="90" y="61" text-anchor="middle" class="s">完成一个判断规则</text>
+      <text x="90" y="88" text-anchor="middle" class="s">由多只晶体管组成</text>
+    </g>
+    <path d="M440 522h34" class="wire"/>
+    <g transform="translate(480,462)">
+      <rect width="180" height="120" rx="13" fill="#fff"/>
+      <text x="90" y="31" text-anchor="middle" class="t" font-weight="700">功能模块</text>
+      <text x="90" y="61" text-anchor="middle" class="s">加法器、寄存器</text>
+      <text x="90" y="88" text-anchor="middle" class="s">完成一类小任务</text>
+    </g>
+    <path d="M665 522h34" class="wire"/>
+    <g transform="translate(705,462)">
+      <rect width="180" height="120" rx="13" fill="#fff"/>
+      <text x="90" y="31" text-anchor="middle" class="t" font-weight="700">大型模块</text>
+      <text x="90" y="61" text-anchor="middle" class="s">核心、缓存、接口</text>
+      <text x="90" y="88" text-anchor="middle" class="s">各自并行工作</text>
+    </g>
+    <path d="M890 522h34" class="wire"/>
+    <g transform="translate(930,462)">
+      <rect width="180" height="120" rx="13" fill="#fff"/>
+      <text x="90" y="31" text-anchor="middle" class="t" font-weight="700">完整芯片</text>
+      <text x="90" y="61" text-anchor="middle" class="s">片上网络互相连接</text>
+      <text x="90" y="88" text-anchor="middle" class="s">共同执行程序</text>
+    </g>
+    <text x="580" y="227" text-anchor="middle" class="s">每一层只需遵守自己的输入、输出和时间规则，设计者不必同时思考每一只晶体管</text>
+  </g>
+  <text x="650" y="705" text-anchor="middle" class="t">协同 = 固定连接 + 逻辑响应 + 状态保存 + 时钟交接 + 模块并行</text>
+</svg>

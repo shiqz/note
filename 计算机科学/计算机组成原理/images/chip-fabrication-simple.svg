@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 17px "Microsoft YaHei",sans-serif;fill:#fff}
+      .t{font:14px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .a{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1200" height="650" rx="24" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="title">芯片制造：不是逐只安装，而是一层层“印”出来</text>
+  <text x="600" y="76" text-anchor="middle" class="s">这是一幅帮助建立概念的简化图，真实晶圆制造需要数百到上千道精密步骤</text>
+
+  <g transform="translate(40,130)">
+    <rect width="170" height="250" rx="17" fill="#0f766e"/>
+    <text x="85" y="34" text-anchor="middle" class="h">1. 硅晶圆</text>
+    <circle cx="85" cy="116" r="58" fill="#99f6e4" stroke="#0f766e" stroke-width="5"/>
+    <path d="M47 105h76M55 85h60M55 125h60M67 67v98M95 60v112M119 78v78" stroke="#14b8a6" stroke-width="2"/>
+    <text x="85" y="202" text-anchor="middle" class="h" font-size="14">非常纯、非常平整</text>
+    <text x="85" y="226" text-anchor="middle" class="h" font-size="14">一次制造许多芯片</text>
+  </g>
+  <path d="M215 255h35" class="a"/>
+  <g transform="translate(260,130)">
+    <rect width="170" height="250" rx="17" fill="#2563eb"/>
+    <text x="85" y="34" text-anchor="middle" class="h">2. 涂覆与光刻</text>
+    <rect x="28" y="150" width="114" height="26" rx="4" fill="#93c5fd"/>
+    <rect x="28" y="133" width="114" height="16" fill="#facc15"/>
+    <rect x="43" y="75" width="84" height="18" rx="4" fill="#1d4ed8"/>
+    <path d="M52 96l-15 34M75 96l-5 34M96 96l5 34M119 96l15 34" stroke="#f59e0b" stroke-width="4"/>
+    <text x="85" y="202" text-anchor="middle" class="h" font-size="14">光把微小图案</text>
+    <text x="85" y="226" text-anchor="middle" class="h" font-size="14">转移到材料表面</text>
+  </g>
+  <path d="M435 255h35" class="a"/>
+  <g transform="translate(480,130)">
+    <rect width="170" height="250" rx="17" fill="#7c3aed"/>
+    <text x="85" y="34" text-anchor="middle" class="h">3. 刻蚀与掺杂</text>
+    <rect x="25" y="142" width="120" height="34" rx="4" fill="#c4b5fd"/>
+    <rect x="25" y="120" width="35" height="22" fill="#6d28d9"/>
+    <rect x="110" y="120" width="35" height="22" fill="#6d28d9"/>
+    <path d="M45 72v35M85 72v35M125 72v35" stroke="#f0abfc" stroke-width="5" stroke-dasharray="7 5"/>
+    <text x="85" y="202" text-anchor="middle" class="h" font-size="14">去掉或加入材料</text>
+    <text x="85" y="226" text-anchor="middle" class="h" font-size="14">改变局部导电性质</text>
+  </g>
+  <path d="M655 255h35" class="a"/>
+  <g transform="translate(700,130)">
+    <rect width="170" height="250" rx="17" fill="#c2410c"/>
+    <text x="85" y="34" text-anchor="middle" class="h">4. 多层互连</text>
+    <rect x="25" y="155" width="120" height="22" fill="#fdba74"/>
+    <rect x="38" y="125" width="94" height="18" fill="#f97316"/>
+    <rect x="25" y="95" width="120" height="18" fill="#fb923c"/>
+    <rect x="45" y="65" width="80" height="18" fill="#ea580c"/>
+    <path d="M55 83v12M115 83v12M70 113v12M105 143v12" stroke="#7c2d12" stroke-width="7"/>
+    <text x="85" y="202" text-anchor="middle" class="h" font-size="14">金属导线把晶体管</text>
+    <text x="85" y="226" text-anchor="middle" class="h" font-size="14">按版图连接起来</text>
+  </g>
+  <path d="M875 255h35" class="a"/>
+  <g transform="translate(920,130)">
+    <rect width="230" height="250" rx="17" fill="#be123c"/>
+    <text x="115" y="34" text-anchor="middle" class="h">5. 测试、切割与封装</text>
+    <circle cx="75" cy="115" r="55" fill="#fecdd3" stroke="#be123c" stroke-width="4"/>
+    <path d="M38 100h74M45 80h60M45 120h60M58 65v98M85 60v108M105 75v78" stroke="#fb7185" stroke-width="2"/>
+    <rect x="147" y="79" width="55" height="72" rx="8" fill="#881337"/>
+    <rect x="158" y="90" width="33" height="50" rx="4" fill="#fda4af"/>
+    <text x="115" y="202" text-anchor="middle" class="h" font-size="14">筛选合格芯片</text>
+    <text x="115" y="226" text-anchor="middle" class="h" font-size="14">保护并连接外部电路</text>
+  </g>
+
+  <g transform="translate(110,445)">
+    <rect width="980" height="120" rx="16" fill="#e2e8f0"/>
+    <text x="490" y="32" text-anchor="middle" class="t">关键思想：同一个图案会同时出现在晶圆上的许多位置，因此不是一次只造一只晶体管</text>
+    <text x="490" y="62" text-anchor="middle" class="t">沉积、光刻、刻蚀、掺杂和清洗等步骤反复进行，逐层形成器件与金属连接</text>
+    <text x="490" y="92" text-anchor="middle" class="s">制造环境必须极其洁净，因为一粒微尘相对于微小电路可能像巨石一样大</text>
+  </g>
+</svg>

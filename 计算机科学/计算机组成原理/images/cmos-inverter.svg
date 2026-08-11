@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 19px "Microsoft YaHei",sans-serif;fill:#fff}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .wire{stroke:#334155;stroke-width:5;fill:none}
+    </style>
+  </defs>
+  <rect width="1200" height="650" rx="24" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="title">CMOS 非门：输入什么，就输出相反结果</text>
+  <text x="600" y="76" text-anchor="middle" class="s">上方 PMOS 负责拉高，下方 NMOS 负责拉低</text>
+
+  <g transform="translate(55,115)">
+    <rect width="510" height="435" rx="20" fill="#2563eb"/>
+    <text x="255" y="36" text-anchor="middle" class="h">输入 A = 0，输出 Y = 1</text>
+    <rect x="25" y="58" width="460" height="310" rx="14" fill="#eff6ff"/>
+    <text x="260" y="85" text-anchor="middle" class="t" font-weight="700">VDD（高电压 / 1）</text>
+    <path d="M260 95v45M260 205v50M260 320v32" class="wire"/>
+    <rect x="215" y="140" width="90" height="65" rx="10" fill="#e879f9" stroke="#a21caf" stroke-width="4"/>
+    <text x="260" y="178" text-anchor="middle" class="t">PMOS 开</text>
+    <rect x="215" y="255" width="90" height="65" rx="10" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="4"/>
+    <text x="260" y="293" text-anchor="middle" class="t">NMOS 关</text>
+    <path d="M75 228h115M190 173h25M190 288h25" class="wire"/>
+    <circle cx="190" cy="173" r="6" fill="#334155"/><circle cx="190" cy="288" r="6" fill="#334155"/>
+    <rect x="53" y="202" width="62" height="52" rx="9" fill="#fff" stroke="#2563eb" stroke-width="4"/>
+    <text x="84" y="234" text-anchor="middle" class="t" font-weight="700">A=0</text>
+    <path d="M260 230h105" class="wire"/>
+    <circle cx="260" cy="230" r="7" fill="#334155"/>
+    <rect x="365" y="204" width="72" height="52" rx="9" fill="#fef3c7" stroke="#ca8a04" stroke-width="4"/>
+    <text x="401" y="236" text-anchor="middle" class="t" font-weight="700">Y=1</text>
+    <text x="260" y="366" text-anchor="middle" class="t">GND（低电压 / 0）</text>
+    <text x="255" y="405" text-anchor="middle" class="h" font-size="15">输出通过 PMOS 接到高电压</text>
+  </g>
+
+  <g transform="translate(635,115)">
+    <rect width="510" height="435" rx="20" fill="#c2410c"/>
+    <text x="255" y="36" text-anchor="middle" class="h">输入 A = 1，输出 Y = 0</text>
+    <rect x="25" y="58" width="460" height="310" rx="14" fill="#fff7ed"/>
+    <text x="260" y="85" text-anchor="middle" class="t" font-weight="700">VDD（高电压 / 1）</text>
+    <path d="M260 95v45M260 205v50M260 320v32" class="wire"/>
+    <rect x="215" y="140" width="90" height="65" rx="10" fill="#fce7f3" stroke="#a21caf" stroke-width="4"/>
+    <text x="260" y="178" text-anchor="middle" class="t">PMOS 关</text>
+    <rect x="215" y="255" width="90" height="65" rx="10" fill="#60a5fa" stroke="#1d4ed8" stroke-width="4"/>
+    <text x="260" y="293" text-anchor="middle" class="t">NMOS 开</text>
+    <path d="M75 228h115M190 173h25M190 288h25" class="wire"/>
+    <circle cx="190" cy="173" r="6" fill="#334155"/><circle cx="190" cy="288" r="6" fill="#334155"/>
+    <rect x="53" y="202" width="62" height="52" rx="9" fill="#fff" stroke="#c2410c" stroke-width="4"/>
+    <text x="84" y="234" text-anchor="middle" class="t" font-weight="700">A=1</text>
+    <path d="M260 230h105" class="wire"/>
+    <circle cx="260" cy="230" r="7" fill="#334155"/>
+    <rect x="365" y="204" width="72" height="52" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
+    <text x="401" y="236" text-anchor="middle" class="t" font-weight="700">Y=0</text>
+    <text x="260" y="366" text-anchor="middle" class="t">GND（低电压 / 0）</text>
+    <text x="255" y="405" text-anchor="middle" class="h" font-size="15">输出通过 NMOS 接到低电压</text>
+  </g>
+
+  <rect x="190" y="585" width="820" height="42" rx="11" fill="#e2e8f0"/>
+  <text x="600" y="611" text-anchor="middle" class="t">真值表：A=0 时 Y=1；A=1 时 Y=0，所以叫“非门”或“反相器”</text>
+</svg>

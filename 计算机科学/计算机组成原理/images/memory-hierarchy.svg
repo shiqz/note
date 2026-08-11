@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720">
+  <defs><filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity=".14"/></filter></defs>
+  <rect width="1100" height="720" rx="24" fill="#f8fafc"/>
+  <text x="550" y="52" text-anchor="middle" font-family="Microsoft YaHei" font-size="30" font-weight="700" fill="#0f172a">存储层次：用局部性换取“又快又大”</text>
+  <g font-family="Microsoft YaHei" filter="url(#s)">
+    <path d="M470 100H630L670 170H430Z" fill="#4f46e5"/>
+    <text x="550" y="142" text-anchor="middle" font-size="20" font-weight="700" fill="white">寄存器</text>
+    <path d="M420 190H680L730 270H370Z" fill="#2563eb"/>
+    <text x="550" y="237" text-anchor="middle" font-size="21" font-weight="700" fill="white">L1 / L2 / L3 Cache</text>
+    <path d="M355 290H745L800 390H300Z" fill="#0891b2"/>
+    <text x="550" y="347" text-anchor="middle" font-size="22" font-weight="700" fill="white">主存 DRAM</text>
+    <path d="M280 410H820L880 525H220Z" fill="#059669"/>
+    <text x="550" y="475" text-anchor="middle" font-size="23" font-weight="700" fill="white">本地持久存储 SSD / HDD</text>
+    <path d="M195 545H905L970 675H130Z" fill="#ca8a04"/>
+    <text x="550" y="618" text-anchor="middle" font-size="23" font-weight="700" fill="white">网络与归档存储</text>
+  </g>
+  <g font-family="Microsoft YaHei" font-size="16" fill="#334155">
+    <path d="M85 600V130" stroke="#dc2626" stroke-width="3"/>
+    <path d="M85 130l-8 14h16z" fill="#dc2626"/>
+    <text x="65" y="365" transform="rotate(-90 65 365)" text-anchor="middle" fill="#b91c1c">越向上：延迟更低、单字节成本更高、容量更小</text>
+    <path d="M1015 130V600" stroke="#2563eb" stroke-width="3"/>
+    <path d="M1015 600l-8-14h16z" fill="#2563eb"/>
+    <text x="1038" y="365" transform="rotate(90 1038 365)" text-anchor="middle" fill="#1d4ed8">越向下：容量更大、持久性更强、访问更慢</text>
+    <text x="740" y="135" fill="#4338ca">CPU 直接操作</text>
+    <text x="790" y="235" fill="#1d4ed8">按缓存行搬运</text>
+    <text x="840" y="345" fill="#0e7490">按字节寻址，常按页管理</text>
+    <text x="900" y="470" fill="#047857">按块读写</text>
+  </g>
+</svg>

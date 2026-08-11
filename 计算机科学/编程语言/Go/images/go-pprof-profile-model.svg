@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610">
+  <style>.t{font:700 28px Arial,"Microsoft YaHei";fill:#17324d}.h{font:700 19px Arial,"Microsoft YaHei";fill:#17324d}.x{font:16px Arial,"Microsoft YaHei";fill:#334f66}.s{font:14px Arial,"Microsoft YaHei";fill:#60798c}.b{fill:#f6fbff;stroke:#4b88b6;stroke-width:2;rx:12}.m{fill:#fff4e8;stroke:#df843d;stroke-width:2;rx:12}.l{stroke:#7895aa;stroke-width:2;fill:none;marker-end:url(#a)}</style>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7895aa"/></marker></defs>
+  <text x="600" y="42" text-anchor="middle" class="t">pprof：从统计采样到可解释报告</text>
+  <rect x="40" y="90" width="230" height="120" class="b"/><text x="155" y="126" text-anchor="middle" class="h">运行中的 Go 进程</text><text x="155" y="158" text-anchor="middle" class="x">CPU / 分配 / 阻塞事件</text><text x="155" y="184" text-anchor="middle" class="s">不是逐次记录，而是统计采样</text>
+  <rect x="355" y="90" width="250" height="120" class="m"/><text x="480" y="126" text-anchor="middle" class="h">Profile 样本</text><text x="480" y="158" text-anchor="middle" class="x">调用栈 + 数值 + 标签</text><text x="480" y="184" text-anchor="middle" class="s">样本越多，方向通常越稳定</text>
+  <rect x="690" y="90" width="210" height="120" class="b"/><text x="795" y="126" text-anchor="middle" class="h">符号化与聚合</text><text x="795" y="158" text-anchor="middle" class="x">地址 → 函数 → 源码行</text><text x="795" y="184" text-anchor="middle" class="s">依赖匹配的二进制与源码</text>
+  <rect x="985" y="90" width="175" height="120" class="b"/><text x="1072" y="126" text-anchor="middle" class="h">报告</text><text x="1072" y="158" text-anchor="middle" class="x">top / list</text><text x="1072" y="184" text-anchor="middle" class="s">图、火焰图、差分</text>
+  <path d="M270 150 H355 M605 150 H690 M900 150 H985" class="l"/>
+  <rect x="95" y="305" width="450" height="190" class="m"/>
+  <text x="320" y="342" text-anchor="middle" class="h">flat：资源直接消耗在当前函数本体</text>
+  <text x="320" y="380" text-anchor="middle" class="x">A → B → C，若样本落在 C</text>
+  <text x="320" y="413" text-anchor="middle" class="x">C.flat 增加；A、B 的 flat 不增加</text>
+  <text x="320" y="457" text-anchor="middle" class="s">适合找“真正执行重活”的叶子函数</text>
+  <rect x="655" y="305" width="450" height="190" class="b"/>
+  <text x="880" y="342" text-anchor="middle" class="h">cum：当前函数及其所有下游累计消耗</text>
+  <text x="880" y="380" text-anchor="middle" class="x">同一个 A → B → C 样本</text>
+  <text x="880" y="413" text-anchor="middle" class="x">A.cum、B.cum、C.cum 都增加</text>
+  <text x="880" y="457" text-anchor="middle" class="s">适合找“从哪里进入昂贵路径”的业务入口</text>
+  <text x="600" y="555" text-anchor="middle" class="x">结论应来自调用路径、源码与业务指标的交叉验证，而不是把 runtime 函数当作根因</text>
+</svg>

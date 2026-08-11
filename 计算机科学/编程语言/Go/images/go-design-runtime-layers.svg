@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <style>
+      .title{font:700 30px "Microsoft YaHei",sans-serif;fill:#16324f}
+      .h{font:700 20px "Microsoft YaHei",sans-serif;fill:#16324f}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#294861}
+      .small{font:13px "Microsoft YaHei",sans-serif;fill:#49677f}
+      .box{stroke:#3b82a0;stroke-width:2;rx:14}
+      .arrow{stroke:#56788f;stroke-width:2;fill:none;marker-end:url(#a)}
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#56788f"/></marker>
+  </defs>
+  <rect width="1200" height="700" fill="#f7fbfd"/>
+  <text x="600" y="48" text-anchor="middle" class="title">Go 从源码到机器的分层设计</text>
+
+  <rect x="70" y="90" width="1060" height="105" class="box" fill="#e8f5f9"/>
+  <text x="100" y="125" class="h">语言与标准库</text>
+  <text x="100" y="157" class="t">goroutine · channel · interface · slice · map · defer · 泛型</text>
+  <text x="780" y="145" class="small">目标：简单语义、组合优先、显式错误</text>
+
+  <rect x="70" y="225" width="510" height="130" class="box" fill="#eaf2ff"/>
+  <text x="100" y="262" class="h">编译器 cmd/compile</text>
+  <text x="100" y="294" class="t">语法/类型 → IR → SSA → 优化 → 机器码</text>
+  <text x="100" y="325" class="small">逃逸、内联、边界检查、写屏障插入</text>
+
+  <rect x="620" y="225" width="510" height="130" class="box" fill="#f4edff"/>
+  <text x="650" y="262" class="h">链接器 cmd/link</text>
+  <text x="650" y="294" class="t">符号解析 · 重定位 · 元数据 · 可执行文件</text>
+  <text x="650" y="325" class="small">打包 runtime、栈图、类型和 GC 元数据</text>
+
+  <rect x="70" y="390" width="1060" height="150" class="box" fill="#fff5df"/>
+  <text x="100" y="427" class="h">运行时 runtime</text>
+  <rect x="100" y="452" width="180" height="58" rx="10" fill="#fff" stroke="#d99b2b"/>
+  <rect x="300" y="452" width="180" height="58" rx="10" fill="#fff" stroke="#d99b2b"/>
+  <rect x="500" y="452" width="180" height="58" rx="10" fill="#fff" stroke="#d99b2b"/>
+  <rect x="700" y="452" width="180" height="58" rx="10" fill="#fff" stroke="#d99b2b"/>
+  <rect x="900" y="452" width="180" height="58" rx="10" fill="#fff" stroke="#d99b2b"/>
+  <text x="190" y="487" text-anchor="middle" class="t">GMP 调度</text>
+  <text x="390" y="487" text-anchor="middle" class="t">栈与逃逸</text>
+  <text x="590" y="487" text-anchor="middle" class="t">分配器与 GC</text>
+  <text x="790" y="487" text-anchor="middle" class="t">netpoll / timer</text>
+  <text x="990" y="487" text-anchor="middle" class="t">锁 / 信号 / cgo</text>
+
+  <rect x="70" y="580" width="1060" height="75" class="box" fill="#e9f7ed"/>
+  <text x="100" y="615" class="h">操作系统与硬件</text>
+  <text x="360" y="615" class="t">线程 · 虚拟内存 · epoll/kqueue/IOCP · futex · CPU Cache · 原子指令</text>
+
+  <path d="M600 195 L600 220" class="arrow"/>
+  <path d="M325 355 L325 385" class="arrow"/>
+  <path d="M875 355 L875 385" class="arrow"/>
+  <path d="M600 540 L600 575" class="arrow"/>
+</svg>

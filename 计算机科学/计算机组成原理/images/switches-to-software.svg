@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="650" viewBox="0 0 1160 650">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#eef2ff"/></linearGradient>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#64748b"/></marker>
+  </defs>
+  <rect width="1160" height="650" rx="24" fill="url(#g)"/>
+  <text x="580" y="48" text-anchor="middle" font-family="Microsoft YaHei" font-size="30" font-weight="700" fill="#0f172a">从开关到软件：复杂性来自逐层组合</text>
+  <g font-family="Microsoft YaHei">
+    <g fill="white" stroke-width="3">
+      <rect x="55" y="120" width="200" height="90" rx="15" stroke="#dc2626"/>
+      <rect x="335" y="120" width="200" height="90" rx="15" stroke="#d97706"/>
+      <rect x="625" y="120" width="200" height="90" rx="15" stroke="#0891b2"/>
+      <rect x="905" y="120" width="200" height="90" rx="15" stroke="#059669"/>
+      <rect x="195" y="340" width="220" height="90" rx="15" stroke="#4f46e5"/>
+      <rect x="475" y="340" width="220" height="90" rx="15" stroke="#2563eb"/>
+      <rect x="755" y="340" width="220" height="90" rx="15" stroke="#7c3aed"/>
+    </g>
+    <g text-anchor="middle" font-weight="700" font-size="21">
+      <text x="155" y="158" fill="#b91c1c">开关 / 晶体管</text><text x="155" y="187" font-size="15" font-weight="400" fill="#64748b">表示两种稳定状态</text>
+      <text x="435" y="158" fill="#b45309">逻辑门</text><text x="435" y="187" font-size="15" font-weight="400" fill="#64748b">AND、OR、NOT</text>
+      <text x="725" y="158" fill="#0e7490">加法器 / 锁存器</text><text x="725" y="187" font-size="15" font-weight="400" fill="#64748b">计算并记住一位信息</text>
+      <text x="1005" y="158" fill="#047857">寄存器 / 存储器</text><text x="1005" y="187" font-size="15" font-weight="400" fill="#64748b">保存数字、地址和指令</text>
+      <text x="305" y="378" fill="#4338ca">数据通路</text><text x="305" y="407" font-size="15" font-weight="400" fill="#64748b">搬运并加工数据</text>
+      <text x="585" y="378" fill="#1d4ed8">控制器与指令</text><text x="585" y="407" font-size="15" font-weight="400" fill="#64748b">决定每一步做什么</text>
+      <text x="865" y="378" fill="#6d28d9">程序与软件</text><text x="865" y="407" font-size="15" font-weight="400" fill="#64748b">组合指令解决问题</text>
+    </g>
+    <g stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#a)">
+      <path d="M255 165H326"/><path d="M535 165H616"/><path d="M825 165H896"/>
+      <path d="M1005 210V280H305V331"/><path d="M415 385H466"/><path d="M695 385H746"/>
+    </g>
+    <rect x="150" y="515" width="860" height="78" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="580" y="548" text-anchor="middle" font-size="19" font-weight="700" fill="#334155">每一层只依赖下一层提供的简单能力，并向上一层隐藏实现细节</text>
+    <text x="580" y="576" text-anchor="middle" font-size="16" fill="#64748b">计算机看似神秘，是因为我们通常只看到了最上面的软件</text>
+  </g>
+</svg>

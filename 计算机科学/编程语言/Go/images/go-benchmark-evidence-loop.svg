@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Go Benchmark 证据闭环</title>
+  <desc id="desc">从生产信号、提出假设、微基准、统计比较、场景压测到灰度验证的性能优化闭环。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef6ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity=".12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <style>
+      .title { font: 700 30px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #475569; }
+      .step { font: 700 19px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #0f172a; }
+      .body { font: 400 14px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #475569; }
+      .num { font: 700 17px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #fff; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="620" rx="24" fill="url(#bg)"/>
+  <text x="600" y="54" text-anchor="middle" class="title">Go Benchmark 证据闭环</text>
+  <text x="600" y="84" text-anchor="middle" class="subtitle">微基准负责隔离变量，系统验证负责证明业务收益</text>
+
+  <path d="M 220 210 C 270 135, 345 120, 410 155" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M 500 170 C 560 130, 640 130, 700 170" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M 790 155 C 875 120, 960 155, 985 230" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M 985 340 C 960 425, 875 465, 790 430" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M 700 445 C 640 485, 560 485, 500 445" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M 410 430 C 325 465, 240 425, 215 350" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="75" y="215" width="255" height="125" rx="18" fill="#fff" stroke="#bfdbfe" stroke-width="2"/>
+    <circle cx="105" cy="243" r="18" fill="#2563eb"/>
+    <text x="105" y="249" text-anchor="middle" class="num">1</text>
+    <text x="135" y="250" class="step">发现生产信号</text>
+    <text x="105" y="285" class="body">P99、CPU、分配、吞吐</text>
+    <text x="105" y="310" class="body">结合 Profile 确认热点占比</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="105" width="255" height="125" rx="18" fill="#fff" stroke="#bfdbfe" stroke-width="2"/>
+    <circle cx="380" cy="133" r="18" fill="#2563eb"/>
+    <text x="380" y="139" text-anchor="middle" class="num">2</text>
+    <text x="410" y="140" class="step">提出性能假设</text>
+    <text x="380" y="175" class="body">明确负载、变量和预期指标</text>
+    <text x="380" y="200" class="body">一次实验只改变一个主因素</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="625" y="105" width="255" height="125" rx="18" fill="#fff" stroke="#bfdbfe" stroke-width="2"/>
+    <circle cx="655" cy="133" r="18" fill="#2563eb"/>
+    <text x="655" y="139" text-anchor="middle" class="num">3</text>
+    <text x="685" y="140" class="step">编写微基准</text>
+    <text x="655" y="175" class="body">固定输入、环境和计时边界</text>
+    <text x="655" y="200" class="body">记录 ns/op、B/op、allocs/op</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="900" y="215" width="255" height="125" rx="18" fill="#fff" stroke="#bfdbfe" stroke-width="2"/>
+    <circle cx="930" cy="243" r="18" fill="#2563eb"/>
+    <text x="930" y="249" text-anchor="middle" class="num">4</text>
+    <text x="960" y="250" class="step">统计比较</text>
+    <text x="930" y="285" class="body">多轮采样与 benchstat</text>
+    <text x="930" y="310" class="body">区分随机波动与真实变化</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="625" y="390" width="255" height="125" rx="18" fill="#fff" stroke="#bfdbfe" stroke-width="2"/>
+    <circle cx="655" cy="418" r="18" fill="#2563eb"/>
+    <text x="655" y="424" text-anchor="middle" class="num">5</text>
+    <text x="685" y="425" class="step">场景压测</text>
+    <text x="655" y="460" class="body">验证吞吐、尾延迟和饱和度</text>
+    <text x="655" y="485" class="body">检查锁、I/O 与下游瓶颈</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="390" width="255" height="125" rx="18" fill="#fff" stroke="#bfdbfe" stroke-width="2"/>
+    <circle cx="380" cy="418" r="18" fill="#2563eb"/>
+    <text x="380" y="424" text-anchor="middle" class="num">6</text>
+    <text x="410" y="425" class="step">灰度与回归</text>
+    <text x="380" y="460" class="body">观察真实流量收益和副作用</text>
+    <text x="380" y="485" class="body">沉淀基线，持续防止退化</text>
+  </g>
+
+  <g>
+    <circle cx="602" cy="308" r="74" fill="#0f172a"/>
+    <text x="602" y="297" text-anchor="middle" style="font:700 22px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff">可信结论</text>
+    <text x="602" y="327" text-anchor="middle" style="font:400 14px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#cbd5e1">可重复 · 可解释</text>
+  </g>
+
+  <text x="600" y="579" text-anchor="middle" class="subtitle">任何一层证据缺失，都应限制结论的适用范围</text>
+</svg>

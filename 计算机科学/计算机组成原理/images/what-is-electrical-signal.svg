@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 18px "Microsoft YaHei",sans-serif;fill:#fff}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .a{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="650" rx="24" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="title">电信号：用电压的变化来传递消息</text>
+  <text x="600" y="76" text-anchor="middle" class="s">就像举旗和放旗可以表示不同命令，高低电压也可以表示 0 和 1</text>
+
+  <g transform="translate(55,120)">
+    <rect width="300" height="230" rx="18" fill="#c2410c"/>
+    <text x="150" y="36" text-anchor="middle" class="h">发送电路</text>
+    <rect x="25" y="62" width="250" height="105" rx="12" fill="#fff7ed"/>
+    <rect x="50" y="87" width="70" height="55" rx="8" fill="#fdba74" stroke="#c2410c" stroke-width="4"/>
+    <text x="85" y="120" text-anchor="middle" class="t">开关</text>
+    <path d="M120 114h65" stroke="#c2410c" stroke-width="5"/>
+    <circle cx="205" cy="114" r="24" fill="#facc15" stroke="#ca8a04" stroke-width="4"/>
+    <path d="M205 82v-14M205 160v-14M173 114h-14M251 114h-14" stroke="#ca8a04" stroke-width="4"/>
+    <text x="150" y="201" text-anchor="middle" class="h" font-size="15">按照消息改变输出电压</text>
+  </g>
+  <path d="M360 235h110" class="a"/>
+
+  <g transform="translate(480,120)">
+    <rect width="360" height="230" rx="18" fill="#2563eb"/>
+    <text x="180" y="36" text-anchor="middle" class="h">连接导线上的电压</text>
+    <rect x="25" y="62" width="310" height="105" rx="12" fill="#eff6ff"/>
+    <path d="M45 142V120H105V82H165V82H225V120H285V82H320" fill="none" stroke="#2563eb" stroke-width="6" stroke-linejoin="round"/>
+    <text x="75" y="158" text-anchor="middle" class="s">低=0</text>
+    <text x="135" y="75" text-anchor="middle" class="s">高=1</text>
+    <text x="195" y="75" text-anchor="middle" class="s">高=1</text>
+    <text x="255" y="158" text-anchor="middle" class="s">低=0</text>
+    <text x="302" y="75" text-anchor="middle" class="s">高=1</text>
+    <text x="180" y="201" text-anchor="middle" class="h" font-size="15">变化顺序携带消息：0 1 1 0 1</text>
+  </g>
+  <path d="M845 235h110" class="a"/>
+
+  <g transform="translate(965,120)">
+    <rect width="180" height="230" rx="18" fill="#0f766e"/>
+    <text x="90" y="36" text-anchor="middle" class="h">接收电路</text>
+    <rect x="22" y="62" width="136" height="105" rx="12" fill="#f0fdfa"/>
+    <text x="90" y="96" text-anchor="middle" class="t">判断电压</text>
+    <text x="90" y="123" text-anchor="middle" class="t">读出 0 和 1</text>
+    <text x="90" y="150" text-anchor="middle" class="t">再执行规则</text>
+    <text x="90" y="201" text-anchor="middle" class="h" font-size="15">读懂约定的消息</text>
+  </g>
+
+  <g transform="translate(95,405)">
+    <rect width="1010" height="155" rx="18" fill="#e2e8f0"/>
+    <text x="505" y="34" text-anchor="middle" class="t" font-weight="700">三个容易混淆的概念</text>
+    <g transform="translate(32,55)">
+      <rect width="290" height="72" rx="12" fill="#fff"/>
+      <text x="145" y="28" text-anchor="middle" class="t" font-weight="700">电压</text>
+      <text x="145" y="52" text-anchor="middle" class="s">两个位置之间的电学状态差别</text>
+    </g>
+    <g transform="translate(360,55)">
+      <rect width="290" height="72" rx="12" fill="#fff"/>
+      <text x="145" y="28" text-anchor="middle" class="t" font-weight="700">电流</text>
+      <text x="145" y="52" text-anchor="middle" class="s">电荷有方向移动的多少</text>
+    </g>
+    <g transform="translate(688,55)">
+      <rect width="290" height="72" rx="12" fill="#fff"/>
+      <text x="145" y="28" text-anchor="middle" class="t" font-weight="700">电信号</text>
+      <text x="145" y="52" text-anchor="middle" class="s">用电压或电流的变化携带消息</text>
+    </g>
+  </g>
+  <text x="600" y="610" text-anchor="middle" class="s">电信号不是神秘的新物质，而是电的状态按照时间发生了有意义的变化</text>
+</svg>

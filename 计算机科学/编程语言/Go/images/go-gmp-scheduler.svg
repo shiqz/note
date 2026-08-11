@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <style>
+      .title{font:700 30px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .h{font:700 19px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#29475f}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#4b667a}
+      .arrow{stroke:#54768c;stroke-width:2;fill:none;marker-end:url(#a)}
+      .dash{stroke:#54768c;stroke-width:2;stroke-dasharray:7 6;fill:none;marker-end:url(#a)}
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#54768c"/></marker>
+  </defs>
+  <rect width="1200" height="760" fill="#f8fbfd"/>
+  <text x="600" y="48" text-anchor="middle" class="title">GMP 调度：把海量 G 复用到少量 M</text>
+
+  <rect x="430" y="80" width="340" height="80" rx="15" fill="#edf2ff" stroke="#647dcc" stroke-width="2"/>
+  <text x="600" y="112" text-anchor="middle" class="h">全局运行队列</text>
+  <text x="600" y="141" text-anchor="middle" class="s">sched.runq：兜底、公平性、批量交换</text>
+
+  <g>
+    <rect x="55" y="215" width="330" height="300" rx="16" fill="#e7f6fb" stroke="#2f8ba8" stroke-width="2"/>
+    <text x="220" y="250" text-anchor="middle" class="h">P0：逻辑处理器</text>
+    <text x="80" y="282" class="s">本地 runq（容量 256）</text>
+    <rect x="80" y="298" width="55" height="45" rx="8" fill="#fff" stroke="#2f8ba8"/><text x="108" y="327" text-anchor="middle" class="t">G1</text>
+    <rect x="145" y="298" width="55" height="45" rx="8" fill="#fff" stroke="#2f8ba8"/><text x="173" y="327" text-anchor="middle" class="t">G2</text>
+    <rect x="210" y="298" width="55" height="45" rx="8" fill="#fff" stroke="#2f8ba8"/><text x="238" y="327" text-anchor="middle" class="t">G3</text>
+    <rect x="275" y="298" width="55" height="45" rx="8" fill="#fff" stroke="#2f8ba8"/><text x="303" y="327" text-anchor="middle" class="t">…</text>
+    <rect x="105" y="385" width="230" height="80" rx="12" fill="#fff4dc" stroke="#d99a26" stroke-width="2"/>
+    <text x="220" y="416" text-anchor="middle" class="h">M0：OS 线程</text>
+    <text x="220" y="445" text-anchor="middle" class="s">绑定 P0 后执行 Go 代码</text>
+  </g>
+
+  <g>
+    <rect x="815" y="215" width="330" height="300" rx="16" fill="#e7f6fb" stroke="#2f8ba8" stroke-width="2"/>
+    <text x="980" y="250" text-anchor="middle" class="h">P1：逻辑处理器</text>
+    <text x="840" y="282" class="s">本地 runq</text>
+    <rect x="840" y="298" width="55" height="45" rx="8" fill="#fff" stroke="#2f8ba8"/><text x="868" y="327" text-anchor="middle" class="t">G8</text>
+    <rect x="905" y="298" width="55" height="45" rx="8" fill="#fff" stroke="#2f8ba8"/><text x="933" y="327" text-anchor="middle" class="t">G9</text>
+    <rect x="970" y="298" width="55" height="45" rx="8" fill="#fff" stroke="#2f8ba8"/><text x="998" y="327" text-anchor="middle" class="t">…</text>
+    <rect x="865" y="385" width="230" height="80" rx="12" fill="#fff4dc" stroke="#d99a26" stroke-width="2"/>
+    <text x="980" y="416" text-anchor="middle" class="h">M1：OS 线程</text>
+    <text x="980" y="445" text-anchor="middle" class="s">绑定 P1 后执行 Go 代码</text>
+  </g>
+
+  <rect x="430" y="245" width="340" height="210" rx="16" fill="#f2ecff" stroke="#8167bd" stroke-width="2"/>
+  <text x="600" y="280" text-anchor="middle" class="h">findRunnable 查找顺序</text>
+  <text x="460" y="316" class="t">1. 本地 runnext / runq</text>
+  <text x="460" y="348" class="t">2. 周期性检查全局队列</text>
+  <text x="460" y="380" class="t">3. netpoll、timer、GC worker</text>
+  <text x="460" y="412" class="t">4. 从其他 P 偷取约一半 G</text>
+
+  <rect x="60" y="585" width="290" height="100" rx="14" fill="#eaf7ec" stroke="#4b9a62" stroke-width="2"/>
+  <text x="205" y="620" text-anchor="middle" class="h">阻塞 syscall</text>
+  <text x="205" y="650" text-anchor="middle" class="s">M 可阻塞，P 转交给其他 M</text>
+  <rect x="455" y="585" width="290" height="100" rx="14" fill="#eaf7ec" stroke="#4b9a62" stroke-width="2"/>
+  <text x="600" y="620" text-anchor="middle" class="h">netpoll / timer</text>
+  <text x="600" y="650" text-anchor="middle" class="s">I/O 就绪后把 G 变为 runnable</text>
+  <rect x="850" y="585" width="290" height="100" rx="14" fill="#eaf7ec" stroke="#4b9a62" stroke-width="2"/>
+  <text x="995" y="620" text-anchor="middle" class="h">sysmon / 抢占</text>
+  <text x="995" y="650" text-anchor="middle" class="s">监控长运行 G、syscall 与定时器</text>
+
+  <path d="M430 120 L385 215" class="arrow"/>
+  <path d="M770 120 L815 215" class="arrow"/>
+  <path d="M385 365 L430 365" class="dash"/>
+  <path d="M815 365 L770 365" class="dash"/>
+  <path d="M220 515 L205 580" class="arrow"/>
+  <path d="M600 455 L600 580" class="arrow"/>
+  <path d="M980 515 L995 580" class="arrow"/>
+  <text x="600" y="725" text-anchor="middle" class="s">GOMAXPROCS 决定 P 的数量；G 数量、M 数量与 P 数量是三个不同概念</text>
+</svg>

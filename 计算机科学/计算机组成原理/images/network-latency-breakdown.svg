@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 18px "Microsoft YaHei",sans-serif;fill:#fff}
+      .t{font:14px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .line{stroke:#64748b;stroke-width:2;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="22" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="title">一次网络传输的四类延迟</text>
+  <text x="600" y="76" text-anchor="middle" class="s">提高带宽主要降低发送延迟，无法突破由距离决定的传播下限</text>
+
+  <g transform="translate(45,125)">
+    <rect width="240" height="220" rx="17" fill="#2563eb"/>
+    <text x="120" y="35" text-anchor="middle" class="h">处理延迟</text>
+    <rect x="16" y="58" width="208" height="102" rx="10" fill="#eff6ff"/>
+    <text x="120" y="88" text-anchor="middle" class="t">解析头部、校验</text>
+    <text x="120" y="115" text-anchor="middle" class="t">查路由表、加解密</text>
+    <text x="120" y="142" text-anchor="middle" class="t">网卡与协议栈处理</text>
+    <text x="120" y="194" text-anchor="middle" class="h">取决于设备能力</text>
+  </g>
+  <line x1="290" y1="235" x2="325" y2="235" class="line"/>
+  <g transform="translate(335,125)">
+    <rect width="240" height="220" rx="17" fill="#7c3aed"/>
+    <text x="120" y="35" text-anchor="middle" class="h">排队延迟</text>
+    <rect x="16" y="58" width="208" height="102" rx="10" fill="#f5f3ff"/>
+    <rect x="38" y="88" width="30" height="30" fill="#a78bfa"/>
+    <rect x="76" y="88" width="30" height="30" fill="#8b5cf6"/>
+    <rect x="114" y="88" width="30" height="30" fill="#7c3aed"/>
+    <rect x="152" y="88" width="30" height="30" fill="#6d28d9"/>
+    <text x="120" y="147" text-anchor="middle" class="t">拥塞时波动最大</text>
+    <text x="120" y="194" text-anchor="middle" class="h">取决于当前负载</text>
+  </g>
+  <line x1="580" y1="235" x2="615" y2="235" class="line"/>
+  <g transform="translate(625,125)">
+    <rect width="240" height="220" rx="17" fill="#c2410c"/>
+    <text x="120" y="35" text-anchor="middle" class="h">发送延迟</text>
+    <rect x="16" y="58" width="208" height="102" rx="10" fill="#fff7ed"/>
+    <text x="120" y="99" text-anchor="middle" class="t">把整个包推入链路</text>
+    <text x="120" y="135" text-anchor="middle" class="h" fill="#9a3412">L / R</text>
+    <text x="120" y="194" text-anchor="middle" class="h">由包大小和带宽决定</text>
+  </g>
+  <line x1="870" y1="235" x2="905" y2="235" class="line"/>
+  <g transform="translate(915,125)">
+    <rect width="240" height="220" rx="17" fill="#0f766e"/>
+    <text x="120" y="35" text-anchor="middle" class="h">传播延迟</text>
+    <rect x="16" y="58" width="208" height="102" rx="10" fill="#f0fdfa"/>
+    <path d="M35 110c25-45 40 45 65 0s40 45 65 0 25 20 40 0" fill="none" stroke="#0f766e" stroke-width="4"/>
+    <text x="120" y="145" text-anchor="middle" class="h" fill="#115e59">D / V</text>
+    <text x="120" y="194" text-anchor="middle" class="h">由距离和介质决定</text>
+  </g>
+
+  <g transform="translate(160,400)">
+    <rect width="880" height="72" rx="14" fill="#e2e8f0"/>
+    <text x="440" y="29" text-anchor="middle" class="t">总延迟 = 处理延迟 + 排队延迟 + 发送延迟 + 传播延迟</text>
+    <text x="440" y="52" text-anchor="middle" class="s">光纤约每 1000 km 产生至少约 5 ms 单程传播时间，实际路径通常更长</text>
+  </g>
+</svg>

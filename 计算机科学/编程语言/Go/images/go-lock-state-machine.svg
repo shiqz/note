@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <style>
+      .title{font:700 29px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .h{font:700 19px "Microsoft YaHei",sans-serif;fill:#17324d}
+      .t{font:15px "Microsoft YaHei",sans-serif;fill:#29475f}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#4d687c}
+      .arrow{stroke:#55778d;stroke-width:2;fill:none;marker-end:url(#a)}
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#55778d"/></marker>
+  </defs>
+  <rect width="1200" height="650" fill="#f8fbfd"/>
+  <text x="600" y="45" text-anchor="middle" class="title">sync.Mutex：快路径、竞争与饥饿模式</text>
+
+  <rect x="60" y="95" width="235" height="100" rx="14" fill="#eaf7ec" stroke="#4b9a62" stroke-width="2"/>
+  <text x="178" y="132" text-anchor="middle" class="h">未加锁 state=0</text>
+  <text x="178" y="165" text-anchor="middle" class="s">CAS 0 → mutexLocked</text>
+
+  <rect x="480" y="95" width="235" height="100" rx="14" fill="#e7f6fb" stroke="#2d8ca9" stroke-width="2"/>
+  <text x="598" y="132" text-anchor="middle" class="h">普通模式</text>
+  <text x="598" y="165" text-anchor="middle" class="s">短暂自旋；新到者参与竞争</text>
+
+  <rect x="900" y="95" width="235" height="100" rx="14" fill="#feecec" stroke="#c95a5a" stroke-width="2"/>
+  <text x="1018" y="132" text-anchor="middle" class="h">饥饿模式</text>
+  <text x="1018" y="165" text-anchor="middle" class="s">直接把所有权交给队首等待者</text>
+
+  <path d="M295 145 L475 145" class="arrow"/>
+  <text x="385" y="128" text-anchor="middle" class="s">CAS 失败，进入慢路径</text>
+  <path d="M715 145 L895 145" class="arrow"/>
+  <text x="805" y="128" text-anchor="middle" class="s">等待超过约 1 ms</text>
+  <path d="M900 180 C830 255 760 250 700 190" class="arrow"/>
+  <text x="805" y="247" text-anchor="middle" class="s">队列将空或等待者等待不足 1 ms</text>
+
+  <rect x="60" y="310" width="1075" height="130" rx="16" fill="#fff5df" stroke="#d79a2b" stroke-width="2"/>
+  <text x="90" y="348" class="h">一个 int32 state 同时编码</text>
+  <rect x="90" y="370" width="210" height="45" rx="9" fill="#fff" stroke="#d79a2b"/>
+  <rect x="325" y="370" width="210" height="45" rx="9" fill="#fff" stroke="#d79a2b"/>
+  <rect x="560" y="370" width="210" height="45" rx="9" fill="#fff" stroke="#d79a2b"/>
+  <rect x="795" y="370" width="300" height="45" rx="9" fill="#fff" stroke="#d79a2b"/>
+  <text x="195" y="398" text-anchor="middle" class="t">bit 0：Locked</text>
+  <text x="430" y="398" text-anchor="middle" class="t">bit 1：Woken</text>
+  <text x="665" y="398" text-anchor="middle" class="t">bit 2：Starving</text>
+  <text x="945" y="398" text-anchor="middle" class="t">高位：等待者数量</text>
+
+  <rect x="60" y="495" width="330" height="95" rx="14" fill="#edf2ff" stroke="#637cca" stroke-width="2"/>
+  <text x="225" y="530" text-anchor="middle" class="h">用户态快路径</text>
+  <text x="225" y="559" text-anchor="middle" class="s">无竞争时只需原子操作</text>
+  <rect x="435" y="495" width="330" height="95" rx="14" fill="#edf2ff" stroke="#637cca" stroke-width="2"/>
+  <text x="600" y="530" text-anchor="middle" class="h">运行时信号量</text>
+  <text x="600" y="559" text-anchor="middle" class="s">semaRoot / treap 管理等待 G</text>
+  <rect x="810" y="495" width="325" height="95" rx="14" fill="#edf2ff" stroke="#637cca" stroke-width="2"/>
+  <text x="973" y="530" text-anchor="middle" class="h">停车与唤醒</text>
+  <text x="973" y="559" text-anchor="middle" class="s">gopark / goready，不等于总进内核</text>
+  <path d="M390 542 L430 542" class="arrow"/><path d="M765 542 L805 542" class="arrow"/>
+  <text x="600" y="625" text-anchor="middle" class="s">设计目标不是绝对 FIFO，而是在吞吐、缓存局部性和尾延迟之间动态折中</text>
+</svg>

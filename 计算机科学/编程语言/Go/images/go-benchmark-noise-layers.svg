@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Go Benchmark 实验噪声分层</title>
+  <desc id="desc">展示代码输入、Go 运行时、操作系统和硬件环境对基准结果的共同影响。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#f0fdfa"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity=".12"/>
+    </filter>
+    <style>
+      .title { font: 700 30px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #475569; }
+      .layer { font: 700 21px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #0f172a; }
+      .body { font: 400 15px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #334155; }
+      .tag { font: 600 14px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #fff; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="650" rx="24" fill="url(#bg)"/>
+  <text x="600" y="55" text-anchor="middle" class="title">Go Benchmark 实验噪声分层</text>
+  <text x="600" y="85" text-anchor="middle" class="subtitle">观察到的差异 = 代码变化 + 运行时变化 + 系统噪声 + 硬件波动</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="120" width="820" height="105" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+    <rect x="115" y="142" width="110" height="34" rx="17" fill="#2563eb"/>
+    <text x="170" y="165" text-anchor="middle" class="tag">代码与输入</text>
+    <text x="250" y="158" class="layer">待测变量应只存在于这一层</text>
+    <text x="250" y="192" class="body">算法、数据规模、命中率、计时边界、fixture、依赖版本、编译标签</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="130" y="245" width="820" height="105" rx="18" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="2"/>
+    <rect x="155" y="267" width="110" height="34" rx="17" fill="#0f766e"/>
+    <text x="210" y="290" text-anchor="middle" class="tag">Go 运行时</text>
+    <text x="290" y="283" class="layer">相同源码也可能因运行时状态变化</text>
+    <text x="290" y="317" class="body">Go 版本、GOMAXPROCS、GC 时机、调度、逃逸、内联、分配器缓存</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="170" y="370" width="820" height="105" rx="18" fill="#fef3c7" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="195" y="392" width="110" height="34" rx="17" fill="#b45309"/>
+    <text x="250" y="415" text-anchor="middle" class="tag">操作系统</text>
+    <text x="330" y="408" class="layer">共享资源会制造非业务波动</text>
+    <text x="330" y="442" class="body">进程调度、后台任务、页错误、NUMA、容器配额、CPU steal、I/O 队列</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="210" y="495" width="820" height="105" rx="18" fill="#fee2e2" stroke="#f87171" stroke-width="2"/>
+    <rect x="235" y="517" width="110" height="34" rx="17" fill="#b91c1c"/>
+    <text x="290" y="540" text-anchor="middle" class="tag">硬件环境</text>
+    <text x="370" y="533" class="layer">底层波动决定可检测差异的下限</text>
+    <text x="370" y="567" class="body">CPU 型号、睿频、温度降频、缓存、内存带宽、微码、电源模式</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="970" y="145" width="165" height="390" rx="24" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="1052" y="190" text-anchor="middle" class="layer">控制原则</text>
+    <line x1="995" y1="210" x2="1110" y2="210" stroke="#cbd5e1"/>
+    <circle cx="1006" cy="244" r="6" fill="#2563eb"/>
+    <text x="1022" y="250" class="body">固定环境</text>
+    <circle cx="1006" cy="292" r="6" fill="#0f766e"/>
+    <text x="1022" y="298" class="body">多轮采样</text>
+    <circle cx="1006" cy="340" r="6" fill="#b45309"/>
+    <text x="1022" y="346" class="body">交错对比</text>
+    <circle cx="1006" cy="388" r="6" fill="#b91c1c"/>
+    <text x="1022" y="394" class="body">记录元数据</text>
+    <circle cx="1006" cy="436" r="6" fill="#7c3aed"/>
+    <text x="1022" y="442" class="body">量化噪声</text>
+    <circle cx="1006" cy="484" r="6" fill="#0f172a"/>
+    <text x="1022" y="490" class="body">统计判断</text>
+  </g>
+</svg>

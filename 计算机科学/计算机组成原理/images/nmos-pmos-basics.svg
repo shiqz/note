@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <style>
+    .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+    .h{font:700 20px "Microsoft YaHei",sans-serif;fill:#fff}
+    .t{font:15px "Microsoft YaHei",sans-serif;fill:#334155}
+    .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+    .on{font:700 18px "Microsoft YaHei",sans-serif;fill:#15803d}
+    .off{font:700 18px "Microsoft YaHei",sans-serif;fill:#b91c1c}
+  </style>
+  <rect width="1200" height="650" rx="24" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="title">NMOS 与 PMOS：一对互补开关</text>
+  <text x="600" y="76" text-anchor="middle" class="s">以下是数字电路入门用的简化规律，真实导通由端子之间的电压关系决定</text>
+
+  <g transform="translate(45,120)">
+    <rect width="530" height="430" rx="20" fill="#2563eb"/>
+    <text x="265" y="38" text-anchor="middle" class="h">NMOS：输入高时容易打开</text>
+    <g transform="translate(25,70)">
+      <rect width="225" height="280" rx="14" fill="#eff6ff"/>
+      <text x="112" y="32" text-anchor="middle" class="off">输入 0：关闭</text>
+      <rect x="35" y="180" width="155" height="30" rx="6" fill="#93c5fd"/>
+      <rect x="35" y="145" width="48" height="65" fill="#1d4ed8"/>
+      <rect x="142" y="145" width="48" height="65" fill="#1d4ed8"/>
+      <rect x="89" y="78" width="48" height="20" rx="4" fill="#60a5fa"/>
+      <rect x="86" y="101" width="54" height="12" fill="#fef3c7"/>
+      <text x="112" y="66" text-anchor="middle" class="t">栅极低</text>
+      <line x1="83" y1="161" x2="142" y2="161" stroke="#ef4444" stroke-width="5" stroke-dasharray="8 7"/>
+      <text x="112" y="239" text-anchor="middle" class="t">没有连续沟道</text>
+      <text x="112" y="262" text-anchor="middle" class="t">不容易导电</text>
+    </g>
+    <g transform="translate(280,70)">
+      <rect width="225" height="280" rx="14" fill="#eff6ff"/>
+      <text x="112" y="32" text-anchor="middle" class="on">输入 1：打开</text>
+      <rect x="35" y="180" width="155" height="30" rx="6" fill="#93c5fd"/>
+      <rect x="35" y="145" width="48" height="65" fill="#1d4ed8"/>
+      <rect x="142" y="145" width="48" height="65" fill="#1d4ed8"/>
+      <rect x="89" y="78" width="48" height="20" rx="4" fill="#2563eb"/>
+      <rect x="86" y="101" width="54" height="12" fill="#fef3c7"/>
+      <text x="112" y="66" text-anchor="middle" class="t">栅极高</text>
+      <rect x="77" y="150" width="71" height="22" rx="10" fill="#22c55e"/>
+      <text x="112" y="239" text-anchor="middle" class="t">形成导电沟道</text>
+      <text x="112" y="262" text-anchor="middle" class="t">源漏之间容易导电</text>
+    </g>
+    <text x="265" y="393" text-anchor="middle" class="h" font-size="15">常用于把输出连接到低电压 GND</text>
+  </g>
+
+  <g transform="translate(625,120)">
+    <rect width="530" height="430" rx="20" fill="#c026d3"/>
+    <text x="265" y="38" text-anchor="middle" class="h">PMOS：输入低时容易打开</text>
+    <g transform="translate(25,70)">
+      <rect width="225" height="280" rx="14" fill="#fdf4ff"/>
+      <text x="112" y="32" text-anchor="middle" class="on">输入 0：打开</text>
+      <rect x="35" y="180" width="155" height="30" rx="6" fill="#f0abfc"/>
+      <rect x="35" y="145" width="48" height="65" fill="#a21caf"/>
+      <rect x="142" y="145" width="48" height="65" fill="#a21caf"/>
+      <rect x="89" y="78" width="48" height="20" rx="4" fill="#e879f9"/>
+      <circle cx="112" cy="106" r="8" fill="#fff" stroke="#a21caf" stroke-width="3"/>
+      <text x="112" y="66" text-anchor="middle" class="t">栅极低</text>
+      <rect x="77" y="150" width="71" height="22" rx="10" fill="#22c55e"/>
+      <text x="112" y="239" text-anchor="middle" class="t">形成导电通路</text>
+      <text x="112" y="262" text-anchor="middle" class="t">源漏之间容易导电</text>
+    </g>
+    <g transform="translate(280,70)">
+      <rect width="225" height="280" rx="14" fill="#fdf4ff"/>
+      <text x="112" y="32" text-anchor="middle" class="off">输入 1：关闭</text>
+      <rect x="35" y="180" width="155" height="30" rx="6" fill="#f0abfc"/>
+      <rect x="35" y="145" width="48" height="65" fill="#a21caf"/>
+      <rect x="142" y="145" width="48" height="65" fill="#a21caf"/>
+      <rect x="89" y="78" width="48" height="20" rx="4" fill="#a21caf"/>
+      <circle cx="112" cy="106" r="8" fill="#fff" stroke="#a21caf" stroke-width="3"/>
+      <text x="112" y="66" text-anchor="middle" class="t">栅极高</text>
+      <line x1="83" y1="161" x2="142" y2="161" stroke="#ef4444" stroke-width="5" stroke-dasharray="8 7"/>
+      <text x="112" y="239" text-anchor="middle" class="t">通路断开</text>
+      <text x="112" y="262" text-anchor="middle" class="t">不容易导电</text>
+    </g>
+    <text x="265" y="393" text-anchor="middle" class="h" font-size="15">常用于把输出连接到高电压 VDD</text>
+  </g>
+
+  <rect x="165" y="585" width="870" height="42" rx="11" fill="#e2e8f0"/>
+  <text x="600" y="611" text-anchor="middle" class="t">CMOS 把 NMOS 与 PMOS 互补组合：一个负责拉低，一个负责拉高</text>
+</svg>

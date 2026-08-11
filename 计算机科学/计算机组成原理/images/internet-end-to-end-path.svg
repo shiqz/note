@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="700" viewBox="0 0 1300 700">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e0f2fe"/><stop offset="1" stop-color="#bae6fd"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#0369a1"/></marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 17px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .t{font:14px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .path{stroke:#0369a1;stroke-width:5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1300" height="700" rx="22" fill="#f8fafc"/>
+  <text x="650" y="48" text-anchor="middle" class="title">一次跨地域网站访问经过的真实路径</text>
+  <text x="650" y="76" text-anchor="middle" class="s">每一跳只需知道下一跳；端系统负责完整协议语义</text>
+
+  <path d="M0 390 Q180 320 350 390T700 385T1030 390T1300 370V560H0Z" fill="url(#sea)"/>
+  <path d="M350 430 Q650 520 980 430" stroke="#075985" stroke-width="8" fill="none"/>
+  <text x="665" y="515" text-anchor="middle" class="h" fill="#075985">海底光缆：多波长并行传输</text>
+
+  <g transform="translate(55,165)">
+    <rect width="150" height="150" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+    <rect x="33" y="26" width="84" height="58" rx="6" fill="#fff" stroke="#2563eb" stroke-width="4"/>
+    <path d="M75 84v20M48 104h54" stroke="#2563eb" stroke-width="5"/>
+    <text x="75" y="130" text-anchor="middle" class="h">用户计算机</text>
+  </g>
+  <path d="M210 240h75" class="path"/>
+
+  <g transform="translate(295,180)">
+    <circle cx="65" cy="60" r="55" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/>
+    <path d="M35 60h60M65 30v60" stroke="#0f766e" stroke-width="5"/>
+    <text x="65" y="135" text-anchor="middle" class="h">家庭网关</text>
+    <text x="65" y="158" text-anchor="middle" class="s">Wi-Fi / Ethernet</text>
+  </g>
+  <path d="M425 240h80" class="path"/>
+
+  <g transform="translate(515,160)">
+    <rect width="160" height="160" rx="20" fill="#fef3c7" stroke="#d97706" stroke-width="4"/>
+    <path d="M25 48h110M25 80h110M25 112h110" stroke="#d97706" stroke-width="7"/>
+    <circle cx="44" cy="48" r="7" fill="#fff"/><circle cx="44" cy="80" r="7" fill="#fff"/><circle cx="44" cy="112" r="7" fill="#fff"/>
+    <text x="80" y="145" text-anchor="middle" class="h">本地运营商</text>
+  </g>
+  <path d="M680 240h80" class="path"/>
+
+  <g transform="translate(770,160)">
+    <rect width="160" height="160" rx="20" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/>
+    <circle cx="80" cy="73" r="45" fill="#fff" stroke="#7c3aed" stroke-width="4"/>
+    <path d="M43 73h74M80 28c-24 24-24 66 0 90M80 28c24 24 24 66 0 90" fill="none" stroke="#7c3aed" stroke-width="3"/>
+    <text x="80" y="145" text-anchor="middle" class="h">骨干网 / IXP</text>
+  </g>
+  <path d="M935 240h80" class="path"/>
+
+  <g transform="translate(1025,145)">
+    <rect width="220" height="190" rx="20" fill="#ffe4e6" stroke="#be123c" stroke-width="4"/>
+    <rect x="30" y="25" width="160" height="35" rx="6" fill="#fff"/>
+    <rect x="30" y="70" width="160" height="35" rx="6" fill="#fff"/>
+    <rect x="30" y="115" width="160" height="35" rx="6" fill="#fff"/>
+    <circle cx="49" cy="42" r="5" fill="#22c55e"/><circle cx="49" cy="87" r="5" fill="#22c55e"/><circle cx="49" cy="132" r="5" fill="#22c55e"/>
+    <text x="110" y="177" text-anchor="middle" class="h">CDN / 数据中心</text>
+  </g>
+
+  <g transform="translate(75,580)">
+    <rect width="1150" height="75" rx="14" fill="#e2e8f0"/>
+    <text x="575" y="28" text-anchor="middle" class="t">主要耗时：DNS + 连接/TLS 握手 + 传播 + 排队 + 服务器处理 + 内容下载 + 浏览器渲染</text>
+    <text x="575" y="52" text-anchor="middle" class="s">CDN 的关键价值不是让光变快，而是把数据副本放到更靠近用户的位置</text>
+  </g>
+</svg>

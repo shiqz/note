@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Microsoft YaHei",sans-serif;fill:#0f172a}
+      .h{font:700 18px "Microsoft YaHei",sans-serif;fill:#fff}
+      .t{font:14px "Microsoft YaHei",sans-serif;fill:#334155}
+      .s{font:13px "Microsoft YaHei",sans-serif;fill:#64748b}
+      .a{stroke:#64748b;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="560" rx="24" fill="#f8fafc"/>
+  <text x="600" y="50" text-anchor="middle" class="title">一只小开关，怎样一步步组成计算机</text>
+  <text x="600" y="78" text-anchor="middle" class="s">每一层把下一层的简单部件组合成更强大的功能</text>
+
+  <g transform="translate(40,135)">
+    <rect width="180" height="230" rx="18" fill="#0f766e"/>
+    <text x="90" y="34" text-anchor="middle" class="h">1. 晶体管</text>
+    <rect x="18" y="55" width="144" height="105" rx="12" fill="#f0fdfa"/>
+    <line x1="40" y1="120" x2="140" y2="120" stroke="#0f766e" stroke-width="7"/>
+    <line x1="89" y1="75" x2="89" y2="105" stroke="#0f766e" stroke-width="6"/>
+    <line x1="104" y1="76" x2="104" y2="106" stroke="#0f766e" stroke-width="6"/>
+    <text x="90" y="190" text-anchor="middle" class="h" font-size="15">用电压控制通断</text>
+    <text x="90" y="215" text-anchor="middle" class="h" font-size="14">像超小电子开关</text>
+  </g>
+  <path d="M225 250h45" class="a"/>
+  <g transform="translate(280,135)">
+    <rect width="180" height="230" rx="18" fill="#2563eb"/>
+    <text x="90" y="34" text-anchor="middle" class="h">2. 逻辑门</text>
+    <rect x="18" y="55" width="144" height="105" rx="12" fill="#eff6ff"/>
+    <path d="M45 78h38c38 0 55 21 55 30s-17 30-55 30H45z" fill="#93c5fd" stroke="#1d4ed8" stroke-width="4"/>
+    <line x1="25" y1="92" x2="45" y2="92" stroke="#1d4ed8" stroke-width="4"/>
+    <line x1="25" y1="124" x2="45" y2="124" stroke="#1d4ed8" stroke-width="4"/>
+    <line x1="138" y1="108" x2="158" y2="108" stroke="#1d4ed8" stroke-width="4"/>
+    <text x="90" y="190" text-anchor="middle" class="h" font-size="15">处理 0 和 1</text>
+    <text x="90" y="215" text-anchor="middle" class="h" font-size="14">NOT / AND / OR</text>
+  </g>
+  <path d="M465 250h45" class="a"/>
+  <g transform="translate(520,135)">
+    <rect width="180" height="230" rx="18" fill="#7c3aed"/>
+    <text x="90" y="34" text-anchor="middle" class="h">3. 功能电路</text>
+    <rect x="18" y="55" width="144" height="105" rx="12" fill="#f5f3ff"/>
+    <rect x="43" y="73" width="94" height="68" rx="8" fill="#c4b5fd" stroke="#6d28d9" stroke-width="4"/>
+    <text x="90" y="101" text-anchor="middle" class="t" font-weight="700">加法器</text>
+    <text x="90" y="126" text-anchor="middle" class="t">寄存器</text>
+    <text x="90" y="190" text-anchor="middle" class="h" font-size="15">会计算、会记忆</text>
+    <text x="90" y="215" text-anchor="middle" class="h" font-size="14">会选择下一步</text>
+  </g>
+  <path d="M705 250h45" class="a"/>
+  <g transform="translate(760,135)">
+    <rect width="180" height="230" rx="18" fill="#c2410c"/>
+    <text x="90" y="34" text-anchor="middle" class="h">4. CPU</text>
+    <rect x="18" y="55" width="144" height="105" rx="12" fill="#fff7ed"/>
+    <rect x="48" y="72" width="84" height="72" rx="8" fill="#fdba74" stroke="#c2410c" stroke-width="4"/>
+    <path d="M48 82H30M48 100H30M48 118H30M48 136H30M132 82h18M132 100h18M132 118h18M132 136h18" stroke="#c2410c" stroke-width="4"/>
+    <text x="90" y="115" text-anchor="middle" class="t" font-weight="700">CPU</text>
+    <text x="90" y="190" text-anchor="middle" class="h" font-size="15">执行机器指令</text>
+    <text x="90" y="215" text-anchor="middle" class="h" font-size="14">协调各种部件</text>
+  </g>
+  <path d="M945 250h45" class="a"/>
+  <g transform="translate(1000,135)">
+    <rect width="160" height="230" rx="18" fill="#be123c"/>
+    <text x="80" y="34" text-anchor="middle" class="h">5. 计算机</text>
+    <rect x="18" y="55" width="124" height="105" rx="12" fill="#fff1f2"/>
+    <rect x="37" y="72" width="86" height="57" rx="5" fill="#fecdd3" stroke="#be123c" stroke-width="4"/>
+    <path d="M80 129v15M56 144h48" stroke="#be123c" stroke-width="4"/>
+    <text x="80" y="190" text-anchor="middle" class="h" font-size="15">运行程序</text>
+    <text x="80" y="215" text-anchor="middle" class="h" font-size="14">处理文字和图像</text>
+  </g>
+
+  <rect x="160" y="420" width="880" height="76" rx="14" fill="#e2e8f0"/>
+  <text x="600" y="450" text-anchor="middle" class="t">单个晶体管并不聪明，强大来自海量晶体管按照精确规则连接并同时工作</text>
+  <text x="600" y="476" text-anchor="middle" class="s">简单开关 → 逻辑规则 → 计算与记忆 → 执行程序</text>
+</svg>

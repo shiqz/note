@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef6f8"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#287f8e"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#173b45" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="560" rx="24" fill="url(#bg)"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="700" fill="#173b45">Go 性能优化：以证据驱动的闭环</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#52717a">先定义目标，再定位瓶颈；一次只改变一个关键变量</text>
+
+  <g fill="none" stroke="#287f8e" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M310 190 C355 145, 390 135, 444 138"/>
+    <path d="M665 138 C724 141, 762 161, 792 201"/>
+    <path d="M883 292 C878 349, 848 382, 805 409"/>
+    <path d="M676 446 C610 475, 546 476, 484 449"/>
+    <path d="M350 405 C303 375, 285 342, 278 291"/>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Microsoft YaHei, sans-serif">
+    <g>
+      <rect x="120" y="170" width="230" height="120" rx="16" fill="#ffffff" stroke="#65b8c4" stroke-width="2"/>
+      <circle cx="158" cy="207" r="22" fill="#d9f1f4"/>
+      <text x="158" y="214" text-anchor="middle" font-size="20" font-weight="700" fill="#287f8e">1</text>
+      <text x="193" y="207" font-size="20" font-weight="700" fill="#173b45">定义目标</text>
+      <text x="145" y="244" font-size="15" fill="#52717a">吞吐、P99、CPU、内存</text>
+      <text x="145" y="268" font-size="15" fill="#52717a">明确负载与可接受边界</text>
+    </g>
+    <g>
+      <rect x="435" y="105" width="230" height="120" rx="16" fill="#ffffff" stroke="#65b8c4" stroke-width="2"/>
+      <circle cx="473" cy="142" r="22" fill="#d9f1f4"/>
+      <text x="473" y="149" text-anchor="middle" font-size="20" font-weight="700" fill="#287f8e">2</text>
+      <text x="508" y="142" font-size="20" font-weight="700" fill="#173b45">建立基线</text>
+      <text x="460" y="179" font-size="15" fill="#52717a">Benchmark + benchstat</text>
+      <text x="460" y="203" font-size="15" fill="#52717a">固定环境，重复采样</text>
+    </g>
+    <g>
+      <rect x="790" y="190" width="230" height="120" rx="16" fill="#ffffff" stroke="#65b8c4" stroke-width="2"/>
+      <circle cx="828" cy="227" r="22" fill="#d9f1f4"/>
+      <text x="828" y="234" text-anchor="middle" font-size="20" font-weight="700" fill="#287f8e">3</text>
+      <text x="863" y="227" font-size="20" font-weight="700" fill="#173b45">采集证据</text>
+      <text x="815" y="264" font-size="15" fill="#52717a">pprof、trace、metrics</text>
+      <text x="815" y="288" font-size="15" fill="#52717a">找到资源消耗归属</text>
+    </g>
+    <g>
+      <rect x="680" y="390" width="230" height="120" rx="16" fill="#ffffff" stroke="#65b8c4" stroke-width="2"/>
+      <circle cx="718" cy="427" r="22" fill="#d9f1f4"/>
+      <text x="718" y="434" text-anchor="middle" font-size="20" font-weight="700" fill="#287f8e">4</text>
+      <text x="753" y="427" font-size="20" font-weight="700" fill="#173b45">实施优化</text>
+      <text x="705" y="464" font-size="15" fill="#52717a">优先算法、分配和阻塞</text>
+      <text x="705" y="488" font-size="15" fill="#52717a">控制改动范围与风险</text>
+    </g>
+    <g>
+      <rect x="245" y="390" width="240" height="120" rx="16" fill="#ffffff" stroke="#65b8c4" stroke-width="2"/>
+      <circle cx="283" cy="427" r="22" fill="#d9f1f4"/>
+      <text x="283" y="434" text-anchor="middle" font-size="20" font-weight="700" fill="#287f8e">5</text>
+      <text x="318" y="427" font-size="20" font-weight="700" fill="#173b45">验证与回归</text>
+      <text x="270" y="464" font-size="15" fill="#52717a">比较置信区间与业务指标</text>
+      <text x="270" y="488" font-size="15" fill="#52717a">压测、灰度、持续监控</text>
+    </g>
+  </g>
+
+  <circle cx="575" cy="296" r="77" fill="#173b45"/>
+  <text x="575" y="286" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#ffffff">性能不是猜测</text>
+  <text x="575" y="318" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="#81d4df">而是可验证的假设</text>
+</svg>
