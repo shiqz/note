@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .arrow{stroke:#526c80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#526c80"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#fff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">存储层次：用局部性制造“又大又快”的近似</text>
+
+  <polygon points="600,80 515,155 685,155" fill="#d9ecfa" stroke="#3f82ae" stroke-width="2"/>
+  <text x="600" y="130" text-anchor="middle" class="label">寄存器</text>
+  <polygon points="515,170 445,245 755,245 685,170" fill="#e3f2fb" stroke="#3f82ae" stroke-width="2"/>
+  <text x="600" y="215" text-anchor="middle" class="label">L1 Cache</text>
+  <polygon points="445,260 380,335 820,335 755,260" fill="#eaf6fc" stroke="#3f82ae" stroke-width="2"/>
+  <text x="600" y="305" text-anchor="middle" class="label">L2 / L3 Cache</text>
+  <polygon points="380,350 300,435 900,435 820,350" fill="#fff3df" stroke="#d68a29" stroke-width="2"/>
+  <text x="600" y="399" text-anchor="middle" class="label">主存 DRAM</text>
+  <polygon points="300,450 200,545 1000,545 900,450" fill="#f1edfb" stroke="#7252aa" stroke-width="2"/>
+  <text x="600" y="505" text-anchor="middle" class="label">SSD / HDD / 远程存储</text>
+
+  <text x="95" y="125" class="label">越向上</text>
+  <text x="95" y="156" class="text">容量更小</text>
+  <text x="95" y="181" class="text">单位成本更高</text>
+  <text x="95" y="206" class="text">速度更快</text>
+  <path d="M160 240 V95" class="arrow"/>
+
+  <text x="940" y="125" class="label">越向下</text>
+  <text x="940" y="156" class="text">容量更大</text>
+  <text x="940" y="181" class="text">单位成本更低</text>
+  <text x="940" y="206" class="text">延迟更高</text>
+  <path d="M1020 95 V240" class="arrow"/>
+
+  <rect x="95" y="590" width="470" height="92" fill="#edf8ef" stroke="#4b9560" stroke-width="2" rx="12"/>
+  <text x="330" y="623" text-anchor="middle" class="label">时间局部性</text>
+  <text x="330" y="652" text-anchor="middle" class="text">刚访问过的数据和指令，短时间内可能再次访问</text>
+
+  <rect x="635" y="590" width="470" height="92" fill="#edf8ef" stroke="#4b9560" stroke-width="2" rx="12"/>
+  <text x="870" y="623" text-anchor="middle" class="label">空间局部性</text>
+  <text x="870" y="652" text-anchor="middle" class="text">访问一个地址后，附近地址很可能随后被访问</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .p1{fill:#edf7fd;stroke:#3f82ae;stroke-width:2;rx:12}
+      .p2{fill:#edf8ef;stroke:#4b9560;stroke-width:2;rx:12}
+      .kernel{fill:#fff3df;stroke:#d68a29;stroke-width:2;rx:12}
+      .arrow{stroke:#526c80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#b7584d;stroke-width:2.3;stroke-dasharray:7 5;fill:none;marker-end:url(#red)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#526c80"/></marker>
+    <marker id="red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#b7584d"/></marker>
+  </defs>
+  <rect width="1200" height="700" fill="#fff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">进程上下文切换：CPU 执行权如何转移</text>
+
+  <rect x="65" y="90" width="280" height="145" class="p1"/>
+  <text x="205" y="125" text-anchor="middle" class="label">进程 A 正在用户态运行</text>
+  <text x="205" y="157" text-anchor="middle" class="text">PC、SP、通用寄存器</text>
+  <text x="205" y="183" text-anchor="middle" class="text">A 的页表、用户栈、地址空间</text>
+  <text x="205" y="209" text-anchor="middle" class="text">缓存与 TLB 中存在 A 的工作集</text>
+
+  <rect x="460" y="80" width="280" height="165" class="kernel"/>
+  <text x="600" y="115" text-anchor="middle" class="label">陷入内核</text>
+  <text x="600" y="147" text-anchor="middle" class="text">时间片到期、阻塞或更高优先级任务</text>
+  <text x="600" y="173" text-anchor="middle" class="text">保存 A 的寄存器到内核栈 / PCB</text>
+  <text x="600" y="199" text-anchor="middle" class="text">更新 A 状态并进入调度器</text>
+  <text x="600" y="225" text-anchor="middle" class="text">从可运行队列选择 B</text>
+
+  <rect x="855" y="90" width="280" height="145" class="p2"/>
+  <text x="995" y="125" text-anchor="middle" class="label">恢复进程 B</text>
+  <text x="995" y="157" text-anchor="middle" class="text">切换地址空间与内核栈</text>
+  <text x="995" y="183" text-anchor="middle" class="text">恢复 B 的寄存器和 PC</text>
+  <text x="995" y="209" text-anchor="middle" class="text">返回用户态继续执行 B</text>
+
+  <path d="M345 162 H457" class="arrow"/><path d="M740 162 H852" class="arrow"/>
+
+  <rect x="80" y="345" width="300" height="140" class="p1"/>
+  <text x="230" y="380" text-anchor="middle" class="label">A 的内核记录</text>
+  <text x="230" y="412" text-anchor="middle" class="text">进程状态、调度实体、凭据</text>
+  <text x="230" y="438" text-anchor="middle" class="text">页表根、信号、文件描述符表</text>
+  <text x="230" y="464" text-anchor="middle" class="text">线程寄存器快照与内核栈</text>
+
+  <rect x="820" y="345" width="300" height="140" class="p2"/>
+  <text x="970" y="380" text-anchor="middle" class="label">B 的内核记录</text>
+  <text x="970" y="412" text-anchor="middle" class="text">进程状态、调度实体、凭据</text>
+  <text x="970" y="438" text-anchor="middle" class="text">页表根、信号、文件描述符表</text>
+  <text x="970" y="464" text-anchor="middle" class="text">线程寄存器快照与内核栈</text>
+
+  <path d="M520 245 V290 H230 V342" class="dash"/>
+  <path d="M680 245 V290 H970 V342" class="arrow"/>
+
+  <rect x="220" y="570" width="760" height="85" fill="#f8fafc" stroke="#a8b7c3" rx="12"/>
+  <text x="600" y="602" text-anchor="middle" class="label">隐藏成本</text>
+  <text x="600" y="630" text-anchor="middle" class="text">除保存寄存器外，切换还可能破坏缓存、TLB、分支预测与 NUMA 局部性；频繁切换会降低有效吞吐。</text>
+</svg>

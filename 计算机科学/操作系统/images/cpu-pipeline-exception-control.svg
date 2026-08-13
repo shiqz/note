@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .stage{fill:#edf7fd;stroke:#4082ad;stroke-width:2;rx:12}
+      .event{fill:#fff2df;stroke:#d58827;stroke-width:2;rx:12}
+      .kernel{fill:#f1edfb;stroke:#7252aa;stroke-width:2;rx:12}
+      .arrow{stroke:#526c80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .red{stroke:#b7584d;stroke-width:2.3;stroke-dasharray:7 5;fill:none;marker-end:url(#red)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#526c80"/></marker>
+    <marker id="red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#b7584d"/></marker>
+  </defs>
+  <rect width="1200" height="700" fill="#fff"/>
+  <text x="600" y="45" text-anchor="middle" class="title">CPU 正常控制流与异常控制流</text>
+
+  <rect x="45" y="95" width="160" height="105" class="stage"/>
+  <text x="125" y="128" text-anchor="middle" class="label">取指</text>
+  <text x="125" y="158" text-anchor="middle" class="text">PC 指向指令</text>
+  <text x="125" y="182" text-anchor="middle" class="text">访问 I-Cache</text>
+  <rect x="235" y="95" width="160" height="105" class="stage"/>
+  <text x="315" y="128" text-anchor="middle" class="label">译码</text>
+  <text x="315" y="158" text-anchor="middle" class="text">指令变成微操作</text>
+  <text x="315" y="182" text-anchor="middle" class="text">识别依赖关系</text>
+  <rect x="425" y="95" width="160" height="105" class="stage"/>
+  <text x="505" y="128" text-anchor="middle" class="label">调度</text>
+  <text x="505" y="158" text-anchor="middle" class="text">寄存器重命名</text>
+  <text x="505" y="182" text-anchor="middle" class="text">乱序选择就绪项</text>
+  <rect x="615" y="95" width="160" height="105" class="stage"/>
+  <text x="695" y="128" text-anchor="middle" class="label">执行</text>
+  <text x="695" y="158" text-anchor="middle" class="text">ALU / FPU / 访存</text>
+  <text x="695" y="182" text-anchor="middle" class="text">推测路径可先运行</text>
+  <rect x="805" y="95" width="160" height="105" class="stage"/>
+  <text x="885" y="128" text-anchor="middle" class="label">提交</text>
+  <text x="885" y="158" text-anchor="middle" class="text">按程序顺序退休</text>
+  <text x="885" y="182" text-anchor="middle" class="text">维持精确状态</text>
+  <rect x="995" y="95" width="160" height="105" class="stage"/>
+  <text x="1075" y="128" text-anchor="middle" class="label">下一条 PC</text>
+  <text x="1075" y="158" text-anchor="middle" class="text">顺序、跳转或返回</text>
+  <text x="1075" y="182" text-anchor="middle" class="text">分支预测提供候选</text>
+  <path d="M205 147 H232" class="arrow"/><path d="M395 147 H422" class="arrow"/>
+  <path d="M585 147 H612" class="arrow"/><path d="M775 147 H802" class="arrow"/>
+  <path d="M965 147 H992" class="arrow"/>
+
+  <rect x="75" y="315" width="235" height="130" class="event"/>
+  <text x="192" y="350" text-anchor="middle" class="label">同步异常</text>
+  <text x="192" y="381" text-anchor="middle" class="text">缺页、除零、非法指令</text>
+  <text x="192" y="407" text-anchor="middle" class="text">由当前指令直接触发</text>
+  <text x="192" y="431" text-anchor="middle" class="text">可修复、重试或终止</text>
+
+  <rect x="345" y="315" width="235" height="130" class="event"/>
+  <text x="462" y="350" text-anchor="middle" class="label">系统调用</text>
+  <text x="462" y="381" text-anchor="middle" class="text">软件主动执行陷入指令</text>
+  <text x="462" y="407" text-anchor="middle" class="text">请求文件、网络、进程服务</text>
+  <text x="462" y="431" text-anchor="middle" class="text">用户态切换到内核态</text>
+
+  <rect x="615" y="315" width="235" height="130" class="event"/>
+  <text x="732" y="350" text-anchor="middle" class="label">外部中断</text>
+  <text x="732" y="381" text-anchor="middle" class="text">时钟、网卡、存储设备</text>
+  <text x="732" y="407" text-anchor="middle" class="text">与当前指令异步</text>
+  <text x="732" y="431" text-anchor="middle" class="text">通常在指令边界响应</text>
+
+  <rect x="900" y="305" width="255" height="150" class="kernel"/>
+  <text x="1027" y="340" text-anchor="middle" class="label">内核异常处理入口</text>
+  <text x="1027" y="371" text-anchor="middle" class="text">保存现场并识别事件编号</text>
+  <text x="1027" y="397" text-anchor="middle" class="text">切换内核栈与权限级</text>
+  <text x="1027" y="423" text-anchor="middle" class="text">处理后返回、调度或终止</text>
+
+  <path d="M192 315 V270 H695 V203" class="red"/>
+  <path d="M310 380 H897" class="arrow"/><path d="M580 380 H897" class="arrow"/><path d="M850 380 H897" class="arrow"/>
+
+  <rect x="140" y="550" width="920" height="95" fill="#f8fafc" stroke="#a9b8c4" rx="12"/>
+  <text x="600" y="583" text-anchor="middle" class="label">异常控制流是操作系统获得控制权的根基</text>
+  <text x="600" y="611" text-anchor="middle" class="text">系统调用、缺页、抢占调度、设备完成通知，最终都依赖 CPU 暂停普通控制流并跳转到受保护的内核入口。</text>
+</svg>

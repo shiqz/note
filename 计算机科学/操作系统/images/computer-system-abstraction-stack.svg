@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 18px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .layer{stroke-width:2;rx:12}
+      .arrow{stroke:#526c80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#526c80"/></marker>
+  </defs>
+  <rect width="1200" height="760" fill="#fff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">计算机系统：层层抽象形成的协作体系</text>
+
+  <rect x="160" y="80" width="750" height="76" class="layer" fill="#eaf5fd" stroke="#3f82ae"/>
+  <text x="535" y="109" text-anchor="middle" class="label">应用与高级语言</text>
+  <text x="535" y="136" text-anchor="middle" class="text">业务逻辑、对象、函数、线程、文件、Socket</text>
+
+  <rect x="160" y="174" width="750" height="76" class="layer" fill="#edf8ef" stroke="#4b9560"/>
+  <text x="535" y="203" text-anchor="middle" class="label">编译器、解释器与语言运行时</text>
+  <text x="535" y="230" text-anchor="middle" class="text">机器码、字节码、ABI、内存分配、GC、协程调度</text>
+
+  <rect x="160" y="268" width="750" height="76" class="layer" fill="#fff4df" stroke="#d68a29"/>
+  <text x="535" y="297" text-anchor="middle" class="label">操作系统接口与内核</text>
+  <text x="535" y="324" text-anchor="middle" class="text">系统调用、进程、虚拟内存、文件系统、网络协议栈、驱动</text>
+
+  <rect x="160" y="362" width="750" height="76" class="layer" fill="#f0ecfa" stroke="#7353aa"/>
+  <text x="535" y="391" text-anchor="middle" class="label">指令集体系结构 ISA</text>
+  <text x="535" y="418" text-anchor="middle" class="text">指令、寄存器、地址、异常、权限级、原子操作</text>
+
+  <rect x="160" y="456" width="750" height="76" class="layer" fill="#fceeed" stroke="#b75c50"/>
+  <text x="535" y="485" text-anchor="middle" class="label">微架构与存储层次</text>
+  <text x="535" y="512" text-anchor="middle" class="text">流水线、乱序执行、分支预测、缓存、TLB、内存控制器</text>
+
+  <rect x="160" y="550" width="750" height="76" class="layer" fill="#f3f5f7" stroke="#6f8292"/>
+  <text x="535" y="579" text-anchor="middle" class="label">数字逻辑与物理硬件</text>
+  <text x="535" y="606" text-anchor="middle" class="text">门电路、晶体管、时钟、DRAM、SSD、总线、网卡</text>
+
+  <path d="M535 156 V171" class="arrow"/><path d="M535 250 V265" class="arrow"/>
+  <path d="M535 344 V359" class="arrow"/><path d="M535 438 V453" class="arrow"/>
+  <path d="M535 532 V547" class="arrow"/>
+
+  <rect x="960" y="105" width="195" height="120" fill="#f8fafc" stroke="#9cabb7" rx="12"/>
+  <text x="1057" y="137" text-anchor="middle" class="label">向下看</text>
+  <text x="1057" y="167" text-anchor="middle" class="text">理解实现与成本</text>
+  <text x="1057" y="193" text-anchor="middle" class="text">定位性能与安全问题</text>
+
+  <rect x="960" y="475" width="195" height="120" fill="#f8fafc" stroke="#9cabb7" rx="12"/>
+  <text x="1057" y="507" text-anchor="middle" class="label">向上看</text>
+  <text x="1057" y="537" text-anchor="middle" class="text">理解抽象与契约</text>
+  <text x="1057" y="563" text-anchor="middle" class="text">保持可移植与可维护</text>
+
+  <path d="M1057 470 V233" class="arrow"/>
+  <path d="M1015 230 V468" class="arrow"/>
+
+  <rect x="160" y="668" width="750" height="54" fill="#f8fafc" stroke="#aab8c4" rx="10"/>
+  <text x="535" y="702" text-anchor="middle" class="text">每层隐藏下层细节，同时通过契约暴露能力；系统问题往往发生在两层的边界处。</text>
+</svg>

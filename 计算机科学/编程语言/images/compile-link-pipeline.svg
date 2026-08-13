@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:13px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .stage{fill:#f3f9fe;stroke:#4383ad;stroke-width:2;rx:12}
+      .artifact{fill:#fff7e8;stroke:#d78c2d;stroke-width:2;rx:10}
+      .runtime{fill:#f2efff;stroke:#7454ae;stroke-width:2;rx:10}
+      .arrow{stroke:#506b80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .darrow{stroke:#7454ae;stroke-width:2.2;stroke-dasharray:7 5;fill:none;marker-end:url(#purple)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#506b80"/></marker>
+    <marker id="purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7454ae"/></marker>
+  </defs>
+  <rect width="1200" height="700" fill="#fff"/>
+  <text x="600" y="45" text-anchor="middle" class="title">高级语言到可执行表示：编译、链接与运行时路径</text>
+
+  <rect x="35" y="100" width="150" height="105" class="artifact"/>
+  <text x="110" y="132" text-anchor="middle" class="label">源代码字节</text>
+  <text x="110" y="160" text-anchor="middle" class="text">.c / .go / .java</text>
+  <text x="110" y="184" text-anchor="middle" class="text">编码、换行与注释</text>
+
+  <rect x="220" y="100" width="150" height="105" class="stage"/>
+  <text x="295" y="132" text-anchor="middle" class="label">前端分析</text>
+  <text x="295" y="160" text-anchor="middle" class="text">词法 → Token</text>
+  <text x="295" y="184" text-anchor="middle" class="text">语法 → AST</text>
+
+  <rect x="405" y="100" width="150" height="105" class="stage"/>
+  <text x="480" y="132" text-anchor="middle" class="label">语义与类型</text>
+  <text x="480" y="160" text-anchor="middle" class="text">名称绑定、类型检查</text>
+  <text x="480" y="184" text-anchor="middle" class="text">控制流与约束验证</text>
+
+  <rect x="590" y="100" width="150" height="105" class="stage"/>
+  <text x="665" y="132" text-anchor="middle" class="label">中间表示 IR</text>
+  <text x="665" y="160" text-anchor="middle" class="text">CFG / SSA / 字节码</text>
+  <text x="665" y="184" text-anchor="middle" class="text">与源语言、机器解耦</text>
+
+  <rect x="775" y="100" width="150" height="105" class="stage"/>
+  <text x="850" y="132" text-anchor="middle" class="label">优化与代码生成</text>
+  <text x="850" y="160" text-anchor="middle" class="text">常量折叠、内联</text>
+  <text x="850" y="184" text-anchor="middle" class="text">寄存器分配、指令选择</text>
+
+  <rect x="960" y="100" width="205" height="105" class="artifact"/>
+  <text x="1062" y="132" text-anchor="middle" class="label">目标文件 / 字节码</text>
+  <text x="1062" y="160" text-anchor="middle" class="text">代码段、数据、符号表</text>
+  <text x="1062" y="184" text-anchor="middle" class="text">重定位信息、调试信息</text>
+
+  <path d="M185 152 H217" class="arrow"/><path d="M370 152 H402" class="arrow"/>
+  <path d="M555 152 H587" class="arrow"/><path d="M740 152 H772" class="arrow"/>
+  <path d="M925 152 H957" class="arrow"/>
+
+  <rect x="80" y="310" width="260" height="130" class="stage"/>
+  <text x="210" y="345" text-anchor="middle" class="label">AOT 原生编译路径</text>
+  <text x="210" y="375" text-anchor="middle" class="text">目标文件 + 静态库 + 动态库导入信息</text>
+  <text x="210" y="400" text-anchor="middle" class="text">链接器解析符号并执行地址重定位</text>
+  <text x="210" y="423" text-anchor="middle" class="text">示例：C、C++、Rust、Go（常见模式）</text>
+
+  <rect x="470" y="310" width="260" height="130" class="runtime"/>
+  <text x="600" y="345" text-anchor="middle" class="label">虚拟机 / JIT 路径</text>
+  <text x="600" y="375" text-anchor="middle" class="text">字节码先由 VM 验证、解释执行</text>
+  <text x="600" y="400" text-anchor="middle" class="text">热点方法再即时编译为本机机器码</text>
+  <text x="600" y="423" text-anchor="middle" class="text">示例：JVM、.NET CLR</text>
+
+  <rect x="860" y="310" width="260" height="130" class="runtime"/>
+  <text x="990" y="345" text-anchor="middle" class="label">解释器路径</text>
+  <text x="990" y="375" text-anchor="middle" class="text">解析源码或加载预编译字节码</text>
+  <text x="990" y="400" text-anchor="middle" class="text">解释器循环分派并执行操作</text>
+  <text x="990" y="423" text-anchor="middle" class="text">示例：CPython（字节码解释器）</text>
+
+  <path d="M1062 205 V255 H210 V307" class="arrow"/>
+  <path d="M1062 205 V255 H600 V307" class="darrow"/>
+  <path d="M1062 205 V255 H990 V307" class="darrow"/>
+
+  <rect x="80" y="535" width="260" height="100" class="artifact"/>
+  <text x="210" y="570" text-anchor="middle" class="label">原生可执行文件</text>
+  <text x="210" y="599" text-anchor="middle" class="text">ELF / PE / Mach-O，直接装载机器码</text>
+
+  <rect x="470" y="535" width="260" height="100" class="artifact"/>
+  <text x="600" y="570" text-anchor="middle" class="label">VM 管理的机器码</text>
+  <text x="600" y="599" text-anchor="middle" class="text">解释代码与 JIT 代码可同时存在</text>
+
+  <rect x="860" y="535" width="260" height="100" class="artifact"/>
+  <text x="990" y="570" text-anchor="middle" class="label">解释器本身的机器码</text>
+  <text x="990" y="599" text-anchor="middle" class="text">最终仍由 CPU 执行原生解释器指令</text>
+
+  <path d="M210 440 V532" class="arrow"/><path d="M600 440 V532" class="arrow"/><path d="M990 440 V532" class="arrow"/>
+</svg>

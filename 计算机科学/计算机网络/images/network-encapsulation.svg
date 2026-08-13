@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560">
+  <defs><style>text{font-family:'Microsoft YaHei',sans-serif;fill:#172033}.t{font-size:24px;font-weight:700}.s{font-size:17px}.x{stroke:#334155;stroke-width:2}.a{fill:#dbeafe}.b{fill:#dcfce7}.c{fill:#ffedd5}.d{fill:#f3e8ff}.e{fill:#fee2e2}</style></defs>
+  <rect width="1100" height="560" rx="20" fill="#f8fafc"/><text x="550" y="42" text-anchor="middle" class="t">发送端封装与接收端解封装</text>
+  <g text-anchor="middle">
+    <text x="130" y="95" class="t">发送端 ↓</text><text x="970" y="95" class="t">接收端 ↑</text>
+    <rect x="250" y="75" width="600" height="62" rx="10" class="a x"/><text x="550" y="113" class="s">HTTP 应用消息</text>
+    <rect x="205" y="158" width="690" height="62" rx="10" class="b x"/><text x="270" y="196" class="s">TLS 头</text><text x="595" y="196" class="s">加密后的应用数据</text>
+    <rect x="160" y="241" width="780" height="62" rx="10" class="c x"/><text x="225" y="279" class="s">TCP 头</text><text x="595" y="279" class="s">TLS Record</text>
+    <rect x="115" y="324" width="870" height="62" rx="10" class="d x"/><text x="180" y="362" class="s">IP 头</text><text x="595" y="362" class="s">TCP 段</text>
+    <rect x="65" y="407" width="970" height="62" rx="10" class="e x"/><text x="135" y="445" class="s">帧头</text><text x="560" y="445" class="s">IP 数据包</text><text x="980" y="445" class="s">FCS</text>
+  </g>
+  <path d="M130 115V455" stroke="#2563eb" stroke-width="4" marker-end="url(#none)"/><path d="M970 455V115" stroke="#16a34a" stroke-width="4"/>
+  <text x="550" y="515" text-anchor="middle" class="s">每层把上层整体视为载荷；链路帧到达路由器后会被拆除并按下一跳重新封装</text>
+</svg>

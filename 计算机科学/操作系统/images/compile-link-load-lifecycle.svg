@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .build{fill:#edf7fd;stroke:#3f82ae;stroke-width:2;rx:12}
+      .file{fill:#fff3df;stroke:#d68a29;stroke-width:2;rx:12}
+      .run{fill:#f1edfb;stroke:#7252aa;stroke-width:2;rx:12}
+      .arrow{stroke:#526c80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#526c80"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#fff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">从源文件到进程：编译、链接与装载协作</text>
+
+  <rect x="40" y="95" width="155" height="100" class="file"/>
+  <text x="117" y="128" text-anchor="middle" class="label">源文件</text>
+  <text x="117" y="158" text-anchor="middle" class="text">main.c / util.c</text>
+  <text x="117" y="181" text-anchor="middle" class="text">头文件与宏</text>
+  <rect x="230" y="95" width="155" height="100" class="build"/>
+  <text x="307" y="128" text-anchor="middle" class="label">编译器前端</text>
+  <text x="307" y="158" text-anchor="middle" class="text">Token / AST / 类型</text>
+  <text x="307" y="181" text-anchor="middle" class="text">生成中间表示</text>
+  <rect x="420" y="95" width="155" height="100" class="build"/>
+  <text x="497" y="128" text-anchor="middle" class="label">优化与后端</text>
+  <text x="497" y="158" text-anchor="middle" class="text">SSA 优化</text>
+  <text x="497" y="181" text-anchor="middle" class="text">指令选择与寄存器分配</text>
+  <rect x="610" y="95" width="155" height="100" class="file"/>
+  <text x="687" y="128" text-anchor="middle" class="label">可重定位目标</text>
+  <text x="687" y="158" text-anchor="middle" class="text">代码、数据、符号</text>
+  <text x="687" y="181" text-anchor="middle" class="text">重定位与调试信息</text>
+  <rect x="800" y="95" width="155" height="100" class="build"/>
+  <text x="877" y="128" text-anchor="middle" class="label">链接器</text>
+  <text x="877" y="158" text-anchor="middle" class="text">符号解析、节合并</text>
+  <text x="877" y="181" text-anchor="middle" class="text">地址布局与重定位</text>
+  <rect x="990" y="95" width="170" height="100" class="file"/>
+  <text x="1075" y="128" text-anchor="middle" class="label">可执行文件</text>
+  <text x="1075" y="158" text-anchor="middle" class="text">ELF / PE / Mach-O</text>
+  <text x="1075" y="181" text-anchor="middle" class="text">程序头与动态依赖</text>
+  <path d="M195 145 H227" class="arrow"/><path d="M385 145 H417" class="arrow"/>
+  <path d="M575 145 H607" class="arrow"/><path d="M765 145 H797" class="arrow"/>
+  <path d="M955 145 H987" class="arrow"/>
+
+  <rect x="90" y="300" width="230" height="125" class="file"/>
+  <text x="205" y="335" text-anchor="middle" class="label">静态库 / 动态库</text>
+  <text x="205" y="367" text-anchor="middle" class="text">.a / .lib：按需复制成员</text>
+  <text x="205" y="393" text-anchor="middle" class="text">.so / .dll：记录运行时依赖</text>
+  <path d="M320 362 H740 V198 H877" class="arrow"/>
+
+  <rect x="430" y="300" width="265" height="125" class="run"/>
+  <text x="562" y="335" text-anchor="middle" class="label">内核加载器</text>
+  <text x="562" y="367" text-anchor="middle" class="text">校验格式、权限和架构</text>
+  <text x="562" y="393" text-anchor="middle" class="text">建立段到虚拟地址的映射</text>
+  <path d="M1075 195 V255 H562 V297" class="arrow"/>
+
+  <rect x="820" y="300" width="280" height="125" class="run"/>
+  <text x="960" y="335" text-anchor="middle" class="label">动态链接器</text>
+  <text x="960" y="367" text-anchor="middle" class="text">映射共享库、解析导入符号</text>
+  <text x="960" y="393" text-anchor="middle" class="text">处理重定位、TLS 与初始化</text>
+  <path d="M695 362 H817" class="arrow"/>
+
+  <rect x="350" y="545" width="500" height="105" class="run"/>
+  <text x="600" y="580" text-anchor="middle" class="label">运行中的进程</text>
+  <text x="600" y="610" text-anchor="middle" class="text">代码页、数据页、堆、栈、共享库、文件映射和内核资源</text>
+  <text x="600" y="635" text-anchor="middle" class="text">入口代码初始化运行时，最后调用 main</text>
+  <path d="M562 425 V542" class="arrow"/><path d="M960 425 V495 H700 V542" class="arrow"/>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .normal{fill:#edf7ff;stroke:#3e82ae;stroke-width:2;rx:12}
+      .kernel{fill:#fff3df;stroke:#d68a28;stroke-width:2;rx:12}
+      .abnormal{fill:#fff0ee;stroke:#bb5c50;stroke-width:2;rx:12}
+      .result{fill:#f1edfb;stroke:#7352aa;stroke-width:2;rx:12}
+      .arrow{stroke:#506b80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .red{stroke:#b7584d;stroke-width:2.4;fill:none;marker-end:url(#red)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#506b80"/></marker>
+    <marker id="red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#b7584d"/></marker>
+  </defs>
+  <rect width="1200" height="680" fill="#fff"/>
+  <text x="600" y="45" text-anchor="middle" class="title">程序关闭时究竟发生了什么</text>
+
+  <rect x="55" y="100" width="270" height="130" class="normal"/>
+  <text x="190" y="135" text-anchor="middle" class="label">正常退出路径</text>
+  <text x="190" y="166" text-anchor="middle" class="text">main 返回或显式 exit</text>
+  <text x="190" y="192" text-anchor="middle" class="text">运行时执行已注册的退出处理</text>
+  <text x="190" y="216" text-anchor="middle" class="text">刷新用户态缓冲区（取决于 API）</text>
+
+  <rect x="55" y="320" width="270" height="130" class="abnormal"/>
+  <text x="190" y="355" text-anchor="middle" class="label">异常终止路径</text>
+  <text x="190" y="386" text-anchor="middle" class="text">未处理异常、致命信号、强制结束</text>
+  <text x="190" y="412" text-anchor="middle" class="text">部分或全部用户态清理可能不执行</text>
+  <text x="190" y="436" text-anchor="middle" class="text">kill -9 等无法被进程捕获</text>
+
+  <rect x="455" y="180" width="290" height="190" class="kernel"/>
+  <text x="600" y="218" text-anchor="middle" class="label">进入内核终止流程</text>
+  <text x="485" y="253" class="text">1. 记录退出码或终止原因</text>
+  <text x="485" y="284" class="text">2. 停止线程并取消等待</text>
+  <text x="485" y="315" class="text">3. 关闭内核持有的文件描述符</text>
+  <text x="485" y="346" class="text">4. 通知父进程并进入僵尸态</text>
+
+  <path d="M325 165 H400 V240 H452" class="arrow"/>
+  <path d="M325 385 H400 V315 H452" class="red"/>
+
+  <rect x="850" y="80" width="285" height="110" class="result"/>
+  <text x="992" y="115" text-anchor="middle" class="label">虚拟内存与页表</text>
+  <text x="992" y="146" text-anchor="middle" class="text">解除映射、减少共享页引用</text>
+  <text x="992" y="171" text-anchor="middle" class="text">回收私有物理页和交换空间</text>
+
+  <rect x="850" y="220" width="285" height="110" class="result"/>
+  <text x="992" y="255" text-anchor="middle" class="label">文件、Socket 与锁</text>
+  <text x="992" y="286" text-anchor="middle" class="text">引用计数归零后释放内核对象</text>
+  <text x="992" y="311" text-anchor="middle" class="text">TCP 关闭语义取决于当前状态</text>
+
+  <rect x="850" y="360" width="285" height="110" class="result"/>
+  <text x="992" y="395" text-anchor="middle" class="label">进程身份信息</text>
+  <text x="992" y="426" text-anchor="middle" class="text">PID 条目暂留退出状态和统计</text>
+  <text x="992" y="451" text-anchor="middle" class="text">父进程 wait 后最终释放</text>
+
+  <path d="M745 245 H795 V135 H847" class="arrow"/>
+  <path d="M745 275 H847" class="arrow"/>
+  <path d="M745 305 H795 V415 H847" class="arrow"/>
+
+  <rect x="150" y="535" width="900" height="95" fill="#f8fafc" stroke="#a8b8c5" rx="12"/>
+  <text x="600" y="568" text-anchor="middle" class="label">两个容易混淆的事实</text>
+  <text x="600" y="597" text-anchor="middle" class="text">操作系统能回收进程级资源，但不能替你完成业务一致性动作，例如提交事务、发送确认消息或写完应用缓冲区。</text>
+  <text x="600" y="620" text-anchor="middle" class="text">“内存泄漏在进程退出后会被回收”是真的；“因此运行期间的泄漏无所谓”是错的。</text>
+</svg>

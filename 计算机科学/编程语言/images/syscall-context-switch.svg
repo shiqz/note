@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .user{fill:#edf7ff;stroke:#3d82af;stroke-width:2;rx:12}
+      .kernel{fill:#fff3df;stroke:#d68825;stroke-width:2;rx:12}
+      .device{fill:#f1edfb;stroke:#7251ab;stroke-width:2;rx:12}
+      .arrow{stroke:#506b80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#a45148;stroke-width:2;stroke-dasharray:7 5;fill:none;marker-end:url(#red)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#506b80"/></marker>
+    <marker id="red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a45148"/></marker>
+  </defs>
+  <rect width="1200" height="690" fill="#fff"/>
+  <text x="600" y="45" text-anchor="middle" class="title">程序调用 read 时：系统调用、阻塞、中断与重新调度</text>
+
+  <rect x="45" y="100" width="195" height="110" class="user"/>
+  <text x="142" y="135" text-anchor="middle" class="label">用户代码</text>
+  <text x="142" y="165" text-anchor="middle" class="text">调用库函数 read()</text>
+  <text x="142" y="190" text-anchor="middle" class="text">准备 fd、缓冲区、长度</text>
+
+  <rect x="285" y="100" width="195" height="110" class="user"/>
+  <text x="382" y="135" text-anchor="middle" class="label">系统调用桩</text>
+  <text x="382" y="165" text-anchor="middle" class="text">参数放入约定寄存器</text>
+  <text x="382" y="190" text-anchor="middle" class="text">执行 syscall / svc 指令</text>
+
+  <rect x="525" y="100" width="195" height="110" class="kernel"/>
+  <text x="622" y="135" text-anchor="middle" class="label">内核入口</text>
+  <text x="622" y="165" text-anchor="middle" class="text">切换权限级与内核栈</text>
+  <text x="622" y="190" text-anchor="middle" class="text">校验编号、参数和地址</text>
+
+  <rect x="765" y="100" width="195" height="110" class="kernel"/>
+  <text x="862" y="135" text-anchor="middle" class="label">VFS / 驱动</text>
+  <text x="862" y="165" text-anchor="middle" class="text">查页缓存或提交设备 I/O</text>
+  <text x="862" y="190" text-anchor="middle" class="text">无数据时登记等待条件</text>
+
+  <rect x="1005" y="100" width="150" height="110" class="kernel"/>
+  <text x="1080" y="135" text-anchor="middle" class="label">调度器</text>
+  <text x="1080" y="165" text-anchor="middle" class="text">线程阻塞</text>
+  <text x="1080" y="190" text-anchor="middle" class="text">选择其他线程</text>
+
+  <path d="M240 155 H282" class="arrow"/><path d="M480 155 H522" class="arrow"/>
+  <path d="M720 155 H762" class="arrow"/><path d="M960 155 H1002" class="arrow"/>
+
+  <rect x="810" y="315" width="300" height="120" class="device"/>
+  <text x="960" y="350" text-anchor="middle" class="label">存储 / 网卡 / 终端设备</text>
+  <text x="960" y="380" text-anchor="middle" class="text">控制器完成工作，DMA 写入内存</text>
+  <text x="960" y="408" text-anchor="middle" class="text">设备向 CPU 发出完成中断</text>
+  <path d="M862 210 V312" class="arrow"/>
+
+  <rect x="470" y="315" width="270" height="120" class="kernel"/>
+  <text x="605" y="350" text-anchor="middle" class="label">中断处理与唤醒</text>
+  <text x="605" y="380" text-anchor="middle" class="text">确认完成、更新内核数据结构</text>
+  <text x="605" y="408" text-anchor="middle" class="text">将等待线程放回可运行队列</text>
+  <path d="M810 375 H743" class="arrow"/>
+
+  <rect x="130" y="315" width="270" height="120" class="kernel"/>
+  <text x="265" y="350" text-anchor="middle" class="label">恢复线程并返回</text>
+  <text x="265" y="380" text-anchor="middle" class="text">调度器未来再次选中该线程</text>
+  <text x="265" y="408" text-anchor="middle" class="text">复制结果，恢复用户态寄存器</text>
+  <path d="M470 375 H403" class="arrow"/>
+
+  <rect x="130" y="520" width="270" height="100" class="user"/>
+  <text x="265" y="555" text-anchor="middle" class="label">read 返回用户代码</text>
+  <text x="265" y="585" text-anchor="middle" class="text">得到字节数，或 errno / 异常</text>
+  <path d="M265 435 V517" class="arrow"/>
+
+  <path d="M1080 210 V270 H1135 V490 H470 V435" class="dash"/>
+  <text x="780" y="483" text-anchor="middle" class="text">CPU 在等待期间可执行其他进程或线程</text>
+  <text x="600" y="660" text-anchor="middle" class="text">系统调用导致用户态/内核态切换；只有发生阻塞、时间片耗尽等情况时，才通常伴随线程上下文切换。</text>
+</svg>

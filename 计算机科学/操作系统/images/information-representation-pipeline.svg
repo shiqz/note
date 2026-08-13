@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .box{fill:#eef7fd;stroke:#3f82ae;stroke-width:2;rx:12}
+      .warn{fill:#fff3df;stroke:#d68a29;stroke-width:2;rx:12}
+      .arrow{stroke:#526c80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#526c80"/></marker>
+  </defs>
+  <rect width="1200" height="680" fill="#fff"/>
+  <text x="600" y="45" text-anchor="middle" class="title">信息表示：相同比特因解释规则而拥有不同含义</text>
+
+  <rect x="45" y="100" width="190" height="105" class="box"/>
+  <text x="140" y="133" text-anchor="middle" class="label">现实信息</text>
+  <text x="140" y="164" text-anchor="middle" class="text">文字、数字、图像</text>
+  <text x="140" y="187" text-anchor="middle" class="text">声音、指令、地址</text>
+
+  <rect x="285" y="100" width="190" height="105" class="box"/>
+  <text x="380" y="133" text-anchor="middle" class="label">编码规则</text>
+  <text x="380" y="164" text-anchor="middle" class="text">UTF-8、补码、IEEE 754</text>
+  <text x="380" y="187" text-anchor="middle" class="text">像素格式、机器指令集</text>
+
+  <rect x="525" y="100" width="190" height="105" class="box"/>
+  <text x="620" y="133" text-anchor="middle" class="label">字节序列</text>
+  <text x="620" y="164" text-anchor="middle" class="text">内存与文件的寻址单位</text>
+  <text x="620" y="187" text-anchor="middle" class="text">例：00 00 80 3F</text>
+
+  <rect x="765" y="100" width="190" height="105" class="box"/>
+  <text x="860" y="133" text-anchor="middle" class="label">位模式</text>
+  <text x="860" y="164" text-anchor="middle" class="text">0 与 1 的有限组合</text>
+  <text x="860" y="187" text-anchor="middle" class="text">硬件门电路处理对象</text>
+
+  <rect x="1005" y="100" width="150" height="105" class="box"/>
+  <text x="1080" y="133" text-anchor="middle" class="label">物理状态</text>
+  <text x="1080" y="164" text-anchor="middle" class="text">电压、电荷</text>
+  <text x="1080" y="187" text-anchor="middle" class="text">磁化、光学状态</text>
+
+  <path d="M235 152 H282" class="arrow"/><path d="M475 152 H522" class="arrow"/>
+  <path d="M715 152 H762" class="arrow"/><path d="M955 152 H1002" class="arrow"/>
+
+  <rect x="80" y="310" width="250" height="145" class="warn"/>
+  <text x="205" y="345" text-anchor="middle" class="label">整数解释</text>
+  <text x="205" y="376" text-anchor="middle" class="text">11111111</text>
+  <text x="205" y="404" text-anchor="middle" class="text">无符号：255</text>
+  <text x="205" y="430" text-anchor="middle" class="text">8 位补码：-1</text>
+
+  <rect x="475" y="310" width="250" height="145" class="warn"/>
+  <text x="600" y="345" text-anchor="middle" class="label">浮点解释</text>
+  <text x="600" y="376" text-anchor="middle" class="text">符号位 + 阶码 + 尾数</text>
+  <text x="600" y="404" text-anchor="middle" class="text">范围很大但精度有限</text>
+  <text x="600" y="430" text-anchor="middle" class="text">存在 NaN、∞、舍入误差</text>
+
+  <rect x="870" y="310" width="250" height="145" class="warn"/>
+  <text x="995" y="345" text-anchor="middle" class="label">地址解释</text>
+  <text x="995" y="376" text-anchor="middle" class="text">同一数字可表示虚拟地址</text>
+  <text x="995" y="404" text-anchor="middle" class="text">页表决定对应的物理页</text>
+  <text x="995" y="430" text-anchor="middle" class="text">权限决定能否读、写、执行</text>
+
+  <path d="M620 205 V260 H205 V307" class="arrow"/>
+  <path d="M620 205 V307" class="arrow"/>
+  <path d="M620 260 H995 V307" class="arrow"/>
+
+  <rect x="145" y="545" width="910" height="80" fill="#f8fafc" stroke="#a8b7c3" rx="12"/>
+  <text x="600" y="578" text-anchor="middle" class="label">系统编程的第一原则</text>
+  <text x="600" y="605" text-anchor="middle" class="text">硬件只保存和搬运位模式；类型、协议、文件格式与 ABI 规定了这些位应当如何被解释。</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500">
+  <defs><style>text{font-family:'Microsoft YaHei',sans-serif;fill:#172033}.t{font-size:24px;font-weight:700}.s{font-size:16px}.b{stroke:#fff;stroke-width:3}</style></defs>
+  <rect width="1100" height="500" rx="20" fill="#f8fafc"/><text x="550" y="42" text-anchor="middle" class="t">一个分组的时延由什么构成</text>
+  <g text-anchor="middle">
+    <rect x="70" y="130" width="220" height="115" rx="12" fill="#dbeafe" class="b"/><text x="180" y="175" class="t">处理时延</text><text x="180" y="208" class="s">解析首部、校验、查表</text>
+    <rect x="290" y="130" width="220" height="115" rx="12" fill="#fef3c7" class="b"/><text x="400" y="175" class="t">排队时延</text><text x="400" y="208" class="s">等待出接口，波动最大</text>
+    <rect x="510" y="130" width="250" height="115" rx="12" fill="#dcfce7" class="b"/><text x="635" y="175" class="t">发送时延</text><text x="635" y="208" class="s">数据长度 ÷ 链路速率</text>
+    <rect x="760" y="130" width="270" height="115" rx="12" fill="#f3e8ff" class="b"/><text x="895" y="175" class="t">传播时延</text><text x="895" y="208" class="s">距离 ÷ 介质传播速度</text>
+  </g>
+  <text x="550" y="310" text-anchor="middle" class="t">总时延 = 处理 + 排队 + 发送 + 传播</text>
+  <text x="550" y="355" text-anchor="middle" class="s">增加带宽主要降低发送时延；缩短物理距离和优化路径才能降低传播时延</text>
+  <text x="550" y="392" text-anchor="middle" class="s">拥塞时排队时延会上升并可能丢包，随后 TCP 重传又增加额外等待</text>
+  <text x="550" y="438" text-anchor="middle" class="t">吞吐量 ≠ 带宽，低延迟 ≠ 高带宽</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0L8 3 0 6Z" fill="#2563eb"/></marker><style>text{font-family:'Microsoft YaHei',sans-serif;fill:#172033}.t{font-size:24px;font-weight:700}.s{font-size:16px}.l{stroke:#2563eb;stroke-width:2.5;marker-end:url(#a)}.d{stroke:#64748b;stroke-width:3;stroke-dasharray:8 7}</style></defs>
+  <rect width="1000" height="700" rx="20" fill="#f8fafc"/><text x="500" y="40" text-anchor="middle" class="t">TCP：三次握手、可靠传输与四次挥手</text>
+  <text x="190" y="85" text-anchor="middle" class="t">客户端</text><text x="810" y="85" text-anchor="middle" class="t">服务端</text>
+  <path d="M190 105V660M810 105V660" class="d"/>
+  <g class="l"><path d="M190 130L810 175"/><path d="M810 210L190 255"/><path d="M190 290L810 335"/><path d="M190 375L810 420"/><path d="M810 455L190 500"/><path d="M190 535L810 565"/><path d="M810 595L190 625"/><path d="M190 650L810 670"/></g>
+  <g text-anchor="middle" class="s">
+    <text x="500" y="143">① SYN，seq=x</text><text x="500" y="220">② SYN + ACK，seq=y，ack=x+1</text><text x="500" y="298">③ ACK，ack=y+1</text>
+    <text x="500" y="388">数据，seq=n，len=L</text><text x="500" y="467">ACK，ack=n+L</text>
+    <text x="500" y="543">FIN：客户端不再发送</text><text x="500" y="603">ACK；服务端仍可发送剩余数据</text><text x="500" y="646">FIN → 最终 ACK；主动方进入 TIME_WAIT</text>
+  </g>
+  <text x="80" y="235" class="t" fill="#16a34a">建连</text><text x="80" y="440" class="t">传输</text><text x="80" y="600" class="t">关闭</text>
+</svg>

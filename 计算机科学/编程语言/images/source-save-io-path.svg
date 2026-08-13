@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 18px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .small{font:13px Arial,"Microsoft YaHei",sans-serif;fill:#53697d}
+      .user{fill:#edf7ff;stroke:#3b82b4;stroke-width:2;rx:12}
+      .kernel{fill:#fff5e6;stroke:#d88923;stroke-width:2;rx:12}
+      .device{fill:#f2eeff;stroke:#7253ad;stroke-width:2;rx:12}
+      .arrow{stroke:#4d687d;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#8798a6;stroke-width:2;stroke-dasharray:7 6}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4d687d"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="650" fill="#fff"/>
+  <text x="600" y="45" text-anchor="middle" class="title">源码从编辑器保存到持久化介质的路径</text>
+  <line x1="50" y1="285" x2="1150" y2="285" class="dash"/>
+  <text x="65" y="270" class="small">用户态</text>
+  <text x="65" y="310" class="small">内核态</text>
+
+  <rect x="55" y="90" width="195" height="125" class="user"/>
+  <text x="152" y="123" text-anchor="middle" class="label">键盘与输入法</text>
+  <text x="152" y="154" text-anchor="middle" class="text">扫描码 → 按键事件</text>
+  <text x="152" y="180" text-anchor="middle" class="text">字符组合与 Unicode</text>
+
+  <rect x="315" y="90" width="235" height="125" class="user"/>
+  <text x="432" y="123" text-anchor="middle" class="label">编辑器进程</text>
+  <text x="432" y="154" text-anchor="middle" class="text">内存中的文本模型</text>
+  <text x="432" y="180" text-anchor="middle" class="text">撤销栈、脏标记、编码规则</text>
+
+  <rect x="615" y="90" width="235" height="125" class="user"/>
+  <text x="732" y="123" text-anchor="middle" class="label">保存策略</text>
+  <text x="732" y="154" text-anchor="middle" class="text">覆盖写或临时文件 + rename</text>
+  <text x="732" y="180" text-anchor="middle" class="text">可选 fsync 保证落盘顺序</text>
+
+  <rect x="915" y="90" width="230" height="125" class="user"/>
+  <text x="1030" y="123" text-anchor="middle" class="label">系统调用边界</text>
+  <text x="1030" y="154" text-anchor="middle" class="text">open / write / rename</text>
+  <text x="1030" y="180" text-anchor="middle" class="text">CPU 转入内核态执行</text>
+
+  <path d="M250 152 H312" class="arrow"/>
+  <path d="M550 152 H612" class="arrow"/>
+  <path d="M850 152 H912" class="arrow"/>
+  <path d="M1030 215 V330" class="arrow"/>
+
+  <rect x="900" y="335" width="245" height="125" class="kernel"/>
+  <text x="1022" y="368" text-anchor="middle" class="label">VFS 与权限检查</text>
+  <text x="1022" y="399" text-anchor="middle" class="text">解析路径、文件描述符</text>
+  <text x="1022" y="425" text-anchor="middle" class="text">检查身份、权限与挂载点</text>
+
+  <rect x="590" y="335" width="245" height="125" class="kernel"/>
+  <text x="712" y="368" text-anchor="middle" class="label">页缓存与脏页</text>
+  <text x="712" y="399" text-anchor="middle" class="text">write 通常先复制进内存</text>
+  <text x="712" y="425" text-anchor="middle" class="text">稍后由回写线程批量下刷</text>
+
+  <rect x="280" y="335" width="245" height="125" class="kernel"/>
+  <text x="402" y="368" text-anchor="middle" class="label">文件系统</text>
+  <text x="402" y="399" text-anchor="middle" class="text">inode / MFT、目录项、块映射</text>
+  <text x="402" y="425" text-anchor="middle" class="text">日志或写时复制维护一致性</text>
+
+  <rect x="55" y="335" width="160" height="125" class="kernel"/>
+  <text x="135" y="368" text-anchor="middle" class="label">块 I/O 层</text>
+  <text x="135" y="399" text-anchor="middle" class="text">合并与调度请求</text>
+  <text x="135" y="425" text-anchor="middle" class="text">驱动提交命令</text>
+
+  <path d="M900 397 H838" class="arrow"/>
+  <path d="M590 397 H528" class="arrow"/>
+  <path d="M280 397 H218" class="arrow"/>
+
+  <rect x="355" y="525" width="490" height="80" class="device"/>
+  <text x="600" y="558" text-anchor="middle" class="label">SSD / HDD 与设备缓存</text>
+  <text x="600" y="584" text-anchor="middle" class="text">控制器经 DMA 传输数据；真正断电不丢失取决于 flush、设备能力和写入屏障</text>
+  <path d="M135 460 V565 H352" class="arrow"/>
+</svg>

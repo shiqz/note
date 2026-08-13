@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740">
+  <defs>
+    <style>
+      .title{font:700 28px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .label{font:700 17px Arial,"Microsoft YaHei",sans-serif;fill:#17324d}
+      .text{font:14px Arial,"Microsoft YaHei",sans-serif;fill:#40566d}
+      .user{fill:#edf7fd;stroke:#3f82ae;stroke-width:2;rx:12}
+      .kernel{fill:#fff3df;stroke:#d68a29;stroke-width:2;rx:12}
+      .device{fill:#f1edfb;stroke:#7252aa;stroke-width:2;rx:12}
+      .arrow{stroke:#526c80;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .async{stroke:#4b9560;stroke-width:2.4;stroke-dasharray:7 5;fill:none;marker-end:url(#green)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#526c80"/></marker>
+    <marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#4b9560"/></marker>
+  </defs>
+  <rect width="1200" height="740" fill="#fff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">I/O 全链路：阻塞、异步、DMA 与事件通知</text>
+  <line x1="40" y1="270" x2="1160" y2="270" stroke="#93a2ae" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="55" y="255" class="text">用户态</text><text x="55" y="295" class="text">内核态</text>
+
+  <rect x="45" y="95" width="210" height="110" class="user"/>
+  <text x="150" y="130" text-anchor="middle" class="label">应用线程 / 协程</text>
+  <text x="150" y="161" text-anchor="middle" class="text">read / recv / 异步提交</text>
+  <text x="150" y="187" text-anchor="middle" class="text">提供 fd、缓冲区和长度</text>
+  <rect x="355" y="95" width="210" height="110" class="user"/>
+  <text x="460" y="130" text-anchor="middle" class="label">运行时 / I/O 库</text>
+  <text x="460" y="161" text-anchor="middle" class="text">缓冲、事件循环、Future</text>
+  <text x="460" y="187" text-anchor="middle" class="text">把语言抽象映射到内核接口</text>
+  <rect x="665" y="95" width="210" height="110" class="user"/>
+  <text x="770" y="130" text-anchor="middle" class="label">等待模型</text>
+  <text x="770" y="161" text-anchor="middle" class="text">阻塞线程或注册就绪事件</text>
+  <text x="770" y="187" text-anchor="middle" class="text">epoll / kqueue / IOCP</text>
+  <rect x="975" y="95" width="180" height="110" class="user"/>
+  <text x="1065" y="130" text-anchor="middle" class="label">处理结果</text>
+  <text x="1065" y="161" text-anchor="middle" class="text">线程被唤醒</text>
+  <text x="1065" y="187" text-anchor="middle" class="text">回调或协程恢复</text>
+  <path d="M255 150 H352" class="arrow"/><path d="M565 150 H662" class="arrow"/>
+
+  <rect x="665" y="335" width="210" height="120" class="kernel"/>
+  <text x="770" y="370" text-anchor="middle" class="label">内核 I/O 子系统</text>
+  <text x="770" y="401" text-anchor="middle" class="text">VFS / 协议栈 / 块层</text>
+  <text x="770" y="427" text-anchor="middle" class="text">页缓存、Socket 缓冲区、队列</text>
+  <path d="M770 205 V332" class="arrow"/>
+
+  <rect x="350" y="335" width="210" height="120" class="kernel"/>
+  <text x="455" y="370" text-anchor="middle" class="label">调度器</text>
+  <text x="455" y="401" text-anchor="middle" class="text">阻塞线程移出运行队列</text>
+  <text x="455" y="427" text-anchor="middle" class="text">CPU 转去执行其他任务</text>
+  <path d="M665 395 H563" class="arrow"/>
+
+  <rect x="945" y="335" width="210" height="120" class="kernel"/>
+  <text x="1050" y="370" text-anchor="middle" class="label">驱动与完成队列</text>
+  <text x="1050" y="401" text-anchor="middle" class="text">描述符、队列、设备命令</text>
+  <text x="1050" y="427" text-anchor="middle" class="text">完成后更新状态并通知等待者</text>
+  <path d="M875 395 H942" class="arrow"/>
+
+  <rect x="590" y="555" width="390" height="105" class="device"/>
+  <text x="785" y="590" text-anchor="middle" class="label">SSD / 网卡 / 终端控制器</text>
+  <text x="785" y="621" text-anchor="middle" class="text">设备通过 DMA 与内存交换数据</text>
+  <text x="785" y="647" text-anchor="middle" class="text">中断或轮询告知内核完成</text>
+  <path d="M1050 455 V520 H900 V552" class="arrow"/>
+  <path d="M670 555 V515 H570 V455" class="async"/>
+  <path d="M980 585 H1125 V510 H1065 V208" class="async"/>
+
+  <rect x="65" y="550" width="390" height="115" fill="#edf8ef" stroke="#4b9560" stroke-width="2" rx="12"/>
+  <text x="260" y="585" text-anchor="middle" class="label">并发的核心不是“同时等待”</text>
+  <text x="260" y="616" text-anchor="middle" class="text">等待 I/O 的任务不占用 CPU 执行指令</text>
+  <text x="260" y="642" text-anchor="middle" class="text">系统让 CPU 服务其他就绪任务，以隐藏延迟</text>
+</svg>

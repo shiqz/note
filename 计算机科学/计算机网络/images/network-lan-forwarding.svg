@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="540" viewBox="0 0 1100 540">
+  <defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0L8 3 0 6Z" fill="#2563eb"/></marker><style>text{font-family:'Microsoft YaHei',sans-serif;fill:#172033}.t{font-size:23px;font-weight:700}.s{font-size:16px}.b{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.g{fill:#f0fdf4;stroke:#16a34a;stroke-width:2}.o{fill:#fff7ed;stroke:#ea580c;stroke-width:2}.l{stroke:#475569;stroke-width:3}.q{stroke:#2563eb;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1100" height="540" rx="20" fill="#f8fafc"/><text x="550" y="42" text-anchor="middle" class="t">ARP 获取下一跳 MAC，交换机按 MAC 表转发</text>
+  <g text-anchor="middle">
+    <rect x="45" y="205" width="210" height="100" rx="12" class="b"/><text x="150" y="240" class="t">主机 A</text><text x="150" y="268" class="s">192.168.1.10</text><text x="150" y="291" class="s">MAC AA:AA</text>
+    <rect x="440" y="210" width="180" height="90" rx="12" class="g"/><text x="530" y="247" class="t">二层交换机</text><text x="530" y="275" class="s">学习源 MAC</text>
+    <rect x="835" y="80" width="220" height="100" rx="12" class="o"/><text x="945" y="115" class="t">默认网关</text><text x="945" y="143" class="s">192.168.1.1</text><text x="945" y="166" class="s">MAC 11:11</text>
+    <rect x="835" y="340" width="220" height="100" rx="12" class="b"/><text x="945" y="378" class="t">其他主机</text><text x="945" y="408" class="s">收到广播但不应答</text>
+  </g>
+  <path d="M255 255H440M620 255H740M740 130V390M740 130H835M740 390H835" class="l"/>
+  <path d="M150 190C300 65 700 55 835 115" class="q"/><text x="500" y="90" text-anchor="middle" class="s">① 广播：谁是 192.168.1.1？</text>
+  <path d="M835 165C690 190 350 195 255 230" class="q"/><text x="540" y="184" text-anchor="middle" class="s">② 单播：我的 MAC 是 11:11</text>
+  <text x="550" y="490" text-anchor="middle" class="s">③ 后续数据帧的目的 MAC 写网关 11:11；目的 IP 仍然是远端服务器 IP</text>
+</svg>
