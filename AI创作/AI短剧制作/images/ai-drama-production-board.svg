@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#f7f8fa"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#18232d">AI 短剧批量生产看板</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">镜头状态透明，问题素材不会悄悄流入后期</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="45" y="120" width="210" height="520" rx="8" fill="#eef2f5" stroke="#9aa6af" stroke-width="2"/>
+    <rect x="45" y="120" width="210" height="58" rx="8" fill="#556470"/>
+    <text x="150" y="156" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">待制作</text>
+    <rect x="65" y="200" width="170" height="94" rx="6" fill="#fff" stroke="#c0c8ce"/>
+    <text x="82" y="228" font-size="15" font-weight="700" fill="#334550">E01-C08</text>
+    <text x="82" y="253" font-size="14" fill="#596976">女主拿起照片</text>
+    <text x="82" y="278" font-size="13" fill="#8a5960">优先级：高</text>
+    <rect x="65" y="312" width="170" height="94" rx="6" fill="#fff" stroke="#c0c8ce"/>
+    <text x="82" y="340" font-size="15" font-weight="700" fill="#334550">E01-C13</text>
+    <text x="82" y="365" font-size="14" fill="#596976">报纸日期特写</text>
+    <text x="82" y="390" font-size="13" fill="#6b7680">方式：后期合成</text>
+
+    <rect x="270" y="120" width="210" height="520" rx="8" fill="#edf5fb" stroke="#8aaec7" stroke-width="2"/>
+    <rect x="270" y="120" width="210" height="58" rx="8" fill="#2d74aa"/>
+    <text x="375" y="156" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">关键帧</text>
+    <rect x="290" y="200" width="170" height="112" rx="6" fill="#fff" stroke="#aac5d9"/>
+    <text x="307" y="228" font-size="15" font-weight="700" fill="#334550">E01-C12 · v03</text>
+    <text x="307" y="253" font-size="14" fill="#596976">听见陌生声音</text>
+    <text x="307" y="278" font-size="13" fill="#2d74aa">角色一致性：通过</text>
+    <text x="307" y="299" font-size="13" fill="#a26b20">待修：怀表边缘</text>
+
+    <rect x="495" y="120" width="210" height="520" rx="8" fill="#f0f7f2" stroke="#91b9a0" stroke-width="2"/>
+    <rect x="495" y="120" width="210" height="58" rx="8" fill="#3d8a5c"/>
+    <text x="600" y="156" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">视频生成</text>
+    <rect x="515" y="200" width="170" height="112" rx="6" fill="#fff" stroke="#acd0b9"/>
+    <text x="532" y="228" font-size="15" font-weight="700" fill="#334550">E01-C02 · v05</text>
+    <text x="532" y="253" font-size="14" fill="#596976">女主猛然抬眼</text>
+    <text x="532" y="278" font-size="13" fill="#3d8a5c">有效时长：3.6s</text>
+    <text x="532" y="299" font-size="13" fill="#6b7680">尝试：5 次</text>
+    <rect x="515" y="330" width="170" height="112" rx="6" fill="#fff" stroke="#acd0b9"/>
+    <text x="532" y="358" font-size="15" font-weight="700" fill="#334550">E01-C16 · v04</text>
+    <text x="532" y="383" font-size="14" fill="#596976">戴戒指的手</text>
+    <text x="532" y="408" font-size="13" fill="#ae4d5c">阻塞：手指变形</text>
+    <text x="532" y="429" font-size="13" fill="#a26b20">方案：改用实拍</text>
+
+    <rect x="720" y="120" width="210" height="520" rx="8" fill="#fff7e6" stroke="#d0b57b" stroke-width="2"/>
+    <rect x="720" y="120" width="210" height="58" rx="8" fill="#b78428"/>
+    <text x="825" y="156" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">待质检</text>
+    <rect x="740" y="200" width="170" height="112" rx="6" fill="#fff" stroke="#dec99e"/>
+    <text x="757" y="228" font-size="15" font-weight="700" fill="#334550">E01-C01 · v02</text>
+    <text x="757" y="253" font-size="14" fill="#596976">怀表倒走</text>
+    <text x="757" y="278" font-size="13" fill="#b78428">检查：运动方向</text>
+    <text x="757" y="299" font-size="13" fill="#6b7680">负责人：剪辑</text>
+
+    <rect x="945" y="120" width="210" height="520" rx="8" fill="#f5eff8" stroke="#b39dc0" stroke-width="2"/>
+    <rect x="945" y="120" width="210" height="58" rx="8" fill="#785a9b"/>
+    <text x="1050" y="156" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">已通过</text>
+    <rect x="965" y="200" width="170" height="112" rx="6" fill="#fff" stroke="#c9bad2"/>
+    <text x="982" y="228" font-size="15" font-weight="700" fill="#334550">E01-C03 · final</text>
+    <text x="982" y="253" font-size="14" fill="#596976">黑暗中的门</text>
+    <text x="982" y="278" font-size="13" fill="#3d8a5c">画面：通过</text>
+    <text x="982" y="299" font-size="13" fill="#3d8a5c">连续性：通过</text>
+    <rect x="965" y="330" width="170" height="112" rx="6" fill="#fff" stroke="#c9bad2"/>
+    <text x="982" y="358" font-size="15" font-weight="700" fill="#334550">E01-C07 · final</text>
+    <text x="982" y="383" font-size="14" fill="#596976">照片落在桌面</text>
+    <text x="982" y="408" font-size="13" fill="#3d8a5c">可用时长：3.2s</text>
+    <text x="982" y="429" font-size="13" fill="#6b7680">已归档原参数</text>
+
+    <rect x="250" y="662" width="700" height="26" rx="5" fill="#18232d"/>
+    <text x="600" y="681" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">每张卡必须能追溯：参考图、提示词、模型、参数、版本、授权来源</text>
+  </g>
+</svg>

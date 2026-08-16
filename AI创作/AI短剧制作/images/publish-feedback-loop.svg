@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <rect width="1200" height="650" fill="#f7f9fa"/>
+  <text x="600" y="56" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#18232d">发布后的数据迭代闭环</text>
+  <text x="600" y="88" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">数据用于定位问题，不用于替代创作判断</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <circle cx="600" cy="348" r="104" fill="#fff" stroke="#263541" stroke-width="3"/>
+    <text x="600" y="335" text-anchor="middle" font-size="25" font-weight="700" fill="#263541">单变量迭代</text>
+    <text x="600" y="370" text-anchor="middle" font-size="15" fill="#5c6b76">每轮只改变少量因素</text>
+
+    <rect x="475" y="125" width="250" height="88" rx="8" fill="#e9f3fc" stroke="#2d74aa" stroke-width="2"/>
+    <text x="600" y="160" text-anchor="middle" font-size="21" font-weight="700" fill="#1e5279">发布</text>
+    <text x="600" y="188" text-anchor="middle" font-size="14" fill="#526675">标题 · 封面 · 首帧 · 成片</text>
+
+    <rect x="840" y="275" width="250" height="88" rx="8" fill="#eaf7ef" stroke="#3d8a5c" stroke-width="2"/>
+    <text x="965" y="310" text-anchor="middle" font-size="21" font-weight="700" fill="#296140">采集</text>
+    <text x="965" y="338" text-anchor="middle" font-size="14" fill="#526675">留存 · 完播 · 互动 · 评论</text>
+
+    <rect x="700" y="500" width="250" height="88" rx="8" fill="#fff4dc" stroke="#b78428" stroke-width="2"/>
+    <text x="825" y="535" text-anchor="middle" font-size="21" font-weight="700" fill="#75581f">诊断</text>
+    <text x="825" y="563" text-anchor="middle" font-size="14" fill="#526675">流失位置 · 观众预期 · 表达障碍</text>
+
+    <rect x="250" y="500" width="250" height="88" rx="8" fill="#f4edfb" stroke="#785a9b" stroke-width="2"/>
+    <text x="375" y="535" text-anchor="middle" font-size="21" font-weight="700" fill="#523c6b">提出假设</text>
+    <text x="375" y="563" text-anchor="middle" font-size="14" fill="#526675">钩子 / 节奏 / 包装 / 情绪</text>
+
+    <rect x="110" y="275" width="250" height="88" rx="8" fill="#fdecef" stroke="#ae4d5c" stroke-width="2"/>
+    <text x="235" y="310" text-anchor="middle" font-size="21" font-weight="700" fill="#76333f">制作新版本</text>
+    <text x="235" y="338" text-anchor="middle" font-size="14" fill="#526675">保留有效部分，只改目标变量</text>
+
+    <path d="M725 170 C830 180 915 220 948 265" fill="none" stroke="#687680" stroke-width="3"/>
+    <path d="M948 265 l-2 -15 -12 9 z" fill="#687680"/>
+
+    <path d="M958 363 C945 430 908 475 852 496" fill="none" stroke="#687680" stroke-width="3"/>
+    <path d="M852 496 l14 2 -7 -13 z" fill="#687680"/>
+
+    <path d="M700 553 C630 585 570 585 500 553" fill="none" stroke="#687680" stroke-width="3"/>
+    <path d="M500 553 l12 -8 2 14 z" fill="#687680"/>
+
+    <path d="M348 500 C294 466 255 420 240 364" fill="none" stroke="#687680" stroke-width="3"/>
+    <path d="M240 364 l10 11 6 -14 z" fill="#687680"/>
+
+    <path d="M250 275 C308 215 380 180 475 170" fill="none" stroke="#687680" stroke-width="3"/>
+    <path d="M475 170 l-13 -7 2 15 z" fill="#687680"/>
+  </g>
+</svg>

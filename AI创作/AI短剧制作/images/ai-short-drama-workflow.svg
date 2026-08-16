@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#f7f8fa"/>
+  <text x="600" y="58" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#17212b">AI 短剧完整生产流程</text>
+  <text x="600" y="91" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#5b6875">每个阶段都有明确产物，通过验收后再进入下一阶段</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="70" y="130" width="300" height="116" rx="8" fill="#e9f3ff" stroke="#2775b6" stroke-width="2"/>
+    <circle cx="112" cy="170" r="22" fill="#2775b6"/>
+    <text x="112" y="177" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">1</text>
+    <text x="150" y="169" font-size="22" font-weight="700" fill="#173f5f">策划</text>
+    <text x="105" y="210" font-size="15" fill="#37556d">项目卡 · 受众 · 题材 · 一句话故事</text>
+
+    <rect x="450" y="130" width="300" height="116" rx="8" fill="#fff4db" stroke="#c88719" stroke-width="2"/>
+    <circle cx="492" cy="170" r="22" fill="#c88719"/>
+    <text x="492" y="177" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">2</text>
+    <text x="530" y="169" font-size="22" font-weight="700" fill="#684914">编剧</text>
+    <text x="485" y="210" font-size="15" fill="#6f592f">人物小传 · 节拍表 · 分场剧本</text>
+
+    <rect x="830" y="130" width="300" height="116" rx="8" fill="#eaf8ef" stroke="#338a55" stroke-width="2"/>
+    <circle cx="872" cy="170" r="22" fill="#338a55"/>
+    <text x="872" y="177" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">3</text>
+    <text x="910" y="169" font-size="22" font-weight="700" fill="#245f3c">分镜</text>
+    <text x="865" y="210" font-size="15" fill="#406c51">镜头表 · 故事板 · 临时声音预演</text>
+
+    <path d="M370 188 H438" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M438 188 l-12 -8 v16 z" fill="#77838f"/>
+    <path d="M750 188 H818" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M818 188 l-12 -8 v16 z" fill="#77838f"/>
+
+    <path d="M980 246 V286 H220 V318" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M220 318 l-8 -12 h16 z" fill="#77838f"/>
+
+    <rect x="70" y="320" width="300" height="116" rx="8" fill="#f3edff" stroke="#7559a8" stroke-width="2"/>
+    <circle cx="112" cy="360" r="22" fill="#7559a8"/>
+    <text x="112" y="367" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">4</text>
+    <text x="150" y="359" font-size="22" font-weight="700" fill="#49376b">资产</text>
+    <text x="105" y="400" font-size="15" fill="#64527f">角色卡 · 场景卡 · 道具 · 风格规范</text>
+
+    <rect x="450" y="320" width="300" height="116" rx="8" fill="#ffedf0" stroke="#b94a5c" stroke-width="2"/>
+    <circle cx="492" cy="360" r="22" fill="#b94a5c"/>
+    <text x="492" y="367" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">5</text>
+    <text x="530" y="359" font-size="22" font-weight="700" fill="#74323d">画面</text>
+    <text x="485" y="400" font-size="15" fill="#81515a">关键帧 · 图生视频 · 镜头验收</text>
+
+    <rect x="830" y="320" width="300" height="116" rx="8" fill="#eaf8f7" stroke="#27827d" stroke-width="2"/>
+    <circle cx="872" cy="360" r="22" fill="#27827d"/>
+    <text x="872" y="367" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">6</text>
+    <text x="910" y="359" font-size="22" font-weight="700" fill="#215f5c">声音</text>
+    <text x="865" y="400" font-size="15" fill="#426e6c">配音 · 环境声 · 音效 · 音乐</text>
+
+    <path d="M370 378 H438" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M438 378 l-12 -8 v16 z" fill="#77838f"/>
+    <path d="M750 378 H818" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M818 378 l-12 -8 v16 z" fill="#77838f"/>
+
+    <path d="M980 436 V476 H220 V508" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M220 508 l-8 -12 h16 z" fill="#77838f"/>
+
+    <rect x="70" y="510" width="300" height="116" rx="8" fill="#fff0e6" stroke="#c8672d" stroke-width="2"/>
+    <circle cx="112" cy="550" r="22" fill="#c8672d"/>
+    <text x="112" y="557" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">7</text>
+    <text x="150" y="549" font-size="22" font-weight="700" fill="#7b3f1f">后期</text>
+    <text x="105" y="590" font-size="15" fill="#805238">剪辑 · 字幕 · 混音 · 调色</text>
+
+    <rect x="450" y="510" width="300" height="116" rx="8" fill="#edf1f4" stroke="#5d6b78" stroke-width="2"/>
+    <circle cx="492" cy="550" r="22" fill="#5d6b78"/>
+    <text x="492" y="557" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">8</text>
+    <text x="530" y="549" font-size="22" font-weight="700" fill="#394653">质检</text>
+    <text x="485" y="590" font-size="15" fill="#56616c">故事 · 画面 · 声音 · 合规</text>
+
+    <rect x="830" y="510" width="300" height="116" rx="8" fill="#edf8e6" stroke="#5d8d31" stroke-width="2"/>
+    <circle cx="872" cy="550" r="22" fill="#5d8d31"/>
+    <text x="872" y="557" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">9</text>
+    <text x="910" y="549" font-size="22" font-weight="700" fill="#3d6122">发布</text>
+    <text x="865" y="590" font-size="15" fill="#56723d">包装 · 上线 · 数据 · 迭代</text>
+
+    <path d="M370 568 H438" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M438 568 l-12 -8 v16 z" fill="#77838f"/>
+    <path d="M750 568 H818" stroke="#77838f" stroke-width="3" fill="none"/>
+    <path d="M818 568 l-12 -8 v16 z" fill="#77838f"/>
+
+    <rect x="285" y="674" width="630" height="48" rx="8" fill="#17212b"/>
+    <text x="600" y="705" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">核心原则：先验证故事，再验证静帧，最后生成运动</text>
+  </g>
+</svg>

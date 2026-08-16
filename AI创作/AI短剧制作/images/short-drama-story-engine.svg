@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <rect width="1200" height="620" fill="#f8f9fb"/>
+  <text x="600" y="55" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#18232d">60～90 秒短剧故事引擎</text>
+  <text x="600" y="87" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">信息密度随时间递增，结尾不是结束，而是制造下一次点击</text>
+
+  <line x1="90" y1="450" x2="1110" y2="450" stroke="#7d8994" stroke-width="3"/>
+  <g font-family="Microsoft YaHei, sans-serif">
+    <path d="M90 450 L90 395 L270 360 L450 315 L710 260 L900 180 L1110 120 L1110 450 Z" fill="#eaf2f8"/>
+    <polyline points="90,395 270,360 450,315 710,260 900,180 1110,120" fill="none" stroke="#2775b6" stroke-width="5"/>
+
+    <circle cx="90" cy="395" r="10" fill="#2775b6"/>
+    <circle cx="270" cy="360" r="10" fill="#2775b6"/>
+    <circle cx="450" cy="315" r="10" fill="#2775b6"/>
+    <circle cx="710" cy="260" r="10" fill="#2775b6"/>
+    <circle cx="900" cy="180" r="10" fill="#c45d28"/>
+    <circle cx="1110" cy="120" r="10" fill="#a73546"/>
+
+    <rect x="52" y="275" width="176" height="82" rx="8" fill="#fff" stroke="#2775b6" stroke-width="2"/>
+    <text x="140" y="307" text-anchor="middle" font-size="20" font-weight="700" fill="#1f5c8c">强钩子</text>
+    <text x="140" y="335" text-anchor="middle" font-size="14" fill="#526675">异常 / 冲突 / 倒计时</text>
+
+    <rect x="244" y="205" width="190" height="82" rx="8" fill="#fff" stroke="#3c8b69" stroke-width="2"/>
+    <text x="339" y="237" text-anchor="middle" font-size="20" font-weight="700" fill="#2b684e">目标建立</text>
+    <text x="339" y="265" text-anchor="middle" font-size="14" fill="#526675">主角想得到什么</text>
+
+    <rect x="474" y="120" width="195" height="82" rx="8" fill="#fff" stroke="#b28125" stroke-width="2"/>
+    <text x="571" y="152" text-anchor="middle" font-size="20" font-weight="700" fill="#75591e">冲突升级</text>
+    <text x="571" y="180" text-anchor="middle" font-size="14" fill="#526675">阻碍和新信息增加</text>
+
+    <rect x="710" y="118" width="170" height="82" rx="8" fill="#fff" stroke="#c45d28" stroke-width="2"/>
+    <text x="795" y="150" text-anchor="middle" font-size="20" font-weight="700" fill="#883f1e">反转揭示</text>
+    <text x="795" y="178" text-anchor="middle" font-size="14" fill="#526675">推翻原有理解</text>
+
+    <rect x="920" y="225" width="210" height="82" rx="8" fill="#fff" stroke="#a73546" stroke-width="2"/>
+    <text x="1025" y="257" text-anchor="middle" font-size="20" font-weight="700" fill="#7f2c39">尾钩</text>
+    <text x="1025" y="285" text-anchor="middle" font-size="14" fill="#526675">更大的问题出现</text>
+
+    <line x1="90" y1="450" x2="90" y2="466" stroke="#65727e" stroke-width="2"/>
+    <line x1="270" y1="450" x2="270" y2="466" stroke="#65727e" stroke-width="2"/>
+    <line x1="450" y1="450" x2="450" y2="466" stroke="#65727e" stroke-width="2"/>
+    <line x1="710" y1="450" x2="710" y2="466" stroke="#65727e" stroke-width="2"/>
+    <line x1="900" y1="450" x2="900" y2="466" stroke="#65727e" stroke-width="2"/>
+    <line x1="1110" y1="450" x2="1110" y2="466" stroke="#65727e" stroke-width="2"/>
+
+    <text x="90" y="492" text-anchor="middle" font-size="15" fill="#3d4c58">0 秒</text>
+    <text x="270" y="492" text-anchor="middle" font-size="15" fill="#3d4c58">3 秒</text>
+    <text x="450" y="492" text-anchor="middle" font-size="15" fill="#3d4c58">15 秒</text>
+    <text x="710" y="492" text-anchor="middle" font-size="15" fill="#3d4c58">45 秒</text>
+    <text x="900" y="492" text-anchor="middle" font-size="15" fill="#3d4c58">65 秒</text>
+    <text x="1110" y="492" text-anchor="middle" font-size="15" fill="#3d4c58">90 秒</text>
+
+    <rect x="135" y="530" width="930" height="50" rx="8" fill="#eef1f4"/>
+    <text x="600" y="562" text-anchor="middle" font-size="17" fill="#33424e">节奏检查：每 10～15 秒至少增加一个新线索、新阻碍或关系变化</text>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <rect width="1200" height="650" fill="#f8f9fb"/>
+  <text x="600" y="56" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#17232e">从分镜到成片的镜头流水线</text>
+  <text x="600" y="88" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">先用低成本材料验证，再逐步投入生成预算</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="60" y="145" width="185" height="120" rx="8" fill="#e9f3fc" stroke="#2d74aa" stroke-width="2"/>
+    <text x="152" y="184" text-anchor="middle" font-size="21" font-weight="700" fill="#1e5279">分镜文本</text>
+    <text x="152" y="216" text-anchor="middle" font-size="14" fill="#526675">景别 · 动作 · 台词</text>
+    <text x="152" y="239" text-anchor="middle" font-size="14" fill="#526675">连续性要求</text>
+
+    <rect x="285" y="145" width="185" height="120" rx="8" fill="#eaf7ef" stroke="#3d8a5c" stroke-width="2"/>
+    <text x="377" y="184" text-anchor="middle" font-size="21" font-weight="700" fill="#296140">故事板</text>
+    <text x="377" y="216" text-anchor="middle" font-size="14" fill="#526675">低成本草图</text>
+    <text x="377" y="239" text-anchor="middle" font-size="14" fill="#526675">只验证构图</text>
+
+    <rect x="510" y="145" width="185" height="120" rx="8" fill="#fff4dc" stroke="#b78428" stroke-width="2"/>
+    <text x="602" y="184" text-anchor="middle" font-size="21" font-weight="700" fill="#75581f">Animatic</text>
+    <text x="602" y="216" text-anchor="middle" font-size="14" fill="#526675">草图 + 临时声音</text>
+    <text x="602" y="239" text-anchor="middle" font-size="14" fill="#526675">验证节奏与时长</text>
+
+    <rect x="735" y="145" width="185" height="120" rx="8" fill="#f4edfb" stroke="#785a9b" stroke-width="2"/>
+    <text x="827" y="184" text-anchor="middle" font-size="21" font-weight="700" fill="#523c6b">关键帧</text>
+    <text x="827" y="216" text-anchor="middle" font-size="14" fill="#526675">角色与场景定稿</text>
+    <text x="827" y="239" text-anchor="middle" font-size="14" fill="#526675">验收静态画面</text>
+
+    <rect x="960" y="145" width="185" height="120" rx="8" fill="#fdecef" stroke="#ae4d5c" stroke-width="2"/>
+    <text x="1052" y="184" text-anchor="middle" font-size="21" font-weight="700" fill="#76333f">动态镜头</text>
+    <text x="1052" y="216" text-anchor="middle" font-size="14" fill="#526675">图生视频</text>
+    <text x="1052" y="239" text-anchor="middle" font-size="14" fill="#526675">验收有效片段</text>
+
+    <path d="M245 205 H273" stroke="#6e7a84" stroke-width="3"/>
+    <path d="M273 205 l-12 -8 v16 z" fill="#6e7a84"/>
+    <path d="M470 205 H498" stroke="#6e7a84" stroke-width="3"/>
+    <path d="M498 205 l-12 -8 v16 z" fill="#6e7a84"/>
+    <path d="M695 205 H723" stroke="#6e7a84" stroke-width="3"/>
+    <path d="M723 205 l-12 -8 v16 z" fill="#6e7a84"/>
+    <path d="M920 205 H948" stroke="#6e7a84" stroke-width="3"/>
+    <path d="M948 205 l-12 -8 v16 z" fill="#6e7a84"/>
+
+    <rect x="150" y="355" width="900" height="164" rx="8" fill="#fff" stroke="#aab3bb" stroke-width="2"/>
+    <text x="600" y="390" text-anchor="middle" font-size="21" font-weight="700" fill="#263541">镜头验收的三道门</text>
+
+    <circle cx="275" cy="447" r="35" fill="#2d74aa"/>
+    <text x="275" y="454" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">A</text>
+    <text x="275" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#334550">讲得清</text>
+
+    <circle cx="600" cy="447" r="35" fill="#3d8a5c"/>
+    <text x="600" y="454" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">B</text>
+    <text x="600" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#334550">接得上</text>
+
+    <circle cx="925" cy="447" r="35" fill="#ae4d5c"/>
+    <text x="925" y="454" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">C</text>
+    <text x="925" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#334550">剪得动</text>
+
+    <line x1="310" y1="447" x2="565" y2="447" stroke="#c0c6cc" stroke-width="2" stroke-dasharray="8 7"/>
+    <line x1="635" y1="447" x2="890" y2="447" stroke="#c0c6cc" stroke-width="2" stroke-dasharray="8 7"/>
+
+    <rect x="262" y="560" width="676" height="48" rx="8" fill="#17232e"/>
+    <text x="600" y="591" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">失败优先回退一级修正，不要在错误方案上无限生成</text>
+  </g>
+</svg>
