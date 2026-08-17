@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#ecfeff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#059669"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="offline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="online" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="860" rx="28" fill="url(#bg)"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700" fill="#0f172a">RAG 系统工程架构</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#475569">检索增强生成 = ETL 数据管道 + 混合搜索引擎 + LLM 生成，本质是后端工程师熟悉的数据系统</text>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="60" y="115" width="200" height="34" rx="17" fill="url(#offline)"/>
+    <text x="160" y="138" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">离线链路（索引构建）</text>
+
+    <rect x="940" y="115" width="200" height="34" rx="17" fill="url(#online)"/>
+    <text x="1040" y="138" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">在线链路（问答请求）</text>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <rect x="50" y="170" width="1080" height="170" rx="16" fill="#ffffff" stroke="#fde68a"/>
+    <text x="70" y="200" font-size="17" font-weight="700" fill="#b45309">数据摄入与处理管道</text>
+
+    <g>
+      <rect x="70" y="220" width="135" height="60" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="137" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">文档上传</text>
+      <text x="137" y="265" text-anchor="middle" font-size="11" fill="#78350f">PDF/Word/MD/HTML</text>
+
+      <rect x="225" y="220" width="135" height="60" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="292" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">文档解析</text>
+      <text x="292" y="265" text-anchor="middle" font-size="11" fill="#78350f">文本/表格/图片抽取</text>
+
+      <rect x="380" y="220" width="135" height="60" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="447" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">清洗与分块</text>
+      <text x="447" y="265" text-anchor="middle" font-size="11" fill="#78350f">去噪/标题层级/Chunk</text>
+
+      <rect x="535" y="220" width="135" height="60" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="602" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">元数据标注</text>
+      <text x="602" y="265" text-anchor="middle" font-size="11" fill="#78350f">来源/权限/版本/时间</text>
+
+      <rect x="690" y="220" width="135" height="60" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="757" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">Embedding</text>
+      <text x="757" y="265" text-anchor="middle" font-size="11" fill="#78350f">文本 → 向量</text>
+
+      <rect x="845" y="220" width="135" height="60" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="912" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">向量索引</text>
+      <text x="912" y="265" text-anchor="middle" font-size="11" fill="#78350f">HNSW/IVF + 元数据</text>
+
+      <rect x="1000" y="220" width="115" height="60" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="1057" y="245" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">向量库</text>
+      <text x="1057" y="265" text-anchor="middle" font-size="11" fill="#78350f">+ 全文索引</text>
+    </g>
+
+    <g stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <line x1="205" y1="250" x2="225" y2="250"/>
+      <line x1="360" y1="250" x2="380" y2="250"/>
+      <line x1="515" y1="250" x2="535" y2="250"/>
+      <line x1="670" y1="250" x2="690" y2="250"/>
+      <line x1="825" y1="250" x2="845" y2="250"/>
+      <line x1="980" y1="250" x2="1000" y2="250"/>
+    </g>
+
+    <text x="600" y="312" text-anchor="middle" font-size="12" fill="#92400e">异步任务队列（Celery/Asynq） · 增量更新 · 失败重试 · 内容哈希去重 · 与你做 ETL 管道完全同构</text>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <rect x="50" y="365" width="1080" height="185" rx="16" fill="#ffffff" stroke="#a7f3d0"/>
+    <text x="70" y="395" font-size="17" font-weight="700" fill="#047857">在线检索与生成链路</text>
+
+    <g>
+      <rect x="70" y="415" width="120" height="60" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+      <text x="130" y="440" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">用户问题</text>
+      <text x="130" y="460" text-anchor="middle" font-size="11" fill="#047857">自然语言输入</text>
+
+      <rect x="220" y="415" width="120" height="60" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+      <text x="280" y="440" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">Query 改写</text>
+      <text x="280" y="460" text-anchor="middle" font-size="11" fill="#047857">扩展/HyDE/多查询</text>
+
+      <rect x="370" y="405" width="260" height="80" rx="10" fill="#d1fae5" stroke="#34d399" stroke-width="2"/>
+      <text x="500" y="432" text-anchor="middle" font-size="14" font-weight="700" fill="#065f46">混合检索</text>
+      <text x="500" y="454" text-anchor="middle" font-size="12" fill="#047857">向量检索（语义） + BM25（关键词）</text>
+      <text x="500" y="472" text-anchor="middle" font-size="11" fill="#065f46">↑ 权限过滤必须在检索前执行 ↑</text>
+
+      <rect x="660" y="415" width="120" height="60" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+      <text x="720" y="440" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">Rerank</text>
+      <text x="720" y="460" text-anchor="middle" font-size="11" fill="#047857">Cross-Encoder 重排</text>
+
+      <rect x="810" y="415" width="120" height="60" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+      <text x="870" y="440" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">上下文拼接</text>
+      <text x="870" y="460" text-anchor="middle" font-size="11" fill="#047857">Prompt + Top-K Chunk</text>
+
+      <rect x="960" y="405" width="140" height="80" rx="10" fill="#a7f3d0" stroke="#059669" stroke-width="2"/>
+      <text x="1030" y="432" text-anchor="middle" font-size="14" font-weight="700" fill="#064e3b">LLM 生成</text>
+      <text x="1030" y="454" text-anchor="middle" font-size="12" fill="#065f46">答案 + 引用来源</text>
+      <text x="1030" y="472" text-anchor="middle" font-size="11" fill="#047857">流式 SSE 输出</text>
+    </g>
+
+    <g stroke="#059669" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <line x1="190" y1="445" x2="220" y2="445"/>
+      <line x1="340" y1="445" x2="370" y2="445"/>
+      <line x1="630" y1="445" x2="660" y2="445"/>
+      <line x1="780" y1="445" x2="810" y2="445"/>
+      <line x1="930" y1="445" x2="960" y2="445"/>
+    </g>
+
+    <path d="M1030 485 L1030 510 L500 510 L500 485" stroke="#2563eb" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowBlue)"/>
+    <text x="765" y="528" text-anchor="middle" font-size="12" fill="#2563eb">检索结果回流参与生成</text>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <rect x="50" y="575" width="1080" height="130" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="70" y="605" font-size="17" font-weight="700" fill="#0f172a">RAG 效果关键变量（按影响排序）</text>
+
+    <g font-size="13" fill="#334155">
+      <rect x="70" y="620" width="240" height="68" rx="10" fill="#fef2f2" stroke="#fecaca"/>
+      <text x="190" y="645" text-anchor="middle" font-weight="700" fill="#b91c1c">① 文档解析质量</text>
+      <text x="190" y="665" text-anchor="middle" font-size="12" fill="#7f1d1d">垃圾进 = 垃圾出</text>
+      <text x="190" y="680" text-anchor="middle" font-size="11" fill="#991b1b">表格/图片/页眉页脚处理</text>
+
+      <rect x="330" y="620" width="240" height="68" rx="10" fill="#fffbeb" stroke="#fde68a"/>
+      <text x="450" y="645" text-anchor="middle" font-weight="700" fill="#b45309">② Chunk 切分策略</text>
+      <text x="450" y="665" text-anchor="middle" font-size="12" fill="#92400e">语义完整 + overlap + 标题路径</text>
+      <text x="450" y="680" text-anchor="middle" font-size="11" fill="#a16207">固定字符硬切是最常见错误</text>
+
+      <rect x="590" y="620" width="240" height="68" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+      <text x="710" y="645" text-anchor="middle" font-weight="700" fill="#1d4ed8">③ 检索策略</text>
+      <text x="710" y="665" text-anchor="middle" font-size="12" fill="#1e40af">混合检索 + Rerank 远胜纯向量</text>
+      <text x="710" y="680" text-anchor="middle" font-size="11" fill="#2563eb">Query 改写对短查询效果显著</text>
+
+      <rect x="850" y="620" width="260" height="68" rx="10" fill="#f0fdf4" stroke="#bbf7d0"/>
+      <text x="980" y="645" text-anchor="middle" font-weight="700" fill="#15803d">④ 评测驱动迭代</text>
+      <text x="980" y="665" text-anchor="middle" font-size="12" fill="#166534">Recall@K / MRR / Faithfulness</text>
+      <text x="980" y="680" text-anchor="middle" font-size="11" fill="#15803d">没有评测集的调参都是玄学</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="50" y="725" width="1080" height="110" rx="16" fill="#0f172a" opacity="0.95"/>
+    <text x="590" y="758" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">后端工程师做 RAG 的天然优势</text>
+    <text x="590" y="788" text-anchor="middle" font-size="14" fill="#cbd5e1">你已经懂 ETL 管道、异步任务、数据库索引、权限过滤、缓存、监控、评测——这些正是 RAG 工程的核心。</text>
+    <text x="590" y="812" text-anchor="middle" font-size="13" fill="#6ee7b7">需要新增的只是：Embedding 模型选型、向量索引原理、Prompt 构建、LLM 评测指标。</text>
+  </g>
+</svg>

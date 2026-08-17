@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 580" width="1050" height="580">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+    <linearGradient id="queryGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="hnswGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="storageGrad3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="1050" height="580" rx="16" fill="url(#bgGrad3)"/>
+  <text x="525" y="40" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="bold" fill="#064e3b" text-anchor="middle">向量数据库的存储结构与近似最近邻（ANN）检索</text>
+
+  <!-- 查询向量 -->
+  <g transform="translate(40, 90)" filter="url(#shadow3)">
+    <rect x="0" y="0" width="160" height="90" rx="12" fill="url(#queryGrad)"/>
+    <text x="80" y="32" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">查询向量 q</text>
+    <text x="80" y="55" font-family="monospace" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">[0.23, -0.87, ...]</text>
+    <text x="80" y="75" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">维度 d = 768</text>
+  </g>
+
+  <line x1="200" y1="135" x2="260" y2="135" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow3)"/>
+
+  <!-- HNSW 索引图 -->
+  <g transform="translate(270, 70)" filter="url(#shadow3)">
+    <rect x="0" y="0" width="420" height="320" rx="14" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+    <text x="210" y="30" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#0c4a6e" text-anchor="middle">HNSW 分层导航小世界图</text>
+    <line x1="20" y1="42" x2="400" y2="42" stroke="#bae6fd" stroke-width="1"/>
+
+    <!-- Layer 2 (顶层稀疏) -->
+    <text x="25" y="62" font-family="monospace" font-size="10" fill="#0369a1" font-weight="bold">Layer 2 (顶层)</text>
+    <circle cx="200" cy="60" r="6" fill="#0ea5e9"/>
+    <circle cx="300" cy="60" r="6" fill="#0ea5e9"/>
+    <line x1="206" y1="60" x2="294" y2="60" stroke="#0ea5e9" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Layer 1 -->
+    <text x="25" y="105" font-family="monospace" font-size="10" fill="#0369a1" font-weight="bold">Layer 1</text>
+    <circle cx="100" cy="103" r="5" fill="#38bdf8"/>
+    <circle cx="180" cy="103" r="5" fill="#38bdf8"/>
+    <circle cx="260" cy="103" r="5" fill="#38bdf8"/>
+    <circle cx="340" cy="103" r="5" fill="#38bdf8"/>
+    <line x1="105" y1="103" x2="175" y2="103" stroke="#38bdf8" stroke-width="1.5" opacity="0.6"/>
+    <line x1="185" y1="103" x2="255" y2="103" stroke="#38bdf8" stroke-width="1.5" opacity="0.6"/>
+    <line x1="265" y1="103" x2="335" y2="103" stroke="#38bdf8" stroke-width="1.5" opacity="0.6"/>
+    <line x1="180" y1="108" x2="200" y2="152" stroke="#38bdf8" stroke-width="1" opacity="0.4" stroke-dasharray="3,2"/>
+
+    <!-- Layer 0 (底层稠密) -->
+    <text x="25" y="160" font-family="monospace" font-size="10" fill="#0369a1" font-weight="bold">Layer 0 (底层 · 全量数据)</text>
+    <g fill="#7dd3fc" stroke="#0284c7" stroke-width="1">
+      <circle cx="60" cy="185" r="4"/>
+      <circle cx="110" cy="175" r="4"/>
+      <circle cx="160" cy="190" r="4"/>
+      <circle cx="210" cy="178" r="4"/>
+      <circle cx="260" cy="192" r="4"/>
+      <circle cx="310" cy="180" r="4"/>
+      <circle cx="360" cy="188" r="4"/>
+      <circle cx="85" cy="215" r="4"/>
+      <circle cx="145" cy="225" r="4"/>
+      <circle cx="205" cy="218" r="4"/>
+      <circle cx="270" cy="228" r="4"/>
+      <circle cx="330" cy="215" r="4"/>
+      <circle cx="380" cy="225" r="4"/>
+      <circle cx="120" cy="255" r="4"/>
+      <circle cx="190" cy="262" r="4"/>
+      <circle cx="250" cy="255" r="4"/>
+      <circle cx="320" cy="260" r="4"/>
+    </g>
+    <!-- 底层连接线 (示意) -->
+    <g stroke="#7dd3fc" stroke-width="1" opacity="0.5">
+      <line x1="64" y1="185" x2="106" y2="175"/>
+      <line x1="114" y1="175" x2="156" y2="190"/>
+      <line x1="164" y1="190" x2="206" y2="178"/>
+      <line x1="214" y1="178" x2="256" y2="192"/>
+      <line x1="264" y1="192" x2="306" y2="180"/>
+      <line x1="314" y1="180" x2="356" y2="188"/>
+      <line x1="60" y1="189" x2="85" y2="211"/>
+      <line x1="110" y1="179" x2="85" y2="211"/>
+      <line x1="160" y1="194" x2="145" y2="221"/>
+      <line x1="210" y1="182" x2="205" y2="214"/>
+      <line x1="260" y1="196" x2="270" y2="224"/>
+      <line x1="310" y1="184" x2="330" y2="211"/>
+      <line x1="360" y1="192" x2="380" y2="221"/>
+      <line x1="85" y1="219" x2="145" y2="225"/>
+      <line x1="145" y1="229" x2="205" y2="218"/>
+      <line x1="205" y1="222" x2="270" y2="228"/>
+      <line x1="270" y1="232" x2="330" y2="215"/>
+      <line x1="330" y1="219" x2="380" y2="225"/>
+      <line x1="145" y1="229" x2="120" y2="251"/>
+      <line x1="205" y1="222" x2="190" y2="258"/>
+      <line x1="270" y1="232" x2="250" y2="251"/>
+      <line x1="330" y1="219" x2="320" y2="256"/>
+    </g>
+
+    <!-- 查询路径高亮 -->
+    <circle cx="210" cy="60" r="7" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="180" cy="103" r="6" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="205" cy="218" r="6" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+    <line x1="205" y1="66" x2="185" y2="98" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+    <line x1="180" y1="109" x2="200" y2="152" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+    <line x1="205" y1="160" x2="205" y2="212" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,2"/>
+
+    <text x="350" y="295" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#dc2626">
+      <tspan fill="#ef4444">●</tspan> 红色路径：q 从顶层贪心导航到底层近邻
+    </text>
+  </g>
+
+  <line x1="690" y1="230" x2="750" y2="230" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow3)"/>
+
+  <!-- 存储层 -->
+  <g transform="translate(760, 90)" filter="url(#shadow3)">
+    <rect x="0" y="0" width="250" height="280" rx="14" fill="url(#storageGrad3)"/>
+    <text x="125" y="32" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">持久化存储</text>
+    <line x1="20" y1="44" x2="230" y2="44" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+
+    <g font-family="monospace" font-size="10" fill="rgba(255,255,255,0.95)">
+      <rect x="20" y="58" width="210" height="36" rx="6" fill="rgba(255,255,255,0.15)"/>
+      <text x="30" y="75">id: vec_001</text>
+      <text x="30" y="89">z: [float32 × 768]</text>
+
+      <rect x="20" y="100" width="210" height="36" rx="6" fill="rgba(255,255,255,0.15)"/>
+      <text x="30" y="117">id: vec_002</text>
+      <text x="30" y="131">z: [float32 × 768]</text>
+
+      <rect x="20" y="142" width="210" height="36" rx="6" fill="rgba(255,255,255,0.25)" stroke="#fef08a" stroke-width="1.5"/>
+      <text x="30" y="159" fill="#fef9c3">id: vec_003 ★ 最近邻</text>
+      <text x="30" y="173" fill="#fef9c3">z: [float32 × 768]</text>
+
+      <rect x="20" y="184" width="210" height="36" rx="6" fill="rgba(255,255,255,0.15)"/>
+      <text x="30" y="201">id: vec_004</text>
+      <text x="30" y="215">z: [float32 × 768]</text>
+
+      <text x="125" y="250" text-anchor="middle" fill="rgba(255,255,255,0.8)">... 百万 / 亿级向量 ...</text>
+      <text x="125" y="268" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.6)">+ payload / metadata</text>
+    </g>
+  </g>
+
+  <!-- 底部：其他索引方法对比 -->
+  <g transform="translate(40, 420)">
+    <rect x="0" y="0" width="970" height="130" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="20" y="30" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">常见 ANN 索引算法对比</text>
+
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="220" height="65" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+      <text x="110" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">HNSW</text>
+      <text x="110" y="38" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle">分层图索引 · 查询 O(log N)</text>
+      <text x="110" y="54" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle">高召回 · 内存占用较大</text>
+    </g>
+
+    <g transform="translate(260, 50)">
+      <rect x="0" y="0" width="220" height="65" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+      <text x="110" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="bold" fill="#166534" text-anchor="middle">IVF (倒排文件)</text>
+      <text x="110" y="38" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#14532d" text-anchor="middle">K-Means 聚类 · 只搜最近簇</text>
+      <text x="110" y="54" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#14532d" text-anchor="middle">速度快 · 可调 nprobe 平衡精度</text>
+    </g>
+
+    <g transform="translate(500, 50)">
+      <rect x="0" y="0" width="220" height="65" rx="8" fill="#fefce8" stroke="#fef08a"/>
+      <text x="110" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="bold" fill="#854d0e" text-anchor="middle">PQ (乘积量化)</text>
+      <text x="110" y="38" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#713f12" text-anchor="middle">向量切分 · 每段压缩编码</text>
+      <text x="110" y="54" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#713f12" text-anchor="middle">极致压缩 · 适合超大规模</text>
+    </g>
+
+    <g transform="translate(740, 50)">
+      <rect x="0" y="0" width="210" height="65" rx="8" fill="#fdf2f8" stroke="#fbcfe8"/>
+      <text x="105" y="20" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" font-weight="bold" fill="#9d174d" text-anchor="middle">暴力搜索 Flat</text>
+      <text x="105" y="38" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#831843" text-anchor="middle">精确计算 · 100% 召回</text>
+      <text x="105" y="54" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#831843" text-anchor="middle">小数据集基准 · 不扩展</text>
+    </g>
+  </g>
+</svg>

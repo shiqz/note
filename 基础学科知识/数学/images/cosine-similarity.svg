@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f8fafc"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b">余弦相似度（Cosine Similarity）：衡量方向的相似程度</text>
+  
+  <g transform="translate(200, 200)">
+    <line x1="-130" y1="0" x2="130" y2="0" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="0" y1="130" x2="0" y2="-130" stroke="#94a3b8" stroke-width="1.5"/>
+    
+    <line x1="0" y1="0" x2="90" y2="-20" stroke="#22c55e" stroke-width="3" marker-end="url(#arr-cos1)"/>
+    <defs><marker id="arr-cos1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#22c55e"/></marker></defs>
+    <text x="95" y="-25" font-family="Arial, sans-serif" font-size="13" fill="#16a34a" font-weight="bold">"猫"</text>
+    
+    <line x1="0" y1="0" x2="80" y2="-40" stroke="#3b82f6" stroke-width="3" marker-end="url(#arr-cos2)"/>
+    <defs><marker id="arr-cos2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/></marker></defs>
+    <text x="85" y="-50" font-family="Arial, sans-serif" font-size="13" fill="#2563eb" font-weight="bold">"狗"</text>
+    
+    <line x1="0" y1="0" x2="-70" y2="60" stroke="#ef4444" stroke-width="3" marker-end="url(#arr-cos3)"/>
+    <defs><marker id="arr-cos3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ef4444"/></marker></defs>
+    <text x="-95" y="75" font-family="Arial, sans-serif" font-size="13" fill="#dc2626" font-weight="bold">"汽车"</text>
+    
+    <path d="M 50 -11 A 50 50 0 0 1 50 -25" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="60" y="-25" font-family="Arial, sans-serif" font-size="14" fill="#d97706" font-weight="bold">θ₁</text>
+    
+    <path d="M -20 25 A 50 50 0 0 1 -50 15" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="-70" y="30" font-family="Arial, sans-serif" font-size="14" fill="#d97706" font-weight="bold">θ₂</text>
+    
+    <text x="0" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">词向量空间示意：语义相近的词方向接近</text>
+  </g>
+  
+  <g transform="translate(500, 100)">
+    <rect x="0" y="0" width="260" height="200" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    
+    <text x="130" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#166534">余弦相似度公式</text>
+    
+    <text x="130" y="70" text-anchor="middle" font-family="serif" font-size="20" fill="#14532d">
+      cosθ = <tspan font-family="monospace" font-size="16">a · b</tspan>
+    </text>
+    <line x1="80" y1="80" x2="180" y2="80" stroke="#14532d" stroke-width="1"/>
+    <text x="130" y="105" text-anchor="middle" font-family="monospace" font-size="16" fill="#14532d">|a| × |b|</text>
+    
+    <text x="130" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#166534">取值范围：[-1, 1]</text>
+    
+    <text x="20" y="165" font-family="Arial, sans-serif" font-size="12" fill="#22c55e">cos = 1 → 方向完全相同</text>
+    <text x="20" y="185" font-family="Arial, sans-serif" font-size="12" fill="#22c55e">cos = 0 → 垂直（无关）</text>
+    <text x="140" y="185" font-family="Arial, sans-serif" font-size="12" fill="#22c55e">cos = -1 → 方向相反</text>
+  </g>
+  
+  <rect x="50" y="340" width="700" height="140" rx="10" fill="#fdf4ff" stroke="#c084fc"/>
+  
+  <text x="400" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#7e22ce">余弦相似度在AI中的核心应用</text>
+  
+  <g transform="translate(80, 400)">
+    <rect x="0" y="0" width="190" height="60" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+    <text x="95" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#7e22ce">语义搜索</text>
+    <text x="95" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#9333ea">Query与文档向量比对</text>
+  </g>
+  
+  <g transform="translate(305, 400)">
+    <rect x="0" y="0" width="190" height="60" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+    <text x="95" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#7e22ce">推荐系统</text>
+    <text x="95" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#9333ea">用户与物品向量匹配</text>
+  </g>
+  
+  <g transform="translate(530, 400)">
+    <rect x="0" y="0" width="190" height="60" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+    <text x="95" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#7e22ce">人脸识别/聚类</text>
+    <text x="95" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#9333ea">特征向量相似比对</text>
+  </g>
+</svg>

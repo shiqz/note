@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f8fafc"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b">矩阵乘法（Matrix Multiplication）</text>
+  
+  <g transform="translate(100, 80)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">矩阵 A (2×3)</text>
+    
+    <rect x="0" y="15" width="120" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="4"/>
+    <text x="20" y="40" font-family="monospace" font-size="16" fill="#1e40af">1  2  3</text>
+    <text x="20" y="70" font-family="monospace" font-size="16" fill="#1e40af">4  5  6</text>
+  </g>
+  
+  <g transform="translate(280, 80)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">矩阵 B (3×2)</text>
+    
+    <rect x="0" y="15" width="90" height="110" fill="#dcfce7" stroke="#22c55e" stroke-width="2" rx="4"/>
+    <text x="20" y="40" font-family="monospace" font-size="16" fill="#166534">7  8</text>
+    <text x="20" y="70" font-family="monospace" font-size="16" fill="#166534">9  10</text>
+    <text x="20" y="100" font-family="monospace" font-size="16" fill="#166534">11 12</text>
+  </g>
+  
+  <text x="400" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#64748b">=</text>
+  
+  <g transform="translate(450, 80)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">结果 C (2×2)</text>
+    
+    <rect x="0" y="15" width="100" height="80" fill="#fce7f3" stroke="#ec4899" stroke-width="2" rx="4"/>
+  </g>
+  
+  <g transform="translate(100, 240)">
+    <rect x="0" y="0" width="600" height="230" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    
+    <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155">计算规则：行乘列，点积求和</text>
+    
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="80" height="50" fill="#bfdbfe" stroke="#3b82f6" rx="3"/>
+      <text x="40" y="32" text-anchor="middle" font-family="monospace" font-size="13" fill="#1e40af">A的第1行</text>
+      
+      <text x="95" y="30" font-family="Arial, sans-serif" font-size="20" fill="#64748b">·</text>
+      
+      <rect x="110" y="0" width="80" height="50" fill="#bbf7d0" stroke="#22c55e" rx="3"/>
+      <text x="150" y="32" text-anchor="middle" font-family="monospace" font-size="13" fill="#166534">B的第1列</text>
+      
+      <text x="205" y="30" font-family="Arial, sans-serif" font-size="20" fill="#64748b">=</text>
+      
+      <rect x="220" y="0" width="120" height="50" fill="#fbcfe8" stroke="#ec4899" rx="3"/>
+      <text x="280" y="20" text-anchor="middle" font-family="monospace" font-size="12" fill="#9d174d">1×7 + 2×9 + 3×11</text>
+      <text x="280" y="40" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#9d174d">= 58</text>
+    </g>
+    
+    <g transform="translate(30, 130)">
+      <rect x="0" y="0" width="80" height="50" fill="#bfdbfe" stroke="#3b82f6" rx="3"/>
+      <text x="40" y="32" text-anchor="middle" font-family="monospace" font-size="13" fill="#1e40af">A的第2行</text>
+      
+      <text x="95" y="30" font-family="Arial, sans-serif" font-size="20" fill="#64748b">·</text>
+      
+      <rect x="110" y="0" width="80" height="50" fill="#bbf7d0" stroke="#22c55e" rx="3"/>
+      <text x="150" y="32" text-anchor="middle" font-family="monospace" font-size="13" fill="#166534">B的第2列</text>
+      
+      <text x="205" y="30" font-family="Arial, sans-serif" font-size="20" fill="#64748b">=</text>
+      
+      <rect x="220" y="0" width="120" height="50" fill="#fbcfe8" stroke="#ec4899" rx="3"/>
+      <text x="280" y="20" text-anchor="middle" font-family="monospace" font-size="12" fill="#9d174d">4×8 + 5×10 + 6×12</text>
+      <text x="280" y="40" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#9d174d">= 154</text>
+    </g>
+    
+    <text x="300" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748b">C[1][1] = 58, C[1][2] = 64, C[2][1] = 139, C[2][2] = 154</text>
+  </g>
+  
+  <rect x="50" y="410" width="700" height="70" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="400" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#166534">矩阵乘法本质：对数据做线性变换</text>
+  <text x="400" y="458" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#22c55e">在AI中：全连接层、注意力计算、特征变换——神经网络的核心运算就是矩阵乘法</text>
+</svg>

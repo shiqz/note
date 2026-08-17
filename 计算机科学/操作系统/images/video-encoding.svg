@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f0f9ff"/>
+      <stop offset="100%" style="stop-color:#e0f2fe"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="480" fill="url(#bg6)" rx="12"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="20" font-weight="600" fill="#0c4a6e">视频编码：连续图像的压缩艺术</text>
+  
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="340" height="360" rx="10" fill="#fff" stroke="#0284c7" stroke-width="2"/>
+    <text x="170" y="28" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#0369a1">视频本质：快速连续播放的图片帧</text>
+    
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="300" height="50" rx="4" fill="#f0f9ff" stroke="#7dd3fc"/>
+      <text x="150" y="20" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#0369a1">帧1 (I帧)  帧2 (P帧)  帧3 (P帧)  帧4 (B帧)</text>
+      <text x="150" y="38" text-anchor="middle" font-family="monospace" font-size="10" fill="#0284c7">完整图像    ←预测残差→    ←双向预测→</text>
+    </g>
+    
+    <g transform="translate(20, 115)">
+      <rect x="0" y="0" width="300" height="70" rx="6" fill="#fef3c7" stroke="#fbbf24"/>
+      <text x="10" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#92400e">I帧（关键帧/Intra）</text>
+      <text x="10" y="40" font-family="-apple-system, sans-serif" font-size="10" fill="#b45309">完整图像，独立解码，类似JPEG</text>
+      <text x="10" y="55" font-family="-apple-system, sans-serif" font-size="10" fill="#b45309">压缩率低，是其他帧的参考</text>
+    </g>
+    
+    <g transform="translate(20, 195)">
+      <rect x="0" y="0" width="300" height="70" rx="6" fill="#dcfce7" stroke="#86efac"/>
+      <text x="10" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#166534">P帧（前向预测/Predictive）</text>
+      <text x="10" y="40" font-family="-apple-system, sans-serif" font-size="10" fill="#15803d">参考前面的I/P帧，只存储差异</text>
+      <text x="10" y="55" font-family="-apple-system, sans-serif" font-size="10" fill="#15803d">压缩率较高，需要前面帧解码</text>
+    </g>
+    
+    <g transform="translate(20, 275)">
+      <rect x="0" y="0" width="300" height="70" rx="6" fill="#faf5ff" stroke="#d8b4fe"/>
+      <text x="10" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#6b21a8">B帧（双向预测/Bidirectional）</text>
+      <text x="10" y="40" font-family="-apple-system, sans-serif" font-size="10" fill="#7c3aed">同时参考前后帧，压缩率最高</text>
+      <text x="10" y="55" font-family="-apple-system, sans-serif" font-size="10" fill="#7c3aed">需要前后帧都可用才能解码</text>
+    </g>
+  </g>
+  
+  <g transform="translate(410, 70)">
+    <rect x="0" y="0" width="340" height="360" rx="10" fill="#fff" stroke="#0284c7" stroke-width="2"/>
+    <text x="170" y="28" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#0369a1">编码标准与容器格式</text>
+    
+    <g transform="translate(20, 50)">
+      <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#374151">帧内压缩（空间压缩）</text>
+      <rect x="0" y="10" width="300" height="55" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+      <text x="10" y="30" font-family="-apple-system, sans-serif" font-size="10" fill="#b91c1c">• DCT变换 + 量化（类似JPEG）</text>
+      <text x="10" y="47" font-family="-apple-system, sans-serif" font-size="10" fill="#b91c1c">• 去除单帧内的空间冗余</text>
+      <text x="10" y="62" font-family="-apple-system, sans-serif" font-size="10" fill="#b91c1c">• 宏块划分与运动估计</text>
+    </g>
+    
+    <g transform="translate(20, 130)">
+      <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#374151">帧间压缩（时间压缩）</text>
+      <rect x="0" y="10" width="300" height="70" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+      <text x="10" y="30" font-family="-apple-system, sans-serif" font-size="10" fill="#1d4ed8">• 运动估计：找前后帧相似块</text>
+      <text x="10" y="47" font-family="-apple-system, sans-serif" font-size="10" fill="#1d4ed8">• 运动补偿：用运动矢量预测</text>
+      <text x="10" y="64" font-family="-apple-system, sans-serif" font-size="10" fill="#1d4ed8">• 只存储残差（预测误差）+ 运动矢量</text>
+    </g>
+    
+    <g transform="translate(20, 220)">
+      <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#374151">常见编码标准</text>
+      <rect x="0" y="10" width="300" height="60" rx="6" fill="#ecfdf5" stroke="#6ee7b7"/>
+      <text x="10" y="30" font-family="monospace" font-size="10" fill="#047857">H.264/AVC → 兼容性最好，最常用</text>
+      <text x="10" y="47" font-family="monospace" font-size="10" fill="#047857">H.265/HEVC → 压缩率高50%，专利费</text>
+      <text x="10" y="64" font-family="monospace" font-size="10" fill="#047857">AV1 → 开源免版税，下一代标准</text>
+    </g>
+    
+    <g transform="translate(20, 300)">
+      <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#374151">容器格式（封装）</text>
+      <rect x="0" y="10" width="300" height="40" rx="6" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="10" y="28" font-family="monospace" font-size="10" fill="#92400e">MP4, MKV, AVI, MOV, WebM → 打包视频+音频+字幕</text>
+      <text x="10" y="43" font-family="monospace" font-size="10" fill="#92400e">注意：容器≠编码（如MP4可装H.264或H.265）</text>
+    </g>
+  </g>
+</svg>

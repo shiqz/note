@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fdf4ff"/>
+      <stop offset="100%" style="stop-color:#fae8ff"/>
+    </linearGradient>
+    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a21caf"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#bg3)" rx="12"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="20" font-weight="600" fill="#701a75">UTF-8 编码规则：变长编码的艺术</text>
+  
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="700" height="120" rx="10" fill="#fff" stroke="#c084fc" stroke-width="2"/>
+    <text x="350" y="30" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#86198f">UTF-8 字节模板（前缀位标识长度）</text>
+    
+    <g transform="translate(30, 50)">
+      <rect x="0" y="0" width="130" height="50" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="65" y="20" text-anchor="middle" font-family="monospace" font-size="13" font-weight="600" fill="#166534">0xxxxxxx</text>
+      <text x="65" y="40" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#15803d">1字节 (U+0000~U+007F)</text>
+    </g>
+    
+    <g transform="translate(175, 50)">
+      <rect x="0" y="0" width="160" height="50" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="80" y="20" text-anchor="middle" font-family="monospace" font-size="13" font-weight="600" fill="#92400e">110xxxxx 10xxxxxx</text>
+      <text x="80" y="40" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#b45309">2字节 (U+0080~U+07FF)</text>
+    </g>
+    
+    <g transform="translate(350, 50)">
+      <rect x="0" y="0" width="190" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+      <text x="95" y="20" text-anchor="middle" font-family="monospace" font-size="13" font-weight="600" fill="#1e40af">1110xxxx 10xxxxxx 10xxxxxx</text>
+      <text x="95" y="40" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#1d4ed8">3字节 (U+0800~U+FFFF)</text>
+    </g>
+    
+    <g transform="translate(555, 50)">
+      <rect x="0" y="0" width="130" height="50" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
+      <text x="65" y="20" text-anchor="middle" font-family="monospace" font-size="11" font-weight="600" fill="#9d174d">11110xxx 10xxxxxx...</text>
+      <text x="65" y="40" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#be185d">4字节 (U+10000+)</text>
+    </g>
+  </g>
+  
+  <g transform="translate(50, 210)">
+    <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#701a75">编码示例：汉字"中" (U+4E2D)</text>
+    
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="700" height="220" rx="10" fill="#fff" stroke="#c084fc" stroke-width="2"/>
+      
+      <g transform="translate(30, 30)">
+        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#374151">步骤1：确定码点范围</text>
+        <text x="0" y="22" font-family="monospace" font-size="12" fill="#6b7280">U+4E2D = 20013（十进制），在 U+0800~U+FFFF 范围 → 需要3字节</text>
+      </g>
+      
+      <g transform="translate(30, 75)">
+        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#374151">步骤2：码点转二进制</text>
+        <text x="0" y="22" font-family="monospace" font-size="12" fill="#6b7280">U+4E2D = 0100 1110 0010 1101（16位）</text>
+      </g>
+      
+      <g transform="translate(30, 120)">
+        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#374151">步骤3：填入UTF-8模板（3字节格式）</text>
+        <rect x="0" y="15" width="640" height="30" rx="4" fill="#f3f4f6"/>
+        <text x="20" y="35" font-family="monospace" font-size="14" fill="#1e40af">1110<span style="color:#dc2626;font-weight:600">0100</span> 10<span style="color:#dc2626;font-weight:600">111000</span> 10<span style="color:#dc2626;font-weight:600">101101</span></text>
+        <text x="420" y="35" font-family="monospace" font-size="11" fill="#6b7280">← 码点位</text>
+      </g>
+      
+      <g transform="translate(30, 175)">
+        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#374151">步骤4：最终字节序列</text>
+        <rect x="0" y="12" width="200" height="28" rx="4" fill="#ecfdf5" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="100" y="31" text-anchor="middle" font-family="monospace" font-size="15" font-weight="600" fill="#166534">E4 B8 AD</text>
+      </g>
+    </g>
+  </g>
+</svg>
