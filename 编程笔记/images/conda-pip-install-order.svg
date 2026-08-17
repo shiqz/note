@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610">
+  <rect width="1200" height="610" fill="#f7f9fb"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#17232e">Conda 与 pip 的正确安装顺序</text>
+  <text x="600" y="87" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">先确定环境和底层依赖，再用 pip 补充 PyPI 独有包</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="65" y="160" width="190" height="120" rx="8" fill="#e8f2fb" stroke="#2d74aa" stroke-width="2"/>
+    <circle cx="105" cy="195" r="21" fill="#2d74aa"/>
+    <text x="105" y="202" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">1</text>
+    <text x="160" y="201" text-anchor="middle" font-size="19" font-weight="700" fill="#1e5279">创建环境</text>
+    <text x="160" y="238" text-anchor="middle" font-size="14" fill="#526675">固定 Python 版本</text>
+    <text x="160" y="261" text-anchor="middle" font-size="14" fill="#526675">同时安装 pip</text>
+
+    <rect x="285" y="160" width="190" height="120" rx="8" fill="#eaf7ef" stroke="#3d8a5c" stroke-width="2"/>
+    <circle cx="325" cy="195" r="21" fill="#3d8a5c"/>
+    <text x="325" y="202" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">2</text>
+    <text x="380" y="201" text-anchor="middle" font-size="19" font-weight="700" fill="#296140">Conda 优先</text>
+    <text x="380" y="238" text-anchor="middle" font-size="14" fill="#526675">科学计算与二进制包</text>
+    <text x="380" y="261" text-anchor="middle" font-size="14" fill="#526675">一次统一求解</text>
+
+    <rect x="505" y="160" width="190" height="120" rx="8" fill="#fff4de" stroke="#b78428" stroke-width="2"/>
+    <circle cx="545" cy="195" r="21" fill="#b78428"/>
+    <text x="545" y="202" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">3</text>
+    <text x="600" y="201" text-anchor="middle" font-size="19" font-weight="700" fill="#75581f">pip 补充</text>
+    <text x="600" y="238" text-anchor="middle" font-size="14" fill="#526675">仅安装 Conda 缺失包</text>
+    <text x="600" y="261" text-anchor="middle" font-size="14" fill="#526675">使用 python -m pip</text>
+
+    <rect x="725" y="160" width="190" height="120" rx="8" fill="#f4edfb" stroke="#785a9b" stroke-width="2"/>
+    <circle cx="765" cy="195" r="21" fill="#785a9b"/>
+    <text x="765" y="202" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">4</text>
+    <text x="820" y="201" text-anchor="middle" font-size="19" font-weight="700" fill="#523c6b">验证环境</text>
+    <text x="820" y="238" text-anchor="middle" font-size="14" fill="#526675">检查解释器和导入</text>
+    <text x="820" y="261" text-anchor="middle" font-size="14" fill="#526675">运行项目测试</text>
+
+    <rect x="945" y="160" width="190" height="120" rx="8" fill="#fdecef" stroke="#ae4d5c" stroke-width="2"/>
+    <circle cx="985" cy="195" r="21" fill="#ae4d5c"/>
+    <text x="985" y="202" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">5</text>
+    <text x="1040" y="201" text-anchor="middle" font-size="19" font-weight="700" fill="#76333f">记录依赖</text>
+    <text x="1040" y="238" text-anchor="middle" font-size="14" fill="#526675">维护 environment.yml</text>
+    <text x="1040" y="261" text-anchor="middle" font-size="14" fill="#526675">验证可重建</text>
+
+    <path d="M255 220 H273" stroke="#6e7a84" stroke-width="3"/><path d="M273 220 l-11 -8 v16 z" fill="#6e7a84"/>
+    <path d="M475 220 H493" stroke="#6e7a84" stroke-width="3"/><path d="M493 220 l-11 -8 v16 z" fill="#6e7a84"/>
+    <path d="M695 220 H713" stroke="#6e7a84" stroke-width="3"/><path d="M713 220 l-11 -8 v16 z" fill="#6e7a84"/>
+    <path d="M915 220 H933" stroke="#6e7a84" stroke-width="3"/><path d="M933 220 l-11 -8 v16 z" fill="#6e7a84"/>
+
+    <rect x="120" y="348" width="960" height="176" rx="8" fill="#fff" stroke="#aab4bc" stroke-width="2"/>
+    <text x="600" y="385" text-anchor="middle" font-size="21" font-weight="700" fill="#263541">三条边界</text>
+    <text x="190" y="430" font-size="16" font-weight="700" fill="#ae4d5c">禁止</text>
+    <text x="265" y="430" font-size="15" fill="#526675">在 base 中堆放项目依赖</text>
+    <text x="190" y="468" font-size="16" font-weight="700" fill="#ae4d5c">避免</text>
+    <text x="265" y="468" font-size="15" fill="#526675">在 Conda 环境使用 pip --user</text>
+    <text x="620" y="430" font-size="16" font-weight="700" fill="#3d8a5c">推荐</text>
+    <text x="695" y="430" font-size="15" fill="#526675">Notebook 中使用 %pip</text>
+    <text x="620" y="468" font-size="16" font-weight="700" fill="#3d8a5c">止损</text>
+    <text x="695" y="468" font-size="15" fill="#526675">冲突严重时按环境文件重建</text>
+  </g>
+</svg>

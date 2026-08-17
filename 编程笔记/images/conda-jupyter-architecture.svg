@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690">
+  <rect width="1200" height="690" fill="#f7f9fb"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#17232e">Conda、Jupyter 与 Python 内核的关系</text>
+  <text x="600" y="87" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">浏览器界面、服务进程和代码解释器是三个不同层次</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="80" y="135" width="1040" height="92" rx="8" fill="#e8f2fb" stroke="#2d74aa" stroke-width="2"/>
+    <text x="130" y="173" font-size="22" font-weight="700" fill="#1e5279">浏览器 / IDE</text>
+    <text x="130" y="203" font-size="15" fill="#526675">JupyterLab · Notebook 7 · VS Code Notebook</text>
+    <rect x="870" y="156" width="195" height="48" rx="6" fill="#2d74aa"/>
+    <text x="968" y="186" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">编辑与展示 .ipynb</text>
+
+    <path d="M600 227 V267" stroke="#6b7883" stroke-width="3"/>
+    <path d="M600 267 l-9 -13 h18 z" fill="#6b7883"/>
+    <text x="620" y="252" font-size="14" fill="#66747f">WebSocket / HTTP</text>
+
+    <rect x="80" y="270" width="1040" height="102" rx="8" fill="#fff4de" stroke="#b78428" stroke-width="2"/>
+    <text x="130" y="312" font-size="22" font-weight="700" fill="#75581f">Jupyter Server</text>
+    <text x="130" y="342" font-size="15" fill="#625c4d">管理文件、会话、终端、认证和内核连接，本身不决定代码使用哪个 Python</text>
+    <rect x="870" y="295" width="195" height="50" rx="6" fill="#b78428"/>
+    <text x="968" y="326" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">读取 kernelspec</text>
+
+    <path d="M600 372 V412" stroke="#6b7883" stroke-width="3"/>
+    <path d="M600 412 l-9 -13 h18 z" fill="#6b7883"/>
+    <text x="620" y="397" font-size="14" fill="#66747f">启动内核进程</text>
+
+    <rect x="80" y="415" width="1040" height="178" rx="8" fill="#eaf7ef" stroke="#3d8a5c" stroke-width="2"/>
+    <text x="130" y="452" font-size="22" font-weight="700" fill="#296140">Conda 项目环境</text>
+
+    <rect x="125" y="478" width="270" height="75" rx="7" fill="#fff" stroke="#83b397" stroke-width="2"/>
+    <text x="260" y="508" text-anchor="middle" font-size="18" font-weight="700" fill="#315f45">Python 解释器</text>
+    <text x="260" y="535" text-anchor="middle" font-size="14" fill="#5b6c62">真正执行代码</text>
+
+    <rect x="465" y="478" width="270" height="75" rx="7" fill="#fff" stroke="#83b397" stroke-width="2"/>
+    <text x="600" y="508" text-anchor="middle" font-size="18" font-weight="700" fill="#315f45">ipykernel</text>
+    <text x="600" y="535" text-anchor="middle" font-size="14" fill="#5b6c62">连接 Jupyter 与 Python</text>
+
+    <rect x="805" y="478" width="270" height="75" rx="7" fill="#fff" stroke="#83b397" stroke-width="2"/>
+    <text x="940" y="508" text-anchor="middle" font-size="18" font-weight="700" fill="#315f45">项目依赖</text>
+    <text x="940" y="535" text-anchor="middle" font-size="14" fill="#5b6c62">NumPy · pandas · PyTorch</text>
+
+    <path d="M395 515 H453" stroke="#75a287" stroke-width="3"/>
+    <path d="M453 515 l-12 -8 v16 z" fill="#75a287"/>
+    <path d="M735 515 H793" stroke="#75a287" stroke-width="3"/>
+    <path d="M793 515 l-12 -8 v16 z" fill="#75a287"/>
+
+    <rect x="250" y="623" width="700" height="42" rx="7" fill="#17232e"/>
+    <text x="600" y="650" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">排错第一步：在 Notebook 中检查 sys.executable</text>
+  </g>
+</svg>

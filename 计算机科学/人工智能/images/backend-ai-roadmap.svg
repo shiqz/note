@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="goGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00add8"/>
+      <stop offset="100%" stop-color="#007d9c"/>
+    </linearGradient>
+    <linearGradient id="pyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3776ab"/>
+      <stop offset="100%" stop-color="#ffd43b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="900" rx="28" fill="url(#bg)"/>
+  <text x="700" y="56" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="32" font-weight="700" fill="#0f172a">后端开发者 AI 学习路线全景</text>
+  <text x="700" y="92" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#475569">发挥 Go/Python 后端优势，从工程视角切入 AI，5~7 个月成为 AI 应用架构师</text>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <line x1="100" y1="170" x2="1300" y2="170" stroke="#2563eb" stroke-width="4" stroke-dasharray="8,4" opacity="0.4"/>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <rect x="50" y="130" width="170" height="32" rx="16" fill="#2563eb"/>
+    <text x="135" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">已有后端能力</text>
+
+    <rect x="1180" y="130" width="170" height="32" rx="16" fill="#059669"/>
+    <text x="1265" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">AI 应用架构师</text>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <g filter="url(#shadow)">
+      <rect x="40" y="200" width="175" height="290" rx="16" fill="url(#card)" stroke="#bfdbfe"/>
+      <rect x="40" y="200" width="175" height="48" rx="16" fill="#1d4ed8"/>
+      <rect x="40" y="232" width="175" height="16" fill="#1d4ed8"/>
+      <text x="127" y="231" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">阶段 0 · 1~2周</text>
+      <text x="127" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">认知转换与工具链</text>
+      <text x="56" y="310" font-size="13" fill="#334155">• 概率性系统思维</text>
+      <text x="56" y="334" font-size="13" fill="#334155">• Python 数据科学生态</text>
+      <text x="56" y="358" font-size="13" fill="#334155">• NumPy / Pandas</text>
+      <text x="56" y="382" font-size="13" fill="#334155">• 线性代数/概率直觉</text>
+      <text x="56" y="406" font-size="13" fill="#334155">• GPU/显存基础认知</text>
+      <text x="56" y="430" font-size="13" fill="#334155">• Conda/Jupyter</text>
+      <rect x="56" y="450" width="68" height="24" rx="12" fill="url(#pyGrad)" opacity="0.85"/>
+      <text x="90" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Python</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="235" y="200" width="175" height="290" rx="16" fill="url(#card)" stroke="#bfdbfe"/>
+      <rect x="235" y="200" width="175" height="48" rx="16" fill="#2563eb"/>
+      <rect x="235" y="232" width="175" height="16" fill="#2563eb"/>
+      <text x="322" y="231" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">阶段 1 · 3~4周</text>
+      <text x="322" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">ML与大模型基础</text>
+      <text x="251" y="310" font-size="13" fill="#334155">• 训练/推理/过拟合</text>
+      <text x="251" y="334" font-size="13" fill="#334155">• PyTorch 速通</text>
+      <text x="251" y="358" font-size="13" fill="#334155">• Transformer/Attention</text>
+      <text x="251" y="382" font-size="13" fill="#334155">• Tokenizer/KV Cache</text>
+      <text x="251" y="406" font-size="13" fill="#334155">• Temperature/采样</text>
+      <text x="251" y="430" font-size="13" fill="#334155">• 主流模型家族选型</text>
+      <rect x="251" y="450" width="68" height="24" rx="12" fill="url(#pyGrad)" opacity="0.85"/>
+      <text x="285" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Python</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="430" y="200" width="175" height="290" rx="16" fill="url(#card)" stroke="#bbf7d0"/>
+      <rect x="430" y="200" width="175" height="48" rx="16" fill="#059669"/>
+      <rect x="430" y="232" width="175" height="16" fill="#059669"/>
+      <text x="517" y="231" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">阶段 2 · 4~6周</text>
+      <text x="517" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">LLM应用核心开发</text>
+      <text x="446" y="310" font-size="13" fill="#334155">• 模型网关/客户端封装</text>
+      <text x="446" y="334" font-size="13" fill="#334155">• 重试/限流/熔断/降级</text>
+      <text x="446" y="358" font-size="13" fill="#334155">• Prompt 工程化</text>
+      <text x="446" y="382" font-size="13" fill="#334155">• 结构化输出/Function Call</text>
+      <text x="446" y="406" font-size="13" fill="#334155">• SSE流式响应</text>
+      <text x="446" y="430" font-size="13" fill="#334155">• 上下文管理/Token预算</text>
+      <rect x="446" y="450" width="56" height="24" rx="12" fill="url(#goGrad)"/>
+      <text x="474" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Go</text>
+      <rect x="510" y="450" width="68" height="24" rx="12" fill="url(#pyGrad)" opacity="0.85"/>
+      <text x="544" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Python</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="625" y="200" width="175" height="290" rx="16" fill="url(#card)" stroke="#bbf7d0"/>
+      <rect x="625" y="200" width="175" height="48" rx="16" fill="#059669"/>
+      <rect x="625" y="232" width="175" height="16" fill="#059669"/>
+      <text x="712" y="231" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">阶段 3 · 4~6周</text>
+      <text x="712" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">RAG知识库系统</text>
+      <text x="641" y="310" font-size="13" fill="#334155">• 文档解析/ETL管道</text>
+      <text x="641" y="334" font-size="13" fill="#334155">• Chunk切分策略</text>
+      <text x="641" y="358" font-size="13" fill="#334155">• Embedding/向量数据库</text>
+      <text x="641" y="382" font-size="13" fill="#334155">• 混合检索/Rerank</text>
+      <text x="641" y="406" font-size="13" fill="#334155">• 权限过滤/引用溯源</text>
+      <text x="641" y="430" font-size="13" fill="#334155">• RAG评测(Recall/MRR)</text>
+      <rect x="641" y="450" width="56" height="24" rx="12" fill="url(#goGrad)"/>
+      <text x="669" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Go</text>
+      <rect x="705" y="450" width="68" height="24" rx="12" fill="url(#pyGrad)" opacity="0.85"/>
+      <text x="739" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Python</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="820" y="200" width="175" height="290" rx="16" fill="url(#card)" stroke="#fde68a"/>
+      <rect x="820" y="200" width="175" height="48" rx="16" fill="#d97706"/>
+      <rect x="820" y="232" width="175" height="16" fill="#d97706"/>
+      <text x="907" y="231" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">阶段 4 · 3~4周</text>
+      <text x="907" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">Agent与工具编排</text>
+      <text x="836" y="310" font-size="13" fill="#334155">• ReAct/Plan-Execute</text>
+      <text x="836" y="334" font-size="13" fill="#334155">• 工具注册/Schema校验</text>
+      <text x="836" y="358" font-size="13" fill="#334155">• 状态机/工作流引擎</text>
+      <text x="836" y="382" font-size="13" fill="#334155">• 权限/审计/人工确认</text>
+      <text x="836" y="406" font-size="13" fill="#334155">• 循环控制/超时兜底</text>
+      <text x="836" y="430" font-size="13" fill="#334155">• DAG确定性工作流</text>
+      <rect x="836" y="450" width="56" height="24" rx="12" fill="url(#goGrad)"/>
+      <text x="864" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Go</text>
+      <rect x="900" y="450" width="68" height="24" rx="12" fill="url(#pyGrad)" opacity="0.85"/>
+      <text x="934" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Python</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="1015" y="200" width="175" height="290" rx="16" fill="url(#card)" stroke="#fecaca"/>
+      <rect x="1015" y="200" width="175" height="48" rx="16" fill="#dc2626"/>
+      <rect x="1015" y="232" width="175" height="16" fill="#dc2626"/>
+      <text x="1102" y="231" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">阶段 5 · 4~6周</text>
+      <text x="1102" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">AI基础设施</text>
+      <text x="1031" y="310" font-size="13" fill="#334155">• vLLM/TGI推理引擎</text>
+      <text x="1031" y="334" font-size="13" fill="#334155">• 量化(GPTQ/AWQ/GGUF)</text>
+      <text x="1031" y="358" font-size="13" fill="#334155">• GPU调度/K8s</text>
+      <text x="1031" y="382" font-size="13" fill="#334155">• 多模型路由/负载均衡</text>
+      <text x="1031" y="406" font-size="13" fill="#334155">• 语义缓存/批处理</text>
+      <text x="1031" y="430" font-size="13" fill="#334155">• 高可用/容灾降级</text>
+      <rect x="1031" y="450" width="68" height="24" rx="12" fill="url(#goGrad)"/>
+      <text x="1065" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Go 主场</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="1210" y="200" width="150" height="290" rx="16" fill="url(#card)" stroke="#fecaca"/>
+      <rect x="1210" y="200" width="150" height="48" rx="16" fill="#be123c"/>
+      <rect x="1210" y="232" width="150" height="16" fill="#be123c"/>
+      <text x="1285" y="231" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">阶段 6 · 4~6周</text>
+      <text x="1285" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">生产化工程</text>
+      <text x="1224" y="310" font-size="13" fill="#334155">• LLM可观测性</text>
+      <text x="1224" y="334" font-size="13" fill="#334155">• Trace/Token/成本</text>
+      <text x="1224" y="358" font-size="13" fill="#334155">• 评测驱动/CI回归</text>
+      <text x="1224" y="382" font-size="13" fill="#334155">• Prompt注入防御</text>
+      <text x="1224" y="406" font-size="13" fill="#334155">• A/B测试/灰度</text>
+      <text x="1224" y="430" font-size="13" fill="#334155">• 数据飞轮/合规</text>
+      <rect x="1224" y="450" width="56" height="24" rx="12" fill="url(#goGrad)"/>
+      <text x="1252" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Go</text>
+      <rect x="1288" y="450" width="56" height="24" rx="12" fill="url(#pyGrad)" opacity="0.85"/>
+      <text x="1316" y="467" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Python</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrow)" opacity="0.5">
+    <line x1="215" y1="345" x2="235" y2="345"/>
+    <line x1="410" y1="345" x2="430" y2="345"/>
+    <line x1="605" y1="345" x2="625" y2="345"/>
+    <line x1="800" y1="345" x2="820" y2="345"/>
+    <line x1="995" y1="345" x2="1015" y2="345"/>
+    <line x1="1190" y1="345" x2="1210" y2="345"/>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="40" y="530" width="1320" height="150" rx="18" fill="#ffffff" stroke="#e2e8f0" filter="url(#shadow)"/>
+    <text x="700" y="566" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">后端能力 → AI 工程能力迁移映射</text>
+
+    <g>
+      <rect x="70" y="588" width="260" height="72" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+      <text x="200" y="614" text-anchor="middle" font-size="14" font-weight="700" fill="#1d4ed8">API 网关 / 微服务</text>
+      <text x="200" y="638" text-anchor="middle" font-size="13" fill="#334155">→ LLM 网关、多模型路由</text>
+      <text x="200" y="654" text-anchor="middle" font-size="13" fill="#334155">→ 限流/重试/熔断/降级</text>
+    </g>
+    <g>
+      <rect x="360" y="588" width="260" height="72" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+      <text x="490" y="614" text-anchor="middle" font-size="14" font-weight="700" fill="#047857">数据库 / 搜索引擎</text>
+      <text x="490" y="638" text-anchor="middle" font-size="13" fill="#334155">→ 向量数据库、ANN 索引</text>
+      <text x="490" y="654" text-anchor="middle" font-size="13" fill="#334155">→ 混合检索、分片一致性</text>
+    </g>
+    <g>
+      <rect x="650" y="588" width="260" height="72" rx="12" fill="#fffbeb" stroke="#fde68a"/>
+      <text x="780" y="614" text-anchor="middle" font-size="14" font-weight="700" fill="#b45309">消息队列 / 工作流</text>
+      <text x="780" y="638" text-anchor="middle" font-size="13" fill="#334155">→ Agent 编排、异步推理</text>
+      <text x="780" y="654" text-anchor="middle" font-size="13" fill="#334155">→ 状态机、人工介入点</text>
+    </g>
+    <g>
+      <rect x="940" y="588" width="260" height="72" rx="12" fill="#fef2f2" stroke="#fecaca"/>
+      <text x="1070" y="614" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">监控 / 安全 / CI/CD</text>
+      <text x="1070" y="638" text-anchor="middle" font-size="13" fill="#334155">→ LLM 可观测、Token 成本</text>
+      <text x="1070" y="654" text-anchor="middle" font-size="13" fill="#334155">→ 注入防御、评测流水线</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="40" y="710" width="1320" height="150" rx="18" fill="#0f172a" opacity="0.94"/>
+    <text x="700" y="748" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">实战项目里程碑（每个都要可运行、可测试、可部署）</text>
+
+    <g fill="#e2e8f0" font-size="14">
+      <text x="80" y="786">① 工单分类器</text>
+      <text x="80" y="808" font-size="12" fill="#94a3b8">Prompt工程 · 结构化输出 · 评测</text>
+
+      <text x="290" y="786">② 企业知识库 RAG</text>
+      <text x="290" y="808" font-size="12" fill="#94a3b8">文档处理 · 混合检索 · 权限溯源</text>
+
+      <text x="530" y="786">③ 售后 Agent</text>
+      <text x="530" y="808" font-size="12" fill="#94a3b8">工具调用 · 状态管理 · 安全确认</text>
+
+      <text x="720" y="786">④ Go LLM 网关</text>
+      <text x="720" y="808" font-size="12" fill="#94a3b8">多模型路由 · 限流缓存 · 监控</text>
+
+      <text x="930" y="786">⑤ 生产级 AI 平台</text>
+      <text x="930" y="808" font-size="12" fill="#94a3b8">评测 · 灰度 · 安全 · 成本优化</text>
+    </g>
+
+    <line x1="80" y1="830" x2="1320" y2="830" stroke="#334155" stroke-width="1"/>
+    <text x="700" y="852" text-anchor="middle" font-size="14" fill="#cbd5e1">核心原则：不要只证明你会调 API，要证明你能把 AI 做成可靠的软件系统。</text>
+  </g>
+</svg>

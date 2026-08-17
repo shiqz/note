@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ea580c"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="400" fill="#f8fafc"/>
+  
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b">向量（Vector）：有方向和大小的量</text>
+  
+  <g transform="translate(200, 200)">
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="0" y1="120" x2="0" y2="-120" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="130" y="5" font-family="Arial, sans-serif" font-size="14" fill="#64748b">x</text>
+    <text x="5" y="-130" font-family="Arial, sans-serif" font-size="14" fill="#64748b">y</text>
+    <text x="-130" y="5" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="end">-x</text>
+    <text x="5" y="135" font-family="Arial, sans-serif" font-size="14" fill="#64748b">-y</text>
+    
+    <line x1="0" y1="0" x2="80" y2="-60" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+    <circle cx="80" cy="-60" r="4" fill="#2563eb"/>
+    
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#93c5fd" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="80" y1="0" x2="80" y2="-60" stroke="#93c5fd" stroke-width="1" stroke-dasharray="4,4"/>
+    
+    <text x="45" y="-45" font-family="Arial, sans-serif" font-size="16" fill="#2563eb" font-weight="bold">v = (4, -3)</text>
+    <text x="85" y="-65" font-family="Arial, sans-serif" font-size="13" fill="#2563eb">(4, -3)</text>
+    
+    <text x="0" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155">二维向量 (2D)</text>
+    <text x="0" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">平面上的一个点/箭头</text>
+  </g>
+  
+  <g transform="translate(600, 200)">
+    <line x1="-100" y1="80" x2="100" y2="-80" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="-100" y1="-20" x2="100" y2="20" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="0" y1="100" x2="0" y2="-100" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    
+    <text x="110" y="-85" font-family="Arial, sans-serif" font-size="13" fill="#64748b">x</text>
+    <text x="110" y="25" font-family="Arial, sans-serif" font-size="13" fill="#64748b">y</text>
+    <text x="5" y="-110" font-family="Arial, sans-serif" font-size="13" fill="#64748b">z</text>
+    
+    <line x1="0" y1="0" x2="60" y2="-30" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
+    <circle cx="60" cy="-30" r="4" fill="#16a34a"/>
+    
+    <line x1="0" y1="0" x2="60" y2="15" stroke="#86efac" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="60" y1="15" x2="60" y2="-30" stroke="#86efac" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="60" y1="15" x2="0" y2="0" stroke="none"/>
+    
+    <text x="20" y="-50" font-family="Arial, sans-serif" font-size="15" fill="#16a34a" font-weight="bold">v = (3, 2, 4)</text>
+    <text x="65" y="-35" font-family="Arial, sans-serif" font-size="12" fill="#16a34a">(3, 2, 4)</text>
+    
+    <text x="0" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155">三维向量 (3D)</text>
+    <text x="0" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">空间中的一个点/箭头</text>
+  </g>
+  
+  <rect x="50" y="310" width="700" height="70" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="400" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e40af" font-weight="bold">向量 = 数字组成的有序列表，表示一个方向和大小</text>
+  <text x="400" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#3b82f6">在AI中：词向量、图像特征、用户画像、神经网络激活值都是向量</text>
+</svg>

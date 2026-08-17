@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f7f9fb"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#17232e">Conda 与 Jupyter 故障排查路径</text>
+  <text x="600" y="87" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">从解释器身份开始，逐层检查环境、内核和依赖</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="420" y="125" width="360" height="74" rx="8" fill="#17232e"/>
+    <text x="600" y="158" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">Notebook 运行异常</text>
+    <text x="600" y="183" text-anchor="middle" font-size="14" fill="#dbe1e5">导入失败 / 内核重启 / 找不到环境</text>
+
+    <path d="M600 199 V235" stroke="#6b7883" stroke-width="3"/>
+    <path d="M600 235 l-9 -13 h18 z" fill="#6b7883"/>
+
+    <rect x="420" y="238" width="360" height="82" rx="8" fill="#e8f2fb" stroke="#2d74aa" stroke-width="2"/>
+    <text x="600" y="271" text-anchor="middle" font-size="20" font-weight="700" fill="#1e5279">检查 sys.executable</text>
+    <text x="600" y="299" text-anchor="middle" font-size="14" fill="#526675">代码究竟由哪个 Python 执行？</text>
+
+    <path d="M420 279 H264" stroke="#6b7883" stroke-width="3"/>
+    <path d="M264 279 l13 -9 v18 z" fill="#6b7883"/>
+    <text x="338" y="267" text-anchor="middle" font-size="14" fill="#ae4d5c">路径错误</text>
+
+    <path d="M780 279 H936" stroke="#6b7883" stroke-width="3"/>
+    <path d="M936 279 l-13 -9 v18 z" fill="#6b7883"/>
+    <text x="862" y="267" text-anchor="middle" font-size="14" fill="#3d8a5c">路径正确</text>
+
+    <rect x="70" y="238" width="190" height="130" rx="8" fill="#fdecef" stroke="#ae4d5c" stroke-width="2"/>
+    <text x="165" y="273" text-anchor="middle" font-size="19" font-weight="700" fill="#76333f">修正内核</text>
+    <text x="165" y="306" text-anchor="middle" font-size="14" fill="#526675">切换 Notebook 内核</text>
+    <text x="165" y="333" text-anchor="middle" font-size="14" fill="#526675">或重新注册 ipykernel</text>
+
+    <rect x="940" y="238" width="190" height="130" rx="8" fill="#eaf7ef" stroke="#3d8a5c" stroke-width="2"/>
+    <text x="1035" y="273" text-anchor="middle" font-size="19" font-weight="700" fill="#296140">检查依赖</text>
+    <text x="1035" y="306" text-anchor="middle" font-size="14" fill="#526675">conda list</text>
+    <text x="1035" y="333" text-anchor="middle" font-size="14" fill="#526675">python -m pip show</text>
+
+    <path d="M165 368 V425 H420" stroke="#6b7883" stroke-width="3" fill="none"/>
+    <path d="M420 425 l-13 -9 v18 z" fill="#6b7883"/>
+    <path d="M1035 368 V425 H780" stroke="#6b7883" stroke-width="3" fill="none"/>
+    <path d="M780 425 l13 -9 v18 z" fill="#6b7883"/>
+
+    <rect x="420" y="387" width="360" height="82" rx="8" fill="#fff4de" stroke="#b78428" stroke-width="2"/>
+    <text x="600" y="420" text-anchor="middle" font-size="20" font-weight="700" fill="#75581f">在目标环境直接运行</text>
+    <text x="600" y="448" text-anchor="middle" font-size="14" fill="#526675">绕开 Jupyter，验证 Python 与导入</text>
+
+    <path d="M600 469 V505" stroke="#6b7883" stroke-width="3"/>
+    <path d="M600 505 l-9 -13 h18 z" fill="#6b7883"/>
+
+    <rect x="420" y="508" width="360" height="82" rx="8" fill="#f4edfb" stroke="#785a9b" stroke-width="2"/>
+    <text x="600" y="541" text-anchor="middle" font-size="20" font-weight="700" fill="#523c6b">检查 kernelspec 与日志</text>
+    <text x="600" y="569" text-anchor="middle" font-size="14" fill="#526675">路径 · 架构 · 动态库 · 权限 · 端口</text>
+
+    <path d="M600 590 V626" stroke="#6b7883" stroke-width="3"/>
+    <path d="M600 626 l-9 -13 h18 z" fill="#6b7883"/>
+
+    <rect x="300" y="629" width="600" height="52" rx="8" fill="#eaf7ef" stroke="#3d8a5c" stroke-width="2"/>
+    <text x="600" y="661" text-anchor="middle" font-size="17" font-weight="700" fill="#296140">环境修补成本过高时：依据 environment.yml 重建</text>
+  </g>
+</svg>

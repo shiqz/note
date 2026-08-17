@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="780" rx="28" fill="url(#bg)"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700" fill="#0f172a">LLM 应用可观测性体系</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#475569">传统 APM 只能看系统指标，AI 系统还需要观测模型质量、Token 成本和安全事件</text>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <rect x="60" y="120" width="340" height="280" rx="16" fill="#ffffff" stroke="#bfdbfe"/>
+    <rect x="60" y="120" width="340" height="50" rx="16" fill="#2563eb"/>
+    <rect x="60" y="148" width="340" height="22" fill="#2563eb"/>
+    <text x="230" y="153" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">系统性能指标</text>
+
+    <g font-size="14" fill="#334155">
+      <text x="82" y="200" font-weight="700" fill="#1e40af">流量与延迟</text>
+      <text x="82" y="224" font-size="13">• QPS / 并发数 / 请求数</text>
+      <text x="82" y="246" font-size="13">• TTFT（首字延迟）</text>
+      <text x="82" y="268" font-size="13">• 端到端延迟 P50 / P95 / P99</text>
+      <text x="82" y="290" font-size="13">• HTTP 错误率 / 超时率</text>
+
+      <text x="82" y="320" font-weight="700" fill="#1e40af">资源与依赖</text>
+      <text x="82" y="344" font-size="13">• CPU / 内存 / GPU 利用率</text>
+      <text x="82" y="366" font-size="13">• 向量库 / Redis / DB 延迟</text>
+      <text x="82" y="388" font-size="13">• 队列堆积长度</text>
+    </g>
+
+    <rect x="380" y="120" width="340" height="280" rx="16" fill="#ffffff" stroke="#a7f3d0" filter="url(#shadow)"/>
+    <rect x="380" y="120" width="340" height="50" rx="16" fill="#059669"/>
+    <rect x="380" y="148" width="340" height="22" fill="#059669"/>
+    <text x="550" y="153" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Token 经济与成本</text>
+
+    <g font-size="14" fill="#334155">
+      <text x="402" y="200" font-weight="700" fill="#047857">用量统计</text>
+      <text x="402" y="224" font-size="13">• input_tokens / output_tokens</text>
+      <text x="402" y="246" font-size="13">• 按用户/租户/模型/功能维度</text>
+      <text x="402" y="268" font-size="13">• 语义缓存命中率</text>
+
+      <text x="402" y="298" font-weight="700" fill="#047857">成本控制</text>
+      <text x="402" y="322" font-size="13">• 每分钟/每小时费用</text>
+      <text x="402" y="344" font-size="13">• 用户配额消耗</text>
+      <text x="402" y="366" font-size="13">• 成本异常告警（突增检测）</text>
+      <text x="402" y="388" font-size="13">• 模型分级路由节省比例</text>
+    </g>
+
+    <rect x="700" y="120" width="440" height="280" rx="16" fill="#ffffff" stroke="#fde68a" filter="url(#shadow)"/>
+    <rect x="700" y="120" width="440" height="50" rx="16" fill="#d97706"/>
+    <rect x="700" y="148" width="440" height="22" fill="#d97706"/>
+    <text x="920" y="153" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">AI 质量指标（传统 APM 没有的）</text>
+
+    <g font-size="14" fill="#334155">
+      <text x="722" y="200" font-weight="700" fill="#b45309">输出质量</text>
+      <text x="722" y="224" font-size="13">• 格式合法率（JSON Schema 通过率）</text>
+      <text x="722" y="246" font-size="13">• 任务成功率 / 幻觉率 / 拒答准确率</text>
+      <text x="722" y="268" font-size="13">• RAG: Recall@K · MRR · Faithfulness</text>
+
+      <text x="722" y="298" font-weight="700" fill="#b45309">用户体验</text>
+      <text x="722" y="322" font-size="13">• 点赞/点踩率、重试率、转人工率</text>
+      <text x="722" y="344" font-size="13">• 会话轮数、完成率、平均会话时长</text>
+      <text x="722" y="366" font-size="13">• 工具调用成功率 / Agent 步数分布</text>
+      <text x="722" y="388" font-size="13">• 引用命中率、无依据回答率</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <rect x="60" y="420" width="1080" height="155" rx="16" fill="#ffffff" stroke="#fecaca"/>
+    <rect x="60" y="420" width="1080" height="44" rx="16" fill="#dc2626"/>
+    <rect x="60" y="446" width="1080" height="18" fill="#dc2626"/>
+    <text x="600" y="449" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">安全与审计事件</text>
+
+    <g font-size="13" fill="#334155">
+      <text x="82" y="490">• Prompt 注入尝试次数与来源</text>
+      <text x="82" y="514">• 越权访问拦截（检索前权限过滤命中）</text>
+      <text x="82" y="538">• 敏感信息输出拦截（手机号/身份证/密钥）</text>
+
+      <text x="420" y="490">• 越狱攻击检测与拦截</text>
+      <text x="420" y="514">• 高风险工具调用（人工确认/拒绝）</text>
+      <text x="420" y="538">• 内容审核触发（违规输出）</text>
+
+      <text x="780" y="490">• 异常 Token 消耗（成本攻击）</text>
+      <text x="780" y="514">• 全量工具调用审计日志</text>
+      <text x="780" y="538">• 模型输出版本与 Prompt 版本追踪</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <rect x="60" y="595" width="1080" height="155" rx="16" fill="#0f172a" opacity="0.96"/>
+    <text x="600" y="630" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">一次 AI 请求的完整 Trace 结构</text>
+
+    <g font-size="12" fill="#cbd5e1" font-family="monospace">
+      <text x="90" y="662">POST /api/v2/chat</text>
+      <text x="110" y="684" fill="#93c5fd">├── auth</text>
+      <text x="110" y="704" fill="#93c5fd">├── context_build</text>
+      <text x="130" y="722" fill="#6ee7b7">│   ├── history_load</text>
+      <text x="130" y="740" fill="#6ee7b7">│   └── retrieval (vector + bm25 + rerank)</text>
+
+      <text x="500" y="662" fill="#fcd34d">├── model_call (LLM)</text>
+      <text x="520" y="682" fill="#fcd34d">│   └── streaming chunks...</text>
+      <text x="500" y="704" fill="#f9a8d4">├── tool_call (if any)</text>
+      <text x="500" y="724" fill="#a5b4fc">├── output_validation</text>
+      <text x="500" y="744" fill="#a5b4fc">└── response</text>
+
+      <text x="850" y="680" fill="#f87171" font-family="Arial, sans-serif" font-size="12">每个 Span 记录：</text>
+      <text x="850" y="702" fill="#fca5a5" font-family="Arial, sans-serif" font-size="12">耗时 · 状态 · Token用量</text>
+      <text x="850" y="722" fill="#fca5a5" font-family="Arial, sans-serif" font-size="12">model · prompt_version</text>
+      <text x="850" y="742" fill="#fca5a5" font-family="Arial, sans-serif" font-size="12">trace_id 贯穿全链路</text>
+    </g>
+  </g>
+</svg>

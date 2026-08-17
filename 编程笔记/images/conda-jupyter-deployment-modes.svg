@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690">
+  <rect width="1200" height="690" fill="#f8f9fb"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#17232e">Jupyter 的两种部署方案</text>
+  <text x="600" y="87" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" fill="#60707d">单项目追求简单，多项目追求职责分离与复用</text>
+
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="55" y="125" width="520" height="500" rx="8" fill="#eef5fb" stroke="#2d74aa" stroke-width="2"/>
+    <text x="315" y="168" text-anchor="middle" font-size="24" font-weight="700" fill="#1e5279">方案一：单环境</text>
+    <text x="315" y="198" text-anchor="middle" font-size="15" fill="#526675">适合初学者和单项目</text>
+
+    <rect x="105" y="235" width="420" height="280" rx="8" fill="#fff" stroke="#8ab4d1" stroke-width="2"/>
+    <text x="315" y="274" text-anchor="middle" font-size="21" font-weight="700" fill="#274c67">data-lab</text>
+    <rect x="145" y="310" width="145" height="62" rx="6" fill="#e8f2fb"/>
+    <text x="218" y="348" text-anchor="middle" font-size="16" fill="#2a5776">JupyterLab</text>
+    <rect x="340" y="310" width="145" height="62" rx="6" fill="#eaf7ef"/>
+    <text x="412" y="348" text-anchor="middle" font-size="16" fill="#315f45">ipykernel</text>
+    <rect x="145" y="404" width="340" height="70" rx="6" fill="#fff4de"/>
+    <text x="315" y="434" text-anchor="middle" font-size="16" font-weight="700" fill="#75581f">Python + 项目依赖</text>
+    <text x="315" y="458" text-anchor="middle" font-size="14" fill="#665f50">界面与内核都在同一个环境</text>
+    <text x="315" y="562" text-anchor="middle" font-size="15" fill="#526675">优点：最容易理解和排错</text>
+    <text x="315" y="589" text-anchor="middle" font-size="15" fill="#526675">代价：每个项目重复安装 JupyterLab</text>
+
+    <rect x="625" y="125" width="520" height="500" rx="8" fill="#f0f7f2" stroke="#3d8a5c" stroke-width="2"/>
+    <text x="885" y="168" text-anchor="middle" font-size="24" font-weight="700" fill="#296140">方案二：服务与内核分离</text>
+    <text x="885" y="198" text-anchor="middle" font-size="15" fill="#526675">适合多项目和长期维护</text>
+
+    <rect x="675" y="230" width="420" height="94" rx="8" fill="#fff" stroke="#8fbea2" stroke-width="2"/>
+    <text x="885" y="267" text-anchor="middle" font-size="20" font-weight="700" fill="#315f45">jupyter-tools</text>
+    <text x="885" y="296" text-anchor="middle" font-size="15" fill="#526675">集中安装 JupyterLab</text>
+
+    <path d="M885 324 V364" stroke="#6f8c7a" stroke-width="3"/>
+    <path d="M885 364 l-9 -13 h18 z" fill="#6f8c7a"/>
+    <text x="904" y="350" font-size="13" fill="#607267">选择内核</text>
+
+    <rect x="675" y="367" width="190" height="142" rx="8" fill="#fff" stroke="#8fbea2" stroke-width="2"/>
+    <text x="770" y="403" text-anchor="middle" font-size="19" font-weight="700" fill="#315f45">project-a</text>
+    <text x="770" y="433" text-anchor="middle" font-size="14" fill="#526675">Python + ipykernel</text>
+    <text x="770" y="460" text-anchor="middle" font-size="14" fill="#526675">pandas · NumPy</text>
+    <text x="770" y="487" text-anchor="middle" font-size="13" fill="#3d8a5c">独立依赖</text>
+
+    <rect x="905" y="367" width="190" height="142" rx="8" fill="#fff" stroke="#8fbea2" stroke-width="2"/>
+    <text x="1000" y="403" text-anchor="middle" font-size="19" font-weight="700" fill="#315f45">project-b</text>
+    <text x="1000" y="433" text-anchor="middle" font-size="14" fill="#526675">Python + ipykernel</text>
+    <text x="1000" y="460" text-anchor="middle" font-size="14" fill="#526675">PyTorch · CUDA</text>
+    <text x="1000" y="487" text-anchor="middle" font-size="13" fill="#3d8a5c">独立依赖</text>
+
+    <text x="885" y="562" text-anchor="middle" font-size="15" fill="#526675">优点：服务复用，项目依赖保持干净</text>
+    <text x="885" y="589" text-anchor="middle" font-size="15" fill="#526675">要求：理解 kernelspec 与解释器路径</text>
+  </g>
+</svg>

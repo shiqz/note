@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#faf5ff"/>
+      <stop offset="100%" stop-color="#f3e8ff"/>
+    </linearGradient>
+    <radialGradient id="spaceGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
+    </radialGradient>
+    <marker id="arrow4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b21a8"/>
+    </marker>
+    <filter id="shadow4" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="560" rx="16" fill="url(#bgGrad4)"/>
+  <text x="500" y="40" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="bold" fill="#581c87" text-anchor="middle">多模态嵌入空间：不同模态数据映射到同一向量空间</text>
+
+  <!-- 左侧输入模态 -->
+  <g transform="translate(30, 90)">
+    <rect x="0" y="0" width="130" height="80" rx="10" fill="#3b82f6"/>
+    <text x="65" y="35" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">📝 文本</text>
+    <text x="65" y="58" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">"一只奔跑的狗"</text>
+  </g>
+  <g transform="translate(30, 190)">
+    <rect x="0" y="0" width="130" height="80" rx="10" fill="#10b981"/>
+    <text x="65" y="35" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">🖼️ 图像</text>
+    <text x="65" y="58" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">狗的照片 (像素矩阵)</text>
+  </g>
+  <g transform="translate(30, 290)">
+    <rect x="0" y="0" width="130" height="80" rx="10" fill="#f59e0b"/>
+    <text x="65" y="35" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">🎵 音频</text>
+    <text x="65" y="58" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">狗叫声波形</text>
+  </g>
+
+  <!-- 编码器 -->
+  <g transform="translate(180, 170)">
+    <rect x="0" y="0" width="100" height="120" rx="12" fill="#8b5cf6"/>
+    <text x="50" y="30" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">编码器</text>
+    <line x1="15" y1="42" x2="85" y2="42" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="50" y="62" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle">Text Encoder</text>
+    <text x="50" y="80" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle">Image Encoder</text>
+    <text x="50" y="98" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle">Audio Encoder</text>
+  </g>
+
+  <line x1="160" y1="130" x2="180" y2="190" stroke="#6b21a8" stroke-width="2" marker-end="url(#arrow4)"/>
+  <line x1="160" y1="230" x2="180" y2="230" stroke="#6b21a8" stroke-width="2" marker-end="url(#arrow4)"/>
+  <line x1="160" y1="330" x2="180" y2="270" stroke="#6b21a8" stroke-width="2" marker-end="url(#arrow4)"/>
+
+  <!-- 向量空间 -->
+  <g transform="translate(310, 70)" filter="url(#shadow4)">
+    <rect x="0" y="0" width="420" height="380" rx="16" fill="url(#spaceGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="210" y="30" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#5b21b6" text-anchor="middle">共享语义向量空间 ℝᵈ</text>
+
+    <!-- 坐标轴 -->
+    <line x1="50" y1="320" x2="390" y2="320" stroke="#c4b5fd" stroke-width="1.5"/>
+    <line x1="50" y1="320" x2="50" y2="50" stroke="#c4b5fd" stroke-width="1.5"/>
+    <text x="395" y="325" font-family="monospace" font-size="10" fill="#7c3aed">dim₁</text>
+    <text x="40" y="45" font-family="monospace" font-size="10" fill="#7c3aed">dim₂</text>
+
+    <!-- 聚类区域：动物 -->
+    <ellipse cx="150" cy="140" rx="80" ry="60" fill="#bfdbfe" opacity="0.4" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="150" y="90" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#1d4ed8" text-anchor="middle" font-weight="bold">动物概念聚类</text>
+
+    <!-- 文本向量点 -->
+    <circle cx="130" cy="130" r="8" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <text x="110" y="115" font-family="monospace" font-size="9" fill="#1e40af">"狗"</text>
+
+    <circle cx="175" cy="155" r="8" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <text x="195" y="150" font-family="monospace" font-size="9" fill="#1e40af">"猫"</text>
+
+    <circle cx="120" cy="170" r="8" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <text x="90" y="190" font-family="monospace" font-size="9" fill="#1e40af">"奔跑"</text>
+
+    <!-- 图像向量点 -->
+    <rect x="155" y="118" width="12" height="12" rx="2" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+    <text x="175" y="110" font-family="monospace" font-size="9" fill="#047857">狗.jpg</text>
+
+    <rect x="195" y="148" width="12" height="12" rx="2" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+    <text x="215" y="170" font-family="monospace" font-size="9" fill="#047857">猫.jpg</text>
+
+    <!-- 音频向量点 -->
+    <polygon points="140,155 152,155 146,145" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="115" y="155" font-family="monospace" font-size="9" fill="#b45309">狗叫.wav</text>
+
+    <!-- 相似度连线 -->
+    <line x1="138" y1="130" x2="155" y2="130" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="147" y="122" font-family="monospace" font-size="8" fill="#dc2626" text-anchor="middle">cos=0.89</text>
+
+    <!-- 聚类区域：交通工具 -->
+    <ellipse cx="310" cy="230" rx="70" ry="55" fill="#fed7aa" opacity="0.4" stroke="#f97316" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="310" y="185" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="10" fill="#c2410c" text-anchor="middle" font-weight="bold">交通工具聚类</text>
+
+    <circle cx="290" cy="220" r="7" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+    <text x="270" y="210" font-family="monospace" font-size="9" fill="#1e40af">"汽车"</text>
+
+    <rect x="318" y="240" width="11" height="11" rx="2" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+    <text x="335" y="255" font-family="monospace" font-size="9" fill="#047857">car.jpg</text>
+
+    <!-- 远距离标注 -->
+    <line x1="150" y1="140" x2="310" y2="230" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2,4"/>
+    <text x="230" y="175" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">距离远 = 语义不相似</text>
+  </g>
+
+  <line x1="730" y1="260" x2="780" y2="260" stroke="#6b21a8" stroke-width="2.5" marker-end="url(#arrow4)"/>
+
+  <!-- 右侧跨模态检索 -->
+  <g transform="translate(790, 100)">
+    <rect x="0" y="0" width="180" height="320" rx="14" fill="#ffffff" stroke="#a78bfa" stroke-width="2"/>
+    <text x="90" y="30" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#5b21b6" text-anchor="middle">跨模态能力</text>
+    <line x1="20" y1="42" x2="160" y2="42" stroke="#e9d5ff" stroke-width="1"/>
+
+    <g transform="translate(15, 58)">
+      <circle cx="8" cy="8" r="5" fill="#8b5cf6"/>
+      <text x="22" y="12" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#4c1d95" font-weight="bold">以文搜图</text>
+      <text x="22" y="28" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="9" fill="#6d28d9">输入文本 → 找相似图像</text>
+    </g>
+
+    <g transform="translate(15, 105)">
+      <circle cx="8" cy="8" r="5" fill="#8b5cf6"/>
+      <text x="22" y="12" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#4c1d95" font-weight="bold">以图搜文</text>
+      <text x="22" y="28" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="9" fill="#6d28d9">输入图像 → 找描述文本</text>
+    </g>
+
+    <g transform="translate(15, 152)">
+      <circle cx="8" cy="8" r="5" fill="#8b5cf6"/>
+      <text x="22" y="12" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#4c1d95" font-weight="bold">以音搜图</text>
+      <text x="22" y="28" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="9" fill="#6d28d9">狗叫声 → 狗的图片</text>
+    </g>
+
+    <g transform="translate(15, 199)">
+      <circle cx="8" cy="8" r="5" fill="#8b5cf6"/>
+      <text x="22" y="12" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="11" fill="#4c1d95" font-weight="bold">图文匹配</text>
+      <text x="22" y="28" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="9" fill="#6d28d9">CLIP 对比学习训练</text>
+    </g>
+
+    <line x1="20" y1="240" x2="160" y2="240" stroke="#e9d5ff" stroke-width="1"/>
+    <text x="90" y="262" font-family="monospace" font-size="9" fill="#7c3aed" text-anchor="middle">CLIP / ALIGN</text>
+    <text x="90" y="278" font-family="monospace" font-size="9" fill="#7c3aed" text-anchor="middle">ImageBind / BLIP</text>
+    <text x="90" y="298" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="9" fill="#a78bfa" text-anchor="middle">对比学习对齐模态</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <g transform="translate(100, 490)">
+    <text x="400" y="0" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#6b21a8" text-anchor="middle">
+      关键：通过对比学习（Contrastive Learning），让"狗"的文本向量、狗的图像向量、狗叫的音频向量在空间中彼此靠近
+    </text>
+  </g>
+</svg>
