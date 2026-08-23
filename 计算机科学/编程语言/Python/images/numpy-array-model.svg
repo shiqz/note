@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker><style>.t{font:700 27px Arial,sans-serif;fill:#0f172a}.h{font:700 18px Arial,sans-serif;fill:#172554}.p{font:15px Arial,sans-serif;fill:#334155}.l{stroke:#475569;stroke-width:2.5;marker-end:url(#a)}.c{stroke:#94a3b8;stroke-width:2}</style></defs>
+  <rect width="1200" height="500" fill="#f8fafc"/><text x="600" y="45" class="t" text-anchor="middle">ndarray：同类型、连续（或规则跨步）的多维数据容器</text>
+  <rect x="55" y="110" width="265" height="280" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="188" y="150" class="h" text-anchor="middle">数组元数据</text>
+  <text x="90" y="200" class="p">shape = (3, 4)</text><text x="90" y="235" class="p">ndim = 2</text><text x="90" y="270" class="p">dtype = int64</text><text x="90" y="305" class="p">strides = (32, 8)</text><text x="90" y="340" class="p">data 指向实际内存</text>
+  <path d="M320 250 H440" class="l"/>
+  <text x="380" y="230" class="p" text-anchor="middle">描述</text>
+  <rect x="470" y="100" width="620" height="300" rx="10" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="780" y="135" class="h" text-anchor="middle">数据缓冲区：C 顺序按行连续存放</text>
+  <g fill="#dcfce7" stroke="#16a34a" class="c"><rect x="545" y="175" width="90" height="55"/><rect x="635" y="175" width="90" height="55"/><rect x="725" y="175" width="90" height="55"/><rect x="815" y="175" width="90" height="55"/><rect x="545" y="230" width="90" height="55"/><rect x="635" y="230" width="90" height="55"/><rect x="725" y="230" width="90" height="55"/><rect x="815" y="230" width="90" height="55"/><rect x="545" y="285" width="90" height="55"/><rect x="635" y="285" width="90" height="55"/><rect x="725" y="285" width="90" height="55"/><rect x="815" y="285" width="90" height="55"/></g>
+  <g class="p" text-anchor="middle"><text x="590" y="209">0</text><text x="680" y="209">1</text><text x="770" y="209">2</text><text x="860" y="209">3</text><text x="590" y="264">4</text><text x="680" y="264">5</text><text x="770" y="264">6</text><text x="860" y="264">7</text><text x="590" y="319">8</text><text x="680" y="319">9</text><text x="770" y="319">10</text><text x="860" y="319">11</text></g>
+  <text x="1010" y="210" class="p">axis=1</text><text x="1010" y="235" class="p">列方向</text><path d="M950 245 H915" class="l"/><text x="590" y="375" class="p">axis=0：行方向</text><path d="M570 360 V345" class="l"/>
+  <text x="600" y="455" class="p" text-anchor="middle">同一 dtype 使得元素大小固定，NumPy 可以用底层循环批量执行计算，避免 Python 对象与解释器循环的开销。</text>
+</svg>
