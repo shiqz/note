@@ -4,7 +4,7 @@
 ## 人工智能学习路线
 
 - [x] 搭建 Conda + Jupyter 开发环境
-- [ ] 学会 NumPy/Pandas 基本操作
+- [ ] 学会 NumPy/Pandas 基本操作 - 正在学习
 - [ ] 理解向量、矩阵乘法、余弦相似度
 - [ ] 跑通第一个本地小模型
 - [ ] 跑通第一个 OpenAI API 调用
