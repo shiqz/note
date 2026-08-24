@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker><style>.t{font:700 27px Arial,sans-serif;fill:#0f172a}.h{font:700 18px Arial,sans-serif;fill:#172554}.p{font:15px Arial,sans-serif;fill:#334155}.l{stroke:#475569;stroke-width:2.5;marker-end:url(#a)}</style></defs>
+  <rect width="1200" height="520" fill="#f8fafc"/><text x="600" y="45" class="t" text-anchor="middle">自注意力：每个 Token 根据上下文动态聚合信息</text>
+  <rect x="50" y="140" width="210" height="190" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="155" y="183" class="h" text-anchor="middle">输入表示 X</text><text x="155" y="215" class="p" text-anchor="middle">x1  x2  ...  xn</text><text x="155" y="255" class="p" text-anchor="middle">每个 Token 一个向量</text><text x="155" y="282" class="p" text-anchor="middle">shape: (n, d_model)</text>
+  <path d="M260 205 H370 M260 255 H370 M260 305 H370" class="l"/>
+  <text x="315" y="195" class="p" text-anchor="middle">WQ</text><text x="315" y="245" class="p" text-anchor="middle">WK</text><text x="315" y="295" class="p" text-anchor="middle">WV</text>
+  <rect x="400" y="115" width="185" height="65" rx="8" fill="#fef3c7" stroke="#d97706"/><text x="492" y="155" class="h" text-anchor="middle">Q：我在找什么</text>
+  <rect x="400" y="215" width="185" height="65" rx="8" fill="#f3e8ff" stroke="#9333ea"/><text x="492" y="255" class="h" text-anchor="middle">K：我有什么线索</text>
+  <rect x="400" y="315" width="185" height="65" rx="8" fill="#dcfce7" stroke="#16a34a"/><text x="492" y="355" class="h" text-anchor="middle">V：实际提供的内容</text>
+  <path d="M585 147 H675 M585 247 H675 M585 347 H675" class="l"/>
+  <rect x="705" y="150" width="200" height="175" rx="10" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="805" y="190" class="h" text-anchor="middle">相关性与加权</text><text x="805" y="225" class="p" text-anchor="middle">score = QK^T / sqrt(dk)</text><text x="805" y="255" class="p" text-anchor="middle">weight = softmax(score)</text><text x="805" y="285" class="p" text-anchor="middle">output = weight V</text>
+  <path d="M905 237 H995" class="l"/>
+  <rect x="1025" y="180" width="135" height="115" rx="10" fill="#cffafe" stroke="#0891b2" stroke-width="2"/><text x="1092" y="224" class="h" text-anchor="middle">上下文化表示</text><text x="1092" y="254" class="p" text-anchor="middle">每个位置的新向量</text>
+  <rect x="100" y="420" width="1000" height="48" rx="7" fill="#fff" stroke="#94a3b8"/><text x="600" y="450" class="p" text-anchor="middle">关键点：Q、K 决定“关注谁”，V 决定“从被关注位置取回什么信息”；三者均由可训练线性投影从 X 得到。</text>
+</svg>
