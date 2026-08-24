@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  
+  <rect width="700" height="400" fill="#f8fafc"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-size="18" fill="#1e293b" font-weight="bold" font-family="Arial, sans-serif">词向量空间：语义编码为向量方向</text>
+  
+  <g transform="translate(350, 320)">
+    <line x1="-250" y1="0" x2="250" y2="0" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ah)"/>
+    <line x1="0" y1="20" x2="0" y2="-250" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ah)"/>
+    <text x="260" y="5" font-size="13" fill="#64748b" font-family="Arial, sans-serif">维度1（如：性别轴）</text>
+    <text x="-80" y="-260" font-size="13" fill="#64748b" font-family="Arial, sans-serif">维度2（如：王室轴）</text>
+    
+    <circle cx="0" cy="0" r="3" fill="#1e293b"/>
+    
+    <g>
+      <line x1="0" y1="0" x2="-80" y2="-80" stroke="#2563eb" stroke-width="2.5"/>
+      <circle cx="-80" cy="-80" r="6" fill="#2563eb"/>
+      <text x="-100" y="-70" font-size="14" fill="#2563eb" font-weight="bold" font-family="Arial, sans-serif">国王</text>
+    </g>
+    
+    <g>
+      <line x1="0" y1="0" x2="-80" y2="40" stroke="#16a34a" stroke-width="2.5"/>
+      <circle cx="-80" cy="40" r="6" fill="#16a34a"/>
+      <text x="-100" y="55" font-size="14" fill="#16a34a" font-weight="bold" font-family="Arial, sans-serif">男人</text>
+    </g>
+    
+    <g>
+      <line x1="0" y1="0" x2="80" y2="40" stroke="#dc2626" stroke-width="2.5"/>
+      <circle cx="80" cy="40" r="6" fill="#dc2626"/>
+      <text x="85" y="35" font-size="14" fill="#dc2626" font-weight="bold" font-family="Arial, sans-serif">女人</text>
+    </g>
+    
+    <g>
+      <line x1="0" y1="0" x2="80" y2="-80" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="6,4"/>
+      <circle cx="80" cy="-80" r="6" fill="#7c3aed" stroke="#fff" stroke-width="2"/>
+      <text x="90" y="-75" font-size="14" fill="#7c3aed" font-weight="bold" font-family="Arial, sans-serif">女王 ≈</text>
+    </g>
+    
+    <path d="M -80 -80 L -80 40" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,3" fill="none" marker-end="url(#ah)"/>
+    <path d="M -80 40 L 80 40" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,3" fill="none" marker-end="url(#ah)"/>
+    <path d="M 80 40 L 80 -80" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,3" fill="none" marker-end="url(#ah)"/>
+    
+    <text x="-50" y="-25" font-size="12" fill="#f59e0b" font-family="Arial, sans-serif">-男人</text>
+    <text x="-10" y="30" font-size="12" fill="#f59e0b" font-family="Arial, sans-serif">+女人</text>
+  </g>
+  
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="250" height="100" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-size="14" fill="#1e40af" font-weight="bold" font-family="Arial, sans-serif">向量运算 = 语义推理</text>
+    <text x="125" y="50" text-anchor="middle" font-size="16" fill="#1d4ed8" font-family="monospace">国王 - 男人 + 女人 ≈ 女王</text>
+    <text x="125" y="75" text-anchor="middle" font-size="13" fill="#3b82f6" font-family="Arial, sans-serif">向量空间中编码了语义关系</text>
+  </g>
+  
+  <g transform="translate(50, 200)">
+    <rect x="0" y="0" width="250" height="120" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="125" y="25" text-anchor="middle" font-size="14" fill="#166534" font-weight="bold" font-family="Arial, sans-serif">向量方向 ≈ 语义</text>
+    <text x="20" y="50" font-size="12" fill="#15803d" font-family="Arial, sans-serif">• 语义相近的词，向量方向接近</text>
+    <text x="20" y="70" font-size="12" fill="#15803d" font-family="Arial, sans-serif">• 夹角越小，余弦相似度越高</text>
+    <text x="20" y="90" font-size="12" fill="#15803d" font-family="Arial, sans-serif">• 向量差 = 概念关系（性别、时态等）</text>
+  </g>
+</svg>

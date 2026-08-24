@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  
+  <rect x="0" y="0" width="600" height="400" fill="#f8fafc"/>
+  
+  <g transform="translate(80, 320)">
+    <line x1="0" y1="0" x2="200" y2="0" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="0" y1="0" x2="0" y2="-250" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="210" y="5" font-size="16" fill="#334155" font-family="Arial, sans-serif">x</text>
+    <text x="-15" y="-260" font-size="16" fill="#334155" font-family="Arial, sans-serif">y</text>
+    <text x="-15" y="15" font-size="14" fill="#64748b" font-family="Arial, sans-serif">O</text>
+    
+    <line x1="0" y1="0" x2="150" y2="-180" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="155" y="-185" font-size="18" fill="#2563eb" font-weight="bold" font-family="Arial, sans-serif">v</text>
+    
+    <line x1="150" y1="0" x2="150" y2="-180" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="0" y1="-180" x2="150" y2="-180" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <text x="70" y="20" font-size="14" fill="#dc2626" font-family="Arial, sans-serif">vₓ = 3</text>
+    <text x="-60" y="-90" font-size="14" fill="#16a34a" font-family="Arial, sans-serif">vᵧ = 4</text>
+    
+    <circle cx="150" cy="-180" r="4" fill="#2563eb"/>
+    <text x="130" y="-200" font-size="14" fill="#2563eb" font-family="Arial, sans-serif">(3, 4)</text>
+    
+    <path d="M 30 -20 A 30 30 0 0 1 46.8 -35.5" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="50" y="-25" font-size="13" fill="#f59e0b" font-family="Arial, sans-serif">θ</text>
+  </g>
+  
+  <g transform="translate(350, 320)">
+    <line x1="0" y1="0" x2="180" y2="0" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="0" y1="0" x2="0" y2="-180" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="5" font-size="14" fill="#334155" font-family="Arial, sans-serif">x</text>
+    <text x="-12" y="-190" font-size="14" fill="#334155" font-family="Arial, sans-serif">y</text>
+    <text x="-12" y="95" font-size="14" fill="#334155" font-family="Arial, sans-serif">z</text>
+    
+    <line x1="0" y1="0" x2="120" y2="-90" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="125" y="-95" font-size="16" fill="#2563eb" font-weight="bold" font-family="Arial, sans-serif">v</text>
+    
+    <line x1="120" y1="0" x2="120" y2="-90" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <line x1="0" y1="-90" x2="120" y2="-90" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,4"/>
+    
+    <text x="80" y="-25" font-size="13" fill="#16a34a" font-family="Arial, sans-serif">vᵧ</text>
+    <text x="50" y="15" font-size="13" fill="#dc2626" font-family="Arial, sans-serif">vₓ</text>
+    <text x="-50" y="-40" font-size="13" fill="#7c3aed" font-family="Arial, sans-serif">v_z</text>
+    
+    <circle cx="120" cy="-90" r="4" fill="#2563eb"/>
+    <text x="80" y="-110" font-size="13" fill="#2563eb" font-family="Arial, sans-serif">(vₓ, vᵧ, v_z)</text>
+  </g>
+  
+  <text x="300" y="30" text-anchor="middle" font-size="20" fill="#1e293b" font-weight="bold" font-family="Arial, sans-serif">向量的几何表示：有方向、有大小的箭头</text>
+  
+  <g transform="translate(80, 370)">
+    <text x="0" y="0" font-size="13" fill="#475569" font-family="Arial, sans-serif">二维向量 v = (vₓ, vᵧ)  |v| = √(vₓ² + vᵧ²)</text>
+  </g>
+  <g transform="translate(350, 370)">
+    <text x="0" y="0" font-size="13" fill="#475569" font-family="Arial, sans-serif">三维向量 v = (vₓ, vᵧ, v_z)</text>
+  </g>
+</svg>

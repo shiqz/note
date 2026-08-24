@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 20px; font-weight: bold; fill: #1a1a2e; }
+      .subtitle { font-size: 14px; font-weight: bold; fill: #2c3e50; }
+      .label { font-size: 12px; fill: #333; }
+      .small { font-size: 11px; fill: #666; }
+      .cell { fill: #fff; stroke: #bdc3c7; stroke-width: 1; }
+      .cell-g1 { fill: #d5f5e3; stroke: #27ae60; stroke-width: 1.5; }
+      .cell-g2 { fill: #d6eaf8; stroke: #2980b9; stroke-width: 1.5; }
+      .cell-g3 { fill: #fdebd0; stroke: #e67e22; stroke-width: 1.5; }
+      .header { fill: #f4f6f7; stroke: #95a5a6; stroke-width: 1.5; }
+      .key-col { fill: #f5eef8; stroke: #8e44ad; stroke-width: 2; }
+      .result-cell { fill: #eaf2f8; stroke: #2471a3; stroke-width: 1.5; }
+      .value { font-size: 11px; fill: #2c3e50; text-anchor: middle; dominant-baseline: middle; }
+      .arrow { stroke: #7f8c8d; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .box { fill: #f8f9fa; stroke: #dee2e6; rx: 6; }
+      .step { font-size: 13px; fill: #fff; font-weight: bold; }
+      .step-bg { rx: 12; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" class="title" text-anchor="middle">GroupBy：Split → Apply → Combine</text>
+
+  <!-- 步骤标签 -->
+  <rect x="100" y="50" width="80" height="28" class="step-bg" fill="#27ae60"/>
+  <text x="140" y="69" class="step" text-anchor="middle">① Split</text>
+  <rect x="400" y="50" width="80" height="28" class="step-bg" fill="#2980b9"/>
+  <text x="440" y="69" class="step" text-anchor="middle">② Apply</text>
+  <rect x="700" y="50" width="100" height="28" class="step-bg" fill="#e67e22"/>
+  <text x="750" y="69" class="step" text-anchor="middle">③ Combine</text>
+
+  <!-- 原始数据 -->
+  <g transform="translate(30, 100)">
+    <text x="0" y="-5" class="subtitle">原始 DataFrame</text>
+    <text x="0" y="10" class="small">按 'city' 分组</text>
+    
+    <rect x="0" y="20" width="70" height="25" class="header" rx="3"/>
+    <text x="35" y="35" class="value" font-weight="bold">city</text>
+    <rect x="70" y="20" width="70" height="25" class="header" rx="3"/>
+    <text x="105" y="35" class="value" font-weight="bold">name</text>
+    <rect x="140" y="20" width="60" height="25" class="header" rx="3"/>
+    <text x="170" y="35" class="value" font-weight="bold">score</text>
+
+    <!-- Beijing 组 -->
+    <rect x="0" y="45" width="70" height="25" class="key-col"/>
+    <text x="35" y="60" class="value">Beijing</text>
+    <rect x="70" y="45" width="70" height="25" class="cell-g1"/>
+    <text x="105" y="60" class="value">Alice</text>
+    <rect x="140" y="45" width="60" height="25" class="cell-g1"/>
+    <text x="170" y="60" class="value">92.5</text>
+
+    <!-- Shanghai 组 -->
+    <rect x="0" y="70" width="70" height="25" class="key-col"/>
+    <text x="35" y="85" class="value">Shanghai</text>
+    <rect x="70" y="70" width="70" height="25" class="cell-g2"/>
+    <text x="105" y="85" class="value">Bob</text>
+    <rect x="140" y="70" width="60" height="25" class="cell-g2"/>
+    <text x="170" y="85" class="value">88.0</text>
+
+    <!-- Guangzhou 组 -->
+    <rect x="0" y="95" width="70" height="25" class="key-col"/>
+    <text x="35" y="110" class="value">Guangzhou</text>
+    <rect x="70" y="95" width="70" height="25" class="cell-g3"/>
+    <text x="105" y="110" class="value">Charlie</text>
+    <rect x="140" y="95" width="60" height="25" class="cell-g3"/>
+    <text x="170" y="110" class="value">75.0</text>
+
+    <!-- Beijing 组（第二行） -->
+    <rect x="0" y="120" width="70" height="25" class="key-col"/>
+    <text x="35" y="135" class="value">Beijing</text>
+    <rect x="70" y="120" width="70" height="25" class="cell-g1"/>
+    <text x="105" y="135" class="value">Eve</text>
+    <rect x="140" y="120" width="60" height="25" class="cell-g1"/>
+    <text x="170" y="135" class="value">90.0</text>
+
+    <!-- Shenzhen 组 -->
+    <rect x="0" y="145" width="70" height="25" class="key-col"/>
+    <text x="35" y="160" class="value">Shenzhen</text>
+    <rect x="70" y="145" width="70" height="25" class="cell"/>
+    <text x="105" y="160" class="value">Diana</text>
+    <rect x="140" y="145" width="60" height="25" class="cell"/>
+    <text x="170" y="160" class="value">95.0</text>
+  </g>
+
+  <!-- 箭头 Split -->
+  <path d="M 230 180 L 290 100" class="arrow"/>
+  <path d="M 230 130 L 290 150" class="arrow"/>
+  <path d="M 230 105 L 290 200" class="arrow"/>
+  <path d="M 230 205 L 290 250" class="arrow"/>
+
+  <!-- Split 后分组 -->
+  <g transform="translate(300, 80)">
+    <text x="0" y="0" class="subtitle">按分组键拆分</text>
+
+    <!-- Group 1: Beijing -->
+    <rect x="0" y="15" width="160" height="75" class="box"/>
+    <rect x="5" y="25" width="150" height="20" fill="#27ae60" rx="3"/>
+    <text x="80" y="39" class="step" text-anchor="middle">Group: Beijing</text>
+    <rect x="5" y="48" width="75" height="18" class="cell-g1"/>
+    <text x="42" y="60" class="value">Alice</text>
+    <rect x="80" y="48" width="75" height="18" class="cell-g1"/>
+    <text x="117" y="60" class="value">92.5</text>
+    <rect x="5" y="68" width="75" height="18" class="cell-g1"/>
+    <text x="42" y="80" class="value">Eve</text>
+    <rect x="80" y="68" width="75" height="18" class="cell-g1"/>
+    <text x="117" y="80" class="value">90.0</text>
+
+    <!-- Group 2: Shanghai -->
+    <rect x="0" y="100" width="160" height="45" class="box"/>
+    <rect x="5" y="108" width="150" height="20" fill="#2980b9" rx="3"/>
+    <text x="80" y="122" class="step" text-anchor="middle">Group: Shanghai</text>
+    <rect x="5" y="130" width="75" height="12" class="cell-g2"/>
+    <text x="42" y="139" class="value">Bob</text>
+    <rect x="80" y="130" width="75" height="12" class="cell-g2"/>
+    <text x="117" y="139" class="value">88.0</text>
+
+    <!-- Group 3: Guangzhou -->
+    <rect x="0" y="155" width="160" height="45" class="box"/>
+    <rect x="5" y="163" width="150" height="20" fill="#e67e22" rx="3"/>
+    <text x="80" y="177" class="step" text-anchor="middle">Group: Guangzhou</text>
+    <rect x="5" y="185" width="75" height="12" class="cell-g3"/>
+    <text x="42" y="194" class="value">Charlie</text>
+    <rect x="80" y="185" width="75" height="12" class="cell-g3"/>
+    <text x="117" y="194" class="value">75.0</text>
+
+    <!-- Group 4: Shenzhen -->
+    <rect x="0" y="210" width="160" height="45" class="box"/>
+    <rect x="5" y="218" width="150" height="20" fill="#8e44ad" rx="3"/>
+    <text x="80" y="232" class="step" text-anchor="middle">Group: Shenzhen</text>
+    <rect x="5" y="240" width="75" height="12" class="cell"/>
+    <text x="42" y="249" class="value">Diana</text>
+    <rect x="80" y="240" width="75" height="12" class="cell"/>
+    <text x="117" y="249" class="value">95.0</text>
+  </g>
+
+  <!-- 箭头 Apply -->
+  <path d="M 470 80 L 580 80" class="arrow"/>
+  <text x="525" y="70" class="small" text-anchor="middle">agg('mean')</text>
+
+  <!-- Apply + Combine 结果 -->
+  <g transform="translate(600, 100)">
+    <text x="0" y="-5" class="subtitle">聚合结果</text>
+    <text x="0" y="10" class="small">每组求 score 均值</text>
+
+    <rect x="0" y="20" width="80" height="25" class="header" rx="3"/>
+    <text x="40" y="35" class="value" font-weight="bold">city</text>
+    <rect x="80" y="20" width="80" height="25" class="header" rx="3"/>
+    <text x="120" y="35" class="value" font-weight="bold">score_mean</text>
+
+    <rect x="0" y="45" width="80" height="25" class="result-cell"/>
+    <text x="40" y="60" class="value">Beijing</text>
+    <rect x="80" y="45" width="80" height="25" class="result-cell"/>
+    <text x="120" y="60" class="value">91.25</text>
+
+    <rect x="0" y="70" width="80" height="25" class="result-cell"/>
+    <text x="40" y="85" class="value">Shanghai</text>
+    <rect x="80" y="70" width="80" height="25" class="result-cell"/>
+    <text x="120" y="85" class="value">88.0</text>
+
+    <rect x="0" y="95" width="80" height="25" class="result-cell"/>
+    <text x="40" y="110" class="value">Guangzhou</text>
+    <rect x="80" y="95" width="80" height="25" class="result-cell"/>
+    <text x="120" y="110" class="value">75.0</text>
+
+    <rect x="0" y="120" width="80" height="25" class="result-cell"/>
+    <text x="40" y="135" class="value">Shenzhen</text>
+    <rect x="80" y="120" width="80" height="25" class="result-cell"/>
+    <text x="120" y="135" class="value">95.0</text>
+
+    <!-- 代码示例 -->
+    <rect x="0" y="160" width="250" height="80" fill="#2c3e50" rx="4"/>
+    <text x="10" y="180" fill="#ecf0f1" font-size="11" font-family="monospace">df.groupby('city')['score']</text>
+    <text x="10" y="196" fill="#2ecc71" font-size="11" font-family="monospace">  .agg(['mean', 'count'])</text>
+    <text x="10" y="216" fill="#bdc3c7" font-size="10" font-family="monospace"># 或 .mean() / .sum() / .apply(custom_fn)</text>
+  </g>
+</svg>

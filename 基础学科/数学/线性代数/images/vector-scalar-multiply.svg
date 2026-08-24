@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <defs>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="ah-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="ah-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  
+  <rect width="600" height="300" fill="#f8fafc"/>
+  
+  <text x="300" y="30" text-anchor="middle" font-size="18" fill="#1e293b" font-weight="bold" font-family="Arial, sans-serif">向量数乘：缩放向量长度，方向不变（或反向）</text>
+  
+  <g transform="translate(80, 240)">
+    <line x1="0" y1="0" x2="200" y2="0" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+    <line x1="0" y1="0" x2="0" y2="-180" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+    
+    <line x1="0" y1="0" x2="60" y2="-45" stroke="#2563eb" stroke-width="3" marker-end="url(#ah-blue)"/>
+    <text x="25" y="-30" font-size="15" fill="#2563eb" font-weight="bold" font-family="Arial, sans-serif">v</text>
+    
+    <line x1="0" y1="0" x2="120" y2="-90" stroke="#16a34a" stroke-width="3" marker-end="url(#ah-green)"/>
+    <text x="65" y="-70" font-size="15" fill="#16a34a" font-weight="bold" font-family="Arial, sans-serif">2v</text>
+    
+    <line x1="0" y1="0" x2="-60" y2="45" stroke="#dc2626" stroke-width="3" marker-end="url(#ah-red)"/>
+    <text x="-55" y="35" font-size="15" fill="#dc2626" font-weight="bold" font-family="Arial, sans-serif">-v</text>
+    
+    <line x1="0" y1="0" x2="30" y2="-22.5" stroke="#f59e0b" stroke-width="3" marker-end="url(#ah-blue)"/>
+    <text x="5" y="-10" font-size="14" fill="#f59e0b" font-weight="bold" font-family="Arial, sans-serif">0.5v</text>
+    
+    <text x="100" y="25" text-anchor="middle" font-size="13" fill="#64748b" font-family="Arial, sans-serif">数乘 k·v：k>1 放大；0&lt;k&lt;1 缩小；k&lt;0 反向</text>
+  </g>
+  
+  <g transform="translate(380, 100)">
+    <rect x="0" y="0" width="180" height="120" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="90" y="30" text-anchor="middle" font-size="15" fill="#92400e" font-weight="bold" font-family="Arial, sans-serif">数乘公式</text>
+    <text x="90" y="55" text-anchor="middle" font-size="14" fill="#78350f" font-family="monospace">k·v = (k·v₁, k·v₂, ..., k·vₙ)</text>
+    <text x="90" y="80" text-anchor="middle" font-size="14" fill="#78350f" font-family="monospace">|k·v| = |k| · |v|</text>
+    <text x="90" y="105" text-anchor="middle" font-size="13" fill="#92400e" font-family="Arial, sans-serif">单位向量：v̂ = v / |v|</text>
+  </g>
+</svg>

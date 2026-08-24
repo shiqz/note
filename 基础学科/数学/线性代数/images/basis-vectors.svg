@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" width="700" height="380">
+  <defs>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="ah-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="ah-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="ah-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+  </defs>
+  
+  <rect width="700" height="380" fill="#f8fafc"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-size="18" fill="#1e293b" font-weight="bold" font-family="Arial, sans-serif">标准基向量 i、j 与线性组合</text>
+  
+  <g transform="translate(120, 300)">
+    <line x1="0" y1="0" x2="280" y2="0" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+    <line x1="0" y1="0" x2="0" y2="-220" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+    <text x="290" y="5" font-size="14" fill="#64748b" font-family="Arial, sans-serif">x</text>
+    <text x="-15" y="-230" font-size="14" fill="#64748b" font-family="Arial, sans-serif">y</text>
+    
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#2563eb" stroke-width="4" marker-end="url(#ah-blue)"/>
+    <text x="110" y="-8" font-size="16" fill="#2563eb" font-weight="bold" font-family="Arial, sans-serif">i = (1, 0)</text>
+    
+    <line x1="0" y1="0" x2="0" y2="-100" stroke="#dc2626" stroke-width="4" marker-end="url(#ah-red)"/>
+    <text x="-60" y="-105" font-size="16" fill="#dc2626" font-weight="bold" font-family="Arial, sans-serif">j = (0, 1)</text>
+    
+    <line x1="0" y1="0" x2="180" y2="-120" stroke="#7c3aed" stroke-width="3" marker-end="url(#ah-purple)"/>
+    <text x="185" y="-125" font-size="16" fill="#7c3aed" font-weight="bold" font-family="Arial, sans-serif">v = 3i + 4j</text>
+    
+    <line x1="0" y1="-120" x2="180" y2="-120" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
+    <line x1="180" y1="0" x2="180" y2="-120" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
+    
+    <text x="90" y="20" font-size="13" fill="#64748b" font-family="Arial, sans-serif">沿i方向走3个单位，沿j方向走4个单位</text>
+    
+    <rect x="90" y="-10" width="20" height="10" fill="#2563eb" opacity="0.3"/>
+    <rect x="0" y="-40" width="10" height="40" fill="#dc2626" opacity="0.3"/>
+  </g>
+  
+  <g transform="translate(450, 80)">
+    <rect x="0" y="0" width="220" height="240" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="30" text-anchor="middle" font-size="15" fill="#92400e" font-weight="bold" font-family="Arial, sans-serif">关键概念</text>
+    
+    <text x="20" y="60" font-size="13" fill="#78350f" font-family="Arial, sans-serif">• <tspan font-weight="bold">基向量</tspan>：空间的"基本单位"</text>
+    <text x="20" y="85" font-size="13" fill="#78350f" font-family="Arial, sans-serif">  i=(1,0), j=(0,1) 是2D标准基</text>
+    
+    <text x="20" y="115" font-size="13" fill="#78350f" font-family="Arial, sans-serif">• <tspan font-weight="bold">线性组合</tspan>：</text>
+    <text x="20" y="135" font-size="13" fill="#78350f" font-family="monospace">  v = a·i + b·j</text>
+    <text x="20" y="155" font-size="13" fill="#78350f" font-family="Arial, sans-serif">  所有向量都能表示为</text>
+    <text x="20" y="175" font-size="13" fill="#78350f" font-family="Arial, sans-serif">  基向量的数乘之和</text>
+    
+    <text x="20" y="205" font-size="13" fill="#78350f" font-family="Arial, sans-serif">• <tspan font-weight="bold">线性无关</tspan>：</text>
+    <text x="20" y="225" font-size="13" fill="#78350f" font-family="Arial, sans-serif">  基向量之间不能互相表示</text>
+  </g>
+</svg>

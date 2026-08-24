@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="stage0" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7"/>
+      <stop offset="100%" style="stop-color:#fde68a"/>
+    </linearGradient>
+    <linearGradient id="stage1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dcfce7"/>
+      <stop offset="100%" style="stop-color:#bbf7d0"/>
+    </linearGradient>
+    <linearGradient id="stage2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe"/>
+      <stop offset="100%" style="stop-color:#bfdbfe"/>
+    </linearGradient>
+    <linearGradient id="stage3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e8ff"/>
+      <stop offset="100%" style="stop-color:#e9d5ff"/>
+    </linearGradient>
+    <linearGradient id="stage4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fce7f3"/>
+      <stop offset="100%" style="stop-color:#fbcfe8"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#bgGrad)" rx="20"/>
+  
+  <text x="600" y="50" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="bold" fill="#1e293b">从0到高等数学 · 完整学习路线图</text>
+  <text x="600" y="80" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#64748b">遵循数学内在逻辑 · 由浅入深 · 层层递进</text>
+  
+  <!-- Stage 0: 预备阶段 -->
+  <g transform="translate(50, 120)">
+    <rect width="200" height="120" rx="16" fill="url(#stage0)" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#92400e">阶段 0</text>
+    <text x="100" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#78350f">数学启蒙</text>
+    <text x="100" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#92400e">数的概念 · 数数</text>
+    <text x="100" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#92400e">对应年龄段：3-6岁</text>
+  </g>
+  
+  <!-- Stage 1: 初等基础 -->
+  <g transform="translate(290, 120)">
+    <rect width="200" height="120" rx="16" fill="url(#stage1)" stroke="#22c55e" stroke-width="2"/>
+    <text x="100" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#166534">阶段 1</text>
+    <text x="100" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#14532d">算术基础</text>
+    <text x="100" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#166534">四则运算 · 整数分数小数</text>
+    <text x="100" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#166534">对应年龄段：6-12岁</text>
+  </g>
+  
+  <!-- Stage 2: 初等进阶 -->
+  <g transform="translate(530, 120)">
+    <rect width="200" height="120" rx="16" fill="url(#stage2)" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#1e40af">阶段 2</text>
+    <text x="100" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e3a8a">初等数学</text>
+    <text x="100" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#1e40af">代数 · 几何 · 函数 · 三角</text>
+    <text x="100" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#1e40af">对应年龄段：12-18岁</text>
+  </g>
+  
+  <!-- Stage 3: 高等基础 -->
+  <g transform="translate(770, 120)">
+    <rect width="200" height="120" rx="16" fill="url(#stage3)" stroke="#a855f7" stroke-width="2"/>
+    <text x="100" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#6b21a8">阶段 3</text>
+    <text x="100" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#581c87">高等数学基础</text>
+    <text x="100" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b21a8">微积分 · 线代 · 概率统计</text>
+    <text x="100" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b21a8">对应年龄段：大学1-2年级</text>
+  </g>
+  
+  <!-- Stage 4: 高等进阶 -->
+  <g transform="translate(950, 280)">
+    <rect width="200" height="180" rx="16" fill="url(#stage4)" stroke="#ec4899" stroke-width="2"/>
+    <text x="100" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#9d174d">阶段 4</text>
+    <text x="100" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#831843">高等数学进阶</text>
+    <text x="100" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9d174d">近代数学 · 各专业方向</text>
+    <text x="100" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9d174d">实分析 · 复分析 · 泛函</text>
+    <text x="100" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9d174d">抽代 · 拓扑 · 微分几何</text>
+    <text x="100" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9d174d">对应年龄段：大学3年级+</text>
+  </g>
+  
+  <!-- Arrows between stages -->
+  <line x1="250" y1="180" x2="290" y2="180" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="490" y1="180" x2="530" y2="180" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="730" y1="180" x2="770" y2="180" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 870 240 Q 900 260 950 280" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Three main branches after Stage 2 -->
+  <g transform="translate(100, 350)">
+    <rect width="280" height="100" rx="12" fill="white" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,5"/>
+    <text x="140" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">📐 几何分支</text>
+    <text x="140" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#475569">平面几何 → 立体几何 → 解析几何</text>
+    <text x="140" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#475569">→ 微分几何 → 拓扑学</text>
+  </g>
+  
+  <g transform="translate(450, 350)">
+    <rect width="280" height="100" rx="12" fill="white" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,5"/>
+    <text x="140" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">🔢 代数分支</text>
+    <text x="140" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#475569">初等代数 → 线性代数</text>
+    <text x="140" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#475569">→ 抽象代数（群环域）</text>
+  </g>
+  
+  <g transform="translate(800, 350)">
+    <rect width="280" height="100" rx="12" fill="white" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,5"/>
+    <text x="140" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">📊 分析分支</text>
+    <text x="140" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#475569">函数入门 → 微积分</text>
+    <text x="140" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#475569">→ 实/复分析 → 泛函分析</text>
+  </g>
+  
+  <g transform="translate(100, 500)">
+    <rect width="980" height="240" rx="16" fill="white" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="490" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#334155">🎯 各领域数学需求指南</text>
+    
+    <g transform="translate(30, 70)">
+      <rect width="220" height="150" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="110" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#166534">💻 计算机/AI方向</text>
+      <text x="20" y="58" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 线性代数（核心）</text>
+      <text x="20" y="80" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 微积分（优化基础）</text>
+      <text x="20" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 概率统计</text>
+      <text x="20" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 离散数学</text>
+      <text x="20" y="146" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 最优化理论</text>
+    </g>
+    
+    <g transform="translate(270, 70)">
+      <rect width="220" height="150" rx="10" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1"/>
+      <text x="110" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#0c4a6e">🔬 物理/工程方向</text>
+      <text x="20" y="58" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 微积分（核心）</text>
+      <text x="20" y="80" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 线性代数</text>
+      <text x="20" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 微分方程</text>
+      <text x="20" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 复变函数</text>
+      <text x="20" y="146" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 数值分析</text>
+    </g>
+    
+    <g transform="translate(510, 70)">
+      <rect width="220" height="150" rx="10" fill="#fefce8" stroke="#eab308" stroke-width="1"/>
+      <text x="110" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#713f12">📈 经济/金融方向</text>
+      <text x="20" y="58" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 微积分</text>
+      <text x="20" y="80" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 线性代数</text>
+      <text x="20" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 概率统计（核心）</text>
+      <text x="20" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 最优化理论</text>
+      <text x="20" y="146" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 随机过程</text>
+    </g>
+    
+    <g transform="translate(750, 70)">
+      <rect width="200" height="150" rx="10" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+      <text x="100" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#581c87">🎓 数学专业方向</text>
+      <text x="20" y="58" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 数学分析（硬核基础）</text>
+      <text x="20" y="80" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 高等代数</text>
+      <text x="20" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 实变/复变/泛函</text>
+      <text x="20" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 抽象代数/拓扑</text>
+      <text x="20" y="146" font-family="system-ui, sans-serif" font-size="12" fill="#334155">• 微分几何</text>
+    </g>
+  </g>
+</svg>

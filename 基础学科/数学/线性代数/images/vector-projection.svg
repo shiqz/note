@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="600" height="350">
+  <defs>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="ah-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="ah-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  
+  <rect width="600" height="350" fill="#f8fafc"/>
+  
+  <text x="300" y="30" text-anchor="middle" font-size="18" fill="#1e293b" font-weight="bold" font-family="Arial, sans-serif">向量投影：一个向量在另一个向量方向上的分量</text>
+  
+  <g transform="translate(100, 280)">
+    <line x1="0" y1="0" x2="300" y2="-200" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ah-blue)"/>
+    <text x="310" y="-210" font-size="14" fill="#2563eb" font-family="Arial, sans-serif">a</text>
+    
+    <line x1="0" y1="0" x2="200" y2="-80" stroke="#dc2626" stroke-width="3" marker-end="url(#ah-red)"/>
+    <text x="205" y="-75" font-size="16" fill="#dc2626" font-weight="bold" font-family="Arial, sans-serif">b</text>
+    
+    <line x1="200" y1="-80" x2="165.5" y2="-110.3" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,3"/>
+    
+    <line x1="0" y1="0" x2="165.5" y2="-110.3" stroke="#16a34a" stroke-width="4" marker-end="url(#ah-green)"/>
+    <text x="80" y="-70" font-size="15" fill="#16a34a" font-weight="bold" font-family="Arial, sans-serif">projₐb</text>
+    
+    <line x1="165.5" y1="-110.3" x2="200" y2="-80" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="185" y="-85" font-size="13" fill="#f59e0b" font-family="Arial, sans-serif">垂直分量</text>
+    
+    <path d="M 40 -22 A 35 35 0 0 1 58.8 -32" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="62" y="-25" font-size="14" fill="#f59e0b" font-family="Arial, sans-serif">θ</text>
+    
+    <rect x="50" y="-135" width="15" height="15" fill="#16a34a" opacity="0.3"/>
+  </g>
+  
+  <g transform="translate(380, 80)">
+    <rect x="0" y="0" width="200" height="180" rx="10" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-size="15" fill="#991b1b" font-weight="bold" font-family="Arial, sans-serif">投影公式</text>
+    <text x="100" y="60" text-anchor="middle" font-size="14" fill="#b91c1c" font-family="monospace">projₐb = (a·b/|a|²)·a</text>
+    <text x="100" y="85" text-anchor="middle" font-size="13" fill="#7f1d1d" font-family="Arial, sans-serif">投影长度：</text>
+    <text x="100" y="105" text-anchor="middle" font-size="14" fill="#b91c1c" font-family="monospace">|projₐb| = |b|cosθ</text>
+    <line x1="20" y1="120" x2="180" y2="120" stroke="#fca5a5" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="20" y="145" font-size="12" fill="#991b1b" font-family="Arial, sans-serif">AI应用：注意力机制中</text>
+    <text x="20" y="165" font-size="12" fill="#991b1b" font-family="Arial, sans-serif">的Value加权本质是投影</text>
+  </g>
+</svg>

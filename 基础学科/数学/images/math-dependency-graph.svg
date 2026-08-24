@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" width="1100" height="700">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fafafa"/>
+      <stop offset="100%" style="stop-color:#f5f5f5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <rect width="1100" height="700" fill="url(#bg)" rx="16"/>
+  
+  <text x="550" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#18181b">数学知识依赖关系图</text>
+  <text x="550" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#71717a">前置知识是后续学习的必要条件</text>
+  
+  <!-- Foundation Layer -->
+  <g transform="translate(50, 120)">
+    <rect width="1000" height="80" rx="12" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="500" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#713f12">第一层：算术基础</text>
+    <g transform="translate(80, 50)">
+      <rect width="120" height="24" rx="6" fill="white" stroke="#ca8a04"/>
+      <text x="60" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#422006">数的概念</text>
+    </g>
+    <g transform="translate(250, 50)">
+      <rect width="120" height="24" rx="6" fill="white" stroke="#ca8a04"/>
+      <text x="60" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#422006">四则运算</text>
+    </g>
+    <g transform="translate(420, 50)">
+      <rect width="160" height="24" rx="6" fill="white" stroke="#ca8a04"/>
+      <text x="80" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#422006">整数/分数/小数</text>
+    </g>
+    <g transform="translate(630, 50)">
+      <rect width="120" height="24" rx="6" fill="white" stroke="#ca8a04"/>
+      <text x="60" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#422006">运算律</text>
+    </g>
+    <g transform="translate(800, 50)">
+      <rect width="120" height="24" rx="6" fill="white" stroke="#ca8a04"/>
+      <text x="60" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#422006">比和比例</text>
+    </g>
+  </g>
+  
+  <!-- Second Layer -->
+  <g transform="translate(50, 230)">
+    <rect width="1000" height="90" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="500" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#14532d">第二层：初等数学基础</text>
+    <g transform="translate(40, 52)">
+      <rect width="130" height="28" rx="6" fill="white" stroke="#16a34a"/>
+      <text x="65" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#14532d">初等代数</text>
+    </g>
+    <g transform="translate(200, 52)">
+      <rect width="130" height="28" rx="6" fill="white" stroke="#16a34a"/>
+      <text x="65" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#14532d">平面几何</text>
+    </g>
+    <g transform="translate(360, 52)">
+      <rect width="130" height="28" rx="6" fill="white" stroke="#16a34a"/>
+      <text x="65" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#14532d">不等式</text>
+    </g>
+    <g transform="translate(520, 52)">
+      <rect width="130" height="28" rx="6" fill="white" stroke="#16a34a"/>
+      <text x="65" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#14532d">方程与方程组</text>
+    </g>
+    <g transform="translate(680, 52)">
+      <rect width="130" height="28" rx="6" fill="white" stroke="#16a34a"/>
+      <text x="65" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#14532d">集合基础</text>
+    </g>
+    <g transform="translate(840, 52)">
+      <rect width="130" height="28" rx="6" fill="white" stroke="#16a34a"/>
+      <text x="65" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#14532d">逻辑初步</text>
+    </g>
+  </g>
+  
+  <!-- Third Layer -->
+  <g transform="translate(50, 350)">
+    <rect width="1000" height="100" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="500" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e3a8a">第三层：初等数学进阶（高中）</text>
+    <g transform="translate(20, 55)">
+      <rect width="110" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="55" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">函数概念</text>
+    </g>
+    <g transform="translate(145, 55)">
+      <rect width="110" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="55" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">指数/对数</text>
+    </g>
+    <g transform="translate(270, 55)">
+      <rect width="110" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="55" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">三角函数</text>
+    </g>
+    <g transform="translate(395, 55)">
+      <rect width="110" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="55" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">数列</text>
+    </g>
+    <g transform="translate(520, 55)">
+      <rect width="110" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="55" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">立体几何</text>
+    </g>
+    <g transform="translate(645, 55)">
+      <rect width="110" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="55" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">解析几何</text>
+    </g>
+    <g transform="translate(770, 55)">
+      <rect width="110" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="55" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">概率统计初步</text>
+    </g>
+    <g transform="translate(895, 55)">
+      <rect width="95" height="32" rx="6" fill="white" stroke="#2563eb"/>
+      <text x="47" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e3a8a">排列组合</text>
+    </g>
+  </g>
+  
+  <!-- Fourth Layer -->
+  <g transform="translate(50, 480)">
+    <rect width="1000" height="90" rx="12" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="500" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#581c87">第四层：高等数学基础（大学低年级）</text>
+    <g transform="translate(50, 52)">
+      <rect width="140" height="28" rx="6" fill="white" stroke="#9333ea"/>
+      <text x="70" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#581c87">微积分（上/下）</text>
+    </g>
+    <g transform="translate(220, 52)">
+      <rect width="140" height="28" rx="6" fill="white" stroke="#9333ea"/>
+      <text x="70" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#581c87">线性代数</text>
+    </g>
+    <g transform="translate(390, 52)">
+      <rect width="140" height="28" rx="6" fill="white" stroke="#9333ea"/>
+      <text x="70" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#581c87">概率论与数理统计</text>
+    </g>
+    <g transform="translate(560, 52)">
+      <rect width="140" height="28" rx="6" fill="white" stroke="#9333ea"/>
+      <text x="70" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#581c87">常微分方程</text>
+    </g>
+    <g transform="translate(730, 52)">
+      <rect width="120" height="28" rx="6" fill="white" stroke="#9333ea"/>
+      <text x="60" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#581c87">离散数学</text>
+    </g>
+    <g transform="translate(870, 52)">
+      <rect width="110" height="28" rx="6" fill="white" stroke="#9333ea"/>
+      <text x="55" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#581c87">数值计算</text>
+    </g>
+  </g>
+  
+  <!-- Fifth Layer -->
+  <g transform="translate(50, 600)">
+    <rect width="1000" height="80" rx="12" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="500" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#831843">第五层：近代数学（高年级/研究生）</text>
+    <g transform="translate(30, 45)">
+      <rect width="120" height="26" rx="6" fill="white" stroke="#db2777"/>
+      <text x="60" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#831843">实变函数</text>
+    </g>
+    <g transform="translate(170, 45)">
+      <rect width="120" height="26" rx="6" fill="white" stroke="#db2777"/>
+      <text x="60" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#831843">复变函数</text>
+    </g>
+    <g transform="translate(310, 45)">
+      <rect width="120" height="26" rx="6" fill="white" stroke="#db2777"/>
+      <text x="60" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#831843">泛函分析</text>
+    </g>
+    <g transform="translate(450, 45)">
+      <rect width="120" height="26" rx="6" fill="white" stroke="#db2777"/>
+      <text x="60" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#831843">抽象代数</text>
+    </g>
+    <g transform="translate(590, 45)">
+      <rect width="120" height="26" rx="6" fill="white" stroke="#db2777"/>
+      <text x="60" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#831843">拓扑学</text>
+    </g>
+    <g transform="translate(730, 45)">
+      <rect width="120" height="26" rx="6" fill="white" stroke="#db2777"/>
+      <text x="60" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#831843">微分几何</text>
+    </g>
+    <g transform="translate(870, 45)">
+      <rect width="110" height="26" rx="6" fill="white" stroke="#db2777"/>
+      <text x="55" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#831843">偏微分方程</text>
+    </g>
+  </g>
+  
+  <!-- Arrows between layers -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#52525b"/>
+    </marker>
+  </defs>
+  <line x1="550" y1="200" x2="550" y2="230" stroke="#52525b" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="550" y1="320" x2="550" y2="350" stroke="#52525b" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="550" y1="450" x2="550" y2="480" stroke="#52525b" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="550" y1="570" x2="550" y2="600" stroke="#52525b" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

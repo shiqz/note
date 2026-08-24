@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdf4ff"/>
+      <stop offset="100%" style="stop-color:#fae8ff"/>
+    </linearGradient>
+    <linearGradient id="algebra" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="geometry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#15803d"/>
+    </linearGradient>
+    <linearGradient id="analysis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#b45309"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1000" height="700" fill="url(#bg2)" rx="20"/>
+  
+  <text x="500" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="bold" fill="#581c87">数学的三大核心分支</text>
+  <text x="500" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#7e22ce">代数（结构）· 几何（空间）· 分析（变化）</text>
+  
+  <!-- Central circle: Mathematics -->
+  <circle cx="500" cy="380" r="70" fill="#7c3aed" opacity="0.95"/>
+  <text x="500" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="white">数学</text>
+  <text x="500" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#e9d5ff">Mathematics</text>
+  
+  <!-- Algebra Branch (Left) -->
+  <g transform="translate(80, 150)">
+    <rect width="280" height="400" rx="20" fill="white" stroke="#3b82f6" stroke-width="2.5"/>
+    <rect width="280" height="70" rx="20" fill="url(#algebra)"/>
+    <rect y="50" width="280" height="20" fill="url(#algebra)"/>
+    <text x="140" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="white">🔢 代数</text>
+    <text x="140" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1e40af">研究"结构"与"关系"</text>
+    
+    <g transform="translate(20, 105)">
+      <rect width="240" height="55" rx="10" fill="#eff6ff" stroke="#93c5fd"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e3a8a">初等代数</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">数、式、方程、不等式、函数</text>
+    </g>
+    
+    <g transform="translate(20, 175)">
+      <rect width="240" height="55" rx="10" fill="#dbeafe" stroke="#60a5fa"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e3a8a">线性代数</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#2563eb">向量、矩阵、线性空间、线性变换</text>
+    </g>
+    
+    <g transform="translate(20, 245)">
+      <rect width="240" height="55" rx="10" fill="#bfdbfe" stroke="#3b82f6"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e3a8a">抽象代数（近世代数）</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8">群、环、域、模、伽罗瓦理论</text>
+    </g>
+    
+    <g transform="translate(20, 315)">
+      <rect width="240" height="60" rx="10" fill="#93c5fd" stroke="#2563eb"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e3a8a">相关分支</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1e40af">数论、代数几何、表示论、同调代数</text>
+    </g>
+  </g>
+  
+  <!-- Geometry Branch (Top) -->
+  <g transform="translate(360, 120)">
+    <rect width="280" height="200" rx="20" fill="white" stroke="#22c55e" stroke-width="2.5"/>
+    <rect width="280" height="70" rx="20" fill="url(#geometry)"/>
+    <rect y="50" width="280" height="20" fill="url(#geometry)"/>
+    <text x="140" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="white">📐 几何</text>
+    <text x="140" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#14532d">研究"空间"与"形状"</text>
+    
+    <g transform="translate(20, 105)">
+      <rect width="110" height="45" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+      <text x="55" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#14532d">平面几何</text>
+      <text x="55" y="37" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#16a34a">欧氏几何</text>
+    </g>
+    <g transform="translate(150, 105)">
+      <rect width="110" height="45" rx="8" fill="#dcfce7" stroke="#4ade80"/>
+      <text x="55" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#14532d">立体几何</text>
+      <text x="55" y="37" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#16a34a">三维空间</text>
+    </g>
+    <g transform="translate(20, 158)">
+      <rect width="110" height="30" rx="8" fill="#bbf7d0" stroke="#22c55e"/>
+      <text x="55" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#166534">解析几何</text>
+    </g>
+    <g transform="translate(150, 158)">
+      <rect width="110" height="30" rx="8" fill="#86efac" stroke="#16a34a"/>
+      <text x="55" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#166534">微分几何</text>
+    </g>
+  </g>
+  
+  <!-- Analysis Branch (Right) -->
+  <g transform="translate(640, 150)">
+    <rect width="280" height="400" rx="20" fill="white" stroke="#f59e0b" stroke-width="2.5"/>
+    <rect width="280" height="70" rx="20" fill="url(#analysis)"/>
+    <rect y="50" width="280" height="20" fill="url(#analysis)"/>
+    <text x="140" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="white">📊 分析</text>
+    <text x="140" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#78350f">研究"变化"与"极限"</text>
+    
+    <g transform="translate(20, 105)">
+      <rect width="240" height="55" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#78350f">微积分</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#b45309">极限、导数、积分、级数</text>
+    </g>
+    
+    <g transform="translate(20, 175)">
+      <rect width="240" height="55" rx="10" fill="#fef3c7" stroke="#fbbf24"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#78350f">实分析（实变函数）</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#b45309">测度论、勒贝格积分</text>
+    </g>
+    
+    <g transform="translate(20, 245)">
+      <rect width="240" height="55" rx="10" fill="#fde68a" stroke="#f59e0b"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#78350f">复分析（复变函数）</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#b45309">解析函数、留数、共形映射</text>
+    </g>
+    
+    <g transform="translate(20, 315)">
+      <rect width="240" height="60" rx="10" fill="#fcd34d" stroke="#d97706"/>
+      <text x="120" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#78350f">泛函分析</text>
+      <text x="120" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">巴拿赫空间、希尔伯特空间、算子理论</text>
+    </g>
+  </g>
+  
+  <!-- Bottom: Topology and Foundations -->
+  <g transform="translate(200, 590)">
+    <rect width="600" height="80" rx="15" fill="white" stroke="#a855f7" stroke-width="2"/>
+    <text x="300" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#6b21a8">🌉 交叉与基础</text>
+    <text x="100" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#7c3aed">拓扑学</text>
+    <text x="250" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#7c3aed">微分方程</text>
+    <text x="400" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#7c3aed">概率论</text>
+    <text x="520" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#7c3aed">数理逻辑/集合论</text>
+  </g>
+  
+  <!-- Connecting lines -->
+  <path d="M 360 350 Q 420 365 440 370" stroke="#3b82f6" stroke-width="2.5" fill="none" stroke-dasharray="6,3"/>
+  <path d="M 500 320 Q 500 300 500 320" stroke="#22c55e" stroke-width="2.5" fill="none" stroke-dasharray="6,3"/>
+  <path d="M 640 350 Q 580 365 560 370" stroke="#f59e0b" stroke-width="2.5" fill="none" stroke-dasharray="6,3"/>
+  <path d="M 350 430 Q 400 520 450 590" stroke="#a855f7" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+  <path d="M 650 430 Q 600 520 550 590" stroke="#a855f7" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" width="700" height="350">
+  <defs>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="ah-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="ah-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  
+  <rect width="700" height="350" fill="#f8fafc"/>
+  
+  <text x="350" y="30" text-anchor="middle" font-size="18" fill="#1e293b" font-weight="bold" font-family="Arial, sans-serif">点积的几何意义：投影长度 × 另一向量长度</text>
+  
+  <g transform="translate(120, 280)">
+    <line x1="0" y1="0" x2="300" y2="0" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="0" y2="-200" stroke="#94a3b8" stroke-width="1.5"/>
+    
+    <line x1="0" y1="0" x2="250" y2="0" stroke="#64748b" stroke-width="2" marker-end="url(#ah-blue)"/>
+    <text x="260" y="5" font-size="14" fill="#2563eb" font-family="Arial, sans-serif">a (在x轴上)</text>
+    
+    <line x1="0" y1="0" x2="150" y2="-120" stroke="#dc2626" stroke-width="3" marker-end="url(#ah-red)"/>
+    <text x="130" y="-135" font-size="16" fill="#dc2626" font-weight="bold" font-family="Arial, sans-serif">b</text>
+    
+    <line x1="150" y1="0" x2="150" y2="-120" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,3"/>
+    <line x1="0" y1="0" x2="150" y2="0" stroke="#16a34a" stroke-width="4" opacity="0.6"/>
+    
+    <path d="M 30 -15 A 30 30 0 0 1 54 -27" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="58" y="-22" font-size="14" fill="#f59e0b" font-family="Arial, sans-serif">θ</text>
+    
+    <text x="75" y="20" font-size="14" fill="#16a34a" font-family="Arial, sans-serif">|b|cosθ (b在a上的投影)</text>
+    
+    <text x="125" y="-50" font-size="14" fill="#64748b" font-family="Arial, sans-serif">高</text>
+  </g>
+  
+  <g transform="translate(420, 80)">
+    <rect x="0" y="0" width="250" height="200" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="125" y="30" text-anchor="middle" font-size="16" fill="#065f46" font-weight="bold" font-family="Arial, sans-serif">点积核心公式</text>
+    <text x="125" y="60" text-anchor="middle" font-size="15" fill="#047857" font-family="monospace">a · b = a₁b₁ + a₂b₂ + ...</text>
+    <text x="125" y="85" text-anchor="middle" font-size="15" fill="#047857" font-family="monospace">= |a||b|cosθ</text>
+    <line x1="20" y1="100" x2="230" y2="100" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="20" y="125" font-size="13" fill="#065f46" font-family="Arial, sans-serif">• a·b > 0 → 夹角 &lt; 90°，同向</text>
+    <text x="20" y="148" font-size="13" fill="#065f46" font-family="Arial, sans-serif">• a·b = 0 → 夹角 = 90°，正交</text>
+    <text x="20" y="171" font-size="13" fill="#065f46" font-family="Arial, sans-serif">• a·b &lt; 0 → 夹角 &gt; 90°，反向</text>
+  </g>
+</svg>

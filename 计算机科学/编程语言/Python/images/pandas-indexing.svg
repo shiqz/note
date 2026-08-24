@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 20px; font-weight: bold; fill: #1a1a2e; }
+      .subtitle { font-size: 15px; font-weight: bold; fill: #2c3e50; }
+      .label { font-size: 13px; fill: #333; }
+      .small { font-size: 11px; fill: #666; }
+      .cell { fill: #fff; stroke: #bdc3c7; stroke-width: 1; }
+      .cell-hl { fill: #d5f5e3; stroke: #27ae60; stroke-width: 2; }
+      .cell-col-hl { fill: #d6eaf8; stroke: #2980b9; stroke-width: 2; }
+      .cell-row-hl { fill: #fdebd0; stroke: #e67e22; stroke-width: 2; }
+      .cell-bool-hl { fill: #fadbd8; stroke: #c0392b; stroke-width: 2; }
+      .header { fill: #f4f6f7; stroke: #95a5a6; stroke-width: 1.5; }
+      .idx-header { fill: #e8daef; stroke: #8e44ad; stroke-width: 1.5; }
+      .value { font-size: 12px; fill: #2c3e50; text-anchor: middle; dominant-baseline: middle; }
+      .hl-value { font-size: 12px; fill: #1a1a2e; text-anchor: middle; dominant-baseline: middle; font-weight: bold; }
+      .box { fill: #f8f9fa; stroke: #dee2e6; rx: 6; }
+      .good { fill: #27ae60; }
+      .bad { fill: #e74c3c; }
+    </style>
+  </defs>
+
+  <text x="450" y="30" class="title" text-anchor="middle">Pandas 数据选择方式对比</text>
+
+  <!-- 原始数据表格 -->
+  <g transform="translate(50, 60)">
+    <text x="0" y="0" class="subtitle">原始 DataFrame (df)</text>
+    <!-- 表头 -->
+    <rect x="0" y="10" width="60" height="30" class="idx-header" rx="3"/>
+    <text x="30" y="28" class="value" font-weight="bold">Index</text>
+    <rect x="60" y="10" width="100" height="30" class="header" rx="3"/>
+    <text x="110" y="28" class="value" font-weight="bold">name</text>
+    <rect x="160" y="10" width="70" height="30" class="header" rx="3"/>
+    <text x="195" y="28" class="value" font-weight="bold">age</text>
+    <rect x="230" y="10" width="90" height="30" class="header" rx="3"/>
+    <text x="275" y="28" class="value" font-weight="bold">city</text>
+    <rect x="320" y="10" width="80" height="30" class="header" rx="3"/>
+    <text x="360" y="28" class="value" font-weight="bold">score</text>
+
+    <!-- 行 0 -->
+    <rect x="0" y="40" width="60" height="30" class="idx-header"/>
+    <text x="30" y="55" class="value">0</text>
+    <rect x="60" y="40" width="100" height="30" class="cell"/>
+    <text x="110" y="55" class="value">"Alice"</text>
+    <rect x="160" y="40" width="70" height="30" class="cell"/>
+    <text x="195" y="55" class="value">25</text>
+    <rect x="230" y="40" width="90" height="30" class="cell"/>
+    <text x="275" y="55" class="value">"Beijing"</text>
+    <rect x="320" y="40" width="80" height="30" class="cell"/>
+    <text x="360" y="55" class="value">92.5</text>
+
+    <!-- 行 1 -->
+    <rect x="0" y="70" width="60" height="30" class="idx-header"/>
+    <text x="30" y="85" class="value">1</text>
+    <rect x="60" y="70" width="100" height="30" class="cell"/>
+    <text x="110" y="85" class="value">"Bob"</text>
+    <rect x="160" y="70" width="70" height="30" class="cell"/>
+    <text x="195" y="85" class="value">30</text>
+    <rect x="230" y="70" width="90" height="30" class="cell"/>
+    <text x="275" y="85" class="value">"Shanghai"</text>
+    <rect x="320" y="70" width="80" height="30" class="cell"/>
+    <text x="360" y="85" class="value">88.0</text>
+
+    <!-- 行 2 -->
+    <rect x="0" y="100" width="60" height="30" class="idx-header"/>
+    <text x="30" y="115" class="value">2</text>
+    <rect x="60" y="100" width="100" height="30" class="cell"/>
+    <text x="110" y="115" class="value">"Charlie"</text>
+    <rect x="160" y="100" width="70" height="30" class="cell"/>
+    <text x="195" y="115" class="value">35</text>
+    <rect x="230" y="100" width="90" height="30" class="cell"/>
+    <text x="275" y="115" class="value">"Guangzhou"</text>
+    <rect x="320" y="100" width="80" height="30" class="cell"/>
+    <text x="360" y="115" class="value">75.0</text>
+
+    <!-- 行 3 -->
+    <rect x="0" y="130" width="60" height="30" class="idx-header"/>
+    <text x="30" y="145" class="value">3</text>
+    <rect x="60" y="130" width="100" height="30" class="cell"/>
+    <text x="110" y="145" class="value">"Diana"</text>
+    <rect x="160" y="130" width="70" height="30" class="cell"/>
+    <text x="195" y="145" class="value">28</text>
+    <rect x="230" y="130" width="90" height="30" class="cell"/>
+    <text x="275" y="145" class="value">"Shenzhen"</text>
+    <rect x="320" y="130" width="80" height="30" class="cell"/>
+    <text x="360" y="145" class="value">95.0</text>
+  </g>
+
+  <!-- 1. [] 列选择 -->
+  <g transform="translate(500, 60)">
+    <rect x="0" y="0" width="370" height="160" class="box"/>
+    <text x="10" y="22" class="subtitle">① df[] 方括号：选择列</text>
+    <text x="10" y="42" class="small">df['name'] → 单个 Series</text>
+    <text x="10" y="58" class="small">df[['name', 'score']] → DataFrame</text>
+    <text x="10" y="74" class="small">df[0:2] → 行切片（按位置）</text>
+    
+    <rect x="15" y="85" width="100" height="30" class="cell-col-hl" rx="3"/>
+    <text x="65" y="103" class="hl-value">"Alice"</text>
+    <rect x="315" y="85" width="40" height="30" class="cell-col-hl" rx="3"/>
+    <text x="335" y="103" class="hl-value">92.5</text>
+    <rect x="15" y="115" width="100" height="30" class="cell-col-hl" rx="3"/>
+    <text x="65" y="133" class="hl-value">"Bob"</text>
+    <rect x="315" y="115" width="40" height="30" class="cell-col-hl" rx="3"/>
+    <text x="335" y="133" class="hl-value">88.0</text>
+    <text x="185" y="140" class="small">df[['name','score']] 结果</text>
+  </g>
+
+  <!-- 2. .loc 标签选择 -->
+  <g transform="translate(50, 250)">
+    <rect x="0" y="0" width="390" height="180" class="box"/>
+    <text x="10" y="22" class="subtitle">② .loc[] ：按标签（行/列名）选择</text>
+    <text x="10" y="42" class="small">df.loc[0, 'name'] → 单个值</text>
+    <text x="10" y="58" class="small">df.loc[0:2, 'name':'city'] → 标签切片（包含端点！）</text>
+    <text x="10" y="74" class="small">df.loc[df['age'] > 28] → 布尔条件行选择</text>
+
+    <!-- 高亮区域示例: 行1-2, name-city -->
+    <rect x="15" y="90" width="60" height="60" fill="#f4f6f7" stroke="#95a5a6" rx="3"/>
+    <text x="45" y="110" class="value">1</text>
+    <text x="45" y="140" class="value">2</text>
+    <rect x="75" y="90" width="100" height="60" class="cell-hl" rx="3"/>
+    <text x="125" y="110" class="hl-value">"Bob"</text>
+    <text x="125" y="140" class="hl-value">"Charlie"</text>
+    <rect x="175" y="90" width="70" height="60" class="cell-hl" rx="3"/>
+    <text x="210" y="110" class="hl-value">30</text>
+    <text x="210" y="140" class="hl-value">35</text>
+    <rect x="245" y="90" width="90" height="60" class="cell-hl" rx="3"/>
+    <text x="290" y="110" class="hl-value">"Shanghai"</text>
+    <text x="290" y="140" class="hl-value">"Guangzhou"</text>
+    <text x="180" y="168" class="small">df.loc[1:2, 'name':'city'] 结果（包含端点）</text>
+  </g>
+
+  <!-- 3. .iloc 位置选择 -->
+  <g transform="translate(470, 250)">
+    <rect x="0" y="0" width="400" height="180" class="box"/>
+    <text x="10" y="22" class="subtitle">③ .iloc[] ：按整数位置选择</text>
+    <text x="10" y="42" class="small">df.iloc[0, 0] → 左上角值</text>
+    <text x="10" y="58" class="small">df.iloc[0:2, 0:3] → 位置切片（左闭右开！）</text>
+    <text x="10" y="74" class="small">行为与 NumPy/Python list 一致</text>
+
+    <!-- 高亮区域示例: 行0-1(不含2), 列0-2(不含3) -->
+    <rect x="15" y="90" width="60" height="30" fill="#f4f6f7" stroke="#95a5a6" rx="3"/>
+    <text x="45" y="108" class="value">0</text>
+    <rect x="15" y="120" width="60" height="30" fill="#f4f6f7" stroke="#95a5a6" rx="3"/>
+    <text x="45" y="138" class="value">1</text>
+    <rect x="75" y="90" width="100" height="60" class="cell-row-hl" rx="3"/>
+    <text x="125" y="108" class="hl-value">"Alice"</text>
+    <text x="125" y="138" class="hl-value">"Bob"</text>
+    <rect x="175" y="90" width="70" height="60" class="cell-row-hl" rx="3"/>
+    <text x="210" y="108" class="hl-value">25</text>
+    <text x="210" y="138" class="hl-value">30</text>
+    <rect x="245" y="90" width="90" height="60" class="cell-row-hl" rx="3"/>
+    <text x="290" y="108" class="hl-value">"Beijing"</text>
+    <text x="290" y="138" class="hl-value">"Shanghai"</text>
+    <text x="180" y="168" class="small">df.iloc[0:2, 0:3] 结果（不包含端点！）</text>
+  </g>
+
+  <!-- 4. 布尔索引 -->
+  <g transform="translate(50, 450)">
+    <rect x="0" y="0" width="820" height="60" class="box"/>
+    <text x="10" y="22" class="subtitle">④ 布尔索引 + isin() / str.contains()</text>
+    <text x="10" y="42" class="small">df[df['score'] &gt; 90] → 筛选 score&gt;90 的行（Alice、Diana）｜ df[df['city'].isin(['Beijing','Shenzhen'])] ｜ df[df['name'].str.startswith('A')]</text>
+  </g>
+</svg>

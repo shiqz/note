@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 20px; font-weight: bold; fill: #1a1a2e; }
+      .subtitle { font-size: 14px; font-weight: bold; fill: #2c3e50; }
+      .label { font-size: 12px; fill: #333; }
+      .small { font-size: 10px; fill: #666; }
+      .cell { fill: #fff; stroke: #bdc3c7; stroke-width: 1; }
+      .header { fill: #f4f6f7; stroke: #95a5a6; stroke-width: 1.5; }
+      .key-col { fill: #f5eef8; stroke: #8e44ad; stroke-width: 2; }
+      .cell-keep { fill: #d5f5e3; stroke: #27ae60; stroke-width: 1.5; }
+      .cell-drop { fill: #fadbd8; stroke: #c0392b; stroke-width: 1.5; stroke-dasharray: 4,2; }
+      .cell-null { fill: #fadbd8; stroke: #e74c3c; stroke-width: 1; }
+      .value { font-size: 11px; fill: #2c3e50; text-anchor: middle; dominant-baseline: middle; }
+      .hl-value { font-size: 11px; fill: #1a1a2e; text-anchor: middle; dominant-baseline: middle; font-weight: bold; }
+      .join-type { font-size: 12px; fill: #fff; font-weight: bold; }
+      .diagram-circle { fill: none; stroke-width: 35; opacity: 0.7; }
+      .how-label { font-size: 13px; font-weight: bold; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <text x="450" y="30" class="title" text-anchor="middle">Pandas merge/join 连接类型</text>
+
+  <!-- 左表 -->
+  <g transform="translate(40, 70)">
+    <text x="0" y="0" class="subtitle">左表 df_users</text>
+    <rect x="0" y="10" width="70" height="25" class="header" rx="3"/>
+    <text x="35" y="25" class="value" font-weight="bold">user_id</text>
+    <rect x="70" y="10" width="80" height="25" class="header" rx="3"/>
+    <text x="110" y="25" class="value" font-weight="bold">name</text>
+
+    <rect x="0" y="35" width="70" height="25" class="key-col"/>
+    <text x="35" y="50" class="value">1</text>
+    <rect x="70" y="35" width="80" height="25" class="cell"/>
+    <text x="110" y="50" class="value">Alice</text>
+
+    <rect x="0" y="60" width="70" height="25" class="key-col"/>
+    <text x="35" y="75" class="value">2</text>
+    <rect x="70" y="60" width="80" height="25" class="cell"/>
+    <text x="110" y="75" class="value">Bob</text>
+
+    <rect x="0" y="85" width="70" height="25" class="key-col"/>
+    <text x="35" y="100" class="value">3</text>
+    <rect x="70" y="85" width="80" height="25" class="cell"/>
+    <text x="110" y="100" class="value">Charlie</text>
+  </g>
+
+  <!-- 右表 -->
+  <g transform="translate(280, 70)">
+    <text x="0" y="0" class="subtitle">右表 df_orders</text>
+    <rect x="0" y="10" width="70" height="25" class="header" rx="3"/>
+    <text x="35" y="25" class="value" font-weight="bold">order_id</text>
+    <rect x="70" y="10" width="70" height="25" class="header" rx="3"/>
+    <text x="105" y="25" class="value" font-weight="bold">user_id</text>
+    <rect x="140" y="10" width="80" height="25" class="header" rx="3"/>
+    <text x="180" y="25" class="value" font-weight="bold">amount</text>
+
+    <rect x="0" y="35" width="70" height="25" class="cell"/>
+    <text x="35" y="50" class="value">101</text>
+    <rect x="70" y="35" width="70" height="25" class="key-col"/>
+    <text x="105" y="50" class="value">1</text>
+    <rect x="140" y="35" width="80" height="25" class="cell"/>
+    <text x="180" y="50" class="value">200</text>
+
+    <rect x="0" y="60" width="70" height="25" class="cell"/>
+    <text x="35" y="75" class="value">102</text>
+    <rect x="70" y="60" width="70" height="25" class="key-col"/>
+    <text x="105" y="75" class="value">2</text>
+    <rect x="140" y="60" width="80" height="25" class="cell"/>
+    <text x="180" y="75" class="value">150</text>
+
+    <rect x="0" y="85" width="70" height="25" class="cell"/>
+    <text x="35" y="100" class="value">103</text>
+    <rect x="70" y="85" width="70" height="25" class="key-col"/>
+    <text x="105" y="100" class="value">4</text>
+    <rect x="140" y="85" width="80" height="25" class="cell"/>
+    <text x="180" y="100" class="value">300</text>
+  </g>
+
+  <!-- how 参数说明 -->
+  <g transform="translate(550, 60)">
+    <text x="0" y="0" class="subtitle">pd.merge(..., how=?)</text>
+    <text x="0" y="18" class="small">on='user_id' （连接键）</text>
+  </g>
+
+  <!-- 四种 join 类型的文氏图示意 -->
+  <!-- Inner Join -->
+  <g transform="translate(550, 100)">
+    <text x="100" y="0" class="how-label">inner（内连接，默认）</text>
+    <circle cx="80" cy="50" r="40" class="diagram-circle" stroke="#27ae60"/>
+    <circle cx="120" cy="50" r="40" class="diagram-circle" stroke="#3498db"/>
+    <text x="100" y="55" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">匹配</text>
+    <text x="100" y="110" class="small" text-anchor="middle">只保留两边都有的键 (1, 2)</text>
+  </g>
+
+  <!-- Left Join -->
+  <g transform="translate(550, 200)">
+    <text x="100" y="0" class="how-label">left（左连接）</text>
+    <circle cx="80" cy="50" r="40" class="diagram-circle" stroke="#27ae60" style="fill: rgba(39,174,96,0.2)"/>
+    <circle cx="120" cy="50" r="40" class="diagram-circle" stroke="#3498db"/>
+    <text x="100" y="55" fill="#2c3e50" font-size="12" font-weight="bold" text-anchor="middle">全部左表</text>
+    <text x="100" y="110" class="small" text-anchor="middle">保留所有左表行，右表无匹配填 NaN</text>
+  </g>
+
+  <!-- Right Join -->
+  <g transform="translate(550, 300)">
+    <text x="100" y="0" class="how-label">right（右连接）</text>
+    <circle cx="80" cy="50" r="40" class="diagram-circle" stroke="#27ae60"/>
+    <circle cx="120" cy="50" r="40" class="diagram-circle" stroke="#3498db" style="fill: rgba(52,152,219,0.2)"/>
+    <text x="100" y="55" fill="#2c3e50" font-size="12" font-weight="bold" text-anchor="middle">全部右表</text>
+    <text x="100" y="110" class="small" text-anchor="middle">保留所有右表行，左表无匹配填 NaN</text>
+  </g>
+
+  <!-- Outer Join -->
+  <g transform="translate(550, 400)">
+    <text x="100" y="0" class="how-label">outer（外连接）</text>
+    <circle cx="80" cy="50" r="40" class="diagram-circle" stroke="#27ae60" style="fill: rgba(39,174,96,0.15)"/>
+    <circle cx="120" cy="50" r="40" class="diagram-circle" stroke="#3498db" style="fill: rgba(52,152,219,0.15)"/>
+    <text x="100" y="55" fill="#2c3e50" font-size="12" font-weight="bold" text-anchor="middle">全部行</text>
+    <text x="100" y="110" class="small" text-anchor="middle">保留两边所有行，无匹配填 NaN</text>
+  </g>
+
+  <!-- 结果示例：inner join 结果 -->
+  <g transform="translate(40, 250)">
+    <text x="0" y="0" class="subtitle">inner join 结果（how='inner'）</text>
+    <rect x="0" y="10" width="70" height="25" class="header" rx="3"/>
+    <text x="35" y="25" class="value" font-weight="bold">user_id</text>
+    <rect x="70" y="10" width="80" height="25" class="header" rx="3"/>
+    <text x="110" y="25" class="value" font-weight="bold">name</text>
+    <rect x="150" y="10" width="70" height="25" class="header" rx="3"/>
+    <text x="185" y="25" class="value" font-weight="bold">order_id</text>
+    <rect x="220" y="10" width="80" height="25" class="header" rx="3"/>
+    <text x="260" y="25" class="value" font-weight="bold">amount</text>
+
+    <rect x="0" y="35" width="70" height="25" class="cell-keep"/>
+    <text x="35" y="50" class="hl-value">1</text>
+    <rect x="70" y="35" width="80" height="25" class="cell-keep"/>
+    <text x="110" y="50" class="hl-value">Alice</text>
+    <rect x="150" y="35" width="70" height="25" class="cell-keep"/>
+    <text x="185" y="50" class="hl-value">101</text>
+    <rect x="220" y="35" width="80" height="25" class="cell-keep"/>
+    <text x="260" y="50" class="hl-value">200</text>
+
+    <rect x="0" y="60" width="70" height="25" class="cell-keep"/>
+    <text x="35" y="75" class="hl-value">2</text>
+    <rect x="70" y="60" width="80" height="25" class="cell-keep"/>
+    <text x="110" y="75" class="hl-value">Bob</text>
+    <rect x="150" y="60" width="70" height="25" class="cell-keep"/>
+    <text x="185" y="75" class="hl-value">102</text>
+    <rect x="220" y="60" width="80" height="25" class="cell-keep"/>
+    <text x="260" y="75" class="hl-value">150</text>
+
+    <text x="0" y="105" class="small">user_id=3 (Charlie) 和 order_id=103 (user_id=4) 被排除</text>
+  </g>
+
+  <!-- left join 结果 -->
+  <g transform="translate(40, 370)">
+    <text x="0" y="0" class="subtitle">left join 结果（how='left'）</text>
+    <rect x="0" y="10" width="70" height="25" class="header" rx="3"/>
+    <text x="35" y="25" class="value" font-weight="bold">user_id</text>
+    <rect x="70" y="10" width="80" height="25" class="header" rx="3"/>
+    <text x="110" y="25" class="value" font-weight="bold">name</text>
+    <rect x="150" y="10" width="70" height="25" class="header" rx="3"/>
+    <text x="185" y="25" class="value" font-weight="bold">order_id</text>
+    <rect x="220" y="10" width="80" height="25" class="header" rx="3"/>
+    <text x="260" y="25" class="value" font-weight="bold">amount</text>
+
+    <rect x="0" y="35" width="70" height="25" class="cell-keep"/>
+    <text x="35" y="50" class="hl-value">1</text>
+    <rect x="70" y="35" width="80" height="25" class="cell-keep"/>
+    <text x="110" y="50" class="hl-value">Alice</text>
+    <rect x="150" y="35" width="70" height="25" class="cell-keep"/>
+    <text x="185" y="50" class="hl-value">101</text>
+    <rect x="220" y="35" width="80" height="25" class="cell-keep"/>
+    <text x="260" y="50" class="hl-value">200</text>
+
+    <rect x="0" y="60" width="70" height="25" class="cell-keep"/>
+    <text x="35" y="75" class="hl-value">2</text>
+    <rect x="70" y="60" width="80" height="25" class="cell-keep"/>
+    <text x="110" y="75" class="hl-value">Bob</text>
+    <rect x="150" y="60" width="70" height="25" class="cell-keep"/>
+    <text x="185" y="75" class="hl-value">102</text>
+    <rect x="220" y="60" width="80" height="25" class="cell-keep"/>
+    <text x="260" y="75" class="hl-value">150</text>
+
+    <rect x="0" y="85" width="70" height="25" class="cell-keep"/>
+    <text x="35" y="100" class="hl-value">3</text>
+    <rect x="70" y="85" width="80" height="25" class="cell-keep"/>
+    <text x="110" y="100" class="hl-value">Charlie</text>
+    <rect x="150" y="85" width="70" height="25" class="cell-null"/>
+    <text x="185" y="100" class="value" fill="#c0392b">NaN</text>
+    <rect x="220" y="85" width="80" height="25" class="cell-null"/>
+    <text x="260" y="100" class="value" fill="#c0392b">NaN</text>
+  </g>
+</svg>

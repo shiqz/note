@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 20px; font-weight: bold; fill: #1a1a2e; }
+      .label { font-size: 14px; fill: #333; }
+      .small { font-size: 12px; fill: #555; }
+      .index-col { fill: #e8f4f8; stroke: #2980b9; stroke-width: 2; }
+      .col-header { fill: #fdf2e9; stroke: #e67e22; stroke-width: 2; }
+      .cell { fill: #fff; stroke: #bdc3c7; stroke-width: 1; }
+      .value { font-size: 13px; fill: #2c3e50; text-anchor: middle; dominant-baseline: middle; }
+      .brace { stroke: #7f8c8d; stroke-width: 2; fill: none; }
+      .arrow { stroke: #27ae60; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .note { font-size: 13px; fill: #27ae60; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="35" class="title" text-anchor="middle">Pandas DataFrame 结构模型</text>
+
+  <!-- DataFrame 表格主体 -->
+  <g transform="translate(150, 70)">
+    <!-- 列名表头区域背景 -->
+    <rect x="80" y="0" width="480" height="45" class="col-header" rx="4"/>
+    
+    <!-- 索引表头 -->
+    <rect x="0" y="0" width="80" height="45" class="index-col" rx="4"/>
+    <text x="40" y="28" class="label" text-anchor="middle" font-weight="bold">Index</text>
+
+    <!-- 列名 -->
+    <text x="160" y="28" class="label" text-anchor="middle" font-weight="bold">name</text>
+    <text x="280" y="28" class="label" text-anchor="middle" font-weight="bold">age</text>
+    <text x="400" y="28" class="label" text-anchor="middle" font-weight="bold">city</text>
+    <text x="520" y="28" class="label" text-anchor="middle" font-weight="bold">score</text>
+
+    <!-- 索引列 -->
+    <rect x="0" y="45" width="80" height="50" class="index-col"/>
+    <text x="40" y="70" class="value" font-weight="bold">0</text>
+    <rect x="0" y="95" width="80" height="50" class="index-col"/>
+    <text x="40" y="120" class="value" font-weight="bold">1</text>
+    <rect x="0" y="145" width="80" height="50" class="index-col"/>
+    <text x="40" y="170" class="value" font-weight="bold">2</text>
+    <rect x="0" y="195" width="80" height="50" class="index-col"/>
+    <text x="40" y="220" class="value" font-weight="bold">3</text>
+
+    <!-- 数据单元格 -->
+    <!-- 第0行 -->
+    <rect x="80" y="45" width="160" height="50" class="cell"/>
+    <text x="160" y="70" class="value">"Alice"</text>
+    <rect x="240" y="45" width="80" height="50" class="cell"/>
+    <text x="280" y="70" class="value">25</text>
+    <rect x="320" y="45" width="160" height="50" class="cell"/>
+    <text x="400" y="70" class="value">"Beijing"</text>
+    <rect x="480" y="45" width="80" height="50" class="cell"/>
+    <text x="520" y="70" class="value">92.5</text>
+
+    <!-- 第1行 -->
+    <rect x="80" y="95" width="160" height="50" class="cell"/>
+    <text x="160" y="120" class="value">"Bob"</text>
+    <rect x="240" y="95" width="80" height="50" class="cell"/>
+    <text x="280" y="120" class="value">30</text>
+    <rect x="320" y="95" width="160" height="50" class="cell"/>
+    <text x="400" y="120" class="value">"Shanghai"</text>
+    <rect x="480" y="95" width="80" height="50" class="cell"/>
+    <text x="520" y="120" class="value">88.0</text>
+
+    <!-- 第2行 -->
+    <rect x="80" y="145" width="160" height="50" class="cell"/>
+    <text x="160" y="170" class="value">"Charlie"</text>
+    <rect x="240" y="145" width="80" height="50" class="cell"/>
+    <text x="280" y="170" class="value">35</text>
+    <rect x="320" y="145" width="160" height="50" class="cell"/>
+    <text x="400" y="170" class="value">"Guangzhou"</text>
+    <rect x="480" y="145" width="80" height="50" class="cell"/>
+    <text x="520" y="170" class="value">NaN</text>
+
+    <!-- 第3行 -->
+    <rect x="80" y="195" width="160" height="50" class="cell"/>
+    <text x="160" y="220" class="value">"Diana"</text>
+    <rect x="240" y="195" width="80" height="50" class="cell"/>
+    <text x="280" y="220" class="value">28</text>
+    <rect x="320" y="195" width="160" height="50" class="cell"/>
+    <text x="400" y="220" class="value">"Shenzhen"</text>
+    <rect x="480" y="195" width="80" height="50" class="cell"/>
+    <text x="520" y="220" class="value">95.0</text>
+  </g>
+
+  <!-- 标注说明 -->
+  <g transform="translate(60, 330)">
+    <!-- 行索引标注 -->
+    <path d="M 40 0 L 40 -200" class="brace"/>
+    <path d="M 30 -200 Q 40 -210 50 -200" class="brace"/>
+    <path d="M 30 0 Q 40 10 50 0" class="brace"/>
+    <text x="60" y="-95" class="note">行索引 (Index)</text>
+    <text x="60" y="-78" class="small">标签用于快速定位行</text>
+
+    <!-- 列标注 -->
+    <path d="M 230 -215 L 630 -215" class="brace"/>
+    <path d="M 230 -225 Q 220 -215 230 -205" class="brace"/>
+    <path d="M 630 -225 Q 640 -215 630 -205" class="brace"/>
+    <text x="380" y="-230" class="note" text-anchor="middle">列名 (Columns)</text>
+    <text x="380" y="-213" class="small" text-anchor="middle">每列是一个 Series，有独立数据类型</text>
+  </g>
+
+  <!-- 属性说明框 -->
+  <g transform="translate(100, 380)">
+    <rect x="0" y="0" width="600" height="80" rx="8" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+    <text x="20" y="25" class="label" font-weight="bold">核心属性：</text>
+    <text x="20" y="48" class="small">df.shape → (4, 4) ｜ df.columns → Index(['name','age','city','score']) ｜ df.index → RangeIndex(start=0, stop=4)</text>
+    <text x="20" y="68" class="small">df.dtypes → name: object, age: int64, city: object, score: float64 ｜ df.values → 底层 NumPy 数组</text>
+  </g>
+</svg>
