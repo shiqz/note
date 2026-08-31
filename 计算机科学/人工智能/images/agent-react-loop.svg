@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f3ff"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
+    </linearGradient>
+    <linearGradient id="brain2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arV2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arG2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#059669"/>
+    </marker>
+    <marker id="arA2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d97706"/>
+    </marker>
+    <marker id="arI2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#4f46e5"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="900" rx="28" fill="url(#bg2)"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700" fill="#0f172a">ReAct 循环：推理（Thought）与行动（Action）交替进行</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#475569">每一步"想清楚 → 调工具 → 看结果"，观察结果回流后再想下一步，直到模型认为信息足够、输出最终答案</text>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow2)">
+    <!-- 左侧：循环机制卡片 -->
+    <rect x="40" y="118" width="520" height="652" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="300" y="152" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">运行机制：一个带护栏的 while 循环</text>
+
+    <!-- 最终答案 -->
+    <rect x="222" y="170" width="156" height="44" rx="22" fill="#0f172a"/>
+    <text x="300" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">最终答案（退出循环）</text>
+
+    <!-- 三个节点 -->
+    <circle cx="300" cy="280" r="58" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/>
+    <text x="300" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#6d28d9">推理</text>
+    <text x="300" y="294" text-anchor="middle" font-size="11" fill="#7c3aed">Thought：下一步做什么</text>
+
+    <circle cx="480" cy="470" r="58" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+    <text x="480" y="462" text-anchor="middle" font-size="15" font-weight="700" fill="#047857">行动</text>
+    <text x="480" y="484" text-anchor="middle" font-size="11" fill="#059669">Action：调用工具</text>
+
+    <circle cx="300" cy="660" r="58" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+    <text x="300" y="652" text-anchor="middle" font-size="15" font-weight="700" fill="#b45309">观察</text>
+    <text x="300" y="674" text-anchor="middle" font-size="11" fill="#b45309">Observation：看结果</text>
+
+    <!-- 中心大脑 -->
+    <circle cx="300" cy="470" r="74" fill="url(#brain2)"/>
+    <text x="300" y="462" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">LLM</text>
+    <text x="300" y="486" text-anchor="middle" font-size="12" fill="#e0e7ff">推理决策核心</text>
+
+    <!-- 循环箭头 -->
+    <path d="M340 322 C 390 350 420 390 440 428" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#arV2)"/>
+    <path d="M440 512 C 420 550 390 590 340 618" stroke="#059669" stroke-width="2.5" fill="none" marker-end="url(#arG2)"/>
+    <path d="M258 622 C 172 568 172 374 258 324" stroke="#d97706" stroke-width="2.5" fill="none" marker-end="url(#arA2)"/>
+    <!-- 退出箭头 -->
+    <line x1="300" y1="224" x2="300" y2="216" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arI2)"/>
+    <text x="372" y="214" font-size="11.5" font-weight="700" fill="#4f46e5">信息足够 → 直接回答</text>
+
+    <rect x="72" y="728" width="456" height="30" rx="15" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="300" y="748" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">护栏：每轮检查 steps &lt; max_steps 且未超时，否则强制终止并兜底</text>
+  </g>
+
+  <!-- 右侧：真实轨迹 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow2)">
+    <rect x="600" y="118" width="560" height="652" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="880" y="152" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">真实轨迹：Messages 列表不断追加</text>
+
+    <rect x="620" y="166" width="520" height="44" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="636" y="193" font-size="12.5" font-weight="700" fill="#0f172a">任务："北京和上海哪个常住人口更多？相差多少？"</text>
+
+    <!-- 竖向连接线 -->
+    <line x1="648" y1="225" x2="648" y2="720" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4,4"/>
+
+    <!-- T1 -->
+    <rect x="636" y="225" width="504" height="52" rx="9" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="652" y="247" font-size="11.5" font-weight="700" fill="#6d28d9">Thought 1</text>
+    <text x="652" y="267" font-size="12" fill="#4c1d95">我需要先查到两个城市最新的常住人口数据</text>
+
+    <!-- A1 -->
+    <rect x="636" y="288" width="504" height="52" rx="9" fill="#ecfdf5" stroke="#6ee7b7"/>
+    <text x="652" y="310" font-size="11.5" font-weight="700" fill="#047857">Action 1</text>
+    <text x="652" y="330" font-size="12" fill="#064e3b" font-family="Consolas, monospace">search("北京 上海 常住人口 统计公报")</text>
+
+    <!-- O1 -->
+    <rect x="636" y="351" width="504" height="62" rx="9" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="652" y="373" font-size="11.5" font-weight="700" fill="#b45309">Observation 1</text>
+    <text x="652" y="393" font-size="12" fill="#78350f">北京约 2185.8 万人；上海约 2487.5 万人</text>
+    <text x="652" y="408" font-size="11" fill="#92400e">（来源：统计公报 / 七普数据）</text>
+
+    <!-- T2 -->
+    <rect x="636" y="424" width="504" height="52" rx="9" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="652" y="446" font-size="11.5" font-weight="700" fill="#6d28d9">Thought 2</text>
+    <text x="652" y="466" font-size="12" fill="#4c1d95">上海人口更多，接下来计算两者的差值</text>
+
+    <!-- A2 -->
+    <rect x="636" y="487" width="504" height="52" rx="9" fill="#ecfdf5" stroke="#6ee7b7"/>
+    <text x="652" y="509" font-size="11.5" font-weight="700" fill="#047857">Action 2</text>
+    <text x="652" y="529" font-size="12" fill="#064e3b" font-family="Consolas, monospace">calculator(2487.5 - 2185.8)</text>
+
+    <!-- O2 -->
+    <rect x="636" y="550" width="504" height="52" rx="9" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="652" y="572" font-size="11.5" font-weight="700" fill="#b45309">Observation 2</text>
+    <text x="652" y="592" font-size="12" fill="#78350f" font-family="Consolas, monospace">301.7</text>
+
+    <!-- T3 -->
+    <rect x="636" y="613" width="504" height="52" rx="9" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="652" y="635" font-size="11.5" font-weight="700" fill="#6d28d9">Thought 3</text>
+    <text x="652" y="655" font-size="12" fill="#4c1d95">数据齐全，可以给出最终答案了</text>
+
+    <!-- Final -->
+    <rect x="636" y="676" width="504" height="56" rx="9" fill="#0f172a"/>
+    <text x="652" y="699" font-size="11.5" font-weight="700" fill="#a5b4fc">Final Answer</text>
+    <text x="652" y="720" font-size="12" fill="#ffffff">上海常住人口更多，比北京多约 301.7 万人</text>
+  </g>
+
+  <!-- 底部总结条 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="40" y="792" width="1120" height="86" rx="16" fill="#0f172a" opacity="0.95"/>
+    <text x="600" y="824" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">关键认知：模型生成"想做什么"，代码真正"去做"，结果再喂回给模型</text>
+    <text x="600" y="852" text-anchor="middle" font-size="13.5" fill="#cbd5e1">Thought / Action / Observation 本质是 messages 列表里一条条追加的消息——上下文越长，模型"看到"的过程越完整，但 Token 成本也越高。</text>
+  </g>
+</svg>

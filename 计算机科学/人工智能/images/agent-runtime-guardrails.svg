@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="880" viewBox="0 0 1200 880">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#eff6ff"/>
+    </linearGradient>
+    <linearGradient id="brain5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow5" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="ar5" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="880" rx="28" fill="url(#bg5)"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700" fill="#0f172a">生产级 Agent 运行时护栏：把自主权关进笼子</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#475569">Agent 每走一步都要经过六道关卡检查——这是"演示 Demo"和"生产系统"的真正差距</text>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow5)">
+    <!-- 左列卡片 -->
+    <!-- 1 循环控制 -->
+    <rect x="56" y="116" width="360" height="164" rx="14" fill="#ffffff" stroke="#fda4af" stroke-width="2"/>
+    <rect x="76" y="136" width="34" height="34" rx="8" fill="#e11d48"/>
+    <text x="93" y="160" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">1</text>
+    <text x="122" y="159" font-size="16" font-weight="700" fill="#be123c">循环与预算控制</text>
+    <text x="76" y="198" font-size="12.5" fill="#881337">· 最大步数 max_steps，防止无限打转</text>
+    <text x="76" y="222" font-size="12.5" fill="#881337">· 全局超时 timeout，单工具超时</text>
+    <text x="76" y="246" font-size="12.5" fill="#881337">· Token / 成本预算，超限熔断</text>
+    <text x="76" y="268" font-size="11.5" fill="#e11d48">解决：死循环、成本失控、长尾卡死</text>
+
+    <!-- 2 权限隔离 -->
+    <rect x="56" y="300" width="360" height="164" rx="14" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
+    <rect x="76" y="320" width="34" height="34" rx="8" fill="#d97706"/>
+    <text x="93" y="344" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">2</text>
+    <text x="122" y="343" font-size="16" font-weight="700" fill="#b45309">权限与隔离</text>
+    <text x="76" y="382" font-size="12.5" fill="#78350f">· 工具白名单，按场景开放最小集</text>
+    <text x="76" y="406" font-size="12.5" fill="#78350f">· user_id / tenant_id 由代码强制注入</text>
+    <text x="76" y="430" font-size="12.5" fill="#78350f">· 参数 Schema 校验；代码在沙箱执行</text>
+    <text x="76" y="452" font-size="11.5" fill="#b45309">解决：越权访问、参数伪造、危险操作</text>
+
+    <!-- 3 HITL -->
+    <rect x="56" y="484" width="360" height="164" rx="14" fill="#ffffff" stroke="#c4b5fd" stroke-width="2"/>
+    <rect x="76" y="504" width="34" height="34" rx="8" fill="#7c3aed"/>
+    <text x="93" y="528" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">3</text>
+    <text x="122" y="527" font-size="16" font-weight="700" fill="#6d28d9">人在回路 HITL</text>
+    <text x="76" y="566" font-size="12.5" fill="#5b21b6">· 高风险动作（退款/删除/支付）暂停</text>
+    <text x="76" y="590" font-size="12.5" fill="#5b21b6">· 人工审批后执行，支持拒绝/修改</text>
+    <text x="76" y="614" font-size="12.5" fill="#5b21b6">· 状态持久化，支持中断后恢复</text>
+    <text x="76" y="636" font-size="11.5" fill="#6d28d9">解决：不可逆动作失控、责任界定</text>
+
+    <!-- 右列卡片 -->
+    <!-- 4 输入输出安全 -->
+    <rect x="784" y="116" width="360" height="164" rx="14" fill="#ffffff" stroke="#67e8f9" stroke-width="2"/>
+    <rect x="804" y="136" width="34" height="34" rx="8" fill="#0e7490"/>
+    <text x="821" y="160" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">4</text>
+    <text x="850" y="159" font-size="16" font-weight="700" fill="#155e75">输入输出安全</text>
+    <text x="804" y="198" font-size="12.5" fill="#164e63">· 工具返回内容也是输入，防注入</text>
+    <text x="804" y="222" font-size="12.5" fill="#164e63">· 系统指令与外部数据严格隔离</text>
+    <text x="804" y="246" font-size="12.5" fill="#164e63">· 输出 Schema 校验 + 敏感信息脱敏</text>
+    <text x="804" y="268" font-size="11.5" fill="#0e7490">解决：提示注入、数据泄露、幻觉输出</text>
+
+    <!-- 5 可观测审计 -->
+    <rect x="784" y="300" width="360" height="164" rx="14" fill="#ffffff" stroke="#93c5fd" stroke-width="2"/>
+    <rect x="804" y="320" width="34" height="34" rx="8" fill="#1d4ed8"/>
+    <text x="821" y="344" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">5</text>
+    <text x="850" y="343" font-size="16" font-weight="700" fill="#1e40af">可观测与审计</text>
+    <text x="804" y="382" font-size="12.5" fill="#1e3a8a">· 全链路 Trace：每步 Thought/Action</text>
+    <text x="804" y="406" font-size="12.5" fill="#1e3a8a">· 记录入参、出参、耗时、Token</text>
+    <text x="804" y="430" font-size="12.5" fill="#1e3a8a">· 轨迹可重放，问题可回溯定位</text>
+    <text x="804" y="452" font-size="11.5" fill="#1d4ed8">解决：黑盒难调试、出事无法追责</text>
+
+    <!-- 6 降级兜底 -->
+    <rect x="784" y="484" width="360" height="164" rx="14" fill="#ffffff" stroke="#6ee7b7" stroke-width="2"/>
+    <rect x="804" y="504" width="34" height="34" rx="8" fill="#059669"/>
+    <text x="821" y="528" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">6</text>
+    <text x="850" y="527" font-size="16" font-weight="700" fill="#047857">降级与兜底</text>
+    <text x="804" y="566" font-size="12.5" fill="#065f46">· 工具错误回流模型，允许自我修正</text>
+    <text x="804" y="590" font-size="12.5" fill="#065f46">· 重试上限后转人工 / 兜底话术</text>
+    <text x="804" y="614" font-size="12.5" fill="#065f46">· 大模型故障时降级到小模型或规则</text>
+    <text x="804" y="636" font-size="11.5" fill="#047857">解决：工具失败、模型抽风、雪崩</text>
+  </g>
+
+  <!-- 中心 Agent 循环 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <circle cx="600" cy="390" r="118" fill="#ffffff" stroke="#4f46e5" stroke-width="2.5" stroke-dasharray="8,6" filter="url(#shadow5)"/>
+    <circle cx="600" cy="390" r="86" fill="url(#brain5)"/>
+    <text x="600" y="372" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">Agent 自主循环</text>
+    <text x="600" y="398" text-anchor="middle" font-size="12" fill="#e0e7ff">Thought → Action</text>
+    <text x="600" y="420" text-anchor="middle" font-size="12" fill="#e0e7ff">→ Observation</text>
+    <text x="600" y="528" text-anchor="middle" font-size="12" font-weight="700" fill="#4f46e5">每一步都经过护栏检查</text>
+  </g>
+
+  <!-- 卡片指向中心的约束箭头 -->
+  <g stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,4" fill="none">
+    <path d="M416 198 L522 322" marker-end="url(#ar5)"/>
+    <path d="M416 382 L508 390" marker-end="url(#ar5)"/>
+    <path d="M416 566 L522 458" marker-end="url(#ar5)"/>
+    <path d="M784 198 L678 322" marker-end="url(#ar5)"/>
+    <path d="M784 382 L692 390" marker-end="url(#ar5)"/>
+    <path d="M784 566 L678 458" marker-end="url(#ar5)"/>
+  </g>
+
+  <!-- 底部总结条 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="56" y="690" width="1088" height="150" rx="16" fill="#0f172a" opacity="0.95"/>
+    <text x="600" y="726" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">核心原则：模型做决策，代码做执行；人来定边界，系统来兜底</text>
+    <text x="600" y="760" text-anchor="middle" font-size="14" fill="#cbd5e1">LLM 永远不应该直接接触数据库连接、支付接口、删除权限——它只能输出"想调用什么工具、参数是什么"，</text>
+    <text x="600" y="786" text-anchor="middle" font-size="14" fill="#cbd5e1">真正执行的是受权限、校验、审批、日志约束的确定性代码。</text>
+    <text x="600" y="818" text-anchor="middle" font-size="13.5" fill="#fda4af">没有护栏的 Agent 上生产，等于把生产环境的钥匙交给一个会幻觉、会被注入、不知疲倦地试错的"实习生"。</text>
+  </g>
+</svg>

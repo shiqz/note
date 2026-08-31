@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ar6" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">容器生命周期与常用命令</text>
+
+  <!-- 状态节点 -->
+  <rect x="80" y="180" width="150" height="70" rx="12" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+  <text x="155" y="210" text-anchor="middle" font-size="16" font-weight="bold" fill="#334155">Created</text>
+  <text x="155" y="232" text-anchor="middle" font-size="11.5" fill="#475569">已创建未运行</text>
+
+  <rect x="330" y="100" width="160" height="70" rx="12" fill="#dcfce7" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="410" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#14532d">Running</text>
+  <text x="410" y="152" text-anchor="middle" font-size="11.5" fill="#166534">运行中</text>
+
+  <rect x="330" y="270" width="160" height="70" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="410" y="300" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">Paused</text>
+  <text x="410" y="322" text-anchor="middle" font-size="11.5" fill="#92400e">已暂停（冻结进程）</text>
+
+  <rect x="600" y="180" width="160" height="70" rx="12" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+  <text x="680" y="210" text-anchor="middle" font-size="16" font-weight="bold" fill="#991b1b">Stopped / Exited</text>
+  <text x="680" y="232" text-anchor="middle" font-size="11.5" fill="#991b1b">已停止</text>
+
+  <!-- 流转箭头与命令 -->
+  <line x1="232" y1="195" x2="325" y2="150" stroke="#475569" stroke-width="2" marker-end="url(#ar6)"/>
+  <text x="278" y="160" text-anchor="middle" font-size="12" font-weight="bold" fill="#1d4ed8">docker start / run</text>
+
+  <line x1="410" y1="172" x2="410" y2="266" stroke="#475569" stroke-width="2" marker-end="url(#ar6)"/>
+  <text x="470" y="225" font-size="12" font-weight="bold" fill="#b45309">docker pause</text>
+
+  <line x1="385" y1="270" x2="385" y2="174" stroke="#475569" stroke-width="2" marker-end="url(#ar6)"/>
+  <text x="300" y="225" font-size="12" font-weight="bold" fill="#b45309">docker unpause</text>
+
+  <line x1="492" y1="150" x2="595" y2="195" stroke="#475569" stroke-width="2" marker-end="url(#ar6)"/>
+  <text x="555" y="155" text-anchor="middle" font-size="12" font-weight="bold" fill="#b91c1c">docker stop</text>
+
+  <line x1="595" y1="230" x2="492" y2="150" stroke="#475569" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ar6)"/>
+  <text x="560" y="262" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">docker start</text>
+
+  <line x1="680" y1="252" x2="680" y2="356" stroke="#475569" stroke-width="2" marker-end="url(#ar6)"/>
+  <rect x="600" y="360" width="160" height="60" rx="12" fill="#334155"/>
+  <text x="680" y="388" text-anchor="middle" font-size="16" font-weight="bold" fill="#f1f5f9">Deleted</text>
+  <text x="680" y="408" text-anchor="middle" font-size="11.5" fill="#cbd5e1">docker rm（容器已删除）</text>
+  <text x="770" y="320" font-size="12" font-weight="bold" fill="#334155">docker rm</text>
+
+  <!-- 运行期命令 -->
+  <rect x="80" y="330" width="200" height="110" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="180" y="358" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d4ed8">Running 状态可执行</text>
+  <text x="100" y="384" font-size="12.5" fill="#1e3a8a">docker logs -f  查看日志</text>
+  <text x="100" y="407" font-size="12.5" fill="#1e3a8a">docker exec -it 进入容器</text>
+  <text x="100" y="430" font-size="12.5" fill="#1e3a8a">docker stats / inspect  监控详情</text>
+
+  <!-- 镜像与容器关系 -->
+  <rect x="330" y="360" width="220" height="80" rx="10" fill="#faf5ff" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="440" y="388" text-anchor="middle" font-size="13" font-weight="bold" fill="#7e22ce">docker run 镜像名</text>
+  <text x="440" y="412" text-anchor="middle" font-size="12" fill="#6b21a8">镜像不存在会自动 pull，</text>
+  <text x="440" y="430" text-anchor="middle" font-size="12" fill="#6b21a8">然后 create + start 一步到位</text>
+</svg>

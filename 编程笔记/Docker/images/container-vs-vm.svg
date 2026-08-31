@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">虚拟机 vs 容器架构对比</text>
+
+  <!-- 左侧：虚拟机 -->
+  <text x="230" y="72" text-anchor="middle" font-size="17" font-weight="bold" fill="#b91c1c">虚拟机（VM）</text>
+
+  <!-- App 层 -->
+  <rect x="70" y="90" width="100" height="46" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="120" y="118" text-anchor="middle" font-size="13" fill="#1e3a8a">App 1</text>
+  <rect x="185" y="90" width="100" height="46" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="235" y="118" text-anchor="middle" font-size="13" fill="#1e3a8a">App 2</text>
+  <rect x="300" y="90" width="100" height="46" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="350" y="118" text-anchor="middle" font-size="13" fill="#1e3a8a">App 3</text>
+
+  <!-- Bins/Libs + Guest OS（每个 VM 一套） -->
+  <rect x="70" y="142" width="100" height="90" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="120" y="172" text-anchor="middle" font-size="12" fill="#7f1d1d">Bins/Libs</text>
+  <text x="120" y="196" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">Guest OS</text>
+  <text x="120" y="216" text-anchor="middle" font-size="11" fill="#7f1d1d">(数 GB)</text>
+
+  <rect x="185" y="142" width="100" height="90" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="235" y="172" text-anchor="middle" font-size="12" fill="#7f1d1d">Bins/Libs</text>
+  <text x="235" y="196" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">Guest OS</text>
+  <text x="235" y="216" text-anchor="middle" font-size="11" fill="#7f1d1d">(数 GB)</text>
+
+  <rect x="300" y="142" width="100" height="90" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="350" y="172" text-anchor="middle" font-size="12" fill="#7f1d1d">Bins/Libs</text>
+  <text x="350" y="196" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">Guest OS</text>
+  <text x="350" y="216" text-anchor="middle" font-size="11" fill="#7f1d1d">(数 GB)</text>
+
+  <!-- Hypervisor -->
+  <rect x="70" y="244" width="330" height="44" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="235" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">Hypervisor（Hyper-V / KVM）</text>
+
+  <!-- Host OS -->
+  <rect x="70" y="298" width="330" height="40" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <text x="235" y="323" text-anchor="middle" font-size="14" fill="#334155">Host OS（宿主机操作系统）</text>
+
+  <!-- 基础设施 -->
+  <rect x="70" y="348" width="330" height="40" rx="6" fill="#334155"/>
+  <text x="235" y="373" text-anchor="middle" font-size="14" fill="#f1f5f9">物理基础设施（CPU / 内存 / 磁盘）</text>
+
+  <!-- 右侧：容器 -->
+  <text x="680" y="72" text-anchor="middle" font-size="17" font-weight="bold" fill="#15803d">容器（Container）</text>
+
+  <rect x="520" y="90" width="100" height="60" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="570" y="116" text-anchor="middle" font-size="13" fill="#14532d">App 1</text>
+  <text x="570" y="136" text-anchor="middle" font-size="11" fill="#14532d">+ Bins/Libs</text>
+
+  <rect x="635" y="90" width="100" height="60" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="685" y="116" text-anchor="middle" font-size="13" fill="#14532d">App 2</text>
+  <text x="685" y="136" text-anchor="middle" font-size="11" fill="#14532d">+ Bins/Libs</text>
+
+  <rect x="750" y="90" width="100" height="60" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="800" y="116" text-anchor="middle" font-size="13" fill="#14532d">App 3</text>
+  <text x="800" y="136" text-anchor="middle" font-size="11" fill="#14532d">+ Bins/Libs</text>
+
+  <!-- Docker Engine -->
+  <rect x="520" y="162" width="330" height="50" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="685" y="192" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">Docker Engine（容器运行时，共享宿主机内核）</text>
+
+  <!-- Host OS -->
+  <rect x="520" y="224" width="330" height="40" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <text x="685" y="249" text-anchor="middle" font-size="14" fill="#334155">Host OS（宿主机操作系统内核）</text>
+
+  <!-- 基础设施 -->
+  <rect x="520" y="274" width="330" height="40" rx="6" fill="#334155"/>
+  <text x="685" y="299" text-anchor="middle" font-size="14" fill="#f1f5f9">物理基础设施（CPU / 内存 / 磁盘）</text>
+
+  <!-- 分隔线 -->
+  <line x1="450" y1="80" x2="450" y2="400" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6,5"/>
+
+  <!-- 底部对比小结 -->
+  <rect x="70" y="425" width="780" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="95" y="452" font-size="14" font-weight="bold" fill="#1e293b">核心差异：</text>
+  <text x="95" y="478" font-size="13" fill="#334155">• 虚拟机虚拟出整套操作系统，每个 VM 都携带独立 Guest OS，启动慢（分钟级）、开销大、体积 GB 级</text>
+  <text x="95" y="502" font-size="13" fill="#334155">• 容器共享宿主机内核，只打包应用与依赖库，启动快（秒级）、开销小、镜像通常 MB 级</text>
+  <text x="95" y="526" font-size="13" fill="#334155">• 容器本质 = 受 namespace 隔离、cgroups 限制资源的“特殊进程”</text>
+</svg>

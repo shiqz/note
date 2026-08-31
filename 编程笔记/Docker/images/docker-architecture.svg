@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+    <marker id="ar2b" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M8,0 L0,3 L8,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">Docker 架构：Client / Daemon / Registry</text>
+
+  <!-- Client -->
+  <rect x="40" y="150" width="200" height="220" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="140" y="182" text-anchor="middle" font-size="17" font-weight="bold" fill="#1d4ed8">Docker Client</text>
+  <text x="140" y="206" text-anchor="middle" font-size="12" fill="#475569">docker 命令行 / REST API</text>
+  <rect x="65" y="225" width="150" height="34" rx="6" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="140" y="247" text-anchor="middle" font-size="13" fill="#1e3a8a">docker build</text>
+  <rect x="65" y="268" width="150" height="34" rx="6" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="140" y="290" text-anchor="middle" font-size="13" fill="#1e3a8a">docker pull / push</text>
+  <rect x="65" y="311" width="150" height="34" rx="6" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="140" y="333" text-anchor="middle" font-size="13" fill="#1e3a8a">docker run / exec</text>
+
+  <!-- Docker Host -->
+  <rect x="330" y="90" width="320" height="340" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="490" y="122" text-anchor="middle" font-size="17" font-weight="bold" fill="#15803d">Docker Host（宿主机）</text>
+
+  <rect x="360" y="145" width="260" height="70" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="490" y="174" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">Docker Daemon（dockerd）</text>
+  <text x="490" y="198" text-anchor="middle" font-size="12" fill="#78350f">常驻后台进程，负责管理镜像与容器</text>
+
+  <rect x="360" y="240" width="120" height="160" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="420" y="268" text-anchor="middle" font-size="14" font-weight="bold" fill="#14532d">Images</text>
+  <text x="420" y="292" text-anchor="middle" font-size="11" fill="#166534">镜像（只读模板）</text>
+  <rect x="378" y="308" width="84" height="22" rx="4" fill="#bbf7d0"/>
+  <text x="420" y="324" text-anchor="middle" font-size="11" fill="#14532d">nginx:1.25</text>
+  <rect x="378" y="336" width="84" height="22" rx="4" fill="#bbf7d0"/>
+  <text x="420" y="352" text-anchor="middle" font-size="11" fill="#14532d">python:3.12</text>
+  <rect x="378" y="364" width="84" height="22" rx="4" fill="#bbf7d0"/>
+  <text x="420" y="380" text-anchor="middle" font-size="11" fill="#14532d">myapp:v1</text>
+
+  <rect x="500" y="240" width="120" height="160" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="560" y="268" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a8a">Containers</text>
+  <text x="560" y="292" text-anchor="middle" font-size="11" fill="#1e40af">容器（运行实例）</text>
+  <rect x="518" y="308" width="84" height="22" rx="4" fill="#bfdbfe"/>
+  <text x="560" y="324" text-anchor="middle" font-size="11" fill="#1e3a8a">web (Running)</text>
+  <rect x="518" y="336" width="84" height="22" rx="4" fill="#bfdbfe"/>
+  <text x="560" y="352" text-anchor="middle" font-size="11" fill="#1e3a8a">db (Running)</text>
+  <rect x="518" y="364" width="84" height="22" rx="4" fill="#bfdbfe"/>
+  <text x="560" y="380" text-anchor="middle" font-size="11" fill="#1e3a8a">cache (Exited)</text>
+
+  <!-- Registry -->
+  <rect x="720" y="150" width="160" height="220" rx="10" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+  <text x="800" y="186" text-anchor="middle" font-size="17" font-weight="bold" fill="#7e22ce">Registry</text>
+  <text x="800" y="210" text-anchor="middle" font-size="12" fill="#6b21a8">镜像仓库</text>
+  <rect x="745" y="232" width="110" height="40" rx="6" fill="#f3e8ff" stroke="#c084fc"/>
+  <text x="800" y="257" text-anchor="middle" font-size="13" fill="#6b21a8">Docker Hub</text>
+  <rect x="745" y="285" width="110" height="40" rx="6" fill="#f3e8ff" stroke="#c084fc"/>
+  <text x="800" y="310" text-anchor="middle" font-size="13" fill="#6b21a8">私有仓库</text>
+  <text x="800" y="348" text-anchor="middle" font-size="11" fill="#7e22ce">harbor / 阿里云 ACR</text>
+
+  <!-- 箭头 -->
+  <line x1="240" y1="260" x2="325" y2="260" stroke="#475569" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="283" y="248" text-anchor="middle" font-size="11" fill="#475569">请求</text>
+
+  <line x1="650" y1="200" x2="715" y2="220" stroke="#475569" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="715" y1="300" x2="650" y2="280" stroke="#475569" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="685" y="180" text-anchor="middle" font-size="11" fill="#475569">pull 拉取</text>
+  <text x="685" y="322" text-anchor="middle" font-size="11" fill="#475569">push 推送</text>
+
+  <!-- 底部说明 -->
+  <rect x="40" y="455" width="840" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="60" y="478" font-size="13" fill="#334155">C/S 架构：CLI 只是客户端，真正干活的是 dockerd；二者通过 REST API 通信，所以客户端可以远程管理其他主机上的 Docker。</text>
+  <text x="60" y="497" font-size="13" fill="#334155">镜像（Image）是静态模板；容器（Container）是镜像运行起来的动态实例 —— 类比：镜像 = 类，容器 = 对象。</text>
+</svg>

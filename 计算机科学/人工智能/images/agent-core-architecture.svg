@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef2ff"/>
+      <stop offset="100%" stop-color="#ecfeff"/>
+    </linearGradient>
+    <linearGradient id="brain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arIndigo" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#4f46e5"/>
+    </marker>
+    <marker id="arAmber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d97706"/>
+    </marker>
+    <marker id="arGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#059669"/>
+    </marker>
+    <marker id="arViolet" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arSlate" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="900" rx="28" fill="url(#bg)"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700" fill="#0f172a">Agent 核心架构：以 LLM 为大脑的自主系统</text>
+  <text x="600" y="86" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#475569">Agent = LLM（大脑）+ 记忆 + 规划 + 工具 + 感知行动闭环；模型只负责决策，代码负责执行</text>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shadow)">
+    <!-- 感知输入 -->
+    <rect x="430" y="118" width="340" height="66" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="600" y="146" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">感知输入 Perception</text>
+    <text x="600" y="170" text-anchor="middle" font-size="12" fill="#475569">用户目标 · 环境状态 · 工具返回的观察结果</text>
+
+    <!-- 大脑 -->
+    <rect x="440" y="238" width="320" height="176" rx="18" fill="url(#brain)"/>
+    <text x="600" y="272" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">LLM 大脑（推理核心）</text>
+    <text x="600" y="298" text-anchor="middle" font-size="12" fill="#e0e7ff">大语言模型 · 任务理解 · 推理决策</text>
+    <g font-size="12.5" fill="#eef2ff">
+      <text x="470" y="328">· 理解目标与当前上下文</text>
+      <text x="470" y="352">· 决定下一步：直接回答 or 调用工具</text>
+      <text x="470" y="376">· 生成工具名称与调用参数</text>
+      <text x="470" y="400">· 判断任务是否完成，输出最终结果</text>
+    </g>
+
+    <!-- 规划 -->
+    <rect x="440" y="470" width="320" height="124" rx="16" fill="#ffffff" stroke="#c4b5fd" stroke-width="2"/>
+    <text x="600" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#6d28d9">规划与反思 Planning</text>
+    <g font-size="12.5" fill="#5b21b6">
+      <text x="470" y="528">· 任务分解：把大目标拆成可执行的子任务</text>
+      <text x="470" y="552">· 计划生成：先谋后动（Plan-and-Execute）</text>
+      <text x="470" y="576">· 自我反思：根据观察修正策略（Reflection）</text>
+    </g>
+
+    <!-- 行动输出/环境 -->
+    <rect x="430" y="652" width="340" height="72" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="600" y="682" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">行动 Action → 作用于环境</text>
+    <text x="600" y="706" text-anchor="middle" font-size="12" fill="#475569">执行真实操作：查询数据库 · 调用 API · 写文件 · 发消息</text>
+
+    <!-- 记忆系统（左） -->
+    <rect x="56" y="238" width="316" height="356" rx="16" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
+    <text x="214" y="270" text-anchor="middle" font-size="17" font-weight="700" fill="#b45309">记忆系统 Memory</text>
+
+    <rect x="76" y="288" width="276" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="92" y="312" font-size="13.5" font-weight="700" fill="#92400e">短期记忆（工作记忆）</text>
+    <text x="92" y="334" font-size="11.5" fill="#78350f">上下文窗口内的消息与推理轨迹</text>
+    <text x="92" y="354" font-size="11.5" fill="#78350f">滑动窗口 · 摘要压缩 · 结果截断</text>
+    <text x="92" y="372" font-size="11" fill="#a16207">受上下文长度与 Token 成本约束</text>
+
+    <rect x="76" y="394" width="276" height="140" rx="10" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="92" y="418" font-size="13.5" font-weight="700" fill="#92400e">长期记忆（外部存储）</text>
+    <text x="92" y="440" font-size="11.5" fill="#78350f">· 情景记忆：历史任务与对话经历</text>
+    <text x="92" y="460" font-size="11.5" fill="#78350f">· 语义记忆：事实知识（RAG / 图谱）</text>
+    <text x="92" y="480" font-size="11.5" fill="#78350f">· 程序记忆：技能、工具用法、经验</text>
+    <text x="92" y="506" font-size="11" fill="#a16207">实现：向量数据库 + 元数据 + 摘要</text>
+    <text x="92" y="524" font-size="11" fill="#a16207">操作：写入 · 检索注入 · 遗忘衰减</text>
+
+    <text x="214" y="568" text-anchor="middle" font-size="11.5" fill="#b45309">让 Agent 跨步骤、跨会话积累经验</text>
+
+    <!-- 工具系统（右） -->
+    <rect x="828" y="238" width="316" height="356" rx="16" fill="#ffffff" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="986" y="270" text-anchor="middle" font-size="17" font-weight="700" fill="#047857">工具与行动 Tools</text>
+
+    <rect x="848" y="288" width="276" height="232" rx="10" fill="#ecfdf5" stroke="#a7f3d0"/>
+    <text x="864" y="312" font-size="13.5" font-weight="700" fill="#065f46">能力扩展（Agent 的手和脚）</text>
+    <text x="864" y="338" font-size="11.5" fill="#047857">· 信息获取：搜索 / 浏览 / RAG 检索</text>
+    <text x="864" y="360" font-size="11.5" fill="#047857">· 计算执行：代码解释器 / SQL / 计算</text>
+    <text x="864" y="382" font-size="11.5" fill="#047857">· 业务操作：订单 / 工单 / 邮件 / 日历</text>
+    <text x="864" y="404" font-size="11.5" fill="#047857">· 系统能力：文件读写 / HTTP 请求</text>
+    <text x="864" y="432" font-size="12" font-weight="700" fill="#065f46">工具定义 = 名称 + 描述 + 参数 Schema</text>
+    <text x="864" y="456" font-size="11.5" fill="#047857">模型生成"调用意图"，运行时代码执行</text>
+    <text x="864" y="482" font-size="11.5" fill="#047857">结果以 Observation 形式回流给大脑</text>
+    <text x="864" y="506" font-size="11" fill="#059669">原则：单一职责 · 参数校验 · 最小权限</text>
+  </g>
+
+  <!-- 连接线 -->
+  <g stroke-width="2.5" fill="none">
+    <!-- 感知 -> 大脑 -->
+    <line x1="600" y1="184" x2="600" y2="232" stroke="#475569" marker-end="url(#arSlate)"/>
+    <!-- 大脑 <-> 记忆 -->
+    <line x1="440" y1="310" x2="378" y2="310" stroke="#d97706" marker-end="url(#arAmber)"/>
+    <line x1="378" y1="360" x2="440" y2="360" stroke="#d97706" marker-end="url(#arAmber)"/>
+    <!-- 大脑 <-> 工具 -->
+    <line x1="760" y1="310" x2="822" y2="310" stroke="#059669" marker-end="url(#arGreen)"/>
+    <line x1="822" y1="360" x2="760" y2="360" stroke="#059669" marker-end="url(#arGreen)"/>
+    <!-- 大脑 -> 规划 -->
+    <line x1="600" y1="414" x2="600" y2="464" stroke="#7c3aed" marker-end="url(#arViolet)"/>
+    <!-- 规划 -> 行动 -->
+    <line x1="600" y1="594" x2="600" y2="646" stroke="#475569" marker-end="url(#arSlate)"/>
+  </g>
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="11.5" font-weight="700">
+    <text x="408" y="300" text-anchor="middle" fill="#b45309">读记忆</text>
+    <text x="408" y="380" text-anchor="middle" fill="#b45309">写记忆</text>
+    <text x="792" y="300" text-anchor="middle" fill="#047857">调用 Action</text>
+    <text x="792" y="380" text-anchor="middle" fill="#047857">观察 Observation</text>
+  </g>
+
+  <!-- 环境反馈回流（右侧虚线大回环） -->
+  <path d="M770 688 L1160 688 L1160 150 L778 150" stroke="#475569" stroke-width="2" stroke-dasharray="7,5" fill="none" marker-end="url(#arSlate)"/>
+  <text x="1175" y="430" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="700" fill="#475569" transform="rotate(90 1175 430)">环境反馈 / 新的观察进入下一轮循环</text>
+
+  <!-- 底部总结条 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="56" y="760" width="1088" height="110" rx="16" fill="#0f172a" opacity="0.95"/>
+    <text x="600" y="794" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">一句话理解 Agent</text>
+    <text x="600" y="824" text-anchor="middle" font-size="14" fill="#cbd5e1">普通 LLM 调用是"一问一答"；Agent 是给 LLM 装上记忆、工具和规划能力，让它在"感知 → 决策 → 行动 → 观察"的循环里自主逼近目标。</text>
+    <text x="600" y="850" text-anchor="middle" font-size="13" fill="#a5b4fc">本质是一个用 LLM 驱动的状态机 / while 循环：每循环一步，模型根据最新观察决定下一步，直到任务完成或触达护栏。</text>
+  </g>
+</svg>

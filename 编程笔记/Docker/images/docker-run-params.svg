@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ar5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">docker run 常用参数图解</text>
+
+  <!-- 命令 -->
+  <rect x="60" y="60" width="780" height="56" rx="8" fill="#1e293b"/>
+  <text x="80" y="95" font-size="14" font-family="Consolas,monospace" fill="#e2e8f0">docker run <tspan fill="#fbbf24">-d</tspan> <tspan fill="#fbbf24">--name web</tspan> <tspan fill="#fbbf24">-p 8080:5000</tspan> <tspan fill="#fbbf24">-v /data/logs:/app/logs</tspan> <tspan fill="#fbbf24">-e TZ=Asia/Shanghai</tspan> myapp:v1</text>
+
+  <!-- 宿主机 -->
+  <rect x="60" y="140" width="360" height="360" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <text x="240" y="172" text-anchor="middle" font-size="16" font-weight="bold" fill="#334155">宿主机 Host</text>
+
+  <rect x="90" y="195" width="130" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="155" y="218" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a8a">端口 8080</text>
+  <text x="155" y="237" text-anchor="middle" font-size="11" fill="#1e40af">浏览器访问</text>
+
+  <rect x="90" y="300" width="130" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="155" y="325" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">/data/logs</text>
+  <text x="155" y="345" text-anchor="middle" font-size="11" fill="#92400e">宿主机目录</text>
+
+  <rect x="90" y="410" width="130" height="50" rx="8" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <text x="155" y="440" text-anchor="middle" font-size="12" fill="#334155">环境变量 / 命名等</text>
+
+  <!-- 容器 -->
+  <rect x="500" y="140" width="340" height="360" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="670" y="172" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">容器 Container（web）</text>
+
+  <rect x="560" y="195" width="220" height="50" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="670" y="218" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">容器端口 5000</text>
+  <text x="670" y="237" text-anchor="middle" font-size="11" fill="#166534">应用监听端口</text>
+
+  <rect x="560" y="300" width="220" height="60" rx="8" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+  <text x="670" y="325" text-anchor="middle" font-size="13" font-weight="bold" fill="#854d0e">/app/logs</text>
+  <text x="670" y="345" text-anchor="middle" font-size="11" fill="#854d0e">容器内目录（数据持久化）</text>
+
+  <rect x="560" y="410" width="220" height="50" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="670" y="432" text-anchor="middle" font-size="12" font-weight="bold" fill="#14532d">-e TZ=Asia/Shanghai</text>
+  <text x="670" y="450" text-anchor="middle" font-size="11" fill="#166534">注入环境变量</text>
+
+  <!-- 映射箭头 -->
+  <line x1="225" y1="220" x2="555" y2="220" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#ar5)"/>
+  <text x="390" y="208" text-anchor="middle" font-size="12" font-weight="bold" fill="#1d4ed8">-p 端口映射</text>
+
+  <line x1="225" y1="330" x2="555" y2="330" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#ar5)"/>
+  <text x="390" y="318" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309">-v 卷挂载（双向同步）</text>
+
+  <line x1="225" y1="435" x2="555" y2="435" stroke="#64748b" stroke-width="2.5" marker-end="url(#ar5)"/>
+  <text x="390" y="423" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">-e / --name</text>
+
+  <!-- 底部参数表 -->
+  <rect x="60" y="512" width="780" height="36" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="450" y="535" text-anchor="middle" font-size="12.5" fill="#334155">-d 后台运行　|　-it 交互+终端　|　--rm 退出即删　|　-p 主机:容器　|　-v 主机:容器　|　-e 变量　|　--name 命名</text>
+</svg>
