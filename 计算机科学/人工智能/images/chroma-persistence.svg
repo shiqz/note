@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="540" viewBox="0 0 980 540" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ca5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">Chroma 持久化、备份与部署模式</text>
+
+  <!-- 左：目录结构 -->
+  <rect x="40" y="75" width="430" height="380" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="255" y="108" text-anchor="middle" font-size="16" font-weight="bold" fill="#334155">PersistentClient 落盘目录</text>
+
+  <text x="80" y="145" font-size="13" font-family="Consolas,monospace" fill="#334155">./chroma_db/</text>
+  <text x="100" y="172" font-size="13" font-family="Consolas,monospace" fill="#2563eb">├── chroma.sqlite3</text>
+  <text x="130" y="196" font-size="11.5" fill="#64748b">元数据 + 记录 + Collection 定义</text>
+  <text x="100" y="226" font-size="13" font-family="Consolas,monospace" fill="#2563eb">└── (向量索引段文件)</text>
+  <text x="130" y="250" font-size="11.5" fill="#64748b">HNSW 索引，随写入自动维护</text>
+
+  <rect x="70" y="275" width="370" height="150" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+  <text x="90" y="302" font-size="13" font-weight="bold" fill="#92400e">备份方式：停写后整体拷贝目录</text>
+  <text x="90" y="330" font-size="12" font-family="Consolas,monospace" fill="#78350f"># 1. 停止写入（或停服务）</text>
+  <text x="90" y="352" font-size="12" font-family="Consolas,monospace" fill="#78350f">cp -r ./chroma_db ./backup_20260902</text>
+  <text x="90" y="378" font-size="12" font-family="Consolas,monospace" fill="#78350f"># 2. 恢复：把目录放回原路径即可</text>
+  <text x="90" y="404" font-size="12" fill="#78350f">重建：用原始文档重新跑一遍 add 流程，</text>
+  <text x="90" y="422" font-size="12" fill="#78350f">即可得到全新索引（升级/迁移时常用）</text>
+
+  <!-- 右：三种 Client -->
+  <rect x="500" y="75" width="440" height="380" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="720" y="108" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">三种 Client 模式</text>
+
+  <rect x="530" y="130" width="380" height="80" rx="10" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="550" y="158" font-size="13" font-weight="bold" fill="#14532d">① 内存模式（测试）</text>
+  <text x="550" y="180" font-size="11.5" font-family="Consolas,monospace" fill="#166534">chromadb.Client()　进程结束数据即消失</text>
+  <text x="550" y="200" font-size="11.5" fill="#64748b">适合单元测试、临时实验</text>
+
+  <rect x="530" y="225" width="380" height="80" rx="10" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/>
+  <text x="550" y="253" font-size="13" font-weight="bold" fill="#14532d">② 持久化嵌入式（开发/小规模生产）</text>
+  <text x="550" y="275" font-size="11.5" font-family="Consolas,monospace" fill="#166534">chromadb.PersistentClient(path="./chroma_db")</text>
+  <text x="550" y="295" font-size="11.5" fill="#64748b">数据落盘，重启不丢；单进程访问</text>
+
+  <rect x="530" y="320" width="380" height="110" rx="10" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="550" y="348" font-size="13" font-weight="bold" fill="#14532d">③ Server 模式（多应用/生产）</text>
+  <text x="550" y="370" font-size="11.5" font-family="Consolas,monospace" fill="#166534">docker run -p 8000:8000 chromadb/chroma</text>
+  <text x="550" y="390" font-size="11.5" font-family="Consolas,monospace" fill="#166534">HttpClient(host="localhost", port=8000)</text>
+  <text x="550" y="412" font-size="11.5" fill="#64748b">多服务共享、独立扩缩容、可挂卷持久化</text>
+
+  <!-- 底部注意 -->
+  <rect x="40" y="475" width="900" height="50" rx="10" fill="#1e293b"/>
+  <text x="490" y="498" text-anchor="middle" font-size="13" fill="#f1f5f9">注意：PersistentClient 数据目录不支持被两个进程同时写；多进程/多机共享请用 Server 模式</text>
+  <text x="490" y="516" text-anchor="middle" font-size="12.5" fill="#94a3b8">Chroma 适合百万级向量以内的场景；千万级以上请评估 Milvus / Qdrant 等分布式向量库</text>
+</svg>

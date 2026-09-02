@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="v5a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#b45309"/>
+    </marker>
+    <marker id="v5b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">向量数据库系统架构：写入链路与查询链路</text>
+
+  <!-- SDK/API 层 -->
+  <rect x="250" y="65" width="500" height="52" rx="12" fill="#1e293b"/>
+  <text x="500" y="97" text-anchor="middle" font-size="15" fill="#f1f5f9">客户端 SDK / REST / gRPC 接口（insert · search · query · delete）</text>
+
+  <!-- 写入链路 -->
+  <rect x="40" y="150" width="440" height="230" rx="14" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="260" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#b45309">写入链路（WAL + 段合并，类 LSM-Tree）</text>
+
+  <rect x="60" y="200" width="120" height="52" rx="8" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="120" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">写入请求</text>
+  <text x="120" y="240" text-anchor="middle" font-size="11" fill="#a16207">向量+payload</text>
+
+  <line x1="182" y1="226" x2="205" y2="226" stroke="#b45309" stroke-width="2" marker-end="url(#v5a)"/>
+
+  <rect x="208" y="200" width="120" height="52" rx="8" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="268" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">WAL 日志</text>
+  <text x="268" y="240" text-anchor="middle" font-size="11" fill="#a16207">先落盘，防丢失</text>
+
+  <line x1="330" y1="226" x2="353" y2="226" stroke="#b45309" stroke-width="2" marker-end="url(#v5a)"/>
+
+  <rect x="356" y="200" width="110" height="52" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+  <text x="411" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Growing 段</text>
+  <text x="411" y="240" text-anchor="middle" font-size="11" fill="#a16207">内存可写</text>
+
+  <line x1="411" y1="254" x2="411" y2="288" stroke="#b45309" stroke-width="2" marker-end="url(#v5a)"/>
+
+  <rect x="356" y="292" width="110" height="52" rx="8" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="411" y="314" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Sealed 段</text>
+  <text x="411" y="332" text-anchor="middle" font-size="11" fill="#a16207">构建 HNSW 索引</text>
+
+  <line x1="353" y1="318" x2="200" y2="318" stroke="#b45309" stroke-width="2" marker-end="url(#v5a)"/>
+  <rect x="70" y="292" width="128" height="52" rx="8" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="134" y="314" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Compaction</text>
+  <text x="134" y="332" text-anchor="middle" font-size="11" fill="#a16207">小段合并、删除清理</text>
+
+  <text x="260" y="367" text-anchor="middle" font-size="11.5" fill="#92400e">增量写入可实时搜索；后台异步建索引，与 ES 的 segment 机制同构</text>
+
+  <!-- 查询链路 -->
+  <rect x="520" y="150" width="440" height="230" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="740" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">查询链路（多段并行 + 归并）</text>
+
+  <rect x="540" y="200" width="120" height="52" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="600" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">查询向量 q</text>
+  <text x="600" y="240" text-anchor="middle" font-size="11" fill="#166534">+ filter 条件</text>
+
+  <line x1="662" y1="226" x2="685" y2="226" stroke="#059669" stroke-width="2" marker-end="url(#v5b)"/>
+
+  <rect x="688" y="200" width="120" height="52" rx="8" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+  <text x="748" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">ANN 索引检索</text>
+  <text x="748" y="240" text-anchor="middle" font-size="11" fill="#166534">HNSW/IVF 图遍历</text>
+
+  <line x1="810" y1="226" x2="833" y2="226" stroke="#059669" stroke-width="2" marker-end="url(#v5b)"/>
+
+  <rect x="836" y="200" width="110" height="52" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="891" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">多段归并</text>
+  <text x="891" y="240" text-anchor="middle" font-size="11" fill="#166534">Top-K 合并</text>
+
+  <line x1="891" y1="254" x2="891" y2="288" stroke="#059669" stroke-width="2" marker-end="url(#v5b)"/>
+
+  <rect x="826" y="292" width="130" height="52" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="891" y="314" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">返回</text>
+  <text x="891" y="332" text-anchor="middle" font-size="11" fill="#166534">id + 分数 + payload</text>
+
+  <line x1="748" y1="254" x2="748" y2="290" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#v5b)"/>
+  <text x="748" y="330" text-anchor="middle" font-size="11" fill="#15803d">标量过滤在遍历时同步生效</text>
+
+  <!-- 存储层 -->
+  <rect x="40" y="415" width="920" height="100" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="70" y="445" font-size="15" font-weight="bold" fill="#334155">存储层</text>
+  <rect x="180" y="428" width="180" height="62" rx="8" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="270" y="455" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#334155">内存索引</text>
+  <text x="270" y="475" text-anchor="middle" font-size="11" fill="#64748b">热数据 / Growing 段</text>
+  <rect x="400" y="428" width="180" height="62" rx="8" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="490" y="455" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#334155">本地磁盘</text>
+  <text x="490" y="475" text-anchor="middle" font-size="11" fill="#64748b">SSD · Sealed 段文件</text>
+  <rect x="620" y="428" width="180" height="62" rx="8" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="710" y="455" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#334155">对象存储</text>
+  <text x="710" y="475" text-anchor="middle" font-size="11" fill="#64748b">S3/OSS · 冷热分层</text>
+  <rect x="820" y="428" width="120" height="62" rx="8" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="880" y="455" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#334155">副本分片</text>
+  <text x="880" y="475" text-anchor="middle" font-size="11" fill="#64748b">高可用/水平扩展</text>
+
+  <!-- 底部特性 -->
+  <rect x="40" y="540" width="920" height="55" rx="12" fill="#0f172a"/>
+  <text x="500" y="564" text-anchor="middle" font-size="13.5" fill="#f1f5f9">向量数据库 ≠ "向量 + 数据库"：还需要 CRUD/事务语义、标量过滤、持久化与崩溃恢复、</text>
+  <text x="500" y="585" text-anchor="middle" font-size="13.5" fill="#6ee7b7">分片扩展、多租户权限、流式增删改、与全文/标量联合查询——工程复杂度与传统数据库同级。</text>
+</svg>

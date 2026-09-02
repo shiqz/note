@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <text x="490" y="42" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">如何确定 K？肘部法则与轮廓系数</text>
+
+  <!-- 左：肘部法则 -->
+  <rect x="30" y="75" width="470" height="410" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="265" y="112" text-anchor="middle" font-size="17" font-weight="bold" fill="#334155">肘部法则（Elbow Method）：SSE ~ K</text>
+
+  <line x1="90" y1="430" x2="470" y2="430" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="90" y1="430" x2="90" y2="140" stroke="#64748b" stroke-width="1.8"/>
+  <polygon points="470,430 460,425 460,435" fill="#64748b"/>
+  <polygon points="90,140 85,150 95,150" fill="#64748b"/>
+  <text x="475" y="435" font-size="13" fill="#475569">K</text>
+  <text x="80" y="145" text-anchor="end" font-size="13" fill="#475569">SSE</text>
+
+  <!-- K 刻度 -->
+  <g font-size="12" fill="#64748b" text-anchor="middle">
+    <text x="110" y="450">1</text><text x="150" y="450">2</text><text x="190" y="450">3</text><text x="230" y="450">4</text>
+    <text x="270" y="450">5</text><text x="310" y="450">6</text><text x="350" y="450">7</text><text x="390" y="450">8</text><text x="430" y="450">9</text>
+  </g>
+
+  <polyline points="110,136 150,310 190,382 230,398 270,407 310,412 350,415 390,417 430,418"
+            fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#2563eb">
+    <circle cx="110" cy="136" r="5"/><circle cx="150" cy="310" r="5"/><circle cx="190" cy="382" r="7" fill="#e11d48"/>
+    <circle cx="230" cy="398" r="5"/><circle cx="270" cy="407" r="5"/><circle cx="310" cy="412" r="5"/>
+    <circle cx="350" cy="415" r="5"/><circle cx="390" cy="417" r="5"/><circle cx="430" cy="418" r="5"/>
+  </g>
+
+  <line x1="190" y1="382" x2="260" y2="330" stroke="#e11d48" stroke-width="2"/>
+  <text x="268" y="322" font-size="14" font-weight="bold" fill="#e11d48">肘部：K = 3</text>
+  <text x="268" y="342" font-size="12.5" fill="#be123c">再增大 K，SSE 下降明显变缓</text>
+  <text x="265" y="475" text-anchor="middle" font-size="12.5" fill="#64748b">K 增大必然使 SSE 减小（极端 K=n 时 SSE=0），关键是找"收益骤减点"</text>
+
+  <!-- 右：轮廓系数 -->
+  <rect x="530" y="75" width="420" height="410" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="740" y="112" text-anchor="middle" font-size="17" font-weight="bold" fill="#15803d">轮廓系数（Silhouette Score）</text>
+
+  <rect x="565" y="140" width="350" height="60" rx="10" fill="white" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="740" y="178" text-anchor="middle" font-size="17" font-family="Consolas,monospace" fill="#14532d">s(i) = ( b(i) − a(i) ) / max( a(i), b(i) )</text>
+
+  <g font-size="13.5" fill="#14532d">
+    <text x="565" y="235"><tspan font-weight="bold">a(i)</tspan>：点 i 到同簇其他点的平均距离（越小越紧凑）</text>
+    <text x="565" y="268"><tspan font-weight="bold">b(i)</tspan>：点 i 到最近的其他簇的平均距离（越大越分离）</text>
+    <text x="565" y="301">s(i) ∈ [−1, 1]：越接近 1 聚类越好，接近 0 说明在边界，</text>
+    <text x="565" y="323">负值说明点可能被分错簇</text>
+  </g>
+
+  <!-- 量尺条 -->
+  <line x1="580" y1="380" x2="900" y2="380" stroke="#94a3b8" stroke-width="10" stroke-linecap="round"/>
+  <line x1="580" y1="380" x2="900" y2="380" stroke="#15803d" stroke-width="10" stroke-linecap="round" stroke-dasharray="213,320"/>
+  <g font-size="12.5" fill="#334155" text-anchor="middle">
+    <text x="580" y="408">−1 分错</text>
+    <text x="740" y="408">0 边界重叠</text>
+    <text x="900" y="408">+1 完美</text>
+  </g>
+  <text x="740" y="452" text-anchor="middle" font-size="12.5" fill="#64748b">选择使平均轮廓系数最大的 K；也可参考 Gap Statistic 或业务先验</text>
+</svg>

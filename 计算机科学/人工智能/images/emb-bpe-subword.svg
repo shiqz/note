@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="580" viewBox="0 0 1000 580" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="eb1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">BPE 子词切分：在"词"与"字"之间取平衡</text>
+
+  <!-- 左：为什么 -->
+  <rect x="40" y="70" width="280" height="460" rx="14" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="180" y="104" text-anchor="middle" font-size="16" font-weight="bold" fill="#b91c1c">为什么不用整词？</text>
+
+  <text x="60" y="140" font-size="12.5" fill="#7f1d1d">整词切分（英文按空格）：</text>
+  <rect x="60" y="152" width="240" height="56" rx="8" fill="#ffffff" stroke="#fecaca"/>
+  <text x="72" y="176" font-size="12" font-family="Consolas,monospace" fill="#991b1b">"unhappiness" → 1 个 token</text>
+  <text x="72" y="196" font-size="12" font-family="Consolas,monospace" fill="#991b1b">"lowest" / "lower" → 3 个不同词</text>
+
+  <text x="60" y="238" font-size="12.5" fill="#7f1d1d">问题：</text>
+  <text x="60" y="266" font-size="12.5" fill="#991b1b">• 词表无限膨胀，罕见词/新词</text>
+  <text x="72" y="286" font-size="12.5" fill="#991b1b">　直接 OOV（未登录词）→ [UNK]</text>
+  <text x="60" y="314" font-size="12.5" fill="#991b1b">• 词形变化共享的语义被割裂</text>
+
+  <line x1="60" y1="336" x2="300" y2="336" stroke="#fca5a5" stroke-dasharray="4,3"/>
+
+  <text x="60" y="366" font-size="12.5" fill="#7f1d1d">纯字符切分：</text>
+  <text x="60" y="394" font-size="12.5" fill="#991b1b">• 序列过长、语义单元太碎</text>
+
+  <rect x="60" y="416" width="240" height="86" rx="8" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="180" y="442" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">子词（BPE）折中：</text>
+  <text x="180" y="466" text-anchor="middle" font-size="12" fill="#78350f">高频片段合并成 token，</text>
+  <text x="180" y="486" text-anchor="middle" font-size="12" fill="#78350f">罕见词退化为字符碎片</text>
+
+  <!-- 中：训练阶段 -->
+  <rect x="350" y="70" width="290" height="460" rx="14" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="495" y="104" text-anchor="middle" font-size="16" font-weight="bold" fill="#b45309">BPE 训练：构建合并规则</text>
+
+  <text x="370" y="138" font-size="12.5" fill="#78350f">语料：low low low lower newest</text>
+  <text x="370" y="166" font-size="12.5" fill="#78350f">① 初始化为字符：</text>
+  <rect x="370" y="178" width="250" height="44" rx="8" fill="#ffffff" stroke="#fde68a"/>
+  <text x="382" y="200" font-size="11.5" font-family="Consolas,monospace" fill="#92400e">l o w · l o w · l o w</text>
+  <text x="382" y="216" font-size="11.5" font-family="Consolas,monospace" fill="#92400e">l o w e r · n e w e s t</text>
+
+  <text x="370" y="252" font-size="12.5" fill="#78350f">② 统计相邻对频次：(l,o)=4, (o,w)=4…</text>
+  <text x="370" y="278" font-size="12.5" fill="#78350f">③ 合并最高频对 (l,o) → "lo"：</text>
+  <rect x="370" y="290" width="250" height="44" rx="8" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="382" y="312" font-size="11.5" font-family="Consolas,monospace" fill="#92400e">lo w · lo w · lo w · lo w e r</text>
+  <text x="382" y="328" font-size="11.5" font-family="Consolas,monospace" fill="#92400e">n e w e s t</text>
+
+  <text x="370" y="364" font-size="12.5" fill="#78350f">④ 继续合并 (lo,w) → "low"、(e,s)→"es"</text>
+  <text x="370" y="390" font-size="12.5" fill="#78350f">　…直到词表达到目标大小（如 5 万）</text>
+
+  <rect x="370" y="414" width="250" height="90" rx="8" fill="#ffffff" stroke="#fde68a"/>
+  <text x="495" y="440" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">产物：词表 + 合并规则表</text>
+  <text x="495" y="464" text-anchor="middle" font-size="11.5" fill="#a16207">WordPiece / SentencePiece 是同族</text>
+  <text x="495" y="484" text-anchor="middle" font-size="11.5" fill="#a16207">变体，思路相同</text>
+
+  <line x1="642" y1="300" x2="672" y2="300" stroke="#b45309" stroke-width="2.5" marker-end="url(#eb1)"/>
+
+  <!-- 右：编码阶段 -->
+  <rect x="675" y="70" width="285" height="460" rx="14" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+  <text x="817" y="104" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">编码：应用规则切新文本</text>
+
+  <text x="695" y="140" font-size="12.5" fill="#14532d">输入："unhappiness"</text>
+  <text x="695" y="170" font-size="12.5" fill="#14532d">贪心最长匹配子词：</text>
+
+  <g>
+    <rect x="695" y="186" width="70" height="40" rx="6" fill="#bbf7d0" stroke="#22c55e"/>
+    <text x="730" y="211" text-anchor="middle" font-size="13" font-family="Consolas,monospace" font-weight="bold" fill="#14532d">un</text>
+    <rect x="775" y="186" width="80" height="40" rx="6" fill="#bbf7d0" stroke="#22c55e"/>
+    <text x="815" y="211" text-anchor="middle" font-size="13" font-family="Consolas,monospace" font-weight="bold" fill="#14532d">happi</text>
+    <rect x="865" y="186" width="70" height="40" rx="6" fill="#bbf7d0" stroke="#22c55e"/>
+    <text x="900" y="211" text-anchor="middle" font-size="13" font-family="Consolas,monospace" font-weight="bold" fill="#14532d">ness</text>
+  </g>
+  <text x="817" y="252" text-anchor="middle" font-size="11.5" fill="#166534">3 个子词 token（而不是 1 个未登录词）</text>
+
+  <line x1="695" y1="276" x2="940" y2="276" stroke="#86efac" stroke-dasharray="4,3"/>
+
+  <text x="695" y="306" font-size="12.5" fill="#14532d">中文同理（BERT 中文按字 + 高频词）：</text>
+  <rect x="695" y="318" width="245" height="40" rx="6" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="817" y="343" text-anchor="middle" font-size="12" font-family="Consolas,monospace" fill="#15803d">"机器学习" → 机 / 器 / 学 / 习</text>
+
+  <rect x="695" y="378" width="245" height="126" rx="8" fill="#dcfce7" stroke="#4ade80"/>
+  <text x="817" y="404" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">子词方案的优势</text>
+  <text x="710" y="430" font-size="12" fill="#166534">✓ 词表可控（3~10 万）</text>
+  <text x="710" y="452" font-size="12" fill="#166534">✓ 任何词都能切，无真正 OOV</text>
+  <text x="710" y="474" font-size="12" fill="#166534">✓ 共享词根：un-/happi/-ness</text>
+  <text x="710" y="496" font-size="12" fill="#166534">✓ 序列长度远小于按字</text>
+</svg>

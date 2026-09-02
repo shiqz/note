@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="et1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">编码器内部：Token ID 如何变成上下文相关向量</text>
+
+  <!-- IDs -->
+  <rect x="60" y="90" width="880" height="56" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="80" y="115" font-size="13" font-weight="bold" fill="#334155">Token IDs：</text>
+  <g font-family="Consolas,monospace" font-size="13">
+    <rect x="190" y="102" width="70" height="30" rx="5" fill="#e2e8f0"/><text x="225" y="122" text-anchor="middle" fill="#334155">101</text>
+    <rect x="275" y="102" width="70" height="30" rx="5" fill="#e2e8f0"/><text x="310" y="122" text-anchor="middle" fill="#334155">1962</text>
+    <rect x="360" y="102" width="70" height="30" rx="5" fill="#e2e8f0"/><text x="395" y="122" text-anchor="middle" fill="#334155">6607</text>
+    <rect x="445" y="102" width="70" height="30" rx="5" fill="#e2e8f0"/><text x="480" y="122" text-anchor="middle" fill="#334155">3300</text>
+    <rect x="530" y="102" width="70" height="30" rx="5" fill="#e2e8f0"/><text x="565" y="122" text-anchor="middle" fill="#334155">1962</text>
+    <rect x="615" y="102" width="70" height="30" rx="5" fill="#e2e8f0"/><text x="650" y="122" text-anchor="middle" fill="#334155">102</text>
+  </g>
+  <text x="760" y="122" font-size="11.5" fill="#64748b">[ CLS, 年, 假, 有, 多, 少, 天, ？, SEP ]</text>
+
+  <line x1="500" y1="148" x2="500" y2="178" stroke="#475569" stroke-width="2.5" marker-end="url(#et1)"/>
+
+  <!-- 查表 -->
+  <rect x="60" y="182" width="420" height="150" rx="12" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="270" y="212" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d4ed8">Embedding 矩阵查表</text>
+  <text x="80" y="242" font-size="12.5" fill="#1e3a8a">嵌入矩阵形状 [词表大小 V × 维度 d]</text>
+  <text x="80" y="266" font-size="12.5" fill="#1e3a8a">第 1962 行就是"年"的初始向量</text>
+  <text x="80" y="294" font-size="12.5" fill="#1e40af">→ ID 即行号，一次查表 O(1)，</text>
+  <text x="80" y="316" font-size="12.5" fill="#1e40af">　此时向量与上下文无关</text>
+
+  <!-- 位置编码 -->
+  <rect x="520" y="182" width="420" height="150" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="730" y="212" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">+ 位置编码（Position Embedding）</text>
+  <text x="540" y="242" font-size="12.5" fill="#78350f">自注意力本身"看不见"词序，</text>
+  <text x="540" y="266" font-size="12.5" fill="#78350f">需要把位置 0,1,2… 编码进向量</text>
+  <text x="540" y="294" font-size="12.5" fill="#92400e">向量 = 词向量 + 位置向量</text>
+  <text x="540" y="316" font-size="12.5" fill="#92400e">（BERT 类为可学习，RoPE 类为旋转编码）</text>
+
+  <line x1="500" y1="334" x2="500" y2="364" stroke="#475569" stroke-width="2.5" marker-end="url(#et1)"/>
+
+  <!-- Transformer 层 -->
+  <rect x="60" y="368" width="880" height="140" rx="12" fill="#f0fdf4" stroke="#4ade80" stroke-width="2.5"/>
+  <text x="500" y="398" text-anchor="middle" font-size="15" font-weight="bold" fill="#15803d">Transformer 编码器 × N 层（多头自注意力 + 前馈网络）</text>
+
+  <!-- token 节点 + 注意力连线示意 -->
+  <g>
+    <line x1="240" y1="440" x2="360" y2="440" stroke="#86efac" stroke-width="3"/>
+    <line x1="360" y1="440" x2="480" y2="440" stroke="#22c55e" stroke-width="4"/>
+    <line x1="480" y1="440" x2="600" y2="440" stroke="#86efac" stroke-width="2"/>
+    <line x1="600" y1="440" x2="720" y2="440" stroke="#bbf7d0" stroke-width="2"/>
+    <line x1="360" y1="440" x2="600" y2="440" stroke="#dcfce7" stroke-width="1.5"/>
+    <circle cx="240" cy="440" r="16" fill="#22c55e"/><text x="240" y="445" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">年</text>
+    <circle cx="360" cy="440" r="16" fill="#16a34a"/><text x="360" y="445" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">假</text>
+    <circle cx="480" cy="440" r="16" fill="#22c55e"/><text x="480" y="445" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">有</text>
+    <circle cx="600" cy="440" r="16" fill="#22c55e"/><text x="600" y="445" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">天</text>
+    <circle cx="720" cy="440" r="16" fill="#22c55e"/><text x="720" y="445" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">？</text>
+  </g>
+  <text x="500" y="488" text-anchor="middle" font-size="12.5" fill="#14532d">每个词按相关性（注意力权重）聚合上下文："假"重点关注"年""天" → 理解为"假期"而非"真假"</text>
+
+  <line x1="500" y1="510" x2="500" y2="540" stroke="#475569" stroke-width="2.5" marker-end="url(#et1)"/>
+
+  <!-- 输出矩阵 -->
+  <rect x="250" y="544" width="500" height="44" rx="10" fill="#1e293b"/>
+  <text x="500" y="572" text-anchor="middle" font-size="13" fill="#6ee7b7">输出：L 个上下文相关向量组成的矩阵 [L × d] —— 下一步 Pooling 压缩为句向量</text>
+</svg>

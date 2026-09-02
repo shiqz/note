@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ca1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">Chroma 是什么：为 AI 应用而生的开源向量数据库</text>
+
+  <!-- 左：嵌入式模式 -->
+  <rect x="40" y="75" width="440" height="330" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="260" y="110" text-anchor="middle" font-size="17" font-weight="bold" fill="#1d4ed8">嵌入式模式（PersistentClient / 内存）</text>
+
+  <rect x="70" y="135" width="170" height="90" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="155" y="170" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#1e3a8a">你的应用进程</text>
+  <text x="155" y="194" text-anchor="middle" font-size="12" fill="#334155">Python / JS</text>
+  <text x="155" y="214" text-anchor="middle" font-size="12" fill="#334155">RAG 脚本 / Notebook</text>
+
+  <rect x="270" y="135" width="180" height="90" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="360" y="168" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#1e3a8a">Chroma 库</text>
+  <text x="360" y="190" text-anchor="middle" font-size="11.5" fill="#1e40af">pip install chromadb</text>
+  <text x="360" y="210" text-anchor="middle" font-size="11.5" fill="#1e40af">同进程函数调用，零运维</text>
+
+  <line x1="242" y1="180" x2="268" y2="180" stroke="#2563eb" stroke-width="2.5" marker-end="url(#ca1)"/>
+
+  <!-- 磁盘 -->
+  <rect x="160" y="270" width="200" height="60" rx="10" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="260" y="296" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#334155">本地目录 ./chroma_db</text>
+  <text x="260" y="316" text-anchor="middle" font-size="11.5" fill="#64748b">SQLite + HNSW 索引落盘</text>
+  <line x1="360" y1="227" x2="260" y2="268" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#ca1)"/>
+
+  <text x="260" y="370" text-anchor="middle" font-size="12.5" fill="#1e40af">适合：原型验证、本地开发、小规模应用（百万向量以内）</text>
+
+  <!-- 右：Server 模式 -->
+  <rect x="500" y="75" width="440" height="330" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="720" y="110" text-anchor="middle" font-size="17" font-weight="bold" fill="#15803d">Client / Server 模式（HttpClient）</text>
+
+  <rect x="530" y="140" width="150" height="70" rx="10" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="605" y="170" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">应用 A</text>
+  <text x="605" y="192" text-anchor="middle" font-size="11" fill="#334155">Python</text>
+  <rect x="530" y="230" width="150" height="70" rx="10" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="605" y="260" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">应用 B</text>
+  <text x="605" y="282" text-anchor="middle" font-size="11" fill="#334155">Node.js</text>
+
+  <line x1="682" y1="175" x2="748" y2="195" stroke="#16a34a" stroke-width="2.5" marker-end="url(#ca1)"/>
+  <line x1="682" y1="265" x2="748" y2="245" stroke="#16a34a" stroke-width="2.5" marker-end="url(#ca1)"/>
+  <text x="700" y="160" font-size="11" fill="#15803d">HTTP / gRPC</text>
+
+  <rect x="750" y="160" width="160" height="110" rx="10" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+  <text x="830" y="195" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#14532d">Chroma Server</text>
+  <text x="830" y="219" text-anchor="middle" font-size="11.5" fill="#166534">docker run chromadb</text>
+  <text x="830" y="240" text-anchor="middle" font-size="11.5" fill="#166534">独立部署 · 多应用共享</text>
+  <text x="830" y="260" text-anchor="middle" font-size="11.5" fill="#166534">端口 8000</text>
+
+  <text x="720" y="370" text-anchor="middle" font-size="12.5" fill="#166534">适合：多服务共享、团队协作、生产环境部署</text>
+
+  <!-- 底部特点 -->
+  <rect x="40" y="425" width="900" height="105" rx="12" fill="#1e293b"/>
+  <text x="490" y="455" text-anchor="middle" font-size="15" font-weight="bold" fill="#f1f5f9">Chroma 的特点</text>
+  <text x="80" y="485" font-size="13" fill="#cbd5e1">• <tspan fill="#6ee7b7" font-weight="bold">极简</tspan>：pip install 即用，3 行代码完成入库 + 语义搜索，内置 HNSW，无需部署中间件</text>
+  <text x="80" y="510" font-size="13" fill="#cbd5e1">• <tspan fill="#6ee7b7" font-weight="bold">AI 原生</tspan>：内置 Embedding Function（文本自动转向量），与 LangChain / LlamaIndex 深度集成</text>
+</svg>

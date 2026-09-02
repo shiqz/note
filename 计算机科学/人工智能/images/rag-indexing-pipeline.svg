@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="arrowC" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">阶段一：离线索引（Indexing）—— 把知识库"装进"系统</text>
+  <rect x="330" y="58" width="320" height="28" rx="14" fill="#fef3c7"/>
+  <text x="490" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">离线执行一次，文档更新时增量重建</text>
+
+  <!-- Step 1 文档 -->
+  <rect x="40" y="120" width="150" height="120" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="115" y="155" text-anchor="middle" font-size="26">📄</text>
+  <text x="115" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">原始文档</text>
+  <text x="115" y="214" text-anchor="middle" font-size="11.5" fill="#a16207">PDF / Word / Markdown</text>
+  <text x="115" y="231" text-anchor="middle" font-size="11.5" fill="#a16207">网页 / 工单 / 表格</text>
+
+  <line x1="192" y1="180" x2="222" y2="180" stroke="#b45309" stroke-width="2.5" marker-end="url(#arrowC)"/>
+
+  <!-- Step 2 加载解析 -->
+  <rect x="225" y="120" width="150" height="120" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="300" y="155" text-anchor="middle" font-size="26">🔍</text>
+  <text x="300" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">加载与解析</text>
+  <text x="300" y="214" text-anchor="middle" font-size="11.5" fill="#a16207">抽取纯文本/表格</text>
+  <text x="300" y="231" text-anchor="middle" font-size="11.5" fill="#a16207">清洗页眉页脚噪声</text>
+
+  <line x1="377" y1="180" x2="407" y2="180" stroke="#b45309" stroke-width="2.5" marker-end="url(#arrowC)"/>
+
+  <!-- Step 3 切分 -->
+  <rect x="410" y="120" width="150" height="120" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="485" y="155" text-anchor="middle" font-size="26">✂️</text>
+  <text x="485" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">切分 Chunk</text>
+  <text x="485" y="214" text-anchor="middle" font-size="11.5" fill="#a16207">按语义/结构切块</text>
+  <text x="485" y="231" text-anchor="middle" font-size="11.5" fill="#a16207">保留 overlap 重叠</text>
+
+  <line x1="562" y1="180" x2="592" y2="180" stroke="#b45309" stroke-width="2.5" marker-end="url(#arrowC)"/>
+
+  <!-- Step 4 Embedding -->
+  <rect x="595" y="120" width="150" height="120" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="670" y="155" text-anchor="middle" font-size="26">🔢</text>
+  <text x="670" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">Embedding</text>
+  <text x="670" y="214" text-anchor="middle" font-size="11.5" fill="#a16207">每个 Chunk 转为</text>
+  <text x="670" y="231" text-anchor="middle" font-size="11.5" fill="#a16207">一个语义向量</text>
+
+  <line x1="747" y1="180" x2="777" y2="180" stroke="#b45309" stroke-width="2.5" marker-end="url(#arrowC)"/>
+
+  <!-- Step 5 向量库 -->
+  <rect x="780" y="110" width="160" height="140" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="860" y="148" text-anchor="middle" font-size="28">🗄️</text>
+  <text x="860" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">向量数据库</text>
+  <text x="860" y="209" text-anchor="middle" font-size="11.5" fill="#a16207">向量 + 原文 Chunk</text>
+  <text x="860" y="226" text-anchor="middle" font-size="11.5" fill="#a16207">+ 元数据（来源/权限）</text>
+  <text x="860" y="243" text-anchor="middle" font-size="11.5" fill="#a16207">建立 ANN 索引</text>
+
+  <!-- 切分示意 -->
+  <text x="490" y="295" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">切分示意：一篇长文档被切成多个带重叠的 Chunk</text>
+
+  <!-- 文档条 -->
+  <rect x="120" y="320" width="740" height="46" rx="8" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="490" y="349" text-anchor="middle" font-size="12.5" fill="#475569">原始长文档（整篇无法直接嵌入/检索）</text>
+
+  <line x1="490" y1="368" x2="490" y2="392" stroke="#b45309" stroke-width="2.5" marker-end="url(#arrowC)"/>
+
+  <!-- chunks -->
+  <g>
+    <rect x="120" y="398" width="200" height="70" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="220" y="425" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Chunk 1</text>
+    <text x="220" y="448" text-anchor="middle" font-size="11" fill="#a16207">向量 v₁ + 原文 + 元数据</text>
+
+    <rect x="300" y="398" width="200" height="70" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="400" y="425" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Chunk 2</text>
+    <text x="400" y="448" text-anchor="middle" font-size="11" fill="#a16207">向量 v₂ + 原文 + 元数据</text>
+
+    <rect x="480" y="398" width="200" height="70" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="580" y="425" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Chunk 3</text>
+    <text x="580" y="448" text-anchor="middle" font-size="11" fill="#a16207">向量 v₃ + 原文 + 元数据</text>
+
+    <rect x="660" y="398" width="200" height="70" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="760" y="425" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Chunk 4 ...</text>
+    <text x="760" y="448" text-anchor="middle" font-size="11" fill="#a16207">向量 v₄ + 原文 + 元数据</text>
+  </g>
+  <!-- overlap 标记 -->
+  <g fill="#f59e0b" opacity="0.35">
+    <rect x="292" y="398" width="16" height="70" rx="3"/>
+    <rect x="472" y="398" width="16" height="70" rx="3"/>
+    <rect x="652" y="398" width="16" height="70" rx="3"/>
+  </g>
+  <text x="490" y="500" text-anchor="middle" font-size="12.5" fill="#92400e">深色重叠区 = overlap（相邻 Chunk 保留一小段重复内容，防止答案恰好被切在边界处）</text>
+  <text x="490" y="528" text-anchor="middle" font-size="12.5" fill="#64748b">为什么切块：① 嵌入模型有长度上限　② 检索粒度更精准　③ 节省 Prompt 空间、降低干扰</text>
+</svg>

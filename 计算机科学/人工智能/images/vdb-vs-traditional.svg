@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="580" viewBox="0 0 980 580" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="v1a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">为什么需要向量数据库：精确匹配搜不到"意思相近"</text>
+
+  <!-- 左：传统数据库 -->
+  <rect x="50" y="75" width="410" height="460" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="255" y="112" text-anchor="middle" font-size="18" font-weight="bold" fill="#475569">传统数据库：关键词精确匹配</text>
+  <text x="255" y="136" text-anchor="middle" font-size="12.5" fill="#64748b">WHERE title LIKE '%鞋子%'（B-Tree / 倒排索引）</text>
+
+  <!-- 查询 -->
+  <rect x="120" y="155" width="270" height="44" rx="22" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <text x="255" y="183" text-anchor="middle" font-size="14" fill="#334155">查询："鞋子"</text>
+
+  <line x1="255" y1="201" x2="255" y2="240" stroke="#94a3b8" stroke-width="2" marker-end="url(#v1a)"/>
+
+  <!-- 结果：命中 -->
+  <rect x="120" y="248" width="270" height="42" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="255" y="274" text-anchor="middle" font-size="13.5" fill="#15803d">✓ "男士鞋子 42 码"　—— 命中</text>
+
+  <!-- 结果：漏检 -->
+  <rect x="120" y="302" width="270" height="42" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="255" y="328" text-anchor="middle" font-size="13.5" fill="#b91c1c">✗ "跑步鞋 透气运动鞋"　—— 漏掉！</text>
+  <rect x="120" y="354" width="270" height="42" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="255" y="380" text-anchor="middle" font-size="13.5" fill="#b91c1c">✗ "篮球鞋 高帮战靴"　—— 漏掉！</text>
+
+  <text x="255" y="435" text-anchor="middle" font-size="13" fill="#64748b">只能匹配字面，无法理解语义</text>
+  <text x="255" y="463" text-anchor="middle" font-size="13" fill="#64748b">同义词、近义词、跨语言、图片/音频</text>
+  <text x="255" y="487" text-anchor="middle" font-size="13" fill="#64748b">等非结构化数据全都无能为力</text>
+
+  <!-- 右：向量数据库 -->
+  <rect x="500" y="75" width="430" height="460" rx="16" fill="#f0fdf4" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="715" y="112" text-anchor="middle" font-size="18" font-weight="bold" fill="#15803d">向量数据库：语义相似度搜索</text>
+  <text x="715" y="136" text-anchor="middle" font-size="12.5" fill="#16a34a">Embedding → ANN 索引 → 按距离排序 Top-K</text>
+
+  <!-- 查询 -->
+  <rect x="585" y="155" width="260" height="44" rx="22" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="715" y="183" text-anchor="middle" font-size="14" fill="#14532d">查询："鞋子" → 向量 q</text>
+
+  <line x1="715" y1="201" x2="715" y2="240" stroke="#16a34a" stroke-width="2" marker-end="url(#v1a)"/>
+
+  <!-- 语义空间 -->
+  <rect x="540" y="248" width="350" height="215" rx="12" fill="#ffffff" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="715" y="272" text-anchor="middle" font-size="12.5" fill="#166534">语义向量空间：距离越近 = 意思越像</text>
+
+  <!-- q -->
+  <text x="700" y="330" text-anchor="middle" font-size="20" fill="#dc2626">★</text>
+  <text x="712" y="325" font-size="12" font-weight="bold" fill="#dc2626">q：鞋子</text>
+  <circle cx="700" cy="325" r="62" fill="none" stroke="#f87171" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <circle cx="660" cy="300" r="7" fill="#22c55e"/>
+  <text x="620" y="296" text-anchor="end" font-size="11.5" fill="#15803d">运动鞋</text>
+  <circle cx="750" cy="305" r="7" fill="#22c55e"/>
+  <text x="795" y="300" font-size="11.5" fill="#15803d">跑步鞋</text>
+  <circle cx="655" cy="355" r="7" fill="#22c55e"/>
+  <text x="620" y="359" text-anchor="end" font-size="11.5" fill="#15803d">篮球鞋</text>
+  <circle cx="755" cy="360" r="7" fill="#22c55e"/>
+  <text x="800" y="364" font-size="11.5" fill="#15803d">拖鞋</text>
+  <circle cx="705" cy="380" r="7" fill="#22c55e"/>
+  <text x="725" y="402" font-size="11.5" fill="#15803d">靴子</text>
+
+  <!-- 远处无关 -->
+  <circle cx="590" cy="430" r="7" fill="#cbd5e1"/>
+  <text x="590" y="452" text-anchor="middle" font-size="11.5" fill="#94a3b8">笔记本电脑（远）</text>
+
+  <text x="715" y="492" text-anchor="middle" font-size="13" fill="#15803d">按相似度返回：运动鞋、跑步鞋、篮球鞋、拖鞋……</text>
+  <text x="715" y="516" text-anchor="middle" font-size="12.5" fill="#16a34a">还能搜"以图搜图""哼旋律找歌"等非文本数据</text>
+</svg>

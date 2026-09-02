@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="620" viewBox="0 0 980 620" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="arrowD" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">阶段二：在线问答（Retrieval &amp; Generation）—— 每次提问实时执行</text>
+
+  <!-- 1 用户问题 -->
+  <rect x="40" y="90" width="150" height="80" rx="12" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+  <text x="115" y="122" text-anchor="middle" font-size="14" font-weight="bold" fill="#065f46">用户问题</text>
+  <text x="115" y="148" text-anchor="middle" font-size="11.5" fill="#047857">"年假有多少天？"</text>
+
+  <line x1="192" y1="130" x2="222" y2="130" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowD)"/>
+
+  <!-- 2 Query Embedding -->
+  <rect x="225" y="90" width="150" height="80" rx="12" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+  <text x="300" y="122" text-anchor="middle" font-size="14" font-weight="bold" fill="#065f46">问题向量化</text>
+  <text x="300" y="148" text-anchor="middle" font-size="11.5" fill="#047857">同一个 Embedding 模型</text>
+
+  <line x1="377" y1="130" x2="407" y2="130" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowD)"/>
+
+  <!-- 3 向量检索 -->
+  <rect x="410" y="80" width="180" height="100" rx="12" fill="#d1fae5" stroke="#10b981" stroke-width="2.5"/>
+  <text x="500" y="112" text-anchor="middle" font-size="14" font-weight="bold" fill="#065f46">相似度检索 Top-K</text>
+  <text x="500" y="136" text-anchor="middle" font-size="11.5" fill="#047857">在向量库中找语义最近</text>
+  <text x="500" y="154" text-anchor="middle" font-size="11.5" fill="#047857">的 K 个 Chunk（如 K=5）</text>
+
+  <!-- 向量库圆柱 -->
+  <ellipse cx="500" cy="225" rx="90" ry="16" fill="#a7f3d0" stroke="#059669" stroke-width="2"/>
+  <rect x="410" y="225" width="180" height="70" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+  <ellipse cx="500" cy="295" rx="90" ry="16" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="500" y="262" text-anchor="middle" font-size="13" font-weight="bold" fill="#065f46">向量数据库</text>
+  <text x="500" y="282" text-anchor="middle" font-size="11" fill="#047857">离线阶段已建好索引</text>
+  <line x1="500" y1="182" x2="500" y2="207" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowD)"/>
+
+  <line x1="592" y1="130" x2="622" y2="130" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowD)"/>
+
+  <!-- 4 Rerank（可选） -->
+  <rect x="625" y="90" width="140" height="80" rx="12" fill="#ecfdf5" stroke="#34d399" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="695" y="122" text-anchor="middle" font-size="14" font-weight="bold" fill="#065f46">Rerank 重排</text>
+  <text x="695" y="146" text-anchor="middle" font-size="11" fill="#047857">（可选）精排取最相关</text>
+
+  <line x1="767" y1="130" x2="797" y2="130" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowD)"/>
+
+  <!-- 5 拼接 Prompt -->
+  <rect x="800" y="80" width="150" height="100" rx="12" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+  <text x="875" y="110" text-anchor="middle" font-size="14" font-weight="bold" fill="#065f46">拼接 Prompt</text>
+  <text x="875" y="134" text-anchor="middle" font-size="11" fill="#047857">系统指令 + 检索</text>
+  <text x="875" y="151" text-anchor="middle" font-size="11" fill="#047857">到的资料 + 问题</text>
+
+  <!-- 向下到 LLM -->
+  <line x1="875" y1="182" x2="875" y2="360" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowD)"/>
+
+  <!-- Prompt 示例框 -->
+  <rect x="120" y="330" width="660" height="150" rx="12" fill="#1e293b"/>
+  <text x="145" y="362" font-size="13" font-family="Consolas,monospace" fill="#94a3b8">你是一个企业问答助手，请<tspan fill="#6ee7b7">严格依据下面提供的资料</tspan>回答问题。</text>
+  <text x="145" y="388" font-size="13" font-family="Consolas,monospace" fill="#94a3b8">资料中没有的内容请回答"根据现有资料无法回答"，不要编造。</text>
+  <text x="145" y="414" font-size="13" font-family="Consolas,monospace" fill="#fbbf24">【资料】</text>
+  <text x="145" y="436" font-size="12.5" font-family="Consolas,monospace" fill="#cbd5e1">[1] 《员工手册》第3章：正式员工年假 10 天，满 5 年 15 天……</text>
+  <text x="145" y="458" font-size="12.5" font-family="Consolas,monospace" fill="#fbbf24">【问题】年假有多少天？</text>
+
+  <!-- LLM -->
+  <rect x="700" y="360" width="240" height="90" rx="14" fill="#a7f3d0" stroke="#059669" stroke-width="2.5"/>
+  <text x="820" y="395" text-anchor="middle" font-size="17" font-weight="bold" fill="#064e3b">大模型 LLM</text>
+  <text x="820" y="421" text-anchor="middle" font-size="12" fill="#065f46">基于上下文生成答案</text>
+
+  <!-- 答案 -->
+  <line x1="820" y1="452" x2="820" y2="495" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowD)"/>
+  <rect x="640" y="500" width="300" height="80" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="790" y="530" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#065f46">带引用来源的答案</text>
+  <text x="790" y="556" text-anchor="middle" font-size="12" fill="#047857">"正式员工年假 10 天……"</text>
+  <text x="790" y="574" text-anchor="middle" font-size="11.5" fill="#047857">📎 来源：《员工手册》第3章</text>
+
+  <text x="330" y="520" font-size="12.5" fill="#475569">关键：检索到的资料质量决定答案质量；</text>
+  <text x="330" y="544" font-size="12.5" fill="#475569">Prompt 中要约束模型"只依据资料作答"，</text>
+  <text x="330" y="568" font-size="12.5" fill="#475569">检索不到就承认不知道，而不是编造。</text>
+</svg>

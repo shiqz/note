@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <text x="480" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">Chunk 切分的权衡：太大太小都不行</text>
+
+  <!-- 切太小 -->
+  <rect x="50" y="80" width="270" height="300" rx="14" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="185" y="115" text-anchor="middle" font-size="17" font-weight="bold" fill="#b91c1c">切得太小</text>
+  <g fill="#fecaca" stroke="#ef4444" stroke-width="1.2">
+    <rect x="80" y="140" width="48" height="34" rx="4"/>
+    <rect x="132" y="140" width="48" height="34" rx="4"/>
+    <rect x="184" y="140" width="48" height="34" rx="4"/>
+    <rect x="236" y="140" width="48" height="34" rx="4"/>
+    <rect x="106" y="180" width="48" height="34" rx="4"/>
+    <rect x="158" y="180" width="48" height="34" rx="4"/>
+    <rect x="210" y="180" width="48" height="34" rx="4"/>
+  </g>
+  <text x="185" y="250" text-anchor="middle" font-size="13" fill="#7f1d1d">• 语义被切碎，上下文缺失</text>
+  <text x="185" y="282" text-anchor="middle" font-size="13" fill="#7f1d1d">• "10 天"和"年假"被切到</text>
+  <text x="185" y="304" text-anchor="middle" font-size="13" fill="#7f1d1d">　两个块，检索到也答不对</text>
+  <text x="185" y="345" text-anchor="middle" font-size="12.5" fill="#991b1b">→ 答案缺信息、前后矛盾</text>
+
+  <!-- 切太大 -->
+  <rect x="345" y="80" width="270" height="300" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+  <text x="480" y="115" text-anchor="middle" font-size="17" font-weight="bold" fill="#b45309">切得太大</text>
+  <g fill="#fde68a" stroke="#f59e0b" stroke-width="1.2">
+    <rect x="385" y="140" width="190" height="74" rx="6"/>
+  </g>
+  <text x="480" y="182" text-anchor="middle" font-size="12" fill="#92400e">一个 Chunk 塞了年假、报销、</text>
+  <text x="480" y="200" text-anchor="middle" font-size="12" fill="#92400e">考勤、VPN……大量无关内容</text>
+  <text x="480" y="250" text-anchor="middle" font-size="13" fill="#78350f">• 向量被"平均"，语义不聚焦</text>
+  <text x="480" y="282" text-anchor="middle" font-size="13" fill="#78350f">• 无关内容稀释相关性，</text>
+  <text x="480" y="304" text-anchor="middle" font-size="13" fill="#78350f">　挤占 Prompt 窗口、浪费 token</text>
+  <text x="480" y="345" text-anchor="middle" font-size="12.5" fill="#92400e">→ "噪声上下文"导致答偏</text>
+
+  <!-- 合适 -->
+  <rect x="640" y="80" width="270" height="300" rx="14" fill="#f0fdf4" stroke="#4ade80" stroke-width="2.5"/>
+  <text x="775" y="115" text-anchor="middle" font-size="17" font-weight="bold" fill="#15803d">推荐做法</text>
+  <g fill="#bbf7d0" stroke="#22c55e" stroke-width="1.2">
+    <rect x="680" y="140" width="100" height="46" rx="6"/>
+    <rect x="760" y="140" width="100" height="46" rx="6"/>
+    <rect x="700" y="196" width="100" height="46" rx="6"/>
+  </g>
+  <g fill="#22c55e" opacity="0.4">
+    <rect x="756" y="140" width="12" height="46"/>
+    <rect x="796" y="196" width="12" height="46"/>
+  </g>
+  <text x="775" y="262" text-anchor="middle" font-size="13" fill="#14532d">• 按标题/段落等<tspan font-weight="bold">语义边界</tspan>切</text>
+  <text x="775" y="292" text-anchor="middle" font-size="13" fill="#14532d">• 块间保留 10~20% overlap</text>
+  <text x="775" y="322" text-anchor="middle" font-size="13" fill="#14532d">• 每个块附带<tspan font-weight="bold">标题路径</tspan>等元数据</text>
+  <text x="775" y="352" text-anchor="middle" font-size="12.5" fill="#166534">经验值：200~800 字/块，按场景调</text>
+
+  <!-- 底部经验 -->
+  <rect x="50" y="410" width="860" height="100" rx="12" fill="#1e293b"/>
+  <text x="480" y="445" text-anchor="middle" font-size="14" fill="#f1f5f9">工程经验：Chunk 策略对 RAG 效果的影响往往大于换模型</text>
+  <text x="480" y="475" text-anchor="middle" font-size="13" fill="#94a3b8">常见改进：父子分块（检索小块、返回大块给模型）　|　表格/代码单独处理　|　按文档层级（章→节→段）切分</text>
+</svg>

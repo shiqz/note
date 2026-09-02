@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ep1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">Pooling 池化：把 L 个词向量压缩成 1 个句向量</text>
+
+  <!-- 公共输入矩阵 -->
+  <rect x="300" y="62" width="400" height="70" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="500" y="88" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#334155">编码器输出：Token 向量矩阵 [L × d]</text>
+  <g font-family="Consolas,monospace" font-size="10.5">
+    <rect x="330" y="100" width="60" height="22" rx="4" fill="#dbeafe"/><text x="360" y="115" text-anchor="middle" fill="#1e40af">CLS</text>
+    <rect x="400" y="100" width="60" height="22" rx="4" fill="#e2e8f0"/><text x="430" y="115" text-anchor="middle" fill="#475569">v₁</text>
+    <rect x="470" y="100" width="60" height="22" rx="4" fill="#e2e8f0"/><text x="500" y="115" text-anchor="middle" fill="#475569">v₂</text>
+    <rect x="540" y="100" width="60" height="22" rx="4" fill="#e2e8f0"/><text x="570" y="115" text-anchor="middle" fill="#475569">v₃</text>
+    <rect x="610" y="100" width="60" height="22" rx="4" fill="#e2e8f0"/><text x="640" y="115" text-anchor="middle" fill="#475569">…</text>
+  </g>
+
+  <line x1="360" y1="134" x2="200" y2="190" stroke="#475569" stroke-width="2.5" marker-end="url(#ep1)"/>
+  <line x1="500" y1="134" x2="500" y2="190" stroke="#475569" stroke-width="2.5" marker-end="url(#ep1)"/>
+  <line x1="640" y1="134" x2="800" y2="190" stroke="#475569" stroke-width="2.5" marker-end="url(#ep1)"/>
+
+  <!-- CLS -->
+  <rect x="60" y="195" width="280" height="300" rx="14" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="200" y="228" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d4ed8">CLS Pooling</text>
+  <rect x="130" y="250" width="140" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2.5"/>
+  <text x="200" y="273" text-anchor="middle" font-size="13" font-family="Consolas,monospace" fill="#1e40af">直接取 CLS 位向量</text>
+  <text x="200" y="320" text-anchor="middle" font-size="12.5" fill="#1e3a8a">句首 <[BOS_never_used_51bce0c785ca2f68081bfa7d91973934]> token 在预训练时</text>
+  <text x="200" y="342" text-anchor="middle" font-size="12.5" fill="#1e3a8a">被专门训练为"整句表示"，</text>
+  <text x="200" y="364" text-anchor="middle" font-size="12.5" fill="#1e3a8a">经多层注意力汇聚了全局信息</text>
+  <rect x="85" y="392" width="230" height="80" rx="8" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="200" y="418" text-anchor="middle" font-size="12" fill="#1e40af">BGE / BERT 系常用</text>
+  <text x="200" y="442" text-anchor="middle" font-size="12" fill="#1e40af">句向量 = 最后一层 [ CLS ]</text>
+  <text x="200" y="462" text-anchor="middle" font-size="11.5" fill="#64748b">注意：裸 BERT 的 CLS 未经</text>
+  <text x="200" y="480" text-anchor="middle" font-size="11.5" fill="#64748b">对比学习微调时效果差</text>
+
+  <!-- Mean -->
+  <rect x="360" y="195" width="280" height="300" rx="14" fill="#f0fdf4" stroke="#4ade80" stroke-width="2.5"/>
+  <text x="500" y="228" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">Mean Pooling（平均池化）</text>
+  <rect x="395" y="250" width="210" height="36" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="500" y="273" text-anchor="middle" font-size="13" font-family="Consolas,monospace" fill="#14532d">s = mean(v₁, v₂, …, v_L)</text>
+  <text x="500" y="320" text-anchor="middle" font-size="12.5" fill="#14532d">所有有效 token 向量逐维求平均</text>
+  <text x="500" y="342" text-anchor="middle" font-size="12.5" fill="#14532d">（用 attention mask 排除 [PAD]）</text>
+  <text x="500" y="364" text-anchor="middle" font-size="12.5" fill="#14532d">信息利用最充分、最稳健</text>
+  <rect x="385" y="392" width="230" height="80" rx="8" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="500" y="418" text-anchor="middle" font-size="12" fill="#15803d">sentence-transformers 默认</text>
+  <text x="500" y="442" text-anchor="middle" font-size="12" fill="#15803d">MiniLM / 多数句向量模型用它</text>
+  <text x="500" y="462" text-anchor="middle" font-size="11.5" fill="#64748b">对长句/短句长度差异更鲁棒</text>
+
+  <!-- Max -->
+  <rect x="660" y="195" width="280" height="300" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+  <text x="800" y="228" text-anchor="middle" font-size="16" font-weight="bold" fill="#b45309">Max Pooling（最大池化）</text>
+  <rect x="695" y="250" width="210" height="36" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+  <text x="800" y="273" text-anchor="middle" font-size="12.5" font-family="Consolas,monospace" fill="#78350f">s_j = max(v₁ⱼ, v₂ⱼ, …, v_Lⱼ)</text>
+  <text x="800" y="320" text-anchor="middle" font-size="12.5" fill="#78350f">每一维取所有 token 中的最大值</text>
+  <text x="800" y="342" text-anchor="middle" font-size="12.5" fill="#78350f">突出最显著的特征信号</text>
+  <rect x="685" y="392" width="230" height="80" rx="8" fill="#ffffff" stroke="#fde68a"/>
+  <text x="800" y="418" text-anchor="middle" font-size="12" fill="#92400e">较少单独使用</text>
+  <text x="800" y="442" text-anchor="middle" font-size="12" fill="#92400e">有时与 mean 拼接增强表示</text>
+  <text x="800" y="462" text-anchor="middle" font-size="11.5" fill="#64748b">易受单个异常 token 影响</text>
+
+  <rect x="200" y="515" width="600" height="34" rx="10" fill="#1e293b"/>
+  <text x="500" y="537" text-anchor="middle" font-size="12.5" fill="#f1f5f9">用哪种？<tspan fill="#6ee7b7">跟随模型官方说明</tspan>：池化方式是模型训练时固定的，推理时必须用同一种，否则语义空间错位</text>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="v4a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">向量数据库的进阶能力：标量过滤与混合检索</text>
+
+  <!-- 左：标量过滤 -->
+  <rect x="40" y="70" width="430" height="490" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="255" y="106" text-anchor="middle" font-size="17" font-weight="bold" fill="#1d4ed8">① 元数据 / 标量过滤（Filtering）</text>
+
+  <rect x="70" y="130" width="370" height="70" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="90" y="158" font-size="13" font-weight="bold" fill="#1e3a8a">查询："退款政策" + 过滤条件</text>
+  <text x="90" y="182" font-size="12" font-family="Consolas,monospace" fill="#334155">department = '售后' AND year &gt;= 2025</text>
+
+  <line x1="255" y1="202" x2="255" y2="232" stroke="#3b82f6" stroke-width="2" marker-end="url(#v4a)"/>
+
+  <!-- 候选点 -->
+  <text x="255" y="258" text-anchor="middle" font-size="12.5" fill="#1e40af">向量相似但不满足条件的结果被排除</text>
+  <g>
+    <circle cx="130" cy="300" r="9" fill="#93c5fd"/>
+    <text x="130" y="330" text-anchor="middle" font-size="11" fill="#64748b">财务部✗</text>
+    <circle cx="220" cy="285" r="9" fill="#2563eb"/>
+    <text x="220" y="315" text-anchor="middle" font-size="11" font-weight="bold" fill="#1d4ed8">售后部✓</text>
+    <circle cx="310" cy="305" r="9" fill="#93c5fd"/>
+    <text x="310" y="335" text-anchor="middle" font-size="11" fill="#64748b">2023年✗</text>
+    <circle cx="390" cy="290" r="9" fill="#2563eb"/>
+    <text x="390" y="320" text-anchor="middle" font-size="11" font-weight="bold" fill="#1d4ed8">售后部✓</text>
+  </g>
+
+  <rect x="70" y="360" width="370" height="170" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="90" y="390" font-size="13" font-weight="bold" fill="#1e3a8a">两种执行方式：</text>
+  <text x="90" y="418" font-size="12.5" fill="#334155">• <tspan font-weight="bold">Pre-filter（推荐）</tspan>：先过滤再搜，</text>
+  <text x="106" y="440" font-size="12.5" fill="#334155">只在候选子集上跑 ANN，又快又安全</text>
+  <text x="90" y="470" font-size="12.5" fill="#334155">• Post-filter：先搜再过滤，Top-K 可能</text>
+  <text x="106" y="492" font-size="12.5" fill="#334155">被过滤光导致结果不足</text>
+  <text x="90" y="518" font-size="12" fill="#b91c1c">⚠ 权限过滤必须在检索阶段生效，防越权</text>
+
+  <!-- 右：混合检索 -->
+  <rect x="510" y="70" width="430" height="490" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="725" y="106" text-anchor="middle" font-size="17" font-weight="bold" fill="#15803d">② 混合检索（Hybrid Search）</text>
+
+  <!-- 查询 -->
+  <rect x="600" y="128" width="250" height="40" rx="20" fill="#bbf7d0" stroke="#4ade80"/>
+  <text x="725" y="153" text-anchor="middle" font-size="13" fill="#14532d">查询："错误码 E1024 怎么处理"</text>
+
+  <!-- 两路 -->
+  <line x1="680" y1="170" x2="610" y2="210" stroke="#16a34a" stroke-width="2" marker-end="url(#v4a)"/>
+  <line x1="770" y1="170" x2="840" y2="210" stroke="#16a34a" stroke-width="2" marker-end="url(#v4a)"/>
+
+  <rect x="530" y="215" width="180" height="80" rx="10" fill="#ffffff" stroke="#86efac"/>
+  <text x="620" y="245" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#15803d">向量检索</text>
+  <text x="620" y="268" text-anchor="middle" font-size="11.5" fill="#166534">语义匹配强</text>
+  <text x="620" y="286" text-anchor="middle" font-size="11.5" fill="#dc2626">对 E1024 等精确符号弱</text>
+
+  <rect x="740" y="215" width="180" height="80" rx="10" fill="#ffffff" stroke="#86efac"/>
+  <text x="830" y="245" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#15803d">BM25 全文检索</text>
+  <text x="830" y="268" text-anchor="middle" font-size="11.5" fill="#166534">关键词/编号精确命中</text>
+  <text x="830" y="286" text-anchor="middle" font-size="11.5" fill="#dc2626">不懂同义词和语义</text>
+
+  <line x1="620" y1="297" x2="700" y2="340" stroke="#16a34a" stroke-width="2" marker-end="url(#v4a)"/>
+  <line x1="830" y1="297" x2="750" y2="340" stroke="#16a34a" stroke-width="2" marker-end="url(#v4a)"/>
+
+  <!-- 融合 -->
+  <rect x="600" y="345" width="250" height="70" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="725" y="373" text-anchor="middle" font-size="14" font-weight="bold" fill="#14532d">RRF 融合排序</text>
+  <text x="725" y="397" text-anchor="middle" font-size="11.5" fill="#166534">按两路排名倒数求和合并，无需调分数量纲</text>
+
+  <line x1="725" y1="417" x2="725" y2="445" stroke="#16a34a" stroke-width="2" marker-end="url(#v4a)"/>
+
+  <rect x="600" y="450" width="250" height="55" rx="10" fill="#ffffff" stroke="#86efac"/>
+  <text x="725" y="475" text-anchor="middle" font-size="13" font-weight="bold" fill="#15803d">统一 Top-K 结果</text>
+  <text x="725" y="495" text-anchor="middle" font-size="11.5" fill="#166534">语义 + 关键词优势互补</text>
+
+  <text x="725" y="535" text-anchor="middle" font-size="12" fill="#166534">生产 RAG 标配：混合检索 → Rerank 精排 → 喂 LLM</text>
+</svg>

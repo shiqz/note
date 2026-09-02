@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="arrowE" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">语义检索原理：Embedding 把"意思相近"映射为"距离相近"</text>
+
+  <!-- 向量空间 -->
+  <rect x="60" y="75" width="640" height="440" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="90" y="108" font-size="14" font-weight="bold" fill="#334155">语义向量空间（示意，实际是数百~数千维）</text>
+
+  <!-- 坐标轴 -->
+  <line x1="140" y1="460" x2="650" y2="460" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowE)"/>
+  <line x1="140" y1="460" x2="140" y2="130" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowE)"/>
+  <text x="655" y="478" font-size="12" fill="#94a3b8">维度 1</text>
+  <text x="105" y="135" font-size="12" fill="#94a3b8">维度 2</text>
+
+  <!-- 人事制度簇 -->
+  <circle cx="300" cy="220" r="70" fill="#dbeafe" opacity="0.5"/>
+  <circle cx="270" cy="200" r="9" fill="#3b82f6"/>
+  <text x="270" y="178" text-anchor="middle" font-size="11.5" fill="#1e40af">年假 10 天…</text>
+  <circle cx="320" cy="235" r="9" fill="#3b82f6"/>
+  <text x="370" y="230" font-size="11.5" fill="#1e40af">请假流程…</text>
+  <circle cx="285" cy="255" r="9" fill="#3b82f6"/>
+  <text x="215" y="278" text-anchor="middle" font-size="11.5" fill="#1e40af">调休规则…</text>
+  <text x="300" y="150" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#1d4ed8">人事制度 Chunk</text>
+
+  <!-- 财务制度簇 -->
+  <circle cx="520" cy="380" r="70" fill="#dcfce7" opacity="0.5"/>
+  <circle cx="500" cy="370" r="9" fill="#22c55e"/>
+  <text x="455" y="360" text-anchor="middle" font-size="11.5" fill="#166534">报销额度…</text>
+  <circle cx="545" cy="395" r="9" fill="#22c55e"/>
+  <text x="590" y="410" font-size="11.5" fill="#166534">发票要求…</text>
+  <circle cx="505" cy="410" r="9" fill="#22c55e"/>
+  <text x="470" y="440" text-anchor="middle" font-size="11.5" fill="#166534">差旅标准…</text>
+  <text x="520" y="335" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#15803d">财务制度 Chunk</text>
+
+  <!-- IT 簇 -->
+  <circle cx="560" cy="180" r="60" fill="#fef3c7" opacity="0.6"/>
+  <circle cx="550" cy="175" r="9" fill="#f59e0b"/>
+  <text x="590" y="165" font-size="11.5" fill="#92400e">VPN 配置…</text>
+  <circle cx="580" cy="205" r="9" fill="#f59e0b"/>
+  <text x="610" y="225" font-size="11.5" fill="#92400e">密码重置…</text>
+  <text x="560" y="255" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#b45309">IT 支持 Chunk</text>
+
+  <!-- Query 星标 -->
+  <text x="330" y="215" text-anchor="middle" font-size="22" fill="#dc2626">★</text>
+  <text x="345" y="195" font-size="13" font-weight="bold" fill="#dc2626">Query："休假几天？"</text>
+
+  <!-- 距离圈 -->
+  <circle cx="330" cy="208" r="55" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="330" y="285" text-anchor="middle" font-size="11.5" fill="#dc2626">距离最近的 Chunk 被检索到（Top-K）</text>
+
+  <!-- 右侧说明 -->
+  <rect x="725" y="90" width="200" height="410" rx="14" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+  <text x="825" y="125" text-anchor="middle" font-size="15" font-weight="bold" fill="#15803d">核心要点</text>
+
+  <text x="745" y="160" font-size="12.5" fill="#14532d">1. 问题和 Chunk 用</text>
+  <text x="758" y="180" font-size="12.5" fill="#14532d"><tspan font-weight="bold">同一个 Embedding 模型</tspan></text>
+  <text x="758" y="200" font-size="12.5" fill="#14532d">转向量，空间才一致</text>
+
+  <text x="745" y="238" font-size="12.5" fill="#14532d">2. "休假"和"年假"</text>
+  <text x="758" y="258" font-size="12.5" fill="#14532d">字面不同但<tspan font-weight="bold">语义相近</tspan>，</text>
+  <text x="758" y="278" font-size="12.5" fill="#14532d">向量距离也近——</text>
+  <text x="758" y="298" font-size="12.5" fill="#14532d">这是关键词搜索做不到的</text>
+
+  <text x="745" y="336" font-size="12.5" fill="#14532d">3. 距离常用<tspan font-weight="bold">余弦相似度</tspan></text>
+  <text x="758" y="356" font-size="12.5" fill="#14532d">衡量（夹角越小越相关）</text>
+
+  <text x="745" y="394" font-size="12.5" fill="#14532d">4. 百万级向量靠 ANN</text>
+  <text x="758" y="414" font-size="12.5" fill="#14532d">近似最近邻索引（HNSW/IVF）</text>
+  <text x="758" y="434" font-size="12.5" fill="#14532d">毫秒级返回结果</text>
+
+  <text x="745" y="472" font-size="12.5" fill="#14532d">5. 但向量检索对专有名词、</text>
+  <text x="758" y="490" font-size="12.5" fill="#14532d">数字型号不敏感 → 需要混合检索</text>
+</svg>

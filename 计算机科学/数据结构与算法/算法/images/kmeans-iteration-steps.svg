@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="620" viewBox="0 0 980 620" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">K-Means 迭代过程：分配 → 更新，反复交替</text>
+
+  <!-- 四个面板边框 -->
+  <rect x="30" y="80" width="450" height="220" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="510" y="80" width="450" height="220" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="30" y="340" width="450" height="220" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="510" y="340" width="450" height="220" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+
+  <text x="255" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">① 初始化：随机放 K 个质心</text>
+  <text x="735" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">② 分配步（E 步）：点划归最近质心</text>
+  <text x="255" y="328" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">③ 更新步（M 步）：质心移到簇均值</text>
+  <text x="735" y="328" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">④ 收敛：质心不再移动，结束</text>
+
+  <!-- ============ 面板 1：灰色点 + 初始质心 ============ -->
+  <g fill="#94a3b8">
+    <circle cx="110" cy="130" r="5"/><circle cx="135" cy="120" r="5"/><circle cx="160" cy="135" r="5"/><circle cx="120" cy="160" r="5"/><circle cx="145" cy="155" r="5"/><circle cx="170" cy="150" r="5"/><circle cx="130" cy="185" r="5"/><circle cx="155" cy="180" r="5"/><circle cx="180" cy="175" r="5"/><circle cx="115" cy="190" r="5"/><circle cx="165" cy="205" r="5"/><circle cx="140" cy="140" r="5"/>
+    <circle cx="330" cy="145" r="5"/><circle cx="355" cy="130" r="5"/><circle cx="380" cy="150" r="5"/><circle cx="340" cy="175" r="5"/><circle cx="365" cy="170" r="5"/><circle cx="390" cy="180" r="5"/><circle cx="335" cy="200" r="5"/><circle cx="370" cy="205" r="5"/><circle cx="400" cy="195" r="5"/><circle cx="350" cy="120" r="5"/><circle cx="385" cy="125" r="5"/><circle cx="360" cy="220" r="5"/>
+    <circle cx="220" cy="235" r="5"/><circle cx="245" cy="220" r="5"/><circle cx="270" cy="240" r="5"/><circle cx="230" cy="260" r="5"/><circle cx="255" cy="255" r="5"/><circle cx="280" cy="245" r="5"/><circle cx="215" cy="270" r="5"/><circle cx="250" cy="280" r="5"/><circle cx="285" cy="275" r="5"/><circle cx="235" cy="285" r="5"/><circle cx="270" cy="290" r="5"/><circle cx="300" cy="255" r="5"/>
+  </g>
+  <g>
+    <circle cx="150" cy="220" r="10" fill="white"/><line x1="143" y1="213" x2="157" y2="227" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><line x1="157" y1="213" x2="143" y2="227" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="330" cy="140" r="10" fill="white"/><line x1="323" y1="133" x2="337" y2="147" stroke="#be123c" stroke-width="3" stroke-linecap="round"/><line x1="337" y1="133" x2="323" y2="147" stroke="#be123c" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="290" cy="260" r="10" fill="white"/><line x1="283" y1="253" x2="297" y2="267" stroke="#047857" stroke-width="3" stroke-linecap="round"/><line x1="297" y1="253" x2="283" y2="267" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ============ 面板 2：分配后染色，质心位置不变 ============ -->
+  <g fill="#2563eb">
+    <circle cx="610" cy="130" r="5"/><circle cx="635" cy="120" r="5"/><circle cx="660" cy="135" r="5"/><circle cx="620" cy="160" r="5"/><circle cx="645" cy="155" r="5"/><circle cx="670" cy="150" r="5"/><circle cx="630" cy="185" r="5"/><circle cx="655" cy="180" r="5"/><circle cx="680" cy="175" r="5"/><circle cx="615" cy="190" r="5"/><circle cx="665" cy="205" r="5"/><circle cx="640" cy="140" r="5"/>
+  </g>
+  <g fill="#e11d48">
+    <circle cx="830" cy="145" r="5"/><circle cx="855" cy="130" r="5"/><circle cx="880" cy="150" r="5"/><circle cx="840" cy="175" r="5"/><circle cx="865" cy="170" r="5"/><circle cx="890" cy="180" r="5"/><circle cx="835" cy="200" r="5"/><circle cx="870" cy="205" r="5"/><circle cx="900" cy="195" r="5"/><circle cx="850" cy="120" r="5"/><circle cx="885" cy="125" r="5"/><circle cx="860" cy="220" r="5"/>
+  </g>
+  <g fill="#059669">
+    <circle cx="720" cy="235" r="5"/><circle cx="745" cy="220" r="5"/><circle cx="770" cy="240" r="5"/><circle cx="730" cy="260" r="5"/><circle cx="755" cy="255" r="5"/><circle cx="780" cy="245" r="5"/><circle cx="715" cy="270" r="5"/><circle cx="750" cy="280" r="5"/><circle cx="785" cy="275" r="5"/><circle cx="735" cy="285" r="5"/><circle cx="770" cy="290" r="5"/><circle cx="800" cy="255" r="5"/>
+  </g>
+  <g>
+    <circle cx="650" cy="220" r="10" fill="white"/><line x1="643" y1="213" x2="657" y2="227" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><line x1="657" y1="213" x2="643" y2="227" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="830" cy="140" r="10" fill="white"/><line x1="823" y1="133" x2="837" y2="147" stroke="#be123c" stroke-width="3" stroke-linecap="round"/><line x1="837" y1="133" x2="823" y2="147" stroke="#be123c" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="790" cy="260" r="10" fill="white"/><line x1="783" y1="253" x2="797" y2="267" stroke="#047857" stroke-width="3" stroke-linecap="round"/><line x1="797" y1="253" x2="783" y2="267" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ============ 面板 3：旧质心（灰）+ 箭头 + 新质心 ============ -->
+  <g fill="#2563eb">
+    <circle cx="110" cy="390" r="5"/><circle cx="135" cy="380" r="5"/><circle cx="160" cy="395" r="5"/><circle cx="120" cy="420" r="5"/><circle cx="145" cy="415" r="5"/><circle cx="170" cy="410" r="5"/><circle cx="130" cy="445" r="5"/><circle cx="155" cy="440" r="5"/><circle cx="180" cy="435" r="5"/><circle cx="115" cy="450" r="5"/><circle cx="165" cy="465" r="5"/><circle cx="140" cy="400" r="5"/>
+  </g>
+  <g fill="#e11d48">
+    <circle cx="330" cy="405" r="5"/><circle cx="355" cy="390" r="5"/><circle cx="380" cy="410" r="5"/><circle cx="340" cy="435" r="5"/><circle cx="365" cy="430" r="5"/><circle cx="390" cy="440" r="5"/><circle cx="335" cy="460" r="5"/><circle cx="370" cy="465" r="5"/><circle cx="400" cy="455" r="5"/><circle cx="350" cy="380" r="5"/><circle cx="385" cy="385" r="5"/><circle cx="360" cy="480" r="5"/>
+  </g>
+  <g fill="#059669">
+    <circle cx="220" cy="495" r="5"/><circle cx="245" cy="480" r="5"/><circle cx="270" cy="500" r="5"/><circle cx="230" cy="520" r="5"/><circle cx="255" cy="515" r="5"/><circle cx="280" cy="505" r="5"/><circle cx="215" cy="530" r="5"/><circle cx="250" cy="540" r="5"/><circle cx="285" cy="535" r="5"/><circle cx="235" cy="545" r="5"/><circle cx="270" cy="550" r="5"/><circle cx="300" cy="515" r="5"/>
+  </g>
+  <!-- 旧质心（灰色虚线） -->
+  <g stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4,3" stroke-linecap="round">
+    <line x1="143" y1="473" x2="157" y2="487"/><line x1="157" y1="473" x2="143" y2="487"/>
+    <line x1="323" y1="393" x2="337" y2="407"/><line x1="337" y1="393" x2="323" y2="407"/>
+    <line x1="283" y1="513" x2="297" y2="527"/><line x1="297" y1="513" x2="283" y2="527"/>
+  </g>
+  <!-- 移动箭头 -->
+  <line x1="148" y1="468" x2="146" y2="432" stroke="#1d4ed8" stroke-width="2.5"/>
+  <polygon points="146,426 141,436 151,436" fill="#1d4ed8"/>
+  <line x1="332" y1="402" x2="360" y2="424" stroke="#be123c" stroke-width="2.5"/>
+  <polygon points="365,428 355,426 360,418" fill="#be123c"/>
+  <line x1="288" y1="516" x2="262" y2="500" stroke="#047857" stroke-width="2.5"/>
+  <polygon points="256,496 267,497 262,506" fill="#047857"/>
+  <!-- 新质心（均值） -->
+  <g>
+    <circle cx="144" cy="420" r="10" fill="white"/><line x1="137" y1="413" x2="151" y2="427" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><line x1="151" y1="413" x2="137" y2="427" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="363" cy="428" r="10" fill="white"/><line x1="356" y1="421" x2="370" y2="435" stroke="#be123c" stroke-width="3" stroke-linecap="round"/><line x1="370" y1="421" x2="356" y2="435" stroke="#be123c" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="255" cy="519" r="10" fill="white"/><line x1="248" y1="512" x2="262" y2="526" stroke="#047857" stroke-width="3" stroke-linecap="round"/><line x1="262" y1="512" x2="248" y2="526" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ============ 面板 4：收敛 ============ -->
+  <g fill="#2563eb">
+    <circle cx="610" cy="390" r="5"/><circle cx="635" cy="380" r="5"/><circle cx="660" cy="395" r="5"/><circle cx="620" cy="420" r="5"/><circle cx="645" cy="415" r="5"/><circle cx="670" cy="410" r="5"/><circle cx="630" cy="445" r="5"/><circle cx="655" cy="440" r="5"/><circle cx="680" cy="435" r="5"/><circle cx="615" cy="450" r="5"/><circle cx="665" cy="465" r="5"/><circle cx="640" cy="400" r="5"/>
+  </g>
+  <g fill="#e11d48">
+    <circle cx="830" cy="405" r="5"/><circle cx="855" cy="390" r="5"/><circle cx="880" cy="410" r="5"/><circle cx="840" cy="435" r="5"/><circle cx="865" cy="430" r="5"/><circle cx="890" cy="440" r="5"/><circle cx="835" cy="460" r="5"/><circle cx="870" cy="465" r="5"/><circle cx="900" cy="455" r="5"/><circle cx="850" cy="380" r="5"/><circle cx="885" cy="385" r="5"/><circle cx="860" cy="480" r="5"/>
+  </g>
+  <g fill="#059669">
+    <circle cx="720" cy="495" r="5"/><circle cx="745" cy="480" r="5"/><circle cx="770" cy="500" r="5"/><circle cx="730" cy="520" r="5"/><circle cx="755" cy="515" r="5"/><circle cx="780" cy="505" r="5"/><circle cx="715" cy="530" r="5"/><circle cx="750" cy="540" r="5"/><circle cx="785" cy="535" r="5"/><circle cx="735" cy="545" r="5"/><circle cx="770" cy="550" r="5"/><circle cx="800" cy="515" r="5"/>
+  </g>
+  <!-- Voronoi 边界 -->
+  <line x1="734" y1="408" x2="736" y2="365" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="734" y1="408" x2="603" y2="555" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="734" y1="408" x2="858" y2="555" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7,5"/>
+  <!-- 最终质心 -->
+  <g>
+    <circle cx="644" cy="420" r="10" fill="white"/><line x1="637" y1="413" x2="651" y2="427" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><line x1="651" y1="413" x2="637" y2="427" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="863" cy="428" r="10" fill="white"/><line x1="856" y1="421" x2="870" y2="435" stroke="#be123c" stroke-width="3" stroke-linecap="round"/><line x1="870" y1="421" x2="856" y2="435" stroke="#be123c" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="755" cy="519" r="10" fill="white"/><line x1="748" y1="512" x2="762" y2="526" stroke="#047857" stroke-width="3" stroke-linecap="round"/><line x1="762" y1="512" x2="748" y2="526" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="735" y="548" text-anchor="middle" font-size="13" font-weight="bold" fill="#15803d">✓ 质心不再移动（或移动量 &lt; 阈值），输出划分结果</text>
+</svg>

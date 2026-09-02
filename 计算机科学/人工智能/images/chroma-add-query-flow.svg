@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ca3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#b45309"/>
+    </marker>
+    <marker id="ca3g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="38" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">Chroma 的写入流程与查询流程</text>
+
+  <!-- 上半：写入 -->
+  <rect x="40" y="65" width="900" height="210" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+  <text x="70" y="98" font-size="16" font-weight="bold" fill="#b45309">① 写入：collection.add(ids, documents, metadatas)</text>
+
+  <rect x="70" y="120" width="150" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="145" y="146" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">文本 documents</text>
+  <text x="145" y="166" text-anchor="middle" font-size="11" fill="#a16207">原始文档/Chunk</text>
+  <line x1="222" y1="150" x2="252" y2="150" stroke="#b45309" stroke-width="2" marker-end="url(#ca3)"/>
+
+  <rect x="255" y="110" width="160" height="80" rx="8" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+  <text x="335" y="140" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">Embedding Function</text>
+  <text x="335" y="162" text-anchor="middle" font-size="11" fill="#a16207">默认 ONNX MiniLM</text>
+  <text x="335" y="180" text-anchor="middle" font-size="11" fill="#a16207">或 OpenAI / BGE / 自定义</text>
+  <line x1="417" y1="150" x2="447" y2="150" stroke="#b45309" stroke-width="2" marker-end="url(#ca3)"/>
+
+  <rect x="450" y="120" width="150" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="525" y="146" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">向量 embeddings</text>
+  <text x="525" y="166" text-anchor="middle" font-size="11" font-family="Consolas,monospace" fill="#a16207">[0.02, -0.87, …]</text>
+  <line x1="602" y1="150" x2="632" y2="150" stroke="#b45309" stroke-width="2" marker-end="url(#ca3)"/>
+
+  <rect x="635" y="110" width="140" height="80" rx="8" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+  <text x="705" y="140" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#78350f">HNSW 索引</text>
+  <text x="705" y="162" text-anchor="middle" font-size="11" fill="#78350f">自动构建/增量更新</text>
+  <text x="705" y="180" text-anchor="middle" font-size="11" fill="#78350f">写入即可搜</text>
+  <line x1="777" y1="150" x2="807" y2="150" stroke="#b45309" stroke-width="2" marker-end="url(#ca3)"/>
+
+  <rect x="810" y="120" width="110" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="865" y="146" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400e">持久化</text>
+  <text x="865" y="166" text-anchor="middle" font-size="11" fill="#a16207">SQLite 落盘</text>
+
+  <text x="490" y="240" text-anchor="middle" font-size="12.5" fill="#92400e">已转向量的记录也可直接传 embeddings 入库（跳过自动 Embedding）</text>
+
+  <!-- 下半：查询 -->
+  <rect x="40" y="295" width="900" height="265" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="70" y="328" font-size="16" font-weight="bold" fill="#15803d">② 查询：collection.query(query_texts, n_results, where)</text>
+
+  <rect x="70" y="350" width="150" height="60" rx="8" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="145" y="376" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">问题文本</text>
+  <text x="145" y="396" text-anchor="middle" font-size="11.5" fill="#166534">"年假几天？"</text>
+  <line x1="222" y1="380" x2="252" y2="380" stroke="#059669" stroke-width="2" marker-end="url(#ca3g)"/>
+
+  <rect x="255" y="350" width="160" height="60" rx="8" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+  <text x="335" y="376" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">同一 Embedding 模型</text>
+  <text x="335" y="396" text-anchor="middle" font-size="11" fill="#166534">问题 → 查询向量 q</text>
+  <line x1="417" y1="380" x2="447" y2="380" stroke="#059669" stroke-width="2" marker-end="url(#ca3g)"/>
+
+  <rect x="450" y="340" width="160" height="80" rx="8" fill="#86efac" stroke="#16a34a" stroke-width="2"/>
+  <text x="530" y="370" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">HNSW ANN 检索</text>
+  <text x="530" y="392" text-anchor="middle" font-size="11" fill="#166534">+ where 元数据过滤</text>
+  <text x="530" y="410" text-anchor="middle" font-size="11" fill="#166534">毫秒级返回 Top-K</text>
+  <line x1="612" y1="380" x2="642" y2="380" stroke="#059669" stroke-width="2" marker-end="url(#ca3g)"/>
+
+  <rect x="645" y="340" width="150" height="80" rx="8" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="720" y="370" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#14532d">返回结果</text>
+  <text x="720" y="392" text-anchor="middle" font-size="11" fill="#166534">ids / documents</text>
+  <text x="720" y="410" text-anchor="middle" font-size="11" fill="#166534">metadatas / distances</text>
+
+  <text x="490" y="460" text-anchor="middle" font-size="12.5" fill="#166534">distances 是"距离"（越小越像）；cosine 模式下 相似度 = 1 − distance</text>
+  <text x="490" y="490" text-anchor="middle" font-size="12.5" fill="#166534">include 参数可控制返回内容：["documents","metadatas","distances","embeddings","uris"]</text>
+  <text x="490" y="520" text-anchor="middle" font-size="12.5" fill="#15803d">关键：query 不传 embedding 时 Chroma 自动把 query_texts 转向量——模型必须与入库时一致</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="540" viewBox="0 0 980 540" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <text x="490" y="42" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">K-Means 的目标：簇内紧凑、簇间分离</text>
+
+  <!-- 左：原始数据 -->
+  <rect x="30" y="80" width="430" height="400" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="245" y="115" text-anchor="middle" font-size="17" font-weight="bold" fill="#475569">原始数据（无任何标签）</text>
+
+  <g fill="#94a3b8">
+    <circle cx="140" cy="150" r="6"/><circle cx="165" cy="140" r="6"/><circle cx="190" cy="155" r="6"/>
+    <circle cx="150" cy="180" r="6"/><circle cx="175" cy="175" r="6"/><circle cx="200" cy="170" r="6"/>
+    <circle cx="160" cy="205" r="6"/><circle cx="185" cy="200" r="6"/><circle cx="210" cy="195" r="6"/>
+    <circle cx="145" cy="210" r="6"/><circle cx="195" cy="225" r="6"/><circle cx="170" cy="160" r="6"/>
+    <circle cx="320" cy="175" r="6"/><circle cx="345" cy="160" r="6"/><circle cx="370" cy="180" r="6"/>
+    <circle cx="330" cy="205" r="6"/><circle cx="355" cy="200" r="6"/><circle cx="380" cy="210" r="6"/>
+    <circle cx="325" cy="230" r="6"/><circle cx="360" cy="235" r="6"/><circle cx="390" cy="225" r="6"/>
+    <circle cx="340" cy="150" r="6"/><circle cx="375" cy="155" r="6"/><circle cx="350" cy="250" r="6"/>
+    <circle cx="230" cy="370" r="6"/><circle cx="255" cy="355" r="6"/><circle cx="280" cy="375" r="6"/>
+    <circle cx="240" cy="400" r="6"/><circle cx="265" cy="395" r="6"/><circle cx="290" cy="385" r="6"/>
+    <circle cx="225" cy="410" r="6"/><circle cx="260" cy="420" r="6"/><circle cx="295" cy="415" r="6"/>
+    <circle cx="245" cy="435" r="6"/><circle cx="280" cy="440" r="6"/><circle cx="310" cy="400" r="6"/>
+  </g>
+  <text x="245" y="460" text-anchor="middle" font-size="13" fill="#64748b">只有一堆点，不知道谁和谁是一类</text>
+
+  <!-- 右：聚类结果 -->
+  <rect x="520" y="80" width="430" height="400" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="735" y="115" text-anchor="middle" font-size="17" font-weight="bold" fill="#475569">K-Means 聚类结果（K = 3）</text>
+
+  <!-- Voronoi 边界 -->
+  <line x1="772" y1="110" x2="755" y2="275" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="755" y1="275" x2="530" y2="368" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="755" y1="275" x2="950" y2="361" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7,5"/>
+
+  <!-- 蓝簇 -->
+  <g fill="#2563eb">
+    <circle cx="640" cy="150" r="6"/><circle cx="665" cy="140" r="6"/><circle cx="690" cy="155" r="6"/>
+    <circle cx="650" cy="180" r="6"/><circle cx="675" cy="175" r="6"/><circle cx="700" cy="170" r="6"/>
+    <circle cx="660" cy="205" r="6"/><circle cx="685" cy="200" r="6"/><circle cx="710" cy="195" r="6"/>
+    <circle cx="645" cy="210" r="6"/><circle cx="695" cy="225" r="6"/><circle cx="670" cy="160" r="6"/>
+  </g>
+  <!-- 红簇 -->
+  <g fill="#e11d48">
+    <circle cx="820" cy="175" r="6"/><circle cx="845" cy="160" r="6"/><circle cx="870" cy="180" r="6"/>
+    <circle cx="830" cy="205" r="6"/><circle cx="855" cy="200" r="6"/><circle cx="880" cy="210" r="6"/>
+    <circle cx="825" cy="230" r="6"/><circle cx="860" cy="235" r="6"/><circle cx="890" cy="225" r="6"/>
+    <circle cx="840" cy="150" r="6"/><circle cx="875" cy="155" r="6"/><circle cx="850" cy="250" r="6"/>
+  </g>
+  <!-- 绿簇 -->
+  <g fill="#059669">
+    <circle cx="730" cy="370" r="6"/><circle cx="755" cy="355" r="6"/><circle cx="780" cy="375" r="6"/>
+    <circle cx="740" cy="400" r="6"/><circle cx="765" cy="395" r="6"/><circle cx="790" cy="385" r="6"/>
+    <circle cx="725" cy="410" r="6"/><circle cx="760" cy="420" r="6"/><circle cx="795" cy="415" r="6"/>
+    <circle cx="745" cy="435" r="6"/><circle cx="780" cy="440" r="6"/><circle cx="810" cy="400" r="6"/>
+  </g>
+
+  <!-- 质心 X -->
+  <g>
+    <circle cx="674" cy="180" r="11" fill="white"/>
+    <line x1="667" y1="173" x2="681" y2="187" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="681" y1="173" x2="667" y2="187" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="853" cy="198" r="11" fill="white"/>
+    <line x1="846" y1="191" x2="860" y2="205" stroke="#be123c" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="860" y1="191" x2="846" y2="205" stroke="#be123c" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="765" cy="400" r="11" fill="white"/>
+    <line x1="758" y1="393" x2="772" y2="407" stroke="#047857" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="772" y1="393" x2="758" y2="407" stroke="#047857" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <text x="735" y="460" text-anchor="middle" font-size="13" fill="#64748b">同色点属于同一簇，X 为质心；虚线是各簇的"势力范围"分界</text>
+
+  <!-- 箭头 -->
+  <line x1="468" y1="280" x2="512" y2="280" stroke="#f59e0b" stroke-width="3"/>
+  <polygon points="512,280 500,273 500,287" fill="#f59e0b"/>
+  <text x="490" y="262" text-anchor="middle" font-size="13" font-weight="bold" fill="#d97706">划分</text>
+</svg>

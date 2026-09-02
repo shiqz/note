@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#0f172a">为什么需要 RAG：纯大模型的三大知识困境</text>
+
+  <!-- 痛点 1：幻觉 -->
+  <rect x="50" y="80" width="270" height="210" rx="14" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="185" y="118" text-anchor="middle" font-size="30">🎭</text>
+  <text x="185" y="155" text-anchor="middle" font-size="17" font-weight="bold" fill="#b91c1c">① 幻觉（Hallucination）</text>
+  <text x="70" y="190" font-size="13" fill="#7f1d1d">LLM 的本质是"续写最可能的下一个</text>
+  <text x="70" y="212" font-size="13" fill="#7f1d1d">词"，不知道就会一本正经地编造，</text>
+  <text x="70" y="234" font-size="13" fill="#7f1d1d">编造的内容格式完美、难以分辨。</text>
+  <text x="70" y="270" font-size="12.5" fill="#991b1b">例：虚构不存在的法条、论文引用</text>
+
+  <!-- 痛点 2：知识截止 -->
+  <rect x="345" y="80" width="270" height="210" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+  <text x="480" y="118" text-anchor="middle" font-size="30">⏳</text>
+  <text x="480" y="155" text-anchor="middle" font-size="17" font-weight="bold" fill="#b45309">② 知识截止（Cutoff）</text>
+  <text x="365" y="190" font-size="13" fill="#78350f">模型的参数在训练完成那一刻就</text>
+  <text x="365" y="212" font-size="13" fill="#78350f">冻结了，之后发生的事一概不知；</text>
+  <text x="365" y="234" font-size="13" fill="#78350f">重新训练成本极高、周期极长。</text>
+  <text x="365" y="270" font-size="12.5" fill="#92400e">例：问最新政策、今天的新闻</text>
+
+  <!-- 痛点 3：私有数据不可见 -->
+  <rect x="640" y="80" width="270" height="210" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="775" y="118" text-anchor="middle" font-size="30">🔒</text>
+  <text x="775" y="155" text-anchor="middle" font-size="17" font-weight="bold" fill="#1d4ed8">③ 私有数据不可见</text>
+  <text x="660" y="190" font-size="13" fill="#1e3a8a">企业内部文档、客服工单、个人笔记</text>
+  <text x="660" y="212" font-size="13" fill="#1e3a8a">从未出现在训练语料中，模型完全</text>
+  <text x="660" y="234" font-size="13" fill="#1e3a8a">无法回答；且敏感数据不能拿去训练。</text>
+  <text x="660" y="270" font-size="12.5" fill="#1e40af">例："我们公司的报销流程是什么？"</text>
+
+  <!-- 箭头到解决方案 -->
+  <line x1="480" y1="300" x2="480" y2="345" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrowA)"/>
+
+  <!-- RAG 解决方案 -->
+  <rect x="90" y="355" width="780" height="210" rx="16" fill="#f0fdf4" stroke="#4ade80" stroke-width="2.5"/>
+  <text x="480" y="395" text-anchor="middle" font-size="20" font-weight="bold" fill="#15803d">RAG（Retrieval-Augmented Generation，检索增强生成）</text>
+  <text x="480" y="425" text-anchor="middle" font-size="14" fill="#166534">回答前，先从外部知识库中"检索"出相关资料，再让模型"依据资料"生成答案</text>
+
+  <text x="130" y="465" font-size="13.5" fill="#14532d">✅ 答案基于真实资料，<tspan font-weight="bold">大幅抑制幻觉</tspan></text>
+  <text x="130" y="495" font-size="13.5" fill="#14532d">✅ 知识库随时更新，<tspan font-weight="bold">无需重新训练模型</tspan></text>
+  <text x="130" y="525" font-size="13.5" fill="#14532d">✅ 可接入内部文档，<tspan font-weight="bold">数据留在自己手里</tspan></text>
+
+  <text x="540" y="465" font-size="13.5" fill="#14532d">✅ 答案可<tspan font-weight="bold">标注引用来源</tspan>，可核验、可追溯</text>
+  <text x="540" y="495" font-size="13.5" fill="#14532d">✅ 知识与模型解耦，<tspan font-weight="bold">热更新、成本低</tspan></text>
+  <text x="540" y="525" font-size="13.5" fill="#14532d">✅ 同一模型可服务不同知识库</text>
+</svg>

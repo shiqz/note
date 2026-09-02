@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="arrowB" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#0f172a">一个比喻理解 RAG：闭卷考试 → 开卷考试</text>
+
+  <!-- 左：闭卷 -->
+  <rect x="60" y="80" width="380" height="330" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="250" y="118" text-anchor="middle" font-size="19" font-weight="bold" fill="#475569">闭卷考试 = 纯大模型</text>
+
+  <!-- 学生 -->
+  <circle cx="250" cy="180" r="30" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <text x="250" y="188" text-anchor="middle" font-size="26">🧠</text>
+  <text x="250" y="240" text-anchor="middle" font-size="14" fill="#334155">只凭大脑记忆答题</text>
+
+  <rect x="100" y="270" width="300" height="110" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="120" y="300" font-size="13" fill="#64748b">• 记不住的内容就<tspan fill="#b91c1c" font-weight="bold">瞎编</tspan></text>
+  <text x="120" y="328" font-size="13" fill="#64748b">• 考纲之后的新内容没学过</text>
+  <text x="120" y="356" font-size="13" fill="#64748b">• 无法核对答案出处</text>
+
+  <!-- 右：开卷 -->
+  <rect x="520" y="80" width="380" height="330" rx="16" fill="#f0fdf4" stroke="#4ade80" stroke-width="2.5"/>
+  <text x="710" y="118" text-anchor="middle" font-size="19" font-weight="bold" fill="#15803d">开卷考试 = RAG</text>
+
+  <circle cx="640" cy="185" r="30" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/>
+  <text x="640" y="193" text-anchor="middle" font-size="26">🧠</text>
+  <!-- 书本 -->
+  <rect x="700" y="160" width="70" height="52" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="2"/>
+  <text x="735" y="192" text-anchor="middle" font-size="22">📚</text>
+  <line x1="672" y1="185" x2="698" y2="185" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowB)"/>
+  <text x="685" y="172" text-anchor="middle" font-size="11.5" fill="#15803d">先翻书</text>
+
+  <text x="710" y="245" text-anchor="middle" font-size="14" fill="#14532d">先检索资料，再依据资料作答</text>
+
+  <rect x="560" y="270" width="300" height="110" rx="10" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="580" y="300" font-size="13" fill="#14532d">• 答案<tspan fill="#15803d" font-weight="bold">有资料依据</tspan>，不乱编</text>
+  <text x="580" y="328" font-size="13" fill="#14532d">• 资料可随时换新（知识库更新）</text>
+  <text x="580" y="356" font-size="13" fill="#14532d">• 可注明"答案出自第几页"</text>
+
+  <!-- 底部对应关系 -->
+  <rect x="120" y="435" width="720" height="60" rx="12" fill="#1e293b"/>
+  <text x="480" y="462" text-anchor="middle" font-size="14.5" fill="#f1f5f9">课本/资料 = 知识库　　翻书 = 检索（Retrieval）　　组织语言答题 = 生成（Generation）</text>
+  <text x="480" y="484" text-anchor="middle" font-size="13" fill="#6ee7b7">RAG 不改变模型本身，而是在生成前为模型"递上"相关资料</text>
+</svg>

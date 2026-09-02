@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="580" viewBox="0 0 980 580" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <marker id="ca4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">Chroma 的三种过滤方式</text>
+
+  <!-- where 元数据过滤 -->
+  <rect x="40" y="75" width="290" height="420" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="185" y="110" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d4ed8">① where：元数据过滤</text>
+
+  <rect x="65" y="130" width="240" height="150" rx="8" fill="#1e293b"/>
+  <text x="80" y="155" font-size="11.5" font-family="Consolas,monospace" fill="#fbbf24"># 精确匹配</text>
+  <text x="80" y="178" font-size="11.5" font-family="Consolas,monospace" fill="#e2e8f0">where={"dept": "人事"}</text>
+  <text x="80" y="206" font-size="11.5" font-family="Consolas,monospace" fill="#fbbf24"># 操作符</text>
+  <text x="80" y="229" font-size="11.5" font-family="Consolas,monospace" fill="#e2e8f0">where={"year": {"$gte": 2025}}</text>
+  <text x="80" y="257" font-size="11.5" font-family="Consolas,monospace" fill="#fbbf24"># AND / OR 组合</text>
+
+  <text x="185" y="312" text-anchor="middle" font-size="12.5" fill="#1e3a8a">支持的操作符：</text>
+  <text x="75" y="340" font-size="12" font-family="Consolas,monospace" fill="#1e40af">$eq  $ne  $gt  $gte</text>
+  <text x="75" y="366" font-size="12" font-family="Consolas,monospace" fill="#1e40af">$lt  $lte  $in  $nin</text>
+  <text x="75" y="392" font-size="12" font-family="Consolas,monospace" fill="#1e40af">$and  $or（逻辑组合）</text>
+
+  <text x="185" y="430" text-anchor="middle" font-size="12" fill="#334155">作用对象：metadata 字段</text>
+  <text x="185" y="455" text-anchor="middle" font-size="12" fill="#334155">值类型：str / int /</text>
+  <text x="185" y="475" text-anchor="middle" font-size="12" fill="#334155">float / bool（不支持 None）</text>
+
+  <!-- where_document 全文过滤 -->
+  <rect x="345" y="75" width="290" height="420" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="490" y="110" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">② where_document：全文过滤</text>
+
+  <rect x="370" y="130" width="240" height="90" rx="8" fill="#1e293b"/>
+  <text x="385" y="160" font-size="11.5" font-family="Consolas,monospace" fill="#e2e8f0">where_document={</text>
+  <text x="400" y="182" font-size="11.5" font-family="Consolas,monospace" fill="#6ee7b7">"$contains": "E1024"}</text>
+
+  <text x="490" y="252" text-anchor="middle" font-size="12.5" fill="#14532d">对 document 原文做</text>
+  <text x="490" y="272" text-anchor="middle" font-size="12.5" fill="#14532d"><tspan font-weight="bold">子串包含</tspan>匹配</text>
+  <text x="490" y="300" text-anchor="middle" font-size="12.5" fill="#14532d">用途：错误码、型号、</text>
+  <text x="490" y="320" text-anchor="middle" font-size="12.5" fill="#14532d">专有名词等精确符号</text>
+  <text x="490" y="340" text-anchor="middle" font-size="12.5" fill="#14532d">向量检索不敏感，用它兜底</text>
+
+  <text x="490" y="392" text-anchor="middle" font-size="12" fill="#334155">也支持 $and / $or 组合</text>
+  <text x="490" y="412" text-anchor="middle" font-size="12" fill="#334155">多个关键词</text>
+
+  <rect x="370" y="440" width="240" height="40" rx="8" fill="#dcfce7" stroke="#4ade80"/>
+  <text x="490" y="465" text-anchor="middle" font-size="11.5" fill="#14532d">语义搜索 + 精确符号 = 简易混合检索</text>
+
+  <!-- 组合示例 -->
+  <rect x="650" y="75" width="290" height="420" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+  <text x="795" y="110" text-anchor="middle" font-size="16" font-weight="bold" fill="#b45309">③ 组合使用 + 分页</text>
+
+  <rect x="675" y="130" width="240" height="180" rx="8" fill="#1e293b"/>
+  <text x="690" y="155" font-size="11" font-family="Consolas,monospace" fill="#e2e8f0">col.query(</text>
+  <text x="702" y="177" font-size="11" font-family="Consolas,monospace" fill="#93c5fd">query_texts=["退款政策"],</text>
+  <text x="702" y="199" font-size="11" font-family="Consolas,monospace" fill="#93c5fd">n_results=10,</text>
+  <text x="702" y="221" font-size="11" font-family="Consolas,monospace" fill="#6ee7b7">where={"$and":[</text>
+  <text x="714" y="241" font-size="11" font-family="Consolas,monospace" fill="#6ee7b7">{"dept":"售后"},</text>
+  <text x="714" y="261" font-size="11" font-family="Consolas,monospace" fill="#6ee7b7">{"year":{"$gte":2025}}]},</text>
+  <text x="702" y="283" font-size="11" font-family="Consolas,monospace" fill="#fbbf24">where_document={"$contains":"退款"},</text>
+  <text x="690" y="305" font-size="11" font-family="Consolas,monospace" fill="#e2e8f0">)</text>
+
+  <text x="795" y="345" text-anchor="middle" font-size="12.5" fill="#78350f">get() 列表查询支持分页：</text>
+  <text x="795" y="372" text-anchor="middle" font-size="11.5" font-family="Consolas,monospace" fill="#92400e">limit=20, offset=40</text>
+  <text x="795" y="410" text-anchor="middle" font-size="12.5" fill="#78350f">过滤在 ANN 检索阶段生效</text>
+  <text x="795" y="432" text-anchor="middle" font-size="12.5" fill="#b91c1c">权限条件务必放进 where，</text>
+  <text x="795" y="454" text-anchor="middle" font-size="12.5" fill="#b91c1c">不要检索后再筛（防越权）</text>
+</svg>
