@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">LCEL 管道：Runnable 组件用 | 串联，数据逐节流动变换</text>
+
+  <!-- 主管线 -->
+  <g font-size="13" text-anchor="middle">
+    <rect x="40" y="100" width="180" height="90" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="130" y="132" font-weight="bold" fill="#334155">输入 dict</text>
+    <text x="130" y="156" font-family="Consolas,monospace" font-size="11.5" fill="#475569">{"question": "..."}</text>
+
+    <rect x="285" y="100" width="180" height="90" rx="12" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text x="375" y="132" font-weight="bold" fill="#1d4ed8">ChatPromptTemplate</text>
+    <text x="375" y="156" font-size="11.5" fill="#1e40af">套模板 → ChatMessages</text>
+
+    <rect x="530" y="100" width="180" height="90" rx="12" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+    <text x="620" y="132" font-weight="bold" fill="#15803d">ChatModel</text>
+    <text x="620" y="156" font-size="11.5" fill="#166534">调 LLM → AIMessage</text>
+
+    <rect x="775" y="100" width="170" height="90" rx="12" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+    <text x="860" y="132" font-weight="bold" fill="#b45309">StrOutputParser</text>
+    <text x="860" y="156" font-size="11.5" fill="#92400e">取 .content → str</text>
+  </g>
+  <g stroke="#2563eb" stroke-width="2.5">
+    <line x1="225" y1="145" x2="280" y2="145"/><polygon points="285,145 275,139 275,151" fill="#2563eb"/>
+    <line x1="470" y1="145" x2="525" y2="145"/><polygon points="530,145 520,139 520,151" fill="#2563eb"/>
+    <line x1="715" y1="145" x2="770" y2="145"/><polygon points="775,145 765,139 765,151" fill="#2563eb"/>
+  </g>
+  <text x="252" y="132" text-anchor="middle" font-size="17" font-family="Consolas,monospace" fill="#2563eb">|</text>
+  <text x="498" y="132" text-anchor="middle" font-size="17" font-family="Consolas,monospace" fill="#2563eb">|</text>
+  <text x="742" y="132" text-anchor="middle" font-size="17" font-family="Consolas,monospace" fill="#2563eb">|</text>
+
+  <rect x="180" y="215" width="620" height="40" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="490" y="241" text-anchor="middle" font-size="14" font-family="Consolas,monospace" fill="#1e3a8a">chain = prompt | model | StrOutputParser()   # 每个组件都是 Runnable</text>
+
+  <!-- 统一接口 -->
+  <text x="490" y="295" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">所有 Runnable 自动拥有同一套调用接口：</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="90" y="315" width="150" height="56" rx="10" fill="white" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="165" y="340" font-family="Consolas,monospace" font-weight="bold" fill="#1d4ed8">.invoke()</text>
+    <text x="165" y="360" font-size="11.5" fill="#475569">同步单次调用</text>
+    <rect x="270" y="315" width="150" height="56" rx="10" fill="white" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="345" y="340" font-family="Consolas,monospace" font-weight="bold" fill="#1d4ed8">.stream()</text>
+    <text x="345" y="360" font-size="11.5" fill="#475569">流式逐 token</text>
+    <rect x="450" y="315" width="150" height="56" rx="10" fill="white" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="525" y="340" font-family="Consolas,monospace" font-weight="bold" fill="#1d4ed8">.batch()</text>
+    <text x="525" y="360" font-size="11.5" fill="#475569">批量并发处理</text>
+    <rect x="630" y="315" width="150" height="56" rx="10" fill="white" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="705" y="340" font-family="Consolas,monospace" font-weight="bold" fill="#1d4ed8">.ainvoke()</text>
+    <text x="705" y="360" font-size="11.5" fill="#475569">异步（a* 系列）</text>
+  </g>
+
+  <!-- 三个特殊 Runnable -->
+  <text x="490" y="415" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">三个最常用的"管道连接件"：</text>
+  <g font-size="12.5">
+    <rect x="60" y="435" width="280" height="120" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="1.8"/>
+    <text x="200" y="463" text-anchor="middle" font-weight="bold" fill="#15803d">RunnablePassthrough</text>
+    <text x="78" y="490" fill="#166534">· 原样透传输入（给 prompt）</text>
+    <text x="78" y="514" fill="#166534">· .assign(上下文=...) 顺手</text>
+    <text x="78" y="536" fill="#166534">  往 dict 里加检索结果</text>
+
+    <rect x="360" y="435" width="260" height="120" rx="12" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.8"/>
+    <text x="490" y="463" text-anchor="middle" font-weight="bold" fill="#b45309">RunnableParallel</text>
+    <text x="378" y="490" fill="#92400e">· 扇出并行执行多个分支</text>
+    <text x="378" y="514" fill="#92400e">· 如同时生成"摘要 + 关键词"</text>
+    <text x="378" y="536" fill="#92400e">· 分支间自动并发</text>
+
+    <rect x="640" y="435" width="280" height="120" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.8"/>
+    <text x="780" y="463" text-anchor="middle" font-weight="bold" fill="#b91c1c">RunnableLambda</text>
+    <text x="658" y="490" fill="#991b1b">· 把任意 Python 函数</text>
+    <text x="658" y="514" fill="#991b1b">  包装成管道组件</text>
+    <text x="658" y="536" fill="#991b1b">· 自定义清洗 / 格式化逻辑</text>
+  </g>
+
+  <text x="490" y="588" text-anchor="middle" font-size="12.5" fill="#64748b">链式调用自动获得：流式透传、自动并发、异步支持、重试（.with_retry）、回调追踪</text>
+</svg>

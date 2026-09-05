@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">LangChain 生态全景：分层安装、按需引入</text>
+
+  <!-- 应用层 -->
+  <rect x="120" y="75" width="740" height="70" rx="14" fill="#eef2ff" stroke="#a5b4fc" stroke-width="2"/>
+  <text x="490" y="105" text-anchor="middle" font-size="16" font-weight="bold" fill="#4338ca">应用层：你的 AI 应用</text>
+  <text x="490" y="130" text-anchor="middle" font-size="13" fill="#4f46e5">RAG 问答 · Agent · 客服机器人 · 代码助手（LangServe 可把链一键部署为 HTTP 服务）</text>
+
+  <!-- LangSmith 侧边 -->
+  <rect x="770" y="165" width="190" height="300" rx="14" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="865" y="195" text-anchor="middle" font-size="15" font-weight="bold" fill="#b91c1c">LangSmith</text>
+  <text x="865" y="220" text-anchor="middle" font-size="12" fill="#991b1b">（独立 SaaS / 自托管）</text>
+  <g font-size="12.5" fill="#991b1b">
+    <text x="790" y="252">· 全链路 Trace 追踪</text>
+    <text x="790" y="282">· Prompt 版本管理</text>
+    <text x="790" y="312">· 评测数据集 / 打分</text>
+    <text x="790" y="342">· Token / 成本监控</text>
+    <text x="790" y="372">· 调试 Agent 每一步</text>
+  </g>
+  <text x="865" y="425" text-anchor="middle" font-size="11.5" fill="#b91c1c">设环境变量即接入：</text>
+  <text x="865" y="445" text-anchor="middle" font-size="11" font-family="Consolas,monospace" fill="#b91c1c">LANGCHAIN_TRACING_V2=true</text>
+
+  <!-- langchain + langgraph 层 -->
+  <rect x="60" y="165" width="340" height="135" rx="14" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="230" y="195" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d4ed8">langchain</text>
+  <g font-size="12.5" fill="#1e40af">
+    <text x="82" y="225">· create_agent（v1 推荐 Agent 入口）</text>
+    <text x="82" y="252">· Prompt 模板 / 输出解析器</text>
+    <text x="82" y="279">· 预置 Chain、文档处理流水线</text>
+  </g>
+
+  <rect x="420" y="165" width="330" height="135" rx="14" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+  <text x="585" y="195" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">LangGraph（langgraph）</text>
+  <g font-size="12.5" fill="#166534">
+    <text x="440" y="225">· 有状态的图编排（节点 + 边）</text>
+    <text x="440" y="252">· Agent 循环底层引擎</text>
+    <text x="440" y="279">· Checkpointer 持久化 / 人工介入</text>
+  </g>
+
+  <!-- core 层 -->
+  <rect x="60" y="320" width="690" height="90" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="405" y="350" text-anchor="middle" font-size="16" font-weight="bold" fill="#334155">langchain-core：抽象与协议（一切的地基）</text>
+  <text x="405" y="378" text-anchor="middle" font-size="12.5" fill="#475569">Runnable 协议（invoke/stream/batch/async）· Message 消息类型 · Tool 抽象 · LCEL 表达式语言 · 回调与缓存</text>
+
+  <!-- 集成包层 -->
+  <rect x="60" y="430" width="690" height="135" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+  <text x="405" y="460" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">集成包（按需安装，一个供应商一个包）</text>
+  <g font-size="12" font-family="Consolas,monospace" fill="#78350f" text-anchor="middle">
+    <rect x="80" y="478" width="150" height="30" rx="7" fill="white" stroke="#fcd34d"/><text x="155" y="498">langchain-openai</text>
+    <rect x="245" y="478" width="170" height="30" rx="7" fill="white" stroke="#fcd34d"/><text x="330" y="498">langchain-anthropic</text>
+    <rect x="430" y="478" width="160" height="30" rx="7" fill="white" stroke="#fcd34d"/><text x="510" y="498">langchain-chroma</text>
+    <rect x="605" y="478" width="125" height="30" rx="7" fill="white" stroke="#fcd34d"/><text x="667" y="498">langchain-community</text>
+
+    <rect x="80" y="518" width="190" height="30" rx="7" fill="white" stroke="#fcd34d"/><text x="175" y="538">langchain-huggingface</text>
+    <rect x="285" y="518" width="200" height="30" rx="7" fill="white" stroke="#fcd34d"/><text x="385" y="538">langchain-text-splitters</text>
+    <rect x="500" y="518" width="230" height="30" rx="7" fill="white" stroke="#fcd34d"/><text x="615" y="538">langchain-deepseek / qwen …</text>
+  </g>
+
+  <text x="490" y="592" text-anchor="middle" font-size="12.5" fill="#64748b">v1.0 起旧版 LLMChain / AgentExecutor 移至 langchain-classic 兼容包，新代码请用 LCEL 与 create_agent</text>
+</svg>

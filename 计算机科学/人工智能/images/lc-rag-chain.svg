@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <text x="490" y="40" text-anchor="middle" font-size="23" font-weight="bold" fill="#0f172a">LangChain 实现 RAG：离线索引 + 在线问答链</text>
+
+  <!-- 离线索引 -->
+  <rect x="40" y="75" width="900" height="150" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="70" y="105" font-size="16" font-weight="bold" fill="#15803d">① 离线索引（Indexing）：一次性构建知识库</text>
+
+  <g font-size="12.5" text-anchor="middle">
+    <rect x="70" y="125" width="130" height="56" rx="10" fill="white" stroke="#86efac"/>
+    <text x="135" y="150" font-weight="bold" fill="#166534">文档加载</text>
+    <text x="135" y="170" font-size="11" fill="#15803d">PDF/MD/TXT</text>
+
+    <rect x="245" y="125" width="150" height="56" rx="10" fill="white" stroke="#86efac"/>
+    <text x="320" y="150" font-weight="bold" fill="#166534">文本切分</text>
+    <text x="320" y="170" font-size="11" fill="#15803d">RecursiveCharacter…</text>
+
+    <rect x="440" y="125" width="140" height="56" rx="10" fill="white" stroke="#86efac"/>
+    <text x="510" y="150" font-weight="bold" fill="#166534">Embedding</text>
+    <text x="510" y="170" font-size="11" fill="#15803d">文本 → 向量</text>
+
+    <rect x="625" y="125" width="150" height="56" rx="10" fill="white" stroke="#86efac"/>
+    <text x="700" y="150" font-weight="bold" fill="#166534">向量库</text>
+    <text x="700" y="170" font-size="11" fill="#15803d">Chroma / Milvus</text>
+  </g>
+  <g stroke="#15803d" stroke-width="2">
+    <line x1="205" y1="153" x2="240" y2="153"/><polygon points="245,153 236,148 236,158" fill="#15803d"/>
+    <line x1="400" y1="153" x2="435" y2="153"/><polygon points="440,153 431,148 431,158" fill="#15803d"/>
+    <line x1="585" y1="153" x2="620" y2="153"/><polygon points="625,153 616,148 616,158" fill="#15803d"/>
+  </g>
+  <text x="490" y="208" text-anchor="middle" font-size="12" fill="#166534">对应 LangChain 组件：DocumentLoader → TextSplitter → Embeddings → VectorStore</text>
+
+  <!-- 在线问答链 -->
+  <rect x="40" y="250" width="900" height="280" rx="14" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="70" y="280" font-size="16" font-weight="bold" fill="#1d4ed8">② 在线问答（Retrieval Chain）：每次提问实时检索</text>
+
+  <!-- 用户问题 -->
+  <rect x="70" y="305" width="130" height="50" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.8"/>
+  <text x="135" y="335" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#334155">用户问题</text>
+
+  <!-- 分叉：检索 -->
+  <line x1="200" y1="330" x2="255" y2="330" stroke="#2563eb" stroke-width="2"/>
+  <line x1="255" y1="330" x2="255" y2="420" stroke="#2563eb" stroke-width="2"/>
+  <line x1="255" y1="420" x2="330" y2="420" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="335,420 326,415 326,425" fill="#2563eb"/>
+  <rect x="335" y="392" width="160" height="56" rx="10" fill="white" stroke="#60a5fa" stroke-width="1.8"/>
+  <text x="415" y="416" text-anchor="middle" font-weight="bold" font-size="12.5" fill="#1d4ed8">retriever 检索</text>
+  <text x="415" y="436" text-anchor="middle" font-size="11" fill="#1e40af">相似度 Top-K 文档块</text>
+  <line x1="495" y1="420" x2="560" y2="420" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="565,420 556,415 556,425" fill="#2563eb"/>
+  <rect x="565" y="392" width="120" height="56" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="625" y="417" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">context</text>
+  <text x="625" y="436" text-anchor="middle" font-size="10.5" fill="#2563eb">检索到的上下文</text>
+
+  <!-- 主路：问题透传 -->
+  <line x1="200" y1="330" x2="265" y2="330" stroke="#2563eb" stroke-width="2"/>
+  <rect x="265" y="305" width="170" height="50" rx="10" fill="white" stroke="#60a5fa" stroke-width="1.8"/>
+  <text x="350" y="326" text-anchor="middle" font-size="11.5" font-family="Consolas,monospace" fill="#1d4ed8">RunnablePassthrough</text>
+  <text x="350" y="344" text-anchor="middle" font-size="11" fill="#1e40af">问题原样透传</text>
+  <line x1="435" y1="330" x2="560" y2="330" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="565,330 556,325 556,335" fill="#2563eb"/>
+
+  <!-- Prompt：context + question 汇合 -->
+  <rect x="565" y="300" width="135" height="60" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="632" y="326" text-anchor="middle" font-weight="bold" font-size="12.5" fill="#1d4ed8">Prompt 模板</text>
+  <text x="632" y="345" text-anchor="middle" font-size="10.5" fill="#1e40af">context + question</text>
+  <line x1="625" y1="392" x2="625" y2="360" stroke="#60a5fa" stroke-width="1.8" stroke-dasharray="5,4"/>
+
+  <line x1="700" y1="330" x2="740" y2="330" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="745,330 736,325 736,335" fill="#2563eb"/>
+  <rect x="745" y="305" width="100" height="50" rx="10" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.8"/>
+  <text x="795" y="335" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#15803d">LLM</text>
+
+  <line x1="845" y1="330" x2="870" y2="330" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="875,330 866,325 866,335" fill="#2563eb"/>
+  <rect x="875" y="305" width="55" height="50" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.8"/>
+  <text x="902" y="327" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#b45309">解析</text>
+  <text x="902" y="343" text-anchor="middle" font-size="10" fill="#92400e">Parser</text>
+
+  <rect x="745" y="440" width="185" height="56" rx="10" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.8"/>
+  <text x="837" y="465" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4338ca">基于上下文的回答</text>
+  <text x="837" y="485" text-anchor="middle" font-size="11" fill="#4f46e5">（不幻觉、可溯源）</text>
+  <line x1="902" y1="355" x2="902" y2="400" stroke="#a5b4fc" stroke-width="2"/>
+  <line x1="902" y1="400" x2="837" y2="400" stroke="#a5b4fc" stroke-width="2"/>
+  <line x1="837" y1="400" x2="837" y2="440" stroke="#a5b4fc" stroke-width="2"/>
+  <polygon points="837,440 832,431 842,431" fill="#a5b4fc"/>
+
+  <text x="490" y="512" text-anchor="middle" font-size="12.5" font-family="Consolas,monospace" fill="#1e3a8a">chain = {"context": retriever, "question": passthrough} | prompt | llm | parser</text>
+
+  <text x="490" y="575" text-anchor="middle" font-size="12.5" fill="#64748b">原理细节见《什么是RAG》，向量库用法见《Chroma 入门手册》——LangChain 负责把它们"粘"成一条链</text>
+</svg>
